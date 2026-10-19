@@ -318,6 +318,10 @@ private struct SmartScanResults: View {
                     Divider().padding(.leading, 44).opacity(0.5)
                 }
                 AppsReportRow()
+                if DevEnvironment.detected {
+                    Divider().padding(.leading, 44).opacity(0.5)
+                    DevProcessesReportRow()
+                }
                 Divider().padding(.leading, 44).opacity(0.5)
                 SecurityRow()
                 Divider().padding(.leading, 44).opacity(0.5)
@@ -456,6 +460,27 @@ private struct AppsReportRow: View {
             } else {
                 Text("\(Fmt.count(model.apps.count, "app")) installed · \(Text(Fmt.bytes(model.installedAppsBytes)).fontWeight(.semibold).foregroundStyle(.primary))")
                     .foregroundStyle(.secondary)
+            }
+        }
+    }
+}
+
+private struct DevProcessesReportRow: View {
+    private var model: DevProcessesModel { AppModel.shared.processes }
+    var body: some View {
+        ReportRow(route: .processes) {
+            switch model.phase {
+            case .scanning:
+                ProgressView().controlSize(.small)
+            case .done:
+                if model.leftBehind.isEmpty {
+                    Label("Nothing left running", systemImage: "checkmark.circle.fill").foregroundStyle(.green).font(.callout)
+                } else {
+                    Label("\(Fmt.count(model.leftBehind.count, "process group")) left behind · \(Fmt.bytes(model.leftBehindMemory)) of memory",
+                          systemImage: "exclamationmark.circle").foregroundStyle(.orange).font(.callout)
+                }
+            default:
+                Text("Not checked yet").foregroundStyle(.tertiary).font(.caption)
             }
         }
     }

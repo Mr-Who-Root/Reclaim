@@ -2,13 +2,14 @@ import SwiftUI
 
 /// Every screen in the sidebar. Also used by URLs (`reclaim://junk`), Spotlight and Shortcuts.
 enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
-    case home, guided, junk, ai, docker, downloads, duplicates, photos, large, map, security, trash, leftovers, apps, settings
+    case home, guided, junk, ai, downloads, duplicates, photos, large, dev, docker, toolchains, maintenance, processes, map, security, trash, leftovers, apps, settings
 
     var id: String { rawValue }
 
     enum Section: String, CaseIterable, Identifiable {
         case overview = "Overview"
         case clean = "Clean Up"
+        case developer = "Developer"
         case explore = "Explore"
         case review = "Review"
         case app = "App"
@@ -19,6 +20,7 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
             switch self {
             case .overview: return String(localized: "Overview")
             case .clean: return String(localized: "Clean Up")
+            case .developer: return String(localized: "Developer")
             case .explore: return String(localized: "Explore")
             case .review: return String(localized: "Review")
             case .app: return String(localized: "App")
@@ -30,7 +32,8 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
     var section: Section {
         switch self {
         case .home, .guided: return .overview
-        case .junk, .ai, .docker, .downloads, .duplicates, .photos, .large: return .clean
+        case .junk, .ai, .downloads, .duplicates, .photos, .large: return .clean
+        case .dev, .docker, .toolchains, .maintenance, .processes: return .developer
         case .map, .security: return .explore
         case .trash: return .review
         case .leftovers, .apps: return .app
@@ -45,6 +48,10 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         case .junk: return String(localized: "Junk")
         case .ai: return String(localized: "AI Junk")
         case .docker: return String(localized: "Docker")
+        case .dev: return String(localized: "Dev Overview")
+        case .toolchains: return String(localized: "SDKs & Toolchains")
+        case .maintenance: return String(localized: "Git & Homebrew")
+        case .processes: return String(localized: "Dev Processes")
         case .downloads: return String(localized: "Downloads")
         case .duplicates: return String(localized: "Duplicates")
         case .photos: return String(localized: "Photo Clutter")
@@ -65,6 +72,10 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         case .junk: return String(localized: "Caches, logs & developer junk")
         case .ai: return String(localized: "Agent temp files, AI app caches & models")
         case .docker: return String(localized: "Images, containers, volumes & build cache")
+        case .dev: return String(localized: "Everything development takes up, by area")
+        case .toolchains: return String(localized: "Old NDKs, simulators, JDKs and language versions")
+        case .maintenance: return String(localized: "brew cleanup and git gc, run for you")
+        case .processes: return String(localized: "Dev servers and headless browsers left running")
         case .downloads: return String(localized: "Old installers, archives & stale downloads")
         case .duplicates: return String(localized: "Byte-for-byte identical files")
         case .photos: return String(localized: "Look-alikes, screenshots & blurry shots")
@@ -85,6 +96,10 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         case .junk: return "sparkles"
         case .ai: return "brain"
         case .docker: return "shippingbox"
+        case .dev: return "chevron.left.forwardslash.chevron.right"
+        case .toolchains: return "wrench.and.screwdriver"
+        case .maintenance: return "arrow.triangle.branch"
+        case .processes: return "terminal"
         case .downloads: return "arrow.down.circle"
         case .duplicates: return "doc.on.doc"
         case .photos: return "photo.on.rectangle.angled"
@@ -105,6 +120,10 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         case .junk: return .orange
         case .ai: return .mint
         case .docker: return Color(red: 0.11, green: 0.52, blue: 0.93)
+        case .dev: return Color(red: 0.20, green: 0.25, blue: 0.38)
+        case .toolchains: return Color(red: 0.85, green: 0.45, blue: 0.10)
+        case .maintenance: return Color(red: 0.42, green: 0.62, blue: 0.18)
+        case .processes: return Color(red: 0.25, green: 0.45, blue: 0.68)
         case .downloads: return .blue
         case .duplicates: return .purple
         case .photos: return .pink
@@ -118,9 +137,13 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         }
     }
 
-    /// Whether the screen applies to this Mac. Docker only shows up when its command-line tool is installed.
+    /// Whether the screen applies to this Mac. Developer screens show up only on Macs with developer tools, Docker only with its CLI.
     var isAvailable: Bool {
-        self == .docker ? DockerCLI.path != nil : true
+        switch self {
+        case .docker: return DockerCLI.path != nil
+        case .dev, .toolchains, .maintenance, .processes: return DevEnvironment.detected
+        default: return true
+        }
     }
 
     /// Every screen that applies to this Mac, in sidebar order.

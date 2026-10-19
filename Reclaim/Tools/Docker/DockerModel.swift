@@ -74,20 +74,18 @@ final class DockerModel: ScanTool {
     private(set) var totalUsed: Int64 = 0
     private(set) var counts = (images: 0, containers: 0, volumes: 0)
     private(set) var runningPrune: Group.Kind?
-    private var work: Task<DockerScanResult, Never>?
+    private var scanGeneration: UUID?
 
     var reclaimableBytes: Int64 { groups.filter(\.isSafe).reduce(0) { $0 + $1.reclaimable } }
     var itemCount: Int { groups.filter(\.isSafe).reduce(0) { $0 + $1.items.count } }
 
     func scan() async {
-        work?.cancel()
         phase = .scanning(String(localized: "Asking Docker what it stores…"))
-        let task = Task.detached(priority: .userInitiated) { DockerScanner.scan() }
-        work = task
-        let result = await task.value
-        guard work == task else { return }
-        work = nil
-        if task.isCancelled { phase = groups.isEmpty ? .idle : .done(.now); return }
+        let generation = UUID()
+        scanGeneration = generation
+        let result = await offPool { DockerScanner.scan() }
+        guard scanGeneration == generation else { return }
+        scanGeneration = nil
         availability = result.availability
         groups = result.groups
         totalUsed = result.totalUsed
@@ -99,7 +97,11 @@ final class DockerModel: ScanTool {
         }
     }
 
-    func cancelScan() { work?.cancel() }
+    func cancelScan() {
+        guard scanGeneration != nil else { return }
+        scanGeneration = nil
+        phase = groups.isEmpty ? .idle : .done(.now)
+    }
 
     // Docker items aren't files, so they don't go through the Trash or Guided Cleanup.
     func suggestions() -> [CleanupSuggestion] { [] }
@@ -109,7 +111,7 @@ final class DockerModel: ScanTool {
     func prune(_ group: Group) async {
         guard runningPrune == nil else { return }
         runningPrune = group.kind
-        let output = await Task.detached(priority: .userInitiated) { DockerCLI.run(group.command, timeout: 600) }.value
+        let output = await offPool { DockerCLI.run(group.command, timeout: 600) }
         runningPrune = nil
         if output.status == 0 {
             let freed = DockerCLI.reclaimed(in: output.out)
@@ -239,23 +241,8 @@ enum DockerCLI {
 
     static func run(_ args: [String], timeout: TimeInterval) -> (status: Int32, out: String, err: String) {
         guard let path else { return (-1, "", "docker not found") }
-        let p = Process()
-        p.executableURL = URL(fileURLWithPath: path)
-        p.arguments = args
-        var env = ProcessInfo.processInfo.environment
-        env["PATH"] = "/usr/local/bin:/opt/homebrew/bin:/Applications/Docker.app/Contents/Resources/bin:/usr/bin:/bin:" + (env["PATH"] ?? "")
-        p.environment = env
-        let out = Pipe(), err = Pipe()
-        p.standardOutput = out
-        p.standardError = err
-        do { try p.run() } catch { return (-1, "", error.localizedDescription) }
-        let watchdog = DispatchWorkItem { if p.isRunning { p.terminate() } }
-        DispatchQueue.global().asyncAfter(deadline: .now() + timeout, execute: watchdog)
-        let o = out.fileHandleForReading.readDataToEndOfFile()
-        let e = err.fileHandleForReading.readDataToEndOfFile()
-        p.waitUntilExit()
-        watchdog.cancel()
-        return (p.terminationStatus, String(decoding: o, as: UTF8.self), String(decoding: e, as: UTF8.self).trimmingCharacters(in: .whitespacesAndNewlines))
+        let o = Shell.run(path, args, timeout: timeout)
+        return (o.status, o.out, o.err)
     }
 
     /// Docker's sizes use decimal units: "1.2GB", "512.5MB", "3.1kB", "0B", optionally followed by " (45%)".

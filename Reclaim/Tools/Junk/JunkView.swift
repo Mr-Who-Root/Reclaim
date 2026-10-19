@@ -215,7 +215,7 @@ private struct JunkDevExplainer: View {
             Text("Build intermediates, downloaded packages, and simulator or device-support files from Xcode, npm, Homebrew, Gradle and friends. They rebuild automatically the next time you build or install, and none of them contain your code or projects.")
                 .font(.callout).foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
-            Label("Emulators, simulators and virtual machines are different: they hold data, so they're marked Caution and never selected for you. Unused simulator runtimes live in a system folder — remove them in Xcode › Settings › Components.",
+            Label("Emulators, simulators and virtual machines are different: they hold data, so they're marked Caution and never selected for you. Old simulator runtimes, NDKs, JDKs and language versions are in SDKs & Toolchains.",
                   systemImage: "info.circle")
                 .font(.caption).foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)

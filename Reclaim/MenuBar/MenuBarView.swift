@@ -82,6 +82,21 @@ struct MenuBarView: View {
                 }
             }
 
+            if !app.processes.leftBehind.isEmpty {
+                Button { open(.processes) } label: {
+                    HStack(spacing: 8) {
+                        RouteIcon(route: .processes, side: 18)
+                        Text("\(Fmt.count(app.processes.leftBehind.count, "dev process", "dev processes")) left running")
+                        Spacer()
+                        Text(Fmt.bytes(app.processes.leftBehindMemory)).foregroundStyle(.orange).monospacedDigit()
+                    }
+                    .font(.callout)
+                    .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .help("Dev servers or headless browsers whose terminal has closed")
+            }
+
             if app.trashLog.totalReclaimed > 0 {
                 Label("\(Fmt.bytes(app.trashLog.totalReclaimed)) cleaned up with Reclaim", systemImage: "leaf.fill")
                     .font(.caption).foregroundStyle(.secondary)
@@ -100,6 +115,7 @@ struct MenuBarView: View {
         .frame(width: 300)
         .task {
             app.refreshVolume()
+            if DevEnvironment.detected { await app.processes.refresh() }
             _ = sampler.cpuUsage()
             while !Task.isCancelled {
                 memory = sampler.memory()
