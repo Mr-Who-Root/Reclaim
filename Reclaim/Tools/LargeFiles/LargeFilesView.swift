@@ -17,6 +17,7 @@ struct LargeFilesView: View {
                         } label: {
                             Label("Scan Again", systemImage: "arrow.clockwise")
                         }
+                        .fixedSize()
                     }
                 }
             }

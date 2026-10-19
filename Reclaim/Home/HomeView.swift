@@ -14,7 +14,7 @@ struct HomeView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     SectionTitle(title: "Tools", subtitle: "Look first, decide yourself, then reclaim. Every tool is unlocked.")
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 230), spacing: 12)], spacing: 12) {
-                        ForEach(Route.allCases.filter { $0 != .home }) { route in
+                        ForEach(Route.allCases.filter { $0 != .home && $0 != .settings }) { route in
                             ToolCard(route: route)
                         }
                     }
@@ -78,9 +78,10 @@ private struct HomeHero: View {
                     }
                 } else {
                     Button {
-                        app.startSmartScan()
+                        AccessCenter.shared.ensureAccess { app.startSmartScan() }
                     } label: {
-                        Label(app.lastSmartScan == nil ? "Run Smart Scan" : "Scan Again", systemImage: "sparkle.magnifyingglass")
+                        Label(!AccessCenter.shared.homeGranted ? "Grant Access & Scan" : (app.lastSmartScan == nil ? "Run Smart Scan" : "Scan Again"),
+                              systemImage: "sparkle.magnifyingglass")
                             .frame(maxWidth: .infinity)
                     }
                     .buttonStyle(.borderedProminent)
@@ -88,6 +89,9 @@ private struct HomeHero: View {
                 }
                 if let last = app.lastSmartScan {
                     Text("Last Smart Scan \(Fmt.relative(last))").font(.caption).foregroundStyle(.secondary)
+                } else if !AccessCenter.shared.homeGranted {
+                    Text("Reclaim asks for your Home folder (\(FS.home.path)) once, then checks every location before scanning.")
+                        .font(.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
                 }
             }
             .frame(width: 300)

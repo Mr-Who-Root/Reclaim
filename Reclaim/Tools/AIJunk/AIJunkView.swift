@@ -56,8 +56,8 @@ struct AIJunkView: View {
                                 "Leaves alone anything a running app has open",
                                 "Models and conversation histories are never selected for you",
                                 "Everything goes to the Trash, so you can undo"],
-                      buttonTitle: "Scan for AI Junk",
-                      action: { Task { await model.scan() } })
+                      buttonTitle: AccessCenter.shared.homeGranted ? "Scan for AI Junk" : "Grant Access & Scan",
+                      action: { AccessCenter.shared.ensureAccess { Task { await model.scan() } } })
         case .scanning(let message):
             ScanningPanel(title: "Looking for AI leftovers", message: message, onCancel: { model.cancelScan() })
         case .done:

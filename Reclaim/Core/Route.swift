@@ -2,7 +2,7 @@ import SwiftUI
 
 /// Every screen in the sidebar. Also used by URLs (`reclaim://junk`), Spotlight and Shortcuts.
 enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
-    case home, guided, junk, ai, downloads, duplicates, photos, large, map, apps, security, trash
+    case home, guided, junk, ai, downloads, duplicates, photos, large, map, apps, security, trash, settings
 
     var id: String { rawValue }
 
@@ -11,6 +11,7 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         case clean = "Clean Up"
         case explore = "Explore"
         case review = "Review"
+        case app = "App"
         var id: String { rawValue }
     }
 
@@ -20,6 +21,7 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         case .junk, .ai, .downloads, .duplicates, .photos, .large, .apps: return .clean
         case .map, .security: return .explore
         case .trash: return .review
+        case .settings: return .app
         }
     }
 
@@ -37,6 +39,7 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         case .apps: return "Apps & Leftovers"
         case .security: return "Security Check"
         case .trash: return "Trash"
+        case .settings: return "Settings"
         }
     }
 
@@ -54,6 +57,7 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         case .apps: return "Uninstall apps and clear their leftovers"
         case .security: return "Signatures, login items & download origins"
         case .trash: return "Review & restore what was moved"
+        case .settings: return "Access, appearance, language, schedules and more"
         }
     }
 
@@ -71,6 +75,7 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         case .apps: return "square.stack.3d.up"
         case .security: return "checkmark.shield"
         case .trash: return "trash"
+        case .settings: return "gearshape"
         }
     }
 
@@ -88,6 +93,7 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         case .apps: return .brown
         case .security: return .green
         case .trash: return .red
+        case .settings: return .gray
         }
     }
 

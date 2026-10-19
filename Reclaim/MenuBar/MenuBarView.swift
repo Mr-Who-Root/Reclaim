@@ -42,7 +42,7 @@ struct MenuBarView: View {
                 .font(.callout)
             } else {
                 Button {
-                    app.startSmartScan()
+                    AccessCenter.shared.ensureAccess { app.startSmartScan() }
                 } label: {
                     Label("Smart Scan", systemImage: "sparkle.magnifyingglass").frame(maxWidth: .infinity)
                 }

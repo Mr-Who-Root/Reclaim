@@ -78,11 +78,12 @@ struct PhotosView: View {
             HStack(alignment: .center, spacing: 12) {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(description(for: model.category)).font(.callout).foregroundStyle(.secondary)
-                        .fixedSize(horizontal: false, vertical: true)
+                        .lineLimit(2)
+                        .frame(maxWidth: .infinity, alignment: .leading)
                     Text("\(Fmt.bytes(model.bytes(for: model.category))) \(model.category == .lookalikes ? "in extra copies" : "in total")")
                         .font(.caption.weight(.semibold))
                 }
-                Spacer()
+                .layoutPriority(1)
                 categoryControls
             }
             .padding(.horizontal, 20)

@@ -169,8 +169,6 @@ final class AppModel {
         if target == "scan" || target == "smartscan" {
             route = .home
             startSmartScan()
-        } else if target == "settings" {
-            NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
         } else if let r = Route(rawValue: target) {
             route = r
         }
@@ -190,7 +188,7 @@ final class AppModel {
     }
 
     func runScheduledScanIfDue() async {
-        guard let interval = ScheduleInterval.current.seconds, !smartScanRunning else { return }
+        guard let interval = ScheduleFrequency.activeInterval, !smartScanRunning else { return }
         let last = UserDefaults.standard.object(forKey: PrefKey.lastScheduledScan) as? Date ?? .distantPast
         guard Date().timeIntervalSince(last) >= interval else { return }
         scheduledScanRunning = true
@@ -199,7 +197,7 @@ final class AppModel {
         UserDefaults.standard.set(Date(), forKey: PrefKey.lastScheduledScan)
         let thresholdGB = UserDefaults.standard.object(forKey: PrefKey.notifyThresholdGB) as? Int ?? 1
         let total = totalReclaimable
-        if total > 0, total >= Int64(thresholdGB) * 1_000_000_000 {
+        if UserDefaults.standard.bool(forKey: PrefKey.notifyEnabled), total > 0, total >= Int64(thresholdGB) * 1_000_000_000 {
             Notifier.post(title: "\(Fmt.bytes(total)) is ready to review",
                           body: "Your scheduled scan found space to reclaim. Nothing was removed — open Reclaim to review.")
         }

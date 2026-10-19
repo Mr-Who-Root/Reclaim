@@ -75,6 +75,17 @@ enum PhotoAnalysis {
     static let neighbourWindow = 16
     static let thumbnailSide = 512
 
+    private static let projectFolders: Set<String> = ["node_modules", ".git", "Pods", "DerivedData", "build", ".build", "dist",
+                                                      "vendor", "Runner", "xcuserdata", "site-packages", "__pycache__"]
+
+    /// Icons and artwork inside code projects (Android mipmaps, asset catalogs, build output) aren't photo clutter.
+    static func isProjectAsset(_ url: URL) -> Bool {
+        url.pathComponents.contains { c in
+            projectFolders.contains(c) || c.hasPrefix("mipmap-") || c.hasPrefix("drawable")
+                || c.hasSuffix(".xcassets") || c.hasSuffix(".imageset") || c.hasSuffix(".appiconset") || c.hasSuffix(".iconset")
+        }
+    }
+
     static let imageExtensions: Set<String> = ["jpg", "jpeg", "png", "heic", "heif", "tif", "tiff", "webp", "gif", "bmp",
                                                "dng", "cr2", "cr3", "nef", "arw", "orf", "raf", "rw2"]
     /// Formats cameras produce; only these are checked for blur (PNG/GIF are usually graphics).
@@ -264,6 +275,7 @@ enum PhotoAnalysis {
 
         // 1. Walk (package contents such as Photos libraries are skipped).
         FS.walkFiles(roots) { url, values in
+            if isProjectAsset(url) { return true }
             let ext = url.pathExtension.lowercased()
             let name = url.lastPathComponent
             if imageExtensions.contains(ext) {

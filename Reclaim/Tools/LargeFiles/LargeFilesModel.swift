@@ -70,8 +70,10 @@ final class LargeFilesModel: ScanTool {
 
     /// Files of 100 MB or more that haven't changed in six months.
     private var staleBig: [LargeItem] { items.filter { $0.size >= 100_000_000 && $0.ageDays > 180 } }
-    var reclaimableBytes: Int64 { staleBig.reduce(0) { $0 + $1.size } }
-    var itemCount: Int { staleBig.count }
+    /// Every file of 100 MB or more is worth a look here (this tool is left out of the overall total, so nothing is double counted).
+    private var big: [LargeItem] { items.filter { $0.size >= 100_000_000 } }
+    var reclaimableBytes: Int64 { big.reduce(0) { $0 + $1.size } }
+    var itemCount: Int { big.count }
 
     func scan() async {
         work?.cancel()

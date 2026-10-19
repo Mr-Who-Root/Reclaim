@@ -1,62 +1,214 @@
 import SwiftUI
 import WidgetKit
 
-struct SettingsView: View {
-    var body: some View {
-        TabView {
-            GeneralSettings().tabItem { Label("General", systemImage: "gearshape") }
-            AppearanceSettings().tabItem { Label("Appearance", systemImage: "paintpalette") }
-            ScanSettings().tabItem { Label("Scans", systemImage: "clock.arrow.circlepath") }
-            FolderSettings().tabItem { Label("Folders", systemImage: "folder") }
-            IntegrationSettings().tabItem { Label("Integrations", systemImage: "puzzlepiece.extension") }
-            PrivacySettings().tabItem { Label("Privacy", systemImage: "hand.raised") }
+/// The settings sections, shared by the in-app Settings page and the ⌘, window.
+enum SettingsSection: String, CaseIterable, Identifiable {
+    case access, appearance, language, scans, general, integrations, about
+    var id: String { rawValue }
+
+    var title: LocalizedStringKey {
+        switch self {
+        case .access: return "Granted Folders"
+        case .appearance: return "Appearance"
+        case .language: return "Language"
+        case .scans: return "Scheduled Scans"
+        case .general: return "Launch at Login"
+        case .integrations: return "Integrations"
+        case .about: return "About"
         }
-        .frame(width: 600, height: 470)
+    }
+
+    var icon: String {
+        switch self {
+        case .access: return "folder.badge.person.crop"
+        case .appearance: return "paintpalette"
+        case .language: return "globe"
+        case .scans: return "clock.arrow.circlepath"
+        case .general: return "power"
+        case .integrations: return "puzzlepiece.extension"
+        case .about: return "info.circle"
+        }
+    }
+
+    @ViewBuilder var content: some View {
+        switch self {
+        case .access: AccessSettings()
+        case .appearance: AppearanceSettings()
+        case .language: LanguageSettings()
+        case .scans: ScanSettings()
+        case .general: GeneralSettings()
+        case .integrations: IntegrationSettings()
+        case .about: AboutSettings()
+        }
     }
 }
 
-// MARK: - General
+/// ⌘, window.
+struct SettingsView: View {
+    var body: some View {
+        TabView {
+            ForEach(SettingsSection.allCases) { section in
+                section.content.tabItem { Label(section.title, systemImage: section.icon) }
+            }
+        }
+        .frame(width: 660, height: 560)
+    }
+}
 
-private struct GeneralSettings: View {
-    @AppStorage(PrefKey.showMenuBar) private var showMenuBar = true
-    @State private var launchAtLogin = LoginItem.isEnabled
-    @State private var loginError: String?
-    @Environment(\.openWindow) private var openWindow
+/// Settings as a page in the main window's sidebar.
+struct SettingsPage: View {
+    @State private var section: SettingsSection? = .access
+
+    var body: some View {
+        VStack(spacing: 0) {
+            ToolHeader(route: .settings)
+            HStack(spacing: 0) {
+                List(SettingsSection.allCases, selection: $section) { s in
+                    Label(s.title, systemImage: s.icon).tag(s)
+                }
+                .listStyle(.sidebar)
+                .frame(width: 200)
+                Divider()
+                (section ?? .access).content
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+        }
+    }
+}
+
+// MARK: - Granted folders
+
+private struct AccessSettings: View {
+    private var access: AccessCenter { AccessCenter.shared }
+    private var store: FolderStore { FolderStore.shared }
 
     var body: some View {
         Form {
             Section {
-                Toggle("Open Reclaim at login", isOn: $launchAtLogin)
-                    .onChange(of: launchAtLogin) { _, on in
-                        loginError = LoginItem.set(on)
-                        launchAtLogin = LoginItem.isEnabled
-                    }
-                if LoginItem.needsApproval {
-                    HStack {
-                        Text("Needs approval in System Settings › Login Items.").font(.caption).foregroundStyle(.orange)
-                        Button("Open Login Items") { LoginItem.openSettings() }
+                HStack(alignment: .top, spacing: 12) {
+                    Image(systemName: access.homeGranted ? "checkmark.shield.fill" : "folder.badge.questionmark")
+                        .font(.title).foregroundStyle(access.homeGranted ? .green : .orange)
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(access.homeGranted ? "Home folder granted" : "Grant access to your Home folder")
+                            .font(.headline)
+                        Text("Reclaim scans what's inside \(FS.home.path): your files, Library caches, app leftovers and the temp folders AI tools use. Grant it once and Reclaim checks every location so macOS can ask about each one now, not mid-scan.")
+                            .font(.callout).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+                        if let last = access.lastChecked {
+                            Text("Last checked \(Fmt.relative(last)) · \(access.grantedCount) of \(access.locations.count) locations readable")
+                                .font(.caption).foregroundStyle(.secondary)
+                        }
+                        HStack {
+                            Button(access.homeGranted ? "Grant Again…" : "Grant Access to \(FS.home.path)…") {
+                                Task { await access.grantHomeAccess() }
+                            }
+                            .buttonStyle(.borderedProminent)
+                            Button("Check Everything") { Task { await access.checkAll() } }
+                                .disabled(access.isChecking)
+                            if access.isChecking { ProgressView().controlSize(.small) }
+                        }
+                        .padding(.top, 4)
                     }
                 }
-                if let loginError { Text(loginError).font(.caption).foregroundStyle(.red) }
-                Toggle("Show Reclaim in the menu bar", isOn: $showMenuBar)
-                Text("The menu bar item shows free space, memory and CPU, with a Smart Scan button. While it's shown, Reclaim keeps running after you close the window so scheduled scans can continue.")
-                    .font(.caption).foregroundStyle(.secondary)
+                .padding(.vertical, 4)
             }
+
             Section {
-                Button("Show the Welcome Tour Again") {
-                    AppModel.shared.showOnboarding = true
-                    openWindow(id: "main")
-                    NSApp.activate()
+                LabeledContent {
+                    HStack {
+                        Label(access.fullDiskAccess ? "Granted" : "Not granted",
+                              systemImage: access.fullDiskAccess ? "checkmark.circle.fill" : "minus.circle")
+                            .foregroundStyle(access.fullDiskAccess ? .green : .secondary)
+                        Button("Open Settings") { FS.openFullDiskAccessSettings() }
+                        Button("Recheck") { access.refreshFullDiskAccess() }
+                    }
+                } label: {
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("Full Disk Access")
+                        Text("Optional. Needed for Mail, iPhone backups, the Trash and other apps' data.")
+                            .font(.caption).foregroundStyle(.secondary)
+                    }
                 }
+            }
+
+            Section("Locations Reclaim scans") {
+                ForEach(access.locations) { location in
+                    LocationRow(location: location)
+                }
+            }
+
+            Section {
+                ForEach(store.folders, id: \.path) { url in
+                    HStack {
+                        FileIconView(url: url, side: 20)
+                        Text(FS.abbreviate(url.path)).lineLimit(1).truncationMode(.middle)
+                        Spacer()
+                        Text(FS.canList(url) ? "Readable" : "Not readable").font(.caption)
+                            .foregroundStyle(FS.canList(url) ? .green : .orange)
+                        Button { store.remove(url) } label: { Image(systemName: "minus.circle.fill").foregroundStyle(.secondary) }
+                            .buttonStyle(.plain).help("Remove from granted folders")
+                    }
+                }
+                Button("Add Folder…") { _ = store.chooseFolder(prompt: String(localized: "Grant Access")) }
+            } header: {
+                Text("Extra folders")
+            } footer: {
+                Text("Folders outside your Home folder, such as external drives. They appear in every tool's location menu.")
+                    .font(.caption).foregroundStyle(.secondary)
             }
         }
         .formStyle(.grouped)
     }
 }
 
+private struct LocationRow: View {
+    let location: AccessCenter.Location
+
+    var body: some View {
+        HStack(spacing: 10) {
+            statusIcon.frame(width: 18)
+            VStack(alignment: .leading, spacing: 1) {
+                Text(location.title)
+                Text("\(FS.abbreviate(location.url.path)) · \(Text(location.usedBy))")
+                    .font(.caption).foregroundStyle(.secondary).lineLimit(1).truncationMode(.middle)
+            }
+            Spacer()
+            statusText
+        }
+    }
+
+    @ViewBuilder private var statusIcon: some View {
+        switch location.status {
+        case .granted: Image(systemName: "checkmark.circle.fill").foregroundStyle(.green)
+        case .blocked: Image(systemName: "lock.fill").foregroundStyle(.orange)
+        case .missing: Image(systemName: "circle.dashed").foregroundStyle(.tertiary)
+        case .checking: ProgressView().controlSize(.small)
+        case .unknown: Image(systemName: "questionmark.circle").foregroundStyle(.tertiary)
+        }
+    }
+
+    @ViewBuilder private var statusText: some View {
+        switch location.status {
+        case .granted: Text("Readable").font(.caption).foregroundStyle(.green)
+        case .missing: Text("Not on this Mac").font(.caption).foregroundStyle(.secondary)
+        case .checking: Text("Checking…").font(.caption).foregroundStyle(.secondary)
+        case .unknown: Text("Not checked").font(.caption).foregroundStyle(.secondary)
+        case .blocked:
+            Button(location.needsFullDiskAccess ? "Needs Full Disk Access" : "Allow in Privacy Settings") {
+                if location.needsFullDiskAccess {
+                    FS.openFullDiskAccessSettings()
+                } else if let url = URL(string: "x-apple.systempreferences:com.apple.preference.security?Privacy_FilesAndFolders") {
+                    NSWorkspace.shared.open(url)
+                }
+            }
+            .font(.caption)
+        }
+    }
+}
+
 // MARK: - Appearance
 
 private struct AppearanceSettings: View {
+    @AppStorage(PrefKey.appearance) private var appearanceRaw = AppearanceMode.system.rawValue
     @AppStorage(PrefKey.accent) private var accentRaw = Accent.ocean.rawValue
     @AppStorage(PrefKey.dockTint) private var dockTint = false
     @AppStorage(PrefKey.vividWidget) private var vividWidget = true
@@ -65,6 +217,12 @@ private struct AppearanceSettings: View {
 
     var body: some View {
         Form {
+            Section("Theme") {
+                Picker("Appearance", selection: $appearanceRaw) {
+                    ForEach(AppearanceMode.allCases) { Text($0.label).tag($0.rawValue) }
+                }
+                .pickerStyle(.segmented)
+            }
             Section("Accent") {
                 AccentPicker(selection: $accentRaw)
                 Text("An accent used across the app, the widget and the Dock icon.").font(.caption).foregroundStyle(.secondary)
@@ -88,6 +246,7 @@ private struct AppearanceSettings: View {
             }
         }
         .formStyle(.grouped)
+        .onChange(of: appearanceRaw) { _, _ in AppearanceMode.current.apply() }
         .onChange(of: accentRaw) { _, _ in apply() }
         .onChange(of: dockTint) { _, _ in apply() }
         .onChange(of: vividWidget) { _, _ in AppModel.shared.writeSnapshot() }
@@ -131,10 +290,51 @@ struct AccentPicker: View {
     }
 }
 
-// MARK: - Scans
+// MARK: - Language
+
+private struct LanguageSettings: View {
+    @State private var pending: AppLanguage?
+    private let current = AppLanguage.current
+
+    var body: some View {
+        Form {
+            Section {
+                ForEach(AppLanguage.allCases) { language in
+                    Button {
+                        if language != current { pending = language }
+                    } label: {
+                        HStack {
+                            Text(language.nativeName)
+                            Spacer()
+                            if language == current { Image(systemName: "checkmark").foregroundStyle(.tint) }
+                        }
+                        .contentShape(Rectangle())
+                    }
+                    .buttonStyle(.plain)
+                }
+            } header: {
+                Text("App language")
+            } footer: {
+                Text("Show Reclaim in a specific language, or follow your Mac's setting. Changing the language reopens Reclaim.")
+                    .font(.caption).foregroundStyle(.secondary)
+            }
+        }
+        .formStyle(.grouped)
+        .confirmationDialog("Reopen Reclaim in \(pending?.nativeName ?? "")?", isPresented: Binding(get: { pending != nil }, set: { if !$0 { pending = nil } })) {
+            Button("Reopen Now") { pending?.applyAndRelaunch() }
+            Button("Cancel", role: .cancel) { pending = nil }
+        } message: {
+            Text("Scans in progress stop. Your results, history and settings are kept.")
+        }
+    }
+}
+
+// MARK: - Scheduled scans
 
 private struct ScanSettings: View {
-    @AppStorage(PrefKey.schedule) private var scheduleRaw = ScheduleInterval.off.rawValue
+    @AppStorage(PrefKey.scheduleEnabled) private var enabled = false
+    @AppStorage(PrefKey.scheduleFrequency) private var frequencyRaw = ScheduleFrequency.weekly.rawValue
+    @AppStorage(PrefKey.notifyEnabled) private var notify = true
     @AppStorage(PrefKey.notifyThresholdGB) private var thresholdGB = 1
     @State private var notificationsDenied = false
 
@@ -143,27 +343,40 @@ private struct ScanSettings: View {
     var body: some View {
         Form {
             Section {
-                Picker("Scan automatically", selection: $scheduleRaw) {
-                    ForEach(ScheduleInterval.allCases) { Text($0.label).tag($0.rawValue) }
+                Toggle("Scan automatically", isOn: $enabled)
+                Picker("Frequency", selection: $frequencyRaw) {
+                    ForEach(ScheduleFrequency.allCases) { Text($0.label).tag($0.rawValue) }
                 }
-                Picker("Notify me when it finds at least", selection: $thresholdGB) {
+                .disabled(!enabled)
+                if enabled {
+                    if let lastScheduled {
+                        LabeledContent("Last scheduled scan", value: Fmt.dateTime(lastScheduled))
+                        LabeledContent("Next scan", value: Fmt.dateTime(lastScheduled.addingTimeInterval(ScheduleFrequency.current.seconds)))
+                    } else {
+                        LabeledContent("Next scan", value: String(localized: "Within a few minutes"))
+                    }
+                }
+            } header: {
+                Text("Schedule")
+            } footer: {
+                Text("Scheduled scans run while Reclaim is open or in the menu bar. They only ever find things — nothing is removed automatically.")
+                    .font(.caption).foregroundStyle(.secondary)
+            }
+            Section("Notify") {
+                Toggle("Notify me when a scan finds something to review", isOn: $notify)
+                    .disabled(!enabled)
+                Picker("Only when it finds at least", selection: $thresholdGB) {
                     Text("Any amount").tag(0)
                     Text("1 GB").tag(1)
                     Text("5 GB").tag(5)
                     Text("10 GB").tag(10)
                     Text("25 GB").tag(25)
                 }
-                .disabled(scheduleRaw == ScheduleInterval.off.rawValue)
-                if let lastScheduled {
-                    LabeledContent("Last scheduled scan", value: Fmt.dateTime(lastScheduled))
-                }
+                .disabled(!enabled || !notify)
                 if notificationsDenied {
-                    Text("Notifications are turned off for Reclaim. Turn them on in System Settings › Notifications to hear about scheduled results.")
+                    Text("Notifications are turned off for Reclaim. Turn them on in System Settings › Notifications.")
                         .font(.caption).foregroundStyle(.orange)
                 }
-            } footer: {
-                Text("Scheduled scans run while Reclaim is open or in the menu bar. They only ever find things — nothing is removed automatically.")
-                    .font(.caption).foregroundStyle(.secondary)
             }
             Section {
                 Button("Run Smart Scan Now") { AppModel.shared.startSmartScan() }
@@ -171,46 +384,60 @@ private struct ScanSettings: View {
             }
         }
         .formStyle(.grouped)
-        .onChange(of: scheduleRaw) { _, value in
-            guard value != ScheduleInterval.off.rawValue else { return }
+        .onChange(of: enabled) { _, on in
+            guard on else { return }
             Task {
-                notificationsDenied = !(await Notifier.requestAuthorization())
+                if notify { notificationsDenied = !(await Notifier.requestAuthorization()) }
                 await AppModel.shared.runScheduledScanIfDue()
             }
+        }
+        .onChange(of: notify) { _, on in
+            guard on else { return }
+            Task { notificationsDenied = !(await Notifier.requestAuthorization()) }
         }
     }
 }
 
-// MARK: - Folders
+// MARK: - Launch at login & menu bar
 
-private struct FolderSettings: View {
-    private var store: FolderStore { FolderStore.shared }
+private struct GeneralSettings: View {
+    @AppStorage(PrefKey.showMenuBar) private var showMenuBar = true
+    @State private var launchAtLogin = LoginItem.isEnabled
+    @State private var loginError: String?
+    @Environment(\.openWindow) private var openWindow
 
     var body: some View {
         Form {
             Section {
-                if store.folders.isEmpty {
-                    Text("No saved folders yet. Every tool can already scan its default folders or your whole Home folder.")
-                        .foregroundStyle(.secondary)
-                }
-                ForEach(store.folders, id: \.path) { url in
+                Toggle("Open Reclaim at login", isOn: $launchAtLogin)
+                    .onChange(of: launchAtLogin) { _, on in
+                        loginError = LoginItem.set(on)
+                        launchAtLogin = LoginItem.isEnabled
+                    }
+                if LoginItem.needsApproval {
                     HStack {
-                        FileIconView(url: url, side: 20)
-                        Text(FS.abbreviate(url.path)).lineLimit(1).truncationMode(.middle)
-                        Spacer()
-                        Button {
-                            store.remove(url)
-                        } label: { Image(systemName: "minus.circle.fill").foregroundStyle(.secondary) }
-                            .buttonStyle(.plain)
-                            .help("Remove from saved folders")
+                        Text("Needs approval in System Settings › General › Login Items.").font(.caption).foregroundStyle(.orange)
+                        Button("Open Login Items") { LoginItem.openSettings() }
                     }
                 }
-                Button("Add Folder…") { _ = store.chooseFolder(prompt: "Add") }
+                if let loginError { Text(loginError).font(.caption).foregroundStyle(.red) }
             } header: {
-                Text("Saved folders")
+                Text("Launch at login")
             } footer: {
-                Text("Saved folders appear in every tool's location menu, including folders on external drives.")
+                Text("Keeps the menu bar item available after you sign in, so scheduled scans can run.")
                     .font(.caption).foregroundStyle(.secondary)
+            }
+            Section("Menu bar") {
+                Toggle("Show Reclaim in the menu bar", isOn: $showMenuBar)
+                Text("Free space, memory and CPU at a glance, with a Smart Scan button. While it's shown, Reclaim keeps running after you close the window.")
+                    .font(.caption).foregroundStyle(.secondary)
+            }
+            Section {
+                Button("Show the Welcome Tour Again") {
+                    AppModel.shared.showOnboarding = true
+                    openWindow(id: "main")
+                    NSApp.activate()
+                }
             }
         }
         .formStyle(.grouped)
@@ -238,7 +465,7 @@ private struct IntegrationSettings: View {
                 Button("Reload Widget") { AppModel.shared.writeSnapshot() }
             }
             Section("Links") {
-                Text("Open `reclaim://scan` to start Smart Scan, or `reclaim://junk`, `reclaim://duplicates`, `reclaim://guided` and so on to jump to a tool.")
+                Text("Open reclaim://scan to start Smart Scan, or reclaim://junk, reclaim://ai, reclaim://guided and so on to jump to a tool.")
                     .font(.callout).textSelection(.enabled)
             }
         }
@@ -246,39 +473,76 @@ private struct IntegrationSettings: View {
     }
 }
 
-// MARK: - Privacy
+// MARK: - About
 
-private struct PrivacySettings: View {
-    @State private var fullDisk = FS.hasFullDiskAccess()
+enum AppInfo {
+    static let repoURL = URL(string: "https://github.com/Mr-Who-Root/Reclaim")!
+    static var version: String { Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "—" }
+    static var build: String { Bundle.main.infoDictionary?["CFBundleVersion"] as? String ?? "—" }
+    static var architecture: String {
+        #if arch(arm64)
+        return "Apple silicon (arm64)"
+        #else
+        return "Intel (x86_64)"
+        #endif
+    }
+}
+
+private struct AboutSettings: View {
+    @State private var confirmClear = false
 
     var body: some View {
         Form {
-            Section("Access") {
-                LabeledContent("Full Disk Access") {
-                    Label(fullDisk ? "Granted" : "Not granted", systemImage: fullDisk ? "checkmark.circle.fill" : "minus.circle")
-                        .foregroundStyle(fullDisk ? .green : .secondary)
+            Section {
+                HStack(spacing: 16) {
+                    Image(nsImage: NSImage(named: NSImage.applicationIconName) ?? NSImage())
+                        .resizable().frame(width: 72, height: 72)
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Reclaim").font(.title.weight(.bold))
+                        Text("Version \(AppInfo.version) (\(AppInfo.build))").foregroundStyle(.secondary)
+                        Text("Every tool unlocked. No account, no subscription, no network.").font(.callout).foregroundStyle(.secondary)
+                    }
                 }
-                Text("Optional. It lets Reclaim measure iOS backups, Mail downloads, other apps' containers and the Trash. Everything else works without it.")
-                    .font(.caption).foregroundStyle(.secondary)
-                HStack {
-                    Button("Open Full Disk Access Settings") { FS.openFullDiskAccessSettings() }
-                    Button("Check Again") { fullDisk = FS.hasFullDiskAccess() }
+                .padding(.vertical, 4)
+            }
+            Section("Details") {
+                LabeledContent("Version", value: AppInfo.version)
+                LabeledContent("Build", value: AppInfo.build)
+                LabeledContent("macOS", value: ProcessInfo.processInfo.operatingSystemVersionString)
+                LabeledContent("Architecture", value: AppInfo.architecture)
+                LabeledContent("Bundle identifier", value: Bundle.main.bundleIdentifier ?? "—")
+                LabeledContent("Data folder") {
+                    Button(FS.abbreviate(SharedPaths.support.path)) {
+                        try? FileManager.default.createDirectory(at: SharedPaths.support, withIntermediateDirectories: true)
+                        FS.open(SharedPaths.support)
+                    }
+                    .buttonStyle(.link)
                 }
             }
-            Section("What Reclaim can do") {
-                Label("Scan your Home folder or any folder you choose", systemImage: "checkmark")
+            Section("Links") {
+                Link("Source code", destination: AppInfo.repoURL)
+                Link("Releases and downloads", destination: AppInfo.repoURL.appendingPathComponent("releases"))
+                Link("Report a problem", destination: AppInfo.repoURL.appendingPathComponent("issues"))
+            }
+            Section("What Reclaim can and can't do") {
+                Label("Scan your Home folder or any folder you grant", systemImage: "checkmark")
                 Label("Find large, old, duplicate and look-alike files", systemImage: "checkmark")
-                Label("Clean app caches, logs and developer junk", systemImage: "checkmark")
-                Label("Find leftovers from apps you've removed", systemImage: "checkmark")
+                Label("Clean caches, logs, developer and AI junk", systemImage: "checkmark")
                 Label("Ask macOS to move items to the Trash, and restore them", systemImage: "checkmark")
+                Label("Never deletes permanently — you empty the Trash yourself", systemImage: "xmark")
+                Label("Never removes anything on a schedule", systemImage: "xmark")
+                Label("Not antivirus — Security Check reads signatures only", systemImage: "xmark")
+                Label("Nothing leaves your Mac — no analytics, no uploads", systemImage: "xmark")
             }
-            Section("What it won't do") {
-                Label("Delete anything permanently without you emptying the Trash", systemImage: "xmark")
-                Label("Remove anything on a schedule — scheduled scans only find", systemImage: "xmark")
-                Label("Scan for malware — Security Check reads signatures only", systemImage: "xmark")
-                Label("Send anything off your Mac — no account, no network, no analytics", systemImage: "xmark")
+            Section {
+                Button("Clear Trash History…", role: .destructive) { confirmClear = true }
+            } footer: {
+                Text("Only Reclaim's list is cleared; nothing in the Trash is touched.").font(.caption).foregroundStyle(.secondary)
             }
         }
         .formStyle(.grouped)
+        .confirmationDialog("Clear Reclaim's Trash history?", isPresented: $confirmClear) {
+            Button("Clear History", role: .destructive) { TrashLog.shared.clearHistory() }
+        }
     }
 }

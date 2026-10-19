@@ -68,8 +68,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCent
             PrefKey.showMenuBar: true,
             PrefKey.vividWidget: true,
             PrefKey.notifyThresholdGB: 1,
+            PrefKey.notifyEnabled: true,
+            PrefKey.scheduleFrequency: ScheduleFrequency.weekly.rawValue,
         ])
         MainActor.assumeIsolated {
+            AppearanceMode.current.apply()
             IconRenderer.applyDockIcon(tinted: defaults.bool(forKey: PrefKey.dockTint), accent: .current)
             SpotlightIndex.indexTools()
             AppModel.shared.startScheduler()

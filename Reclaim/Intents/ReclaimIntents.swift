@@ -3,7 +3,7 @@ import Foundation
 
 /// A Reclaim tool, for "Open a Reclaim Tool".
 enum ReclaimToolOption: String, AppEnum {
-    case home, guided, junk, ai, downloads, duplicates, photos, large, map, apps, security, trash
+    case home, guided, junk, ai, downloads, duplicates, photos, large, map, apps, security, trash, settings
 
     static var typeDisplayRepresentation: TypeDisplayRepresentation = "Reclaim Tool"
 
@@ -20,6 +20,7 @@ enum ReclaimToolOption: String, AppEnum {
         .apps: "Apps & Leftovers",
         .security: "Security Check",
         .trash: "Trash",
+        .settings: "Settings",
     ]
 
     var route: Route { Route(rawValue: rawValue) ?? .home }

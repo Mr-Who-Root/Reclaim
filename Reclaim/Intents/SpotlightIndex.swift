@@ -42,6 +42,7 @@ enum SpotlightIndex {
         case .apps: words += ["uninstall", "uninstaller", "leftovers", "applications"]
         case .security: words += ["security", "signature", "notarized", "login items", "launch agents"]
         case .trash: words += ["trash", "restore", "undo"]
+        case .settings: words += ["settings", "preferences", "language", "appearance", "schedule"]
         }
         return words
     }

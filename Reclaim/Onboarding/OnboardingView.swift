@@ -126,7 +126,7 @@ struct OnboardingView: View {
             Text("What Reclaim does").font(.largeTitle.weight(.bold))
             Text("Ten tools, one habit: look first, decide yourself, then reclaim.").foregroundStyle(.secondary)
             LazyVGrid(columns: [GridItem(.flexible(), alignment: .leading), GridItem(.flexible(), alignment: .leading)], spacing: 12) {
-                ForEach(Route.allCases.filter { $0 != .home }) { route in
+                ForEach(Route.allCases.filter { $0 != .home && $0 != .settings }) { route in
                     HStack(spacing: 10) {
                         RouteIcon(route: route, side: 30)
                         VStack(alignment: .leading, spacing: 1) {
@@ -146,6 +146,28 @@ struct OnboardingView: View {
             Text("Reclaim runs entirely on your Mac. macOS asks before it can read Desktop, Documents and Downloads — just click Allow when a tool asks.")
                 .multilineTextAlignment(.center).foregroundStyle(.secondary).frame(maxWidth: 480)
             VStack(alignment: .leading, spacing: 14) {
+                HStack(alignment: .top, spacing: 12) {
+                    Image(systemName: AccessCenter.shared.homeGranted ? "checkmark.circle.fill" : "folder.badge.person.crop").font(.title2)
+                        .foregroundStyle(AccessCenter.shared.homeGranted ? .green : .accentColor).frame(width: 30)
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text("Your Home folder").font(.headline)
+                        Text("Grant \(FS.home.path) once. Reclaim then checks every location it scans, including the temp folders AI tools use, so macOS asks about each one now.")
+                            .font(.callout).foregroundStyle(.secondary)
+                        HStack {
+                            Button(AccessCenter.shared.homeGranted ? "Granted · Check Again" : "Grant Access to Home Folder…") {
+                                Task {
+                                    if AccessCenter.shared.homeGranted { await AccessCenter.shared.checkAll() } else { await AccessCenter.shared.grantHomeAccess() }
+                                    fullDisk = FS.hasFullDiskAccess()
+                                }
+                            }
+                            .buttonStyle(.borderedProminent)
+                            if AccessCenter.shared.isChecking { ProgressView().controlSize(.small) }
+                            else if AccessCenter.shared.lastChecked != nil {
+                                Text("\(AccessCenter.shared.grantedCount) of \(AccessCenter.shared.locations.count) readable").font(.caption).foregroundStyle(.secondary)
+                            }
+                        }
+                    }
+                }
                 HStack(alignment: .top, spacing: 12) {
                     Image(systemName: fullDisk ? "checkmark.shield.fill" : "lock.shield").font(.title2)
                         .foregroundStyle(fullDisk ? .green : .orange).frame(width: 30)

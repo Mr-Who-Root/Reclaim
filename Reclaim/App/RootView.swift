@@ -101,6 +101,7 @@ private struct DetailView: View {
         case .apps: AppsView()
         case .security: SecurityView()
         case .trash: TrashView()
+        case .settings: SettingsPage()
         }
     }
 }
