@@ -54,7 +54,7 @@ struct ReclaimCommands: Commands {
                 .keyboardShortcut("r", modifiers: [.command])
         }
         CommandMenu("Go") {
-            ForEach(Array(Route.allCases.enumerated()), id: \.element) { index, route in
+            ForEach(Array(Route.visible.enumerated()), id: \.element) { index, route in
                 if index < 9 {
                     Button(route.title) { AppModel.shared.route = route }
                         .keyboardShortcut(KeyEquivalent(Character("\(index + 1)")), modifiers: [.command])

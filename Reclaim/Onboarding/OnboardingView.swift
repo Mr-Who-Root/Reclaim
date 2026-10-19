@@ -126,7 +126,7 @@ struct OnboardingView: View {
             Text("What Reclaim does").font(.largeTitle.weight(.bold))
             Text("Ten tools, one habit: look first, decide yourself, then reclaim.").foregroundStyle(.secondary)
             LazyVGrid(columns: [GridItem(.flexible(), alignment: .leading), GridItem(.flexible(), alignment: .leading)], spacing: 12) {
-                ForEach(Route.allCases.filter { $0 != .home && $0 != .settings }) { route in
+                ForEach(Route.visible.filter { $0 != .home && $0 != .settings }) { route in
                     HStack(spacing: 10) {
                         RouteIcon(route: route, side: 30)
                         VStack(alignment: .leading, spacing: 1) {

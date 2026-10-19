@@ -10,7 +10,7 @@ final class AppsModel: ScanTool {
     }
 
     enum AppSort: String, CaseIterable, Identifiable {
-        case name = "Name", size = "Size"
+        case name = "Name", size = "Size", lastUsed = "Last Opened"
         var id: String { rawValue }
     }
 
@@ -85,11 +85,19 @@ final class AppsModel: ScanTool {
                 $0.name.localizedCaseInsensitiveContains(query) || ($0.bundleID?.localizedCaseInsensitiveContains(query) ?? false)
             }
         }
-        if appSort == .size {
-            list.sort { (appSizes[$0.id] ?? -1) > (appSizes[$1.id] ?? -1) }
+        if unusedOnly { list = list.filter(\.isUnused) }
+        switch appSort {
+        case .size: list.sort { (appSizes[$0.id] ?? -1) > (appSizes[$1.id] ?? -1) }
+        case .lastUsed: list.sort { ($0.lastUsed ?? .distantPast) < ($1.lastUsed ?? .distantPast) }
+        case .name: break
         }
         return list
     }
+
+    /// Only show apps not opened for six months or more.
+    var unusedOnly = false
+    var unusedApps: [InstalledApp] { apps.filter(\.isUnused) }
+    var unusedBytes: Int64 { unusedApps.reduce(0) { $0 + (appSizes[$1.id] ?? 0) } }
 
     var selectedApp: InstalledApp? { apps.first { $0.id == selectedAppID } }
 
@@ -292,6 +300,7 @@ final class AppsModel: ScanTool {
         leftovers = groups
         let valid = Set(groups.flatMap(\.items).map(\.id))
         leftoverSelection.formIntersection(valid)
+        dropExcluded()
         phase = .done(.now)
     }
 

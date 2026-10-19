@@ -41,12 +41,17 @@ enum JunkSource {
     case profileSubfolder(String, String)
     /// Folders exactly this many levels below the folder (e.g. system-images/<api>/<tag>/<abi>).
     case descendants(String, Int)
+    /// Build output found inside code projects (see JunkProjects).
+    case projects(JunkProjects.Bucket)
 
     var base: URL {
         switch self {
         case .children(let p), .path(let p), .childrenWithExtension(let p, _),
              .grandchildrenWithExtension(let p, _), .profileSubfolder(let p, _), .descendants(let p, _):
             return FS.home.appendingPathComponent(p)
+        case .projects:
+            // Not a single folder; never treated as "owned" (see ownedPaths).
+            return URL(fileURLWithPath: "/.reclaim-projects")
         }
     }
 }
@@ -203,6 +208,21 @@ enum JunkRules {
             group: .developer, safety: .caution, selectedByDefault: false,
             sources: [.childrenWithExtension(".android/avd", "avd")]),
         JunkRule(
+            id: "projectsOld", title: String(localized: "Build folders in old projects"), icon: "folder.badge.gearshape",
+            explanation: String(localized: "node_modules, target, build, Pods and other build output in projects you haven't touched for 3 months or more. Your code is never touched, and each folder comes back with one command if you return to the project."),
+            group: .developer, safety: .safe, selectedByDefault: true,
+            sources: [.projects(.old)]),
+        JunkRule(
+            id: "projectsRecent", title: String(localized: "Build folders in recent projects"), icon: "folder.badge.gearshape",
+            explanation: String(localized: "The same build output in projects you worked on in the last 3 months. Safe to clear, but you'd rebuild it soon, so nothing is selected for you."),
+            group: .developer, safety: .safe, selectedByDefault: false,
+            sources: [.projects(.recent)]),
+        JunkRule(
+            id: "projectEnvs", title: String(localized: "Python environments in old projects"), icon: "terminal",
+            explanation: String(localized: "Virtual environments in Python projects untouched for 3 months or more. They can be recreated from requirements, but may hold packages you installed by hand."),
+            group: .developer, safety: .caution, selectedByDefault: false,
+            sources: [.projects(.environments)]),
+        JunkRule(
             id: "androidSnapshots", title: String(localized: "Android emulator snapshots"), icon: "camera.viewfinder",
             explanation: String(localized: "Quick Boot snapshots of your Android emulators. Removing them only means the next start is a cold boot — the emulators and their data are kept."),
             group: .developer, safety: .safe, selectedByDefault: true,
@@ -306,7 +326,12 @@ enum JunkScanner {
 
     /// Folders owned by specific rules, so the generic app-caches rule doesn't list them twice.
     private static func ownedPaths(_ rules: [JunkRule]) -> [String] {
-        rules.filter { !$0.isAppCaches }.flatMap { $0.sources.map { $0.base.standardizedFileURL.path } }
+        rules.filter { !$0.isAppCaches }.flatMap { rule in
+            rule.sources.compactMap { source -> String? in
+                if case .projects = source { return nil }
+                return source.base.standardizedFileURL.path
+            }
+        }
     }
 
     private static func isOwned(_ path: String, by owned: [String]) -> Bool {
@@ -342,6 +367,8 @@ enum JunkScanner {
                     let candidate = child.appendingPathComponent(sub)
                     if FS.exists(candidate) { urls.append(candidate) }
                 }
+            case .projects(let bucket):
+                urls += JunkProjects.artifacts(bucket).map(\.url)
             case .descendants(_, let depth):
                 var level = (list(base) ?? []).filter(FS.isDirectory)
                 for _ in 1..<max(1, depth) {
@@ -505,6 +532,10 @@ enum JunkScanner {
             if let last = info.lastBooted { parts.append(String(localized: "last used \(Fmt.relative(last))")) }
             else if rule.id == "simDevices" { parts.append(String(localized: "never booted")) }
             return parts.joined(separator: " · ")
+        case "projectsOld", "projectsRecent", "projectEnvs":
+            guard let a = JunkProjects.artifact(at: url) else { return nil }
+            let age = a.lastActivity.map { String(localized: "untouched for \(Fmt.age($0))") } ?? String(localized: "no recent activity")
+            return String(localized: "\(a.project) · \(Fmt.loc(a.label)) · \(age) · rebuild with \(a.rebuild)")
         case "vms", "genymotion":
             return url.deletingPathExtension().lastPathComponent
         default:

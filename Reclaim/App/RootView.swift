@@ -40,7 +40,7 @@ private struct Sidebar: View {
         List(selection: $selection) {
             ForEach(Route.Section.allCases.filter { $0 != .pinned }) { section in
                 Section {
-                    ForEach(Route.allCases.filter { $0.section == section }) { route in
+                    ForEach(Route.visible.filter { $0.section == section }) { route in
                         SidebarRow(route: route).tag(route)
                             .listRowInsets(EdgeInsets(top: 1, leading: 8, bottom: 1, trailing: 8))
                     }
@@ -192,6 +192,7 @@ private struct DetailView: View {
         case .guided: GuidedView()
         case .junk: JunkView()
         case .ai: AIJunkView()
+        case .docker: DockerView()
         case .downloads: DownloadsView()
         case .duplicates: DuplicatesView()
         case .photos: PhotosView()

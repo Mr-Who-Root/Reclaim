@@ -304,6 +304,7 @@ private struct PhotoTile: View {
             }
             Button("Quick Look", action: preview)
             Button("Reveal in Finder") { FS.reveal([item.entry.url]) }
+            Button("Never Suggest This") { Exclusions.shared.add(item.entry.url) }
             Button("Open") { FS.open(item.entry.url) }
         }
         .accessibilityElement(children: .ignore)

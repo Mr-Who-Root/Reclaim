@@ -3,12 +3,13 @@ import WidgetKit
 
 /// The settings sections, shared by the in-app Settings page and the ⌘, window.
 enum SettingsSection: String, CaseIterable, Identifiable {
-    case access, appearance, language, scans, general, integrations, about
+    case access, exclusions, appearance, language, scans, general, integrations, about
     var id: String { rawValue }
 
     var title: LocalizedStringKey {
         switch self {
         case .access: return "Granted Folders"
+        case .exclusions: return "Exclusions"
         case .appearance: return "Appearance"
         case .language: return "Language"
         case .scans: return "Scheduled Scans"
@@ -21,6 +22,7 @@ enum SettingsSection: String, CaseIterable, Identifiable {
     var icon: String {
         switch self {
         case .access: return "folder.badge.person.crop"
+        case .exclusions: return "eye.slash"
         case .appearance: return "paintpalette"
         case .language: return "globe"
         case .scans: return "clock.arrow.circlepath"
@@ -33,6 +35,7 @@ enum SettingsSection: String, CaseIterable, Identifiable {
     @ViewBuilder var content: some View {
         switch self {
         case .access: AccessSettings()
+        case .exclusions: ExclusionSettings()
         case .appearance: AppearanceSettings()
         case .language: LanguageSettings()
         case .scans: ScanSettings()
@@ -203,6 +206,53 @@ private struct LocationRow: View {
             }
             .font(.caption)
         }
+    }
+}
+
+// MARK: - Exclusions
+
+private struct ExclusionSettings: View {
+    private var exclusions: Exclusions { Exclusions.shared }
+
+    var body: some View {
+        Form {
+            Section {
+                if exclusions.paths.isEmpty {
+                    Text("Nothing excluded yet. Right-click any result and choose Never Suggest This.")
+                        .foregroundStyle(.secondary)
+                }
+                ForEach(exclusions.paths, id: \.self) { path in
+                    HStack(spacing: 10) {
+                        FileIconView(url: URL(fileURLWithPath: path), side: 20)
+                        VStack(alignment: .leading, spacing: 1) {
+                            Text(URL(fileURLWithPath: path).lastPathComponent).lineLimit(1)
+                            Text(FS.abbreviate(path)).font(.caption).foregroundStyle(.secondary).lineLimit(1).truncationMode(.middle)
+                        }
+                        Spacer()
+                        Button {
+                            exclusions.remove(path)
+                        } label: { Image(systemName: "minus.circle.fill").foregroundStyle(.secondary) }
+                            .buttonStyle(.plain)
+                            .help("Suggest this again")
+                    }
+                }
+                Button("Add Folder or File…") {
+                    let panel = NSOpenPanel()
+                    panel.canChooseDirectories = true
+                    panel.canChooseFiles = true
+                    panel.allowsMultipleSelection = true
+                    panel.prompt = String(localized: "Exclude")
+                    panel.directoryURL = FS.home
+                    if panel.runModal() == .OK { panel.urls.forEach(exclusions.add) }
+                }
+            } header: {
+                Text("Never suggest")
+            } footer: {
+                Text("Every tool skips these files and folders, and anything inside a folder. Remove one to see it in results again after the next scan.")
+                    .font(.caption).foregroundStyle(.secondary)
+            }
+        }
+        .formStyle(.grouped)
     }
 }
 

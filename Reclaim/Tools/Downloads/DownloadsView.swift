@@ -51,9 +51,16 @@ struct DownloadsView: View {
             }
         case .done:
             if model.items.isEmpty {
-                AllClearView(title: "Downloads is empty",
-                             message: "There's nothing in your Downloads folder. Scanned \(Fmt.relative(model.phase.lastScan)).",
-                             action: { Task { await model.scan() } })
+                if Exclusions.shared.contains(FS.downloads.standardizedFileURL.path) {
+                    AllClearView(title: "Downloads is excluded",
+                                 message: "You asked Reclaim never to suggest anything in Downloads. Remove it in Settings › Exclusions to see it here again.",
+                                 actionTitle: "Open Exclusions",
+                                 action: { AppModel.shared.settingsSection = .exclusions; AppModel.shared.route = .settings })
+                } else {
+                    AllClearView(title: "Downloads is empty",
+                                 message: "There's nothing in your Downloads folder. Scanned \(Fmt.relative(model.phase.lastScan)).",
+                                 action: { Task { await model.scan() } })
+                }
             } else {
                 results
             }

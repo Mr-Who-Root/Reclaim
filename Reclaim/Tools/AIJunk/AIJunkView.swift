@@ -221,6 +221,8 @@ private struct AIJunkItemRow: View {
                 NSPasteboard.general.clearContents()
                 NSPasteboard.general.setString(item.url.path, forType: .string)
             }
+            Divider()
+            Button("Never Suggest This") { Exclusions.shared.add(item.url) }
         }
     }
 }

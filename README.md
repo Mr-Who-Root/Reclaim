@@ -19,6 +19,10 @@ can't verify the developer:
 
 Or, in Terminal: `xattr -dr com.apple.quarantine /Applications/Reclaim.app`
 
+Because of the ad-hoc signature, macOS doesn't list Reclaim's desktop widget in the widget gallery for downloaded
+builds. Building it yourself with a free Apple Development certificate brings the widget back (see
+[Build from source](#build-from-source)).
+
 Requires macOS 26 or later (Apple silicon or Intel).
 
 ## Tools
@@ -27,20 +31,21 @@ Requires macOS 26 or later (Apple silicon or Intel).
 | --- | --- |
 | **Mac Overview & Smart Scan** | Free space at a glance and one read-only pass across every section — all cleanup tools, Leftovers, your installed apps, Security Check, the Storage Map and the Trash. It only scans and reports; nothing is removed. |
 | **Guided Cleanup** | Audits the areas you pick, builds a short plan you approve item by item, re-checks each item before acting, and keeps Undo per item. Includes an on-device assistant (Apple Intelligence) to ask about the review. |
-| **Junk** | App caches, logs, saved window state, Chrome-family and Firefox caches, Xcode DerivedData / Archives / DeviceSupport, simulator caches, npm, Yarn, pip, Homebrew, CocoaPods, Gradle, Cargo, Android emulator images, iPhone backups and Mail downloads — each rule explains why it's safe. |
+| **Junk** | App caches, logs, saved window state, Chrome-family and Firefox caches, Xcode DerivedData / Archives / DeviceSupport, simulator caches, npm, Yarn, pip, Homebrew, CocoaPods, Gradle, Cargo, Android emulator images, iPhone backups and Mail downloads — each rule explains why it's safe. Also finds rebuildable build folders inside your code projects (`node_modules`, `target`, `build`, `Pods`, `.venv`…), only where the project's own files confirm what they are, split into old and recent projects so active work is left alone. |
 | **AI Junk** | Stale agent scratch folders in `/tmp` and your temp folder, leftover Puppeteer/Playwright browser profiles, old Claude Code / Codex / Gemini / Antigravity / Continue sessions, agent git worktrees, Aider caches, orphaned Cursor/VS Code workspace data, AI app caches and old bundled versions, downloaded models (Hugging Face, Ollama — per model, only unshared layers — LM Studio, GPT4All, Whisper, PyTorch, Draw Things…) and AI-generated images. Anything a running app has open is left alone. |
+| **Docker** | Build cache, dangling and unused images, stopped containers and orphaned volumes, read from `docker system df`. Each category explains what clearing it means and runs Docker's own prune command only after you confirm. Shown when the Docker CLI is installed (Docker Desktop, OrbStack, Colima, Rancher Desktop). |
 | **Downloads** | Old installers, archives, unfinished and large downloads, with filters and a "Select Suggested" button. |
 | **Duplicates** | Byte-for-byte duplicates (size → partial hash → SHA-256) with a protected keeper and selection rules. |
 | **Photo Clutter** | Look-alike shots (Vision feature prints), screenshots and screen recordings in ~40 languages, and blurry photos. |
 | **Large & Old Files** | Size, age and kind filters, list or sortable table, Quick Look. |
 | **Storage Map** | Interactive treemap of any folder or the whole disk, drill-down, Collector for batch removal. |
 | **Leftovers** | Support files left behind by apps you already removed, matched by bundle identifier and grouped per app. |
-| **Uninstall an App** | Remove an app together with its caches, preferences, containers and other support files (Finder password fallback for protected apps). Lists apps in the Applications folders and anywhere else in your Home folder, such as your own builds. |
+| **Uninstall an App** | Remove an app together with its caches, preferences, containers and other support files (Finder password fallback for protected apps). Lists apps in the Applications folders and anywhere else in your Home folder, such as your own builds, with when each was last opened and a filter for apps unused for 6+ months. |
 | **Security Check** | Code-signature and notarisation status of every app, Deep Verify, login items and launch agents (flags ones pointing at missing programs), and where your downloads came from. Read-only; not antivirus. |
 | **Trash** | Everything Reclaim moved, restore to the original folder, Open/Empty Trash. |
 
-Also: **Settings** (granted folders and access check, appearance, language, scheduled scans with notifications,
-launch at login, about), a **menu bar** monitor (free space, memory, CPU, Smart Scan), a desktop **widget**,
+Also: **Exclusions** (right-click any result › Never Suggest This; manage them in Settings › Exclusions), **Settings** (granted folders and access check, appearance, language, scheduled scans with notifications,
+launch at login, about), a **menu bar** monitor (free space, memory, CPU and CPU temperature, Smart Scan), a desktop **widget**,
 **Shortcuts & Siri** actions, **Spotlight** entries for every tool, and `reclaim://` links (`reclaim://scan`,
 `reclaim://ai`, `reclaim://settings/about`…).
 
@@ -69,6 +74,12 @@ scripts/make_icon.sh        # regenerates the app icon
 ```
 
 Or open `Reclaim.xcodeproj` and run the **Reclaim** scheme.
+
+The scripts sign with your **Developer ID Application** or **Apple Development** certificate when the Mac has one,
+and ad hoc otherwise. macOS only lists the desktop widget in the widget gallery when it's signed with a certificate
+that has a team, so to use the widget with your own build, add your Apple ID in **Xcode › Settings › Accounts** and
+create a free Apple Development certificate (**Manage Certificates › +**) before building. To force a specific
+identity, set `RECLAIM_SIGN_IDENTITY` (`-` for ad hoc).
 
 ## Project layout
 

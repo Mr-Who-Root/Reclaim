@@ -131,6 +131,7 @@ final class DownloadsModel: ScanTool {
         items = result.items
         selection = selection.filter { id in items.contains { $0.id == id } }
         lastScan = .now
+        dropExcluded()
         phase = .done(.now)
     }
 

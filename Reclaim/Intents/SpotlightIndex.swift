@@ -8,7 +8,7 @@ enum SpotlightIndex {
     private static let domain = "com.govindsr.reclaim.tools"
 
     static func indexTools() {
-        let items = Route.allCases.map { route -> CSSearchableItem in
+        let items = Route.visible.map { route -> CSSearchableItem in
             let attributes = CSSearchableItemAttributeSet(contentType: .content)
             attributes.title = route == .home ? "Reclaim" : "\(route.title) — Reclaim"
             attributes.displayName = attributes.title
@@ -34,6 +34,7 @@ enum SpotlightIndex {
         case .guided: words += ["guided", "plan", "review"]
         case .junk: words += ["cache", "caches", "logs", "xcode", "derived data", "npm", "homebrew"]
         case .ai: words += ["ai", "ai junk", "claude", "codex", "cursor", "ollama", "hugging face", "models", "temp files", "tmp"]
+        case .docker: words += ["docker", "containers", "images", "volumes", "build cache", "prune"]
         case .downloads: words += ["installers", "dmg", "pkg", "zip", "archives"]
         case .duplicates: words += ["duplicate files", "copies", "identical"]
         case .photos: words += ["photos", "screenshots", "screen recordings", "blurry", "similar"]

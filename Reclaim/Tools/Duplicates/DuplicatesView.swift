@@ -246,6 +246,7 @@ private struct DupCopyRow: View {
             Divider()
             Button("Quick Look", action: preview)
             Button("Reveal in Finder") { FS.reveal([file.url]) }
+            Button("Never Suggest This") { Exclusions.shared.add(file.url) }
             Button("Open") { FS.open(file.url) }
         }
     }

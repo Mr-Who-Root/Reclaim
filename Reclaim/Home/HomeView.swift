@@ -23,7 +23,7 @@ struct HomeView: View {
                 VStack(alignment: .leading, spacing: 10) {
                     SectionTitle(title: "Tools", subtitle: "Look first, decide yourself, then reclaim. Every tool is unlocked.")
                     LazyVGrid(columns: [GridItem(.adaptive(minimum: 230), spacing: 12)], spacing: 12) {
-                        ForEach(Route.allCases.filter { $0 != .home && $0 != .settings }) { route in
+                        ForEach(Route.visible.filter { $0 != .home && $0 != .settings }) { route in
                             ToolCard(route: route)
                         }
                     }
@@ -450,6 +450,9 @@ private struct AppsReportRow: View {
                 ProgressView().controlSize(.small)
             } else if model.apps.isEmpty {
                 Text("Not scanned yet").foregroundStyle(.tertiary).font(.caption)
+            } else if !model.unusedApps.isEmpty {
+                Text("\(Fmt.count(model.unusedApps.count, "app")) unused for 6+ months · \(Text(Fmt.bytes(model.unusedBytes)).fontWeight(.semibold).foregroundStyle(.primary))")
+                    .foregroundStyle(.secondary)
             } else {
                 Text("\(Fmt.count(model.apps.count, "app")) installed · \(Text(Fmt.bytes(model.installedAppsBytes)).fontWeight(.semibold).foregroundStyle(.primary))")
                     .foregroundStyle(.secondary)

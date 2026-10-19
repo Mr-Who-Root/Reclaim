@@ -60,6 +60,7 @@ final class JunkModel: ScanTool {
         selection = Set(results.filter { $0.rule.isRecommended }.flatMap { $0.items.map(\.id) })
         expanded = expanded.filter { id in results.contains { $0.id == id } }
         lastScan = .now
+        dropExcluded()
         phase = .done(.now)
     }
 
