@@ -104,6 +104,15 @@ final class AppsModel: ScanTool {
 
     private var appsLoadTask: Task<Void, Never>?
 
+    /// Loads the app list and waits until every app's size is measured (used by Smart Scan).
+    func loadAppsAndSizes() async {
+        await loadApps()
+        await sizeTask?.value
+    }
+
+    /// Total size of the installed apps measured so far.
+    var installedAppsBytes: Int64 { apps.reduce(0) { $0 + (appSizes[$1.id] ?? 0) } }
+
     /// Loads the app list; concurrent callers wait for the same load.
     func loadApps() async {
         if let existing = appsLoadTask {

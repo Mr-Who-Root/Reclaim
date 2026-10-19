@@ -6,6 +6,8 @@ struct InstalledApp: Identifiable, Hashable, Sendable {
     let name: String
     let bundleID: String?
     let version: String?
+    /// Set for apps found outside the Applications folders (e.g. "~/Github/App/build/Release").
+    var otherLocation: String? = nil
     var id: String { url.path }
 }
 
@@ -82,6 +84,12 @@ enum AppsScanner {
                         if let app = makeApp(inner) { found[app.id] = app }
                     }
                 }
+            }
+        }
+        for url in AppLocator.appsOutsideApplications() where found[url.path] == nil {
+            if var app = makeApp(url) {
+                app.otherLocation = FS.abbreviate(url.deletingLastPathComponent().path)
+                found[app.id] = app
             }
         }
         return found.values.sorted { $0.name.localizedStandardCompare($1.name) == .orderedAscending }

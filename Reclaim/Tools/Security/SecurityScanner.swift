@@ -151,6 +151,7 @@ enum SecurityScanner {
                 }
             }
         }
+        for url in AppLocator.appsOutsideApplications() { consider(url) }
         return apps.sorted { $0.lastPathComponent.localizedCaseInsensitiveCompare($1.lastPathComponent) == .orderedAscending }
     }
 

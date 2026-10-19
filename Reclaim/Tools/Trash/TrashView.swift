@@ -5,9 +5,10 @@ struct TrashView: View {
     private var app: AppModel { AppModel.shared }
     private var log: TrashLog { TrashLog.shared }
 
-    @State private var inTrash: Set<UUID> = []
-    @State private var trashSize: Int64?
-    @State private var measured = false
+    private var status: TrashStatus { TrashStatus.shared }
+    private var inTrash: Set<UUID> { status.reclaimIDsInTrash }
+    private var trashSize: Int64? { status.totalBytes }
+    private var measured: Bool { status.phase.isDone }
     @State private var confirmEmpty = false
     @State private var confirmClear = false
     @State private var emptying = false
@@ -38,6 +39,10 @@ struct TrashView: View {
             .padding(.horizontal, 20)
             .padding(.bottom, 12)
 
+            if measured, !status.readable {
+                FullDiskAccessBanner(reason: "macOS only lets Reclaim see inside the Trash with Full Disk Access. Until then, sizes and whether items were emptied can't be checked.")
+                    .padding(.bottom, 10)
+            }
             if log.records.isEmpty {
                 AllClearView(title: "Nothing removed yet",
                              message: "When you move files to the Trash from any tool, they show up here. You can restore them, review them in Finder, and empty the Trash to permanently reclaim the space.")
@@ -97,7 +102,8 @@ struct TrashView: View {
                     } content: {
                         ForEach(group.records) { record in
                             RowDivider(inset: 0)
-                            TrashRow(record: record, inTrash: inTrash.contains(record.id), restoring: restoring.contains(record.id)) {
+                            TrashRow(record: record, inTrash: inTrash.contains(record.id), known: status.readable,
+                                 restoring: restoring.contains(record.id)) {
                                 Task { await restore([record.id]) }
                             }
                         }
@@ -122,14 +128,7 @@ struct TrashView: View {
     }
 
     private func refresh() async {
-        let records = log.records
-        let result = await Task.detached(priority: .utility) { () -> (Set<UUID>, Int64?) in
-            let ids = Set(records.filter(\.isInTrash).map(\.id))
-            return (ids, TrashService.currentTrashSize())
-        }.value
-        inTrash = result.0
-        trashSize = result.1
-        measured = true
+        await status.scan()
     }
 
     private func restore(_ ids: [UUID]) async {
@@ -186,6 +185,8 @@ struct TrashView: View {
 private struct TrashRow: View {
     let record: TrashRecord
     let inTrash: Bool
+    /// False when the Trash can't be read, so "in the Trash" is a guess.
+    var known = true
     let restoring: Bool
     let onRestore: () -> Void
 
@@ -212,6 +213,7 @@ private struct TrashRow: View {
                 if record.restored {
                     Text("Restored").foregroundStyle(.green)
                 } else if inTrash {
+                    if !known { Text("Status unknown").font(.caption2).foregroundStyle(.secondary) }
                     Button(action: onRestore) {
                         if restoring { ProgressView().controlSize(.small) } else { Text("Restore") }
                     }
