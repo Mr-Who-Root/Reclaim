@@ -6,10 +6,11 @@ struct RootView: View {
     var body: some View {
         NavigationSplitView {
             Sidebar(selection: $app.route)
-                .navigationSplitViewColumnWidth(min: 210, ideal: 230, max: 300)
+                .navigationSplitViewColumnWidth(min: 230, ideal: 250, max: 320)
         } detail: {
             DetailView(route: app.route ?? .home)
                 .id(app.route ?? .home)
+                .navigationTitle((app.route ?? .home).title)
         }
         .overlay(alignment: .bottom) {
             if let toast = app.toast {
@@ -20,8 +21,9 @@ struct RootView: View {
             }
         }
         .animation(.spring(duration: 0.35), value: app.toast)
+        .themedRoot()
         .sheet(isPresented: $app.showOnboarding) {
-            OnboardingView()
+            OnboardingView().themedRoot()
         }
         .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in
             app.refreshVolume()
@@ -31,41 +33,134 @@ struct RootView: View {
 
 private struct Sidebar: View {
     @Binding var selection: Route?
+    @Environment(\.theme) private var theme
     private var app: AppModel { AppModel.shared }
 
     var body: some View {
         List(selection: $selection) {
-            ForEach(Route.Section.allCases) { section in
-                Section(section.rawValue) {
+            ForEach(Route.Section.allCases.filter { $0 != .pinned }) { section in
+                Section {
                     ForEach(Route.allCases.filter { $0.section == section }) { route in
                         SidebarRow(route: route).tag(route)
+                            .listRowInsets(EdgeInsets(top: 1, leading: 8, bottom: 1, trailing: 8))
                     }
+                } header: {
+                    Text(section.title)
+                        .font(.caption.weight(.bold))
+                        .textCase(.uppercase)
+                        .tracking(0.6)
+                        .foregroundStyle(theme.sidebarSecondaryText.map { AnyShapeStyle($0) } ?? AnyShapeStyle(.secondary))
                 }
             }
         }
         .listStyle(.sidebar)
-        .safeAreaInset(edge: .bottom) {
+        .environment(\.defaultMinListRowHeight, 26)
+        .safeAreaInset(edge: .top) { BrandHeader() }
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            VStack(spacing: 6) {
+                Divider().opacity(0.4)
+                PinnedSettingsRow(selection: $selection)
             VStack(alignment: .leading, spacing: 6) {
                 HStack {
+                    Image(systemName: "internaldrive.fill").font(.caption).foregroundStyle(.secondary)
                     Text("Macintosh HD").font(.caption.weight(.semibold))
+                        .foregroundStyle(theme.sidebarText.map { AnyShapeStyle($0) } ?? AnyShapeStyle(.primary))
                     Spacer()
-                    Text("\(Fmt.bytes(app.volume.free)) free").font(.caption).foregroundStyle(.secondary).monospacedDigit()
+                    Text("\(Fmt.bytes(app.volume.free)) free").font(.caption).monospacedDigit()
+                        .foregroundStyle(theme.sidebarSecondaryText.map { AnyShapeStyle($0) } ?? AnyShapeStyle(.secondary))
                 }
                 UsageBar(fraction: app.volume.usedFraction, height: 6)
             }
-            .padding(12)
+            .card(padding: 10)
+            }
+            .padding(.horizontal, 10)
+            .padding(.bottom, 10)
+            .background {
+                // Opaque, so list rows scrolling underneath don't show through.
+                if theme.isColored {
+                    ZStack { ThemeBackground(); theme.sidebarOverlay }.ignoresSafeArea()
+                } else {
+                    Rectangle().fill(.regularMaterial).ignoresSafeArea()
+                }
+            }
         }
+        .background {
+            if theme.isColored {
+                ZStack {
+                    ThemeBackground()
+                    theme.sidebarOverlay
+                }
+                .ignoresSafeArea()
+            }
+        }
+    }
+}
+
+/// Settings, pinned under the sections.
+private struct PinnedSettingsRow: View {
+    @Binding var selection: Route?
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        let selected = selection == .settings
+        Button {
+            selection = .settings
+        } label: {
+            HStack(spacing: 9) {
+                RouteIcon(route: .settings, side: 24)
+                Text(Route.settings.title)
+                    .font(.system(size: 13, weight: .medium))
+                    .foregroundStyle(selected ? AnyShapeStyle(Color.white) : (theme.sidebarText.map { AnyShapeStyle($0) } ?? AnyShapeStyle(.primary)))
+                Spacer()
+            }
+            .padding(.horizontal, 8)
+            .padding(.vertical, 5)
+            .background(RoundedRectangle(cornerRadius: 7, style: .continuous).fill(selected ? AnyShapeStyle(.tint) : AnyShapeStyle(Color.clear)))
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(selected ? .isSelected : [])
+    }
+}
+
+/// App logo and name at the top of the sidebar.
+private struct BrandHeader: View {
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        HStack(spacing: 10) {
+            Image(nsImage: IconRenderer.image(top: theme.accent.nsColor, bottom: theme.accent.deepNSColor, side: 96))
+                .resizable()
+                .frame(width: 38, height: 38)
+                .shadow(color: theme.accentColor.opacity(0.4), radius: 6, y: 2)
+            VStack(alignment: .leading, spacing: 0) {
+                Text("Reclaim").font(.system(.title3, design: .rounded).weight(.bold))
+                    .foregroundStyle(theme.sidebarText.map { AnyShapeStyle($0) } ?? AnyShapeStyle(.primary))
+                Text("Disk cleanup, all unlocked").font(.caption)
+                    .foregroundStyle(theme.sidebarSecondaryText.map { AnyShapeStyle($0) } ?? AnyShapeStyle(.secondary))
+            }
+            Spacer(minLength: 0)
+        }
+        .padding(.horizontal, 14)
+        .padding(.top, 2)
+        .padding(.bottom, 4)
+        .accessibilityElement(children: .combine)
     }
 }
 
 private struct SidebarRow: View {
     let route: Route
+    @Environment(\.theme) private var theme
     private var app: AppModel { AppModel.shared }
 
     var body: some View {
-        HStack(spacing: 8) {
+        HStack(spacing: 9) {
             RouteIcon(route: route, side: 22)
             Text(route.title)
+                .font(.system(size: 13, weight: .medium))
+                .lineLimit(1)
+                .layoutPriority(1)
+                .foregroundStyle(theme.sidebarText.map { AnyShapeStyle($0) } ?? AnyShapeStyle(.primary))
             Spacer()
             trailing
         }
@@ -76,7 +171,8 @@ private struct SidebarRow: View {
             if tool.phase.isScanning {
                 ProgressView().controlSize(.mini)
             } else if tool.phase.isDone, tool.reclaimableBytes > 0 {
-                Text(Fmt.bytes(tool.reclaimableBytes)).font(.caption).foregroundStyle(.secondary).monospacedDigit()
+                Text(Fmt.bytes(tool.reclaimableBytes)).font(.caption.weight(.medium)).monospacedDigit()
+                    .foregroundStyle(theme.sidebarSecondaryText.map { AnyShapeStyle($0) } ?? AnyShapeStyle(.secondary))
             }
         } else if route == .security, app.security.phase.isScanning {
             ProgressView().controlSize(.mini)
@@ -91,14 +187,17 @@ private struct DetailView: View {
         case .home: HomeView()
         case .guided: GuidedView()
         case .junk: JunkView()
+        case .ai: AIJunkView()
         case .downloads: DownloadsView()
         case .duplicates: DuplicatesView()
         case .photos: PhotosView()
         case .large: LargeFilesView()
         case .map: StorageMapView()
-        case .apps: AppsView()
+        case .leftovers: AppsView(mode: .leftovers)
+        case .apps: AppsView(mode: .uninstall)
         case .security: SecurityView()
         case .trash: TrashView()
+        case .settings: SettingsPage()
         }
     }
 }

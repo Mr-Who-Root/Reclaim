@@ -7,11 +7,14 @@ final class AppModel {
     static let shared = AppModel()
 
     var route: Route? = .home
+    /// Which Settings section the in-app Settings page shows.
+    var settingsSection: SettingsSection? = .access
     var toast: Toast?
     var showOnboarding = !UserDefaults.standard.bool(forKey: PrefKey.didOnboard)
     var volume = VolumeStats.startup()
 
     let junk = JunkModel()
+    let aiJunk = AIJunkModel()
     let downloads = DownloadsModel()
     let duplicates = DuplicatesModel()
     let photos = PhotosModel()
@@ -31,16 +34,17 @@ final class AppModel {
     private var toastDismissTask: Task<Void, Never>?
 
     /// Tools that report reclaimable space, in display order.
-    var scanTools: [any ScanTool] { [junk, downloads, duplicates, photos, large, apps] }
+    var scanTools: [any ScanTool] { [junk, aiJunk, downloads, duplicates, photos, large, apps] }
 
     func tool(for route: Route) -> (any ScanTool)? {
         switch route {
         case .junk: return junk
+        case .ai: return aiJunk
         case .downloads: return downloads
         case .duplicates: return duplicates
         case .photos: return photos
         case .large: return large
-        case .apps: return apps
+        case .leftovers: return apps
         default: return nil
         }
     }
@@ -106,9 +110,17 @@ final class AppModel {
             showToast(Toast(message: "Moved \(Fmt.count(batch.moved.count, "item")) (\(Fmt.bytes(batch.bytes))) to the Trash",
                             detail: detail, undoIDs: batch.moved.map(\.id), isError: !batch.failed.isEmpty))
         }
+        didTrash(paths: batch.movedPaths)
+        return batch.movedPaths
+    }
+
+    /// Tells every tool that these paths are gone, then refreshes free space and the widget.
+    func didTrash(paths: Set<String>) {
+        if !paths.isEmpty {
+            for tool in scanTools { tool.forget(paths: paths) }
+        }
         refreshVolume()
         writeSnapshot()
-        return batch.movedPaths
     }
 
     func undo(_ toast: Toast) async {
@@ -137,6 +149,12 @@ final class AppModel {
 
     func refreshVolume() {
         volume = VolumeStats.startup()
+        SpaceHistory.shared.record(volume)
+    }
+
+    /// True once any tool has scanned (or is scanning) in this session.
+    var hasSessionResults: Bool {
+        smartScanRunning || scanTools.contains { $0.phase.isDone || $0.phase.isScanning }
     }
 
     /// Saves what the widget and Shortcuts read.
@@ -156,11 +174,19 @@ final class AppModel {
     func handle(url: URL) {
         guard url.scheme == "reclaim" else { return }
         let target = (url.host ?? url.path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))).lowercased()
-        if target == "scan" || target == "smartscan" {
-            route = .home
-            startSmartScan()
-        } else if target == "settings" {
-            NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
+        if target == "settings" {
+            let sub = url.pathComponents.dropFirst().first ?? ""
+            settingsSection = SettingsSection(rawValue: sub) ?? settingsSection
+            route = .settings
+        } else if target == "scan" || target == "smartscan" {
+            // reclaim://scan/<tool> scans one tool; reclaim://scan runs Smart Scan.
+            if let sub = url.pathComponents.dropFirst().first, let r = Route(rawValue: sub), let tool = tool(for: r) {
+                route = r
+                Task { await tool.scan() }
+            } else {
+                route = .home
+                startSmartScan()
+            }
         } else if let r = Route(rawValue: target) {
             route = r
         }
@@ -180,7 +206,7 @@ final class AppModel {
     }
 
     func runScheduledScanIfDue() async {
-        guard let interval = ScheduleInterval.current.seconds, !smartScanRunning else { return }
+        guard let interval = ScheduleFrequency.activeInterval, !smartScanRunning else { return }
         let last = UserDefaults.standard.object(forKey: PrefKey.lastScheduledScan) as? Date ?? .distantPast
         guard Date().timeIntervalSince(last) >= interval else { return }
         scheduledScanRunning = true
@@ -189,7 +215,7 @@ final class AppModel {
         UserDefaults.standard.set(Date(), forKey: PrefKey.lastScheduledScan)
         let thresholdGB = UserDefaults.standard.object(forKey: PrefKey.notifyThresholdGB) as? Int ?? 1
         let total = totalReclaimable
-        if total > 0, total >= Int64(thresholdGB) * 1_000_000_000 {
+        if UserDefaults.standard.bool(forKey: PrefKey.notifyEnabled), total > 0, total >= Int64(thresholdGB) * 1_000_000_000 {
             Notifier.post(title: "\(Fmt.bytes(total)) is ready to review",
                           body: "Your scheduled scan found space to reclaim. Nothing was removed — open Reclaim to review.")
         }

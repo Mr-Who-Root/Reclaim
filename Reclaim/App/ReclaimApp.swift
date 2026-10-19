@@ -13,7 +13,6 @@ struct ReclaimApp: App {
     var body: some Scene {
         Window("Reclaim", id: "main") {
             RootView()
-                .tint(accent.color)
                 .frame(minWidth: 940, minHeight: 620)
                 .onOpenURL { AppModel.shared.handle(url: $0) }
                 .onContinueUserActivity(CSSearchableItemActionType) { activity in
@@ -27,12 +26,12 @@ struct ReclaimApp: App {
 
         Settings {
             SettingsView()
-                .tint(accent.color)
+                .themedRoot()
         }
 
         MenuBarExtra(isInserted: $showMenuBar) {
             MenuBarView()
-                .tint(accent.color)
+                .themedRoot()
         } label: {
             Image(systemName: "internaldrive")
                 .accessibilityLabel("Reclaim")
@@ -68,8 +67,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCent
             PrefKey.showMenuBar: true,
             PrefKey.vividWidget: true,
             PrefKey.notifyThresholdGB: 1,
+            PrefKey.notifyEnabled: true,
+            PrefKey.scheduleFrequency: ScheduleFrequency.weekly.rawValue,
         ])
         MainActor.assumeIsolated {
+            AppearanceMode.current.apply()
             IconRenderer.applyDockIcon(tinted: defaults.bool(forKey: PrefKey.dockTint), accent: .current)
             SpotlightIndex.indexTools()
             AppModel.shared.startScheduler()
