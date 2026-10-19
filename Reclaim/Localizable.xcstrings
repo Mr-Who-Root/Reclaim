@@ -1960,6 +1960,142 @@
         }
       }
     },
+    "%@ installed · remove one with its support files": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ مثبّتة · أزل أحدها مع ملفات الدعم الخاصة به"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ installiert · entferne eine samt ihrer Support-Dateien"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ instaladas · elimina una con sus archivos de soporte"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ installées · supprimez-en une avec ses fichiers de support"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ इंस्टॉल हैं · किसी एक को उसकी सहायक फ़ाइलों के साथ हटाएँ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ terinstal · hapus salah satunya beserta file pendukungnya"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ installate · rimuovine una con i suoi file di supporto"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ をインストール済み・サポートファイルごと削除できます"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 설치됨 · 지원 파일과 함께 제거할 수 있음"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ഇൻസ്റ്റാൾ ചെയ്തിട്ടുണ്ട് · ഒന്നിനെ അതിന്റെ സപ്പോർട്ട് ഫയലുകൾക്കൊപ്പം നീക്കം ചെയ്യുക"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ geïnstalleerd · verwijder er een met de ondersteunende bestanden"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zainstalowano: %@ · usuń dowolną wraz z jej plikami pomocniczymi"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ instalados · remova um com seus arquivos de suporte"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Установлено: %@ · удалите любое вместе с его вспомогательными файлами"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ installerade · ta bort en med dess supportfiler"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ நிறுவப்பட்டுள்ளன · ஒன்றை அதன் துணைக் கோப்புகளுடன் அகற்றவும்"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ติดตั้งแล้ว %@ · ลบแอปใดก็ได้พร้อมไฟล์สนับสนุน"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ yüklü · birini destek dosyalarıyla birlikte kaldırın"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Встановлено: %@ · видаліть будь-яку разом із її допоміжними файлами"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đã cài %@ · xóa một ứng dụng cùng các tệp hỗ trợ của nó"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已安装 %@ · 可连同支持文件一起移除"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已安裝 %@・可連同支援檔案一起移除"
+          }
+        }
+      }
+    },
     "%@ is running. Quit it first so it can be removed cleanly.": {
       "localizations": {
         "ar": {
@@ -2944,10 +3080,142 @@
     },
     "%@ worth a closer look: %@": {
       "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يستحق %@ نظرة أدق: %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ genauer ansehen: %@"
+          }
+        },
         "en": {
           "stringUnit": {
             "state": "new",
             "value": "%1$@ worth a closer look: %2$@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ para revisar con más detalle: %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ à examiner de plus près : %@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ध्यान से देखने लायक: %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ perlu diperiksa lebih teliti: %@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ da esaminare con attenzione: %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "要確認: %@（%@）"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 자세히 확인 필요: %@"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "കൂടുതൽ ശ്രദ്ധിക്കേണ്ട %@: %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ om nader te bekijken: %@"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ do dokładniejszego sprawdzenia: %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ para examinar com mais atenção: %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ стоит изучить подробнее: %@"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ värt en närmare titt: %@"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ கூர்ந்து பார்க்கத் தக்கவை: %@"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ที่ควรดูให้ละเอียด: %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ yakından bakmaya değer: %@"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ варто розглянути уважніше: %@"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ đáng xem kỹ hơn: %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@值得仔细查看：%@"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@值得仔細查看：%@"
           }
         }
       }
@@ -13238,10 +13506,550 @@
         }
       }
     },
-    "Android emulator snapshots": {},
-    "Android system images": {},
-    "Android tool caches": {},
-    "Android virtual devices deployed by Genymotion. Removing one deletes that device and its data.": {},
+    "Android emulator snapshots": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لقطات محاكي Android"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android-Emulator-Snapshots"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Instantáneas del emulador de Android"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Instantanés d'émulateur Android"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android एम्युलेटर स्नैपशॉट"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snapshot emulator Android"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snapshot dell'emulatore Android"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android エミュレータのスナップショット"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android 에뮬레이터 스냅샷"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android എമുലേറ്റർ സ്നാപ്പ്ഷോട്ടുകൾ"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android-emulatorsnapshots"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Migawki emulatora Androida"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snapshots do emulador Android"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Снимки эмулятора Android"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ögonblicksbilder för Android-emulator"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android எமுலேட்டர் ஸ்னாப்ஷாட்கள்"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สแนปช็อตโปรแกรมจำลอง Android"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android emülatör anlık görüntüleri"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Знімки емулятора Android"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ảnh chụp nhanh trình giả lập Android"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android 模拟器快照"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android 模擬器快照"
+          }
+        }
+      }
+    },
+    "Android system images": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "صور نظام Android"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android-System-Images"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imágenes del sistema de Android"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Images système Android"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android सिस्टम इमेज"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Image sistem Android"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Immagini di sistema Android"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android システムイメージ"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android 시스템 이미지"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android സിസ്റ്റം ഇമേജുകൾ"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android-systeemimages"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Obrazy systemu Android"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Imagens de sistema Android"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Системные образы Android"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Systemavbilder för Android"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android சிஸ்டம் படிமங்கள்"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "อิมเมจระบบ Android"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android sistem görüntüleri"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Системні образи Android"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ảnh đĩa hệ thống Android"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android 系统映像"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android 系統映像檔"
+          }
+        }
+      }
+    },
+    "Android tool caches": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ذاكرة أدوات Android المؤقتة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android-Tool-Caches"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cachés de herramientas de Android"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Caches des outils Android"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android टूल कैश"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cache alat Android"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cache degli strumenti Android"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android ツールのキャッシュ"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android 도구 캐시"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android ടൂൾ കാഷെകൾ"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Caches van Android-tools"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pamięć podręczna narzędzi Androida"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Caches das ferramentas Android"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кэши инструментов Android"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cacheminnen för Android-verktyg"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android கருவி கேச்கள்"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "แคชเครื่องมือ Android"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android araç önbellekleri"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кеші інструментів Android"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bộ nhớ đệm công cụ Android"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android 工具缓存"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android 工具快取"
+          }
+        }
+      }
+    },
+    "Android virtual devices deployed by Genymotion. Removing one deletes that device and its data.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أجهزة Android افتراضية نشرها Genymotion. تؤدي إزالة أحدها إلى حذف ذلك الجهاز وبياناته."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Virtuelle Android-Geräte, die mit Genymotion bereitgestellt wurden. Das Entfernen löscht das jeweilige Gerät und seine Daten."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dispositivos virtuales de Android creados con Genymotion. Al eliminar uno se borra ese dispositivo y sus datos."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Appareils virtuels Android déployés par Genymotion. En supprimer un efface cet appareil et ses données."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genymotion द्वारा बनाए गए Android वर्चुअल डिवाइस। किसी एक को हटाने से वह डिवाइस और उसका डेटा डिलीट हो जाता है।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perangkat virtual Android yang di-deploy oleh Genymotion. Menghapusnya akan menghapus perangkat tersebut beserta datanya."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dispositivi virtuali Android distribuiti da Genymotion. Rimuoverne uno elimina il dispositivo e i suoi dati."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genymotion で作成された Android 仮想デバイスです。削除するとそのデバイスとデータも削除されます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genymotion으로 배포한 Android 가상 기기입니다. 제거하면 해당 기기와 데이터가 삭제됩니다."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genymotion സൃഷ്ടിച്ച Android വെർച്വൽ ഉപകരണങ്ങൾ. ഒന്ന് നീക്കം ചെയ്താൽ ആ ഉപകരണവും അതിന്റെ ഡാറ്റയും ഇല്ലാതാകും."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Virtuele Android-apparaten die door Genymotion zijn geïmplementeerd. Als je er een verwijdert, worden dat apparaat en de gegevens ervan verwijderd."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wirtualne urządzenia z Androidem wdrożone przez Genymotion. Usunięcie urządzenia usuwa je wraz z danymi."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dispositivos virtuais Android implantados pelo Genymotion. Remover um apaga esse dispositivo e seus dados."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Виртуальные устройства Android, развернутые Genymotion. Удаление устройства удаляет его вместе с данными."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Virtuella Android-enheter som har distribuerats av Genymotion. Om du tar bort en raderas enheten och dess data."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genymotion உருவாக்கிய Android மெய்நிகர் சாதனங்கள். ஒன்றை அகற்றினால் அந்தச் சாதனமும் அதன் தரவும் நீக்கப்படும்."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "อุปกรณ์เสมือน Android ที่ Genymotion ติดตั้งใช้งานไว้ การเอาออกจะลบอุปกรณ์นั้นพร้อมข้อมูล"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genymotion tarafından dağıtılan Android sanal aygıtları. Birini kaldırmak o aygıtı ve verilerini siler."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Віртуальні пристрої Android, розгорнуті Genymotion. Видалення пристрою видаляє його разом із даними."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thiết bị ảo Android do Genymotion triển khai. Gỡ bỏ một thiết bị sẽ xóa thiết bị đó cùng dữ liệu của nó."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "由 Genymotion 部署的 Android 虚拟设备。移除后会删除该设备及其数据。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "由 Genymotion 部署的 Android 虛擬裝置。移除後會刪除該裝置及其資料。"
+          }
+        }
+      }
+    },
     "Any amount": {
       "localizations": {
         "ar": {
@@ -20864,7 +21672,142 @@
         }
       }
     },
-    "Caches the Android build tools and emulator rebuild on demand.": {},
+    "Caches the Android build tools and emulator rebuild on demand.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ذاكرة تخزين مؤقت تعيد أدوات بناء Android والمحاكي إنشاءها عند الحاجة."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Caches, die die Android-Build-Tools und der Emulator bei Bedarf neu erstellen."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cachés que las herramientas de compilación y el emulador de Android vuelven a crear cuando las necesitan."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Caches que les outils de compilation et l'émulateur Android recréent à la demande."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कैश, जिन्हें Android बिल्ड टूल और एम्युलेटर ज़रूरत पड़ने पर फिर से बना लेते हैं।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cache yang dibuat ulang alat build Android dan emulator sesuai kebutuhan."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cache che gli strumenti di build Android e l'emulatore ricreano quando servono."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android のビルドツールとエミュレータが必要に応じて再作成するキャッシュです。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android 빌드 도구와 에뮬레이터가 필요할 때 다시 생성하는 캐시입니다."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android ബിൽഡ് ടൂളുകളും എമുലേറ്ററും ആവശ്യാനുസരണം വീണ്ടും സൃഷ്ടിക്കുന്ന കാഷെകൾ."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Caches die de Android-buildtools en de emulator zo nodig opnieuw aanmaken."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pamięć podręczna, którą narzędzia kompilacji Androida i emulator odtwarzają na żądanie."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Caches que as ferramentas de compilação do Android e o emulador recriam quando necessário."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кэши, которые инструменты сборки Android и эмулятор создают заново при необходимости."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cacheminnen som Androids byggverktyg och emulatorn skapar på nytt vid behov."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android பில்ட் கருவிகளும் எமுலேட்டரும் தேவைக்கேற்ப மீண்டும் உருவாக்கும் கேச்கள்."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "แคชที่เครื่องมือบิลด์ของ Android และโปรแกรมจำลองสร้างใหม่เมื่อต้องการ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android derleme araçlarının ve emülatörün gerektiğinde yeniden oluşturduğu önbellekler."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Кеші, які інструменти збірки Android та емулятор створюють знову за потреби."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bộ nhớ đệm mà công cụ build Android và trình giả lập tạo lại khi cần."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android 构建工具和模拟器按需重新创建的缓存。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android 建置工具和模擬器會視需要重新建立的快取。"
+          }
+        }
+      }
+    },
     "Caches, containers, preferences and saved state": {
       "localizations": {
         "ar": {
@@ -35426,7 +36369,142 @@
         }
       }
     },
-    "Don't show this again": {},
+    "Don't show this again": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عدم الإظهار مرة أخرى"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht mehr anzeigen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No volver a mostrar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ne plus afficher"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "इसे फिर से न दिखाएँ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Jangan tampilkan lagi"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non mostrare più"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "今後表示しない"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "다시 표시하지 않기"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ഇത് വീണ്ടും കാണിക്കരുത്"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toon dit niet meer"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nie pokazuj ponownie"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não mostrar novamente"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Больше не показывать"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Visa inte igen"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "இதை மீண்டும் காட்டாதே"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่ต้องแสดงอีก"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bunu bir daha gösterme"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Більше не показувати"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Không hiển thị lại"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "不再显示"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "不再顯示"
+          }
+        }
+      }
+    },
     "Double-click a file to preview it": {
       "localizations": {
         "ar": {
@@ -38283,8 +39361,278 @@
         }
       }
     },
-    "Emulator %@": {},
-    "Emulators, simulators and virtual machines are different: they hold data, so they're marked Caution and never selected for you. Unused simulator runtimes live in a system folder — remove them in Xcode › Settings › Components.": {},
+    "Emulator %@": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المحاكي %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emulator %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emulador %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Émulateur %@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "एम्युलेटर %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emulator %@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emulatore %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "エミュレータ %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "에뮬레이터 %@"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "എമുലേറ്റർ %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emulator %@"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emulator %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emulador %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Эмулятор %@"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emulator %@"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "எமுலேட்டர் %@"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "โปรแกรมจำลอง %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emülatör %@"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Емулятор %@"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trình giả lập %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "模拟器 %@"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "模擬器 %@"
+          }
+        }
+      }
+    },
+    "Emulators, simulators and virtual machines are different: they hold data, so they're marked Caution and never selected for you. Unused simulator runtimes live in a system folder — remove them in Xcode › Settings › Components.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "محاكيات Android وأجهزة محاكاة Xcode والآلات الافتراضية مختلفة: فهي تحتوي على بيانات، لذا تُصنَّف «حذر» ولا تُحدَّد نيابةً عنك أبدًا. توجد بيئات تشغيل المحاكي غير المستخدمة في مجلد نظام — أزلها من Xcode › Settings › Components."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emulatoren, Simulatoren und virtuelle Maschinen sind anders: Sie enthalten Daten, daher sind sie mit „Vorsicht“ markiert und werden nie automatisch ausgewählt. Nicht verwendete Simulator-Laufzeiten liegen in einem Systemordner – entferne sie in Xcode › Settings › Components."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Los emuladores, simuladores y máquinas virtuales son distintos: contienen datos, así que se marcan con Precaución y nunca se seleccionan automáticamente. Los runtimes de simulador sin usar están en una carpeta del sistema; elimínalos en Xcode › Settings › Components."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les émulateurs, simulateurs et machines virtuelles sont différents : ils contiennent des données, c'est pourquoi ils sont marqués « Prudence » et ne sont jamais sélectionnés automatiquement. Les runtimes de simulateur inutilisés se trouvent dans un dossier système ; supprimez-les dans Xcode › Settings › Components."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "एम्युलेटर, सिम्युलेटर और वर्चुअल मशीनें अलग हैं: इनमें डेटा होता है, इसलिए इन्हें सावधानी चिह्नित किया जाता है और ये कभी अपने आप चयनित नहीं होते। अप्रयुक्त सिम्युलेटर रनटाइम एक सिस्टम फ़ोल्डर में रहते हैं — उन्हें Xcode › Settings › Components में हटाएँ।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emulator, simulator, dan mesin virtual berbeda: semuanya menyimpan data, jadi ditandai Hati-hati dan tidak pernah dipilih untuk Anda. Runtime simulator yang tidak digunakan berada di folder sistem — hapus di Xcode › Settings › Components."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emulatori, simulatori e macchine virtuali sono diversi: contengono dati, quindi sono contrassegnati con Attenzione e non vengono mai selezionati automaticamente. I runtime dei simulatori inutilizzati si trovano in una cartella di sistema: rimuovili in Xcode › Settings › Components."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "エミュレータ、シミュレータ、仮想マシンは別です。データを保持しているため「注意」が付き、自動では選択されません。使われていないシミュレータランタイムはシステムフォルダにあります。Xcode › Settings › Components で削除してください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "에뮬레이터, 시뮬레이터 및 가상 머신은 다릅니다. 데이터를 담고 있으므로 ‘주의’로 표시되며 자동으로 선택되지 않습니다. 사용하지 않는 시뮬레이터 런타임은 시스템 폴더에 있으므로 Xcode › Settings › Components에서 제거하세요."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "എമുലേറ്ററുകൾ, സിമുലേറ്ററുകൾ, വെർച്വൽ മെഷീനുകൾ എന്നിവ വ്യത്യസ്തമാണ്: അവയിൽ ഡാറ്റയുണ്ട്, അതിനാൽ അവ ജാഗ്രത എന്ന് അടയാളപ്പെടുത്തുന്നു, ഒരിക്കലും സ്വയമേവ തിരഞ്ഞെടുക്കില്ല. ഉപയോഗിക്കാത്ത സിമുലേറ്റർ റൺടൈമുകൾ ഒരു സിസ്റ്റം ഫോൾഡറിലാണ് — Xcode › Settings › Components എന്നതിൽ അവ നീക്കം ചെയ്യുക."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emulators, simulators en virtuele machines zijn anders: ze bevatten gegevens, dus ze zijn gemarkeerd met ‘Voorzichtig’ en worden nooit voor je geselecteerd. Ongebruikte simulatorruntimes staan in een systeemmap — verwijder ze via Xcode › Settings › Components."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emulatory, symulatory i maszyny wirtualne to co innego: przechowują dane, więc są oznaczone jako Ostrożnie i nigdy nie są zaznaczane automatycznie. Nieużywane środowiska uruchomieniowe symulatora znajdują się w katalogu systemowym — usuń je w Xcode › Settings › Components."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emuladores, simuladores e máquinas virtuais são diferentes: eles guardam dados, por isso são marcados como Cuidado e nunca são pré-selecionados. Runtimes de simulador não usados ficam em uma pasta do sistema — remova-os em Xcode › Settings › Components."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Эмуляторы, симуляторы и виртуальные машины — другое дело: в них хранятся данные, поэтому они помечены «Осторожно» и никогда не выбираются автоматически. Неиспользуемые среды выполнения симуляторов хранятся в системной папке — удалите их в Xcode › Settings › Components."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emulatorer, simulatorer och virtuella maskiner är annorlunda: de innehåller data, så de är märkta med Försiktighet och markeras aldrig åt dig. Oanvända simulatormiljöer ligger i en systemmapp – ta bort dem i Xcode › Settings › Components."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "எமுலேட்டர்கள், சிமுலேட்டர்கள், மெய்நிகர் இயந்திரங்கள் ஆகியவை வேறுபட்டவை: அவற்றில் தரவு உள்ளது, எனவே அவை எச்சரிக்கை எனக் குறிக்கப்பட்டு, உங்களுக்காக ஒருபோதும் தேர்ந்தெடுக்கப்படாது. பயன்படுத்தப்படாத simulator runtimes ஒரு சிஸ்டம் கோப்புறையில் உள்ளன — அவற்றை Xcode › Settings › Components இல் அகற்றவும்."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "โปรแกรมจำลอง, Simulator และเครื่องเสมือนนั้นต่างออกไป เพราะเก็บข้อมูลไว้ จึงทำเครื่องหมายว่าระวังและไม่ถูกเลือกไว้ให้ runtime ของ Simulator ที่ไม่ได้ใช้อยู่ในโฟลเดอร์ระบบ — เอาออกได้ใน Xcode › Settings › Components"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emülatörler, simülatörler ve sanal makineler farklıdır: veri barındırırlar, bu yüzden Dikkat olarak işaretlenir ve asla sizin yerinize seçilmezler. Kullanılmayan simülatör çalışma zamanları bir sistem klasöründe bulunur — bunları Xcode › Settings › Components bölümünden kaldırın."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Емулятори, симулятори й віртуальні машини — інша справа: вони містять дані, тому позначені «Обережно» й ніколи не вибираються автоматично. Невикористовувані середовища виконання симуляторів зберігаються в системній папці — видаліть їх у Xcode › Settings › Components."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trình giả lập, trình mô phỏng và máy ảo thì khác: chúng chứa dữ liệu, nên được đánh dấu Thận trọng và không bao giờ được chọn sẵn. Runtime trình mô phỏng không dùng đến nằm trong thư mục hệ thống — hãy xóa chúng trong Xcode › Settings › Components."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android 模拟器、Xcode 模拟器和虚拟机则不同：它们包含数据，因此会标记为“谨慎”，永远不会自动为你选中。未使用的模拟器运行时位于系统文件夹中——请在 Xcode › Settings › Components 中移除它们。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android 模擬器、Xcode 模擬器和虛擬機器則不同：其中包含資料，因此會標示為「注意」，且絕不會自動為您選取。未使用的模擬器執行環境位於系統檔案夾中；請在 Xcode › Settings › Components 中移除。"
+          }
+        }
+      }
+    },
     "Enclosing Folder": {
       "localizations": {
         "ar": {
@@ -46463,7 +47811,142 @@
         }
       }
     },
-    "Genymotion virtual devices": {},
+    "Genymotion virtual devices": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أجهزة Genymotion الافتراضية"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Virtuelle Genymotion-Geräte"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dispositivos virtuales de Genymotion"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Appareils virtuels Genymotion"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genymotion वर्चुअल डिवाइस"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perangkat virtual Genymotion"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dispositivi virtuali Genymotion"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genymotion 仮想デバイス"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genymotion 가상 기기"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genymotion വെർച്വൽ ഉപകരണങ്ങൾ"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Virtuele Genymotion-apparaten"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Urządzenia wirtualne Genymotion"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dispositivos virtuais do Genymotion"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Виртуальные устройства Genymotion"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Virtuella Genymotion-enheter"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genymotion மெய்நிகர் சாதனங்கள்"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "อุปกรณ์เสมือน Genymotion"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genymotion sanal aygıtları"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Віртуальні пристрої Genymotion"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thiết bị ảo Genymotion"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genymotion 虚拟设备"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Genymotion 虛擬裝置"
+          }
+        }
+      }
+    },
     "Get Mac Storage Status": {
       "localizations": {
         "ar": {
@@ -83103,8 +84586,278 @@
         }
       }
     },
-    "Quick Boot snapshots of %@": {},
-    "Quick Boot snapshots of your Android emulators. Removing them only means the next start is a cold boot — the emulators and their data are kept.": {},
+    "Quick Boot snapshots of %@": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لقطات Quick Boot لـ %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quick-Boot-Snapshots von %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Instantáneas de Quick Boot de %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Instantanés Quick Boot de %@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ के Quick Boot स्नैपशॉट"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snapshot Quick Boot untuk %@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snapshot Quick Boot di %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ の Quick Boot スナップショット"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@의 Quick Boot 스냅샷"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@-ന്റെ Quick Boot സ്നാപ്പ്ഷോട്ടുകൾ"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quick Boot-snapshots van %@"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Migawki Quick Boot dla %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snapshots de Quick Boot de %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Снимки Quick Boot для %@"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quick Boot-ögonblicksbilder för %@"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ இன் Quick Boot ஸ்னாப்ஷாட்கள்"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สแนปช็อต Quick Boot ของ %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ için Quick Boot anlık görüntüleri"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Знімки Quick Boot для %@"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ảnh chụp nhanh Quick Boot của %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 的 Quick Boot 快照"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 的 Quick Boot 快照"
+          }
+        }
+      }
+    },
+    "Quick Boot snapshots of your Android emulators. Removing them only means the next start is a cold boot — the emulators and their data are kept.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لقطات Quick Boot لمحاكيات Android لديك. لا تعني إزالتها سوى أن التشغيل التالي سيكون تشغيلًا باردًا — ويتم الاحتفاظ بالمحاكيات وبياناتها."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quick-Boot-Snapshots deiner Android-Emulatoren. Das Entfernen bedeutet nur, dass der nächste Start ein Kaltstart ist – die Emulatoren und ihre Daten bleiben erhalten."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Instantáneas de Quick Boot de tus emuladores de Android. Eliminarlas solo implica que el próximo inicio será un arranque en frío; se conservan los emuladores y sus datos."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Instantanés Quick Boot de vos émulateurs Android. Les supprimer signifie seulement que le prochain démarrage sera un démarrage à froid ; les émulateurs et leurs données sont conservés."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपके Android एम्युलेटर के Quick Boot स्नैपशॉट। इन्हें हटाने का बस इतना मतलब है कि अगली बार एम्युलेटर कोल्ड बूट से शुरू होगा — एम्युलेटर और उनका डेटा रखे जाते हैं।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snapshot Quick Boot emulator Android Anda. Menghapusnya hanya membuat start berikutnya menjadi cold boot — emulator dan datanya tetap disimpan."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snapshot Quick Boot dei tuoi emulatori Android. Rimuoverli significa solo che il prossimo avvio sarà a freddo: gli emulatori e i loro dati vengono conservati."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android エミュレータの Quick Boot スナップショットです。削除しても次回の起動がコールドブートになるだけで、エミュレータとそのデータは保持されます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android 에뮬레이터의 Quick Boot 스냅샷입니다. 제거해도 다음 시작이 콜드 부팅이 될 뿐이며, 에뮬레이터와 데이터는 유지됩니다."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "നിങ്ങളുടെ Android എമുലേറ്ററുകളുടെ Quick Boot സ്നാപ്പ്ഷോട്ടുകൾ. ഇവ നീക്കം ചെയ്താൽ അടുത്ത തവണ കോൾഡ് ബൂട്ട് ആയി ആരംഭിക്കും എന്നു മാത്രം — എമുലേറ്ററുകളും അവയുടെ ഡാറ്റയും സൂക്ഷിക്കും."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quick Boot-snapshots van je Android-emulators. Als je ze verwijdert, wordt de volgende start alleen een koude start — de emulators en hun gegevens blijven bewaard."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Migawki Quick Boot Twoich emulatorów Androida. Ich usunięcie oznacza jedynie, że następne uruchomienie będzie zimnym startem — emulatory i ich dane są zachowywane."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snapshots de Quick Boot dos seus emuladores Android. Removê-los só significa que a próxima inicialização será a frio — os emuladores e seus dados são mantidos."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Снимки Quick Boot Ваших эмуляторов Android. После их удаления следующий запуск просто будет холодным — эмуляторы и их данные сохраняются."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Quick Boot-ögonblicksbilder av dina Android-emulatorer. Om du tar bort dem blir nästa start bara en kallstart – emulatorerna och deras data behålls."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "உங்கள் Android எமுலேட்டர்களின் Quick Boot ஸ்னாப்ஷாட்கள். இவற்றை அகற்றினால், அடுத்த முறை cold boot ஆகத் தொடங்கும் என்பது மட்டுமே — எமுலேட்டர்களும் அவற்றின் தரவும் வைக்கப்படும்."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สแนปช็อต Quick Boot ของโปรแกรมจำลอง Android ของคุณ การเอาออกเพียงทำให้การเปิดครั้งถัดไปเป็น cold boot — โปรแกรมจำลองและข้อมูลจะยังคงอยู่"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Android emülatörlerinizin Quick Boot anlık görüntüleri. Bunları kaldırmak yalnızca bir sonraki başlatmanın soğuk başlatma olacağı anlamına gelir — emülatörler ve verileri korunur."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Знімки Quick Boot ваших емуляторів Android. Після їх видалення наступний запуск просто буде холодним — емулятори та їхні дані зберігаються."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ảnh chụp nhanh Quick Boot của các trình giả lập Android của bạn. Gỡ bỏ chúng chỉ khiến lần khởi động tiếp theo là khởi động nguội — các trình giả lập và dữ liệu của chúng được giữ nguyên."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你的 Android 模拟器的 Quick Boot 快照。移除后只意味着下次启动为冷启动——模拟器及其数据会被保留。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "您 Android 模擬器的 Quick Boot 快照。移除後只代表下次會以冷開機啟動；模擬器及其資料會保留。"
+          }
+        }
+      }
+    },
     "Quick Look": {
       "localizations": {
         "ar": {
@@ -87865,7 +89618,278 @@
         }
       }
     },
-    "Remove an app together with everything it left behind": {},
+    "Remove an app together with everything it left behind": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أزِل تطبيقًا مع كل ما خلّفه"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Eine App mit allem entfernen, was sie zurückgelassen hat"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elimina una app junto con todo lo que ha dejado"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supprimer une app avec tout ce qu'elle a laissé derrière elle"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "किसी ऐप को उसकी छोड़ी हुई हर चीज़ के साथ हटाएँ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hapus app beserta semua yang ditinggalkannya"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rimuovi un'app insieme a tutto ciò che ha lasciato"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App と、その App が残したものをすべて削除"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "앱과 앱이 남긴 모든 항목을 함께 제거"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ഒരു ആപ്പിനെ അത് ബാക്കിവെച്ച എല്ലാത്തിനുമൊപ്പം നീക്കം ചെയ്യുക"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verwijder een app samen met alles wat die heeft achtergelaten"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usuń aplikację razem ze wszystkim, co po sobie zostawiła"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remova um app junto com tudo o que ele deixou para trás"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удаление приложения вместе со всем, что от него осталось"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ta bort en app tillsammans med allt den har lämnat kvar"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ஓர் ஆப்பை அது விட்டுச்சென்ற அனைத்துடனும் சேர்த்து அகற்று"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เอาแอปออกพร้อมทุกอย่างที่แอปทิ้งไว้"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir uygulamayı geride bıraktığı her şeyle birlikte kaldırın"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Видалення програми разом з усім, що після неї залишилося"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gỡ bỏ ứng dụng cùng mọi thứ nó để lại"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "移除应用及其留下的所有内容"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "移除 App 及其留下的所有內容"
+          }
+        }
+      }
+    },
+    "Remove an app together with the files it leaves in your Library": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أزل تطبيقًا مع الملفات التي يتركها في مكتبتك"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Entferne eine App zusammen mit den Dateien, die sie in deiner Library hinterlässt"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Elimina una app junto con los archivos que deja en tu Biblioteca"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supprimez une app ainsi que les fichiers qu’elle laisse dans votre Bibliothèque"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "किसी ऐप को उन फ़ाइलों के साथ हटाएँ जो वह आपकी लाइब्रेरी में छोड़ता है"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hapus app beserta file yang ditinggalkannya di Perpustakaan Anda"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rimuovi un’app insieme ai file che lascia nella tua Libreria"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アプリと、それがライブラリに残すファイルをまとめて削除します"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "앱과 앱이 보관함에 남긴 파일을 함께 제거합니다"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ഒരു ആപ്പിനെ അത് നിങ്ങളുടെ ലൈബ്രറിയിൽ ഉപേക്ഷിക്കുന്ന ഫയലുകൾക്കൊപ്പം നീക്കം ചെയ്യുക"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verwijder een app samen met de bestanden die hij in je bibliotheek achterlaat"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Usuń aplikację razem z plikami, które zostawia w Twojej Bibliotece"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Remova um app junto com os arquivos que ele deixa na sua Biblioteca"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалите приложение вместе с файлами, которые оно оставляет в Библиотеке"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ta bort en app tillsammans med filerna den lämnar i ditt bibliotek"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ஒரு ஆப்பை உங்கள் லைப்ரரியில் அது விட்டுச்செல்லும் கோப்புகளுடன் சேர்த்து அகற்றவும்"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ลบแอปพร้อมไฟล์ที่แอปทิ้งไว้ในคลังของคุณ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir uygulamayı Kitaplığınızda bıraktığı dosyalarla birlikte kaldırın"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Видаліть програму разом із файлами, які вона залишає в Бібліотеці"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Xóa một ứng dụng cùng với các tệp nó để lại trong Thư viện của bạn"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "移除应用以及它留在你的资源库中的文件"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "移除 App 以及它留在你的資料庫中的檔案"
+          }
+        }
+      }
+    },
     "Remove from Collector": {
       "localizations": {
         "ar": {
@@ -100786,7 +102810,142 @@
         }
       }
     },
-    "Show": {},
+    "Show": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إظهار"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anzeigen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Afficher"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "दिखाएँ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tampilkan"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostra"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "表示"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "보기"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "കാണിക്കുക"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Toon"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pokaż"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mostrar"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показать"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Visa"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "காட்டு"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "แสดง"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Göster"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показати"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hiển thị"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "显示"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "顯示"
+          }
+        }
+      }
+    },
     "Show Folders": {
       "localizations": {
         "ar": {
@@ -102555,8 +104714,278 @@
         }
       }
     },
-    "Simulated devices whose iOS, watchOS, tvOS or visionOS version is no longer installed, so Xcode can't run them. The same as xcrun simctl delete unavailable.": {},
-    "Simulated iPhones, iPads, Watches, Apple TVs and Vision Pros with the apps and data on them. Xcode can create a device again, but its data is gone. Running simulators are left alone.": {},
+    "Simulated devices whose iOS, watchOS, tvOS or visionOS version is no longer installed, so Xcode can't run them. The same as xcrun simctl delete unavailable.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أجهزة محاكاة لم يعد إصدار iOS أو watchOS أو tvOS أو visionOS الخاص بها مثبّتًا، لذا لا يستطيع Xcode تشغيلها. يماثل xcrun simctl delete unavailable."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simulierte Geräte, deren iOS-, watchOS-, tvOS- oder visionOS-Version nicht mehr installiert ist, sodass Xcode sie nicht ausführen kann. Entspricht xcrun simctl delete unavailable."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dispositivos simulados cuya versión de iOS, watchOS, tvOS o visionOS ya no está instalada, por lo que Xcode no puede ejecutarlos. Equivale a xcrun simctl delete unavailable."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Appareils simulés dont la version d'iOS, watchOS, tvOS ou visionOS n'est plus installée, si bien qu'Xcode ne peut pas les exécuter. Équivaut à xcrun simctl delete unavailable."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ऐसे सिम्युलेटेड डिवाइस, जिनका iOS, watchOS, tvOS या visionOS संस्करण अब इंस्टॉल नहीं है, इसलिए Xcode उन्हें चला नहीं सकता। यह xcrun simctl delete unavailable के समान है।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perangkat simulasi yang versi iOS, watchOS, tvOS, atau visionOS-nya sudah tidak terinstal, sehingga Xcode tidak dapat menjalankannya. Sama dengan xcrun simctl delete unavailable."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dispositivi simulati la cui versione di iOS, watchOS, tvOS o visionOS non è più installata, quindi Xcode non può eseguirli. Equivale a xcrun simctl delete unavailable."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iOS、watchOS、tvOS、または visionOS のバージョンがもうインストールされていないため、Xcode で実行できないシミュレートされたデバイスです。xcrun simctl delete unavailable と同じです。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iOS, watchOS, tvOS 또는 visionOS 버전이 더 이상 설치되어 있지 않아 Xcode에서 실행할 수 없는 시뮬레이션된 기기입니다. xcrun simctl delete unavailable과 같습니다."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iOS, watchOS, tvOS അല്ലെങ്കിൽ visionOS പതിപ്പ് ഇനി ഇൻസ്റ്റാൾ ചെയ്തിട്ടില്ലാത്തതിനാൽ Xcode-ന് പ്രവർത്തിപ്പിക്കാനാകാത്ത സിമുലേറ്റഡ് ഉപകരണങ്ങൾ. xcrun simctl delete unavailable എന്നതിന് തുല്യം."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gesimuleerde apparaten waarvan de iOS-, watchOS-, tvOS- of visionOS-versie niet meer is geïnstalleerd, zodat Xcode ze niet kan uitvoeren. Hetzelfde als xcrun simctl delete unavailable."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Symulowane urządzenia, których wersja iOS, watchOS, tvOS lub visionOS nie jest już zainstalowana, więc Xcode nie może ich uruchomić. To samo co xcrun simctl delete unavailable."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dispositivos simulados cuja versão do iOS, watchOS, tvOS ou visionOS não está mais instalada, por isso o Xcode não consegue executá-los. O mesmo que xcrun simctl delete unavailable."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Симулируемые устройства, версия iOS, watchOS, tvOS или visionOS которых больше не установлена, поэтому Xcode не может их запустить. То же, что xcrun simctl delete unavailable."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simulerade enheter vars iOS-, watchOS-, tvOS- eller visionOS-version inte längre är installerad, så Xcode kan inte köra dem. Samma sak som xcrun simctl delete unavailable."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iOS, watchOS, tvOS அல்லது visionOS பதிப்பு இனி நிறுவப்படாததால் Xcode இயக்க முடியாத சிமுலேட்டட் சாதனங்கள். xcrun simctl delete unavailable கட்டளைக்குச் சமமானது."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "อุปกรณ์จำลองที่ไม่ได้ติดตั้ง iOS, watchOS, tvOS หรือ visionOS เวอร์ชันนั้นไว้แล้ว Xcode จึงเรียกใช้ไม่ได้ เหมือนกับ xcrun simctl delete unavailable"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iOS, watchOS, tvOS veya visionOS sürümü artık yüklü olmadığı için Xcode'un çalıştıramadığı simüle edilen aygıtlar. xcrun simctl delete unavailable ile aynıdır."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Симульовані пристрої, версію iOS, watchOS, tvOS або visionOS яких більше не встановлено, тож Xcode не може їх запустити. Те саме, що xcrun simctl delete unavailable."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thiết bị mô phỏng có phiên bản iOS, watchOS, tvOS hoặc visionOS không còn được cài đặt, nên Xcode không thể chạy chúng. Tương đương với xcrun simctl delete unavailable."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iOS、watchOS、tvOS 或 visionOS 版本已不再安装的模拟设备，Xcode 无法运行它们。等同于 xcrun simctl delete unavailable。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iOS、watchOS、tvOS 或 visionOS 版本已不再安裝的模擬裝置，Xcode 無法執行。等同於 xcrun simctl delete unavailable。"
+          }
+        }
+      }
+    },
+    "Simulated iPhones, iPads, Watches, Apple TVs and Vision Pros with the apps and data on them. Xcode can create a device again, but its data is gone. Running simulators are left alone.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أجهزة iPhone وiPad وApple Watch وApple TV وVision Pro المحاكاة مع التطبيقات والبيانات الموجودة عليها. يمكن لـ Xcode إنشاء الجهاز مجددًا، لكن بياناته تضيع. لا يتم المساس بأجهزة المحاكاة قيد التشغيل."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simulierte iPhones, iPads, Apple Watches, Apple TVs und Vision Pros mit den Apps und Daten darauf. Xcode kann ein Gerät neu erstellen, aber seine Daten sind weg. Laufende Simulatoren bleiben unberührt."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone, iPad, Apple Watch, Apple TV y Vision Pro simulados, con las apps y los datos que contienen. Xcode puede volver a crear un dispositivo, pero sus datos se pierden. Los simuladores en ejecución no se tocan."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone, iPad, Apple Watch, Apple TV et Vision Pro simulés, avec leurs apps et leurs données. Xcode peut recréer un appareil, mais ses données sont perdues. Les simulateurs en cours d'exécution ne sont pas touchés."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सिम्युलेटेड iPhone, iPad, Watch, Apple TV और Vision Pro, उन पर मौजूद ऐप्स और डेटा के साथ। Xcode डिवाइस फिर से बना सकता है, लेकिन उसका डेटा वापस नहीं आता। चल रहे सिम्युलेटर को छुआ नहीं जाता।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone, iPad, Apple Watch, Apple TV, dan Vision Pro simulasi beserta app dan data di dalamnya. Xcode dapat membuat perangkat lagi, tetapi datanya hilang. Simulator yang sedang berjalan tidak diubah."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone, iPad, Apple Watch, Apple TV e Vision Pro simulati, con le app e i dati che contengono. Xcode può creare di nuovo un dispositivo, ma i suoi dati vanno persi. I simulatori in esecuzione non vengono toccati."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "シミュレートされた iPhone、iPad、Apple Watch、Apple TV、Vision Pro と、そこにある App やデータです。Xcode でデバイスを再作成できますが、データは失われます。実行中のシミュレータはそのまま残されます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "시뮬레이션된 iPhone, iPad, Apple Watch, Apple TV 및 Vision Pro와 그 안의 앱 및 데이터입니다. Xcode에서 기기를 다시 만들 수 있지만 데이터는 사라집니다. 실행 중인 시뮬레이터는 건드리지 않습니다."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "സിമുലേറ്റഡ് iPhone, iPad, Watch, Apple TV, Vision Pro എന്നിവ, അവയിലെ ആപ്പുകളും ഡാറ്റയും സഹിതം. Xcode-ന് ഉപകരണം വീണ്ടും സൃഷ്ടിക്കാനാകും, പക്ഷേ അതിന്റെ ഡാറ്റ നഷ്ടമാകും. പ്രവർത്തിക്കുന്ന സിമുലേറ്ററുകളെ തൊടില്ല."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gesimuleerde iPhones, iPads, Apple Watches, Apple TV's en Vision Pro's met de apps en gegevens erop. Xcode kan een apparaat opnieuw aanmaken, maar de gegevens ervan zijn dan weg. Actieve simulators blijven ongemoeid."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Symulowane urządzenia iPhone, iPad, Apple Watch, Apple TV i Vision Pro wraz z aplikacjami i danymi. Xcode może ponownie utworzyć urządzenie, ale jego dane przepadną. Uruchomione symulatory pozostają nietknięte."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone, iPad, Apple Watch, Apple TV e Vision Pro simulados, com os apps e dados que eles contêm. O Xcode pode criar o dispositivo de novo, mas os dados dele se perdem. Simuladores em execução não são alterados."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Симулируемые iPhone, iPad, Apple Watch, Apple TV и Vision Pro с приложениями и данными на них. Xcode может создать устройство заново, но его данные будут потеряны. Запущенные симуляторы не затрагиваются."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simulerade iPhone, iPad, Apple Watch, Apple TV och Vision Pro med apparna och datan på dem. Xcode kan skapa en enhet igen, men dess data är borta. Simulatorer som körs lämnas orörda."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "சிமுலேட்டட் iPhone, iPad, Watch, Apple TV, Vision Pro சாதனங்கள், அவற்றிலுள்ள ஆப்ஸ் மற்றும் தரவுடன். Xcode சாதனத்தை மீண்டும் உருவாக்க முடியும், ஆனால் அதன் தரவு திரும்பக் கிடைக்காது. இயங்கும் சிமுலேட்டர்கள் தொடப்படாது."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone, iPad, Apple Watch, Apple TV และ Vision Pro จำลอง พร้อมแอปและข้อมูลในนั้น Xcode สร้างอุปกรณ์ขึ้นใหม่ได้ แต่ข้อมูลจะหายไป Simulator ที่กำลังทำงานอยู่จะไม่ถูกแตะต้อง"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Üzerlerindeki uygulamalar ve verilerle birlikte simüle edilen iPhone, iPad, Apple Watch, Apple TV ve Vision Pro aygıtları. Xcode bir aygıtı yeniden oluşturabilir ancak verileri geri gelmez. Çalışan simülatörlere dokunulmaz."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Симульовані iPhone, iPad, Apple Watch, Apple TV і Vision Pro з програмами й даними на них. Xcode може створити пристрій знову, але його дані буде втрачено. Запущені симулятори не зачіпаються."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "iPhone, iPad, Apple Watch, Apple TV và Vision Pro mô phỏng cùng ứng dụng và dữ liệu trên đó. Xcode có thể tạo lại thiết bị, nhưng dữ liệu của nó sẽ mất. Trình mô phỏng đang chạy không bị động đến."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "模拟的 iPhone、iPad、Apple Watch、Apple TV 和 Vision Pro，以及其上的应用和数据。Xcode 可以重新创建设备，但其数据将无法恢复。正在运行的模拟器不会受影响。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "模擬的 iPhone、iPad、Apple Watch、Apple TV 和 Vision Pro，以及其中的 App 和資料。Xcode 可以重新建立裝置，但資料會遺失。執行中的模擬器不會受影響。"
+          }
+        }
+      }
+    },
     "Simulator caches": {
       "localizations": {
         "ar": {
@@ -102693,7 +105122,142 @@
         }
       }
     },
-    "Simulator devices": {},
+    "Simulator devices": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أجهزة المحاكاة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simulatorgeräte"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dispositivos de simulador"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Appareils simulés"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सिम्युलेटर डिवाइस"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perangkat simulator"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dispositivi del simulatore"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "シミュレータデバイス"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "시뮬레이터 기기"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "സിമുലേറ്റർ ഉപകരണങ്ങൾ"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simulatorapparaten"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Urządzenia symulatora"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dispositivos de simulador"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Устройства симулятора"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simulatorenheter"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "சிமுலேட்டர் சாதனங்கள்"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "อุปกรณ์ Simulator"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simülatör aygıtları"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пристрої симулятора"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thiết bị trình mô phỏng"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "模拟器设备"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "模擬器裝置"
+          }
+        }
+      }
+    },
     "Size": {
       "localizations": {
         "ar": {
@@ -106917,7 +109481,142 @@
         }
       }
     },
-    "Support files from apps you already removed": {},
+    "Support files from apps you already removed": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ملفات دعم من تطبيقات أزلتها بالفعل"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Support-Dateien von bereits entfernten Apps"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Archivos de soporte de apps que ya has eliminado"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fichiers associés d'apps que vous avez déjà supprimées"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपके द्वारा पहले ही हटाए जा चुके ऐप्स की सहायता फ़ाइलें"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "File pendukung dari app yang sudah Anda hapus"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "File di supporto di app che hai già rimosso"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "すでに削除した App のサポートファイル"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "이미 제거한 앱의 지원 파일"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "നിങ്ങൾ ഇതിനകം നീക്കം ചെയ്ത ആപ്പുകളുടെ സപ്പോർട്ട് ഫയലുകൾ"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ondersteuningsbestanden van apps die je al hebt verwijderd"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pliki pomocnicze już usuniętych aplikacji"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Arquivos de suporte de apps que você já removeu"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вспомогательные файлы уже удаленных приложений"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Supportfiler från appar som du redan har tagit bort"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "நீங்கள் ஏற்கனவே அகற்றிய ஆப்ஸின் ஆதரவுக் கோப்புகள்"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไฟล์สนับสนุนจากแอปที่คุณเอาออกแล้ว"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Daha önce kaldırdığınız uygulamalardan kalan destek dosyaları"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Допоміжні файли вже видалених програм"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tệp hỗ trợ từ các ứng dụng bạn đã gỡ bỏ"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "你已移除的应用的支持文件"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已移除的 App 的支援檔案"
+          }
+        }
+      }
+    },
     "Support files left behind by apps you already removed": {
       "localizations": {
         "ar": {
@@ -110863,7 +113562,142 @@
         }
       }
     },
-    "The Android OS images emulators are created from, often several gigabytes each. Android Studio downloads one again when you create an emulator that needs it.": {},
+    "The Android OS images emulators are created from, often several gigabytes each. Android Studio downloads one again when you create an emulator that needs it.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "صور نظام تشغيل Android التي تُنشأ منها المحاكيات، وغالبًا ما يبلغ حجم كل منها عدة غيغابايت. يعيد Android Studio تنزيل الصورة عند إنشاء محاكٍ يحتاج إليها."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die Android-Betriebssystem-Images, aus denen Emulatoren erstellt werden, oft jeweils mehrere Gigabyte groß. Android Studio lädt ein Image erneut, wenn du einen Emulator erstellst, der es benötigt."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Las imágenes del sistema operativo Android a partir de las que se crean los emuladores, a menudo de varios gigabytes cada una. Android Studio vuelve a descargarla cuando creas un emulador que la necesita."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Les images de l'OS Android à partir desquelles les émulateurs sont créés, souvent de plusieurs gigaoctets chacune. Android Studio en retélécharge une lorsque vous créez un émulateur qui en a besoin."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "वे Android OS इमेज, जिनसे एम्युलेटर बनाए जाते हैं, अक्सर हर एक कई गीगाबाइट की। जब आप ऐसा एम्युलेटर बनाते हैं जिसे इसकी ज़रूरत हो, तो Android Studio इसे फिर से डाउनलोड कर लेता है।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Image OS Android yang menjadi dasar pembuatan emulator, sering kali masing-masing beberapa gigabyte. Android Studio mengunduhnya lagi saat Anda membuat emulator yang memerlukannya."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le immagini del sistema operativo Android da cui vengono creati gli emulatori, spesso da diversi gigabyte ciascuna. Android Studio ne scarica di nuovo una quando crei un emulatore che la richiede."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "エミュレータの作成元となる Android OS イメージで、1 つで数 GB になることもよくあります。そのイメージを必要とするエミュレータを作成すると、Android Studio が再度ダウンロードします。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "에뮬레이터를 만드는 데 사용되는 Android OS 이미지로, 각각 수 GB인 경우가 많습니다. 이미지가 필요한 에뮬레이터를 만들면 Android Studio가 다시 다운로드합니다."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "എമുലേറ്ററുകൾ സൃഷ്ടിക്കാൻ ഉപയോഗിക്കുന്ന Android OS ഇമേജുകൾ, പലപ്പോഴും ഓരോന്നും നിരവധി ജിഗാബൈറ്റുകൾ. അത് ആവശ്യമുള്ള ഒരു എമുലേറ്റർ സൃഷ്ടിക്കുമ്പോൾ Android Studio അത് വീണ്ടും ഡൗൺലോഡ് ചെയ്യും."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De Android-besturingssysteemimages waaruit emulators worden aangemaakt, vaak elk meerdere gigabytes. Android Studio downloadt er opnieuw een wanneer je een emulator aanmaakt die hem nodig heeft."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Obrazy systemu Android, z których tworzone są emulatory, często po kilka gigabajtów każdy. Android Studio pobierze obraz ponownie, gdy utworzysz emulator, który go potrzebuje."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "As imagens do sistema Android a partir das quais os emuladores são criados, muitas vezes com vários gigabytes cada. O Android Studio baixa uma de novo quando você cria um emulador que precisa dela."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Образы ОС Android, из которых создаются эмуляторы, часто по несколько гигабайт каждый. Android Studio загрузит образ снова, когда Вы создадите эмулятор, которому он нужен."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avbilderna av Android-operativsystemet som emulatorer skapas från, ofta flera gigabyte var. Android Studio hämtar en igen när du skapar en emulator som behöver den."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "எமுலேட்டர்கள் உருவாக்கப்படும் Android OS படிமங்கள், பெரும்பாலும் ஒவ்வொன்றும் பல ஜிகாபைட்கள். அது தேவைப்படும் எமுலேட்டரை நீங்கள் உருவாக்கும்போது Android Studio அதை மீண்டும் பதிவிறக்கும்."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "อิมเมจระบบปฏิบัติการ Android ที่ใช้สร้างโปรแกรมจำลอง ซึ่งมักมีขนาดหลายกิกะไบต์ต่อรายการ Android Studio จะดาวน์โหลดใหม่เมื่อคุณสร้างโปรแกรมจำลองที่ต้องใช้"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Emülatörlerin oluşturulduğu Android işletim sistemi görüntüleri; her biri genellikle birkaç gigabayttır. Android Studio, bunlardan birine ihtiyaç duyan bir emülatör oluşturduğunuzda onu yeniden indirir."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Образи ОС Android, з яких створюються емулятори, часто по кілька гігабайтів кожен. Android Studio викачає образ знову, коли ви створите емулятор, якому він потрібен."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ảnh đĩa hệ điều hành Android dùng để tạo trình giả lập, mỗi ảnh thường nặng vài gigabyte. Android Studio sẽ tải lại khi bạn tạo một trình giả lập cần đến nó."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "用于创建模拟器的 Android 操作系统映像，每个通常有好几 GB。当你创建需要它的模拟器时，Android Studio 会重新下载。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "用來建立模擬器的 Android 作業系統映像檔，每個通常有好幾 GB。當您建立需要它的模擬器時，Android Studio 會重新下載。"
+          }
+        }
+      }
+    },
     "The Linux VM Claude uses to run code for you. It downloads again (several GB) when a feature needs it.": {
       "localizations": {
         "ar": {
@@ -111000,7 +113834,142 @@
         }
       }
     },
-    "The app": {},
+    "The app": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "التطبيق نفسه"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die App"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La app"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'app"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ऐप"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'app"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App 本体"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "앱 자체"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ആപ്പ്"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De app"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aplikacja"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O app"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Приложение"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Appen"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ஆப்"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ตัวแอป"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uygulama"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Програма"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ứng dụng"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "应用本身"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App 本身"
+          }
+        }
+      }
+    },
     "The assistant isn't available": {
       "localizations": {
         "ar": {
@@ -114673,7 +117642,142 @@
         }
       }
     },
-    "Unavailable simulators": {},
+    "Unavailable simulators": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أجهزة المحاكاة غير المتاحة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht verfügbare Simulatoren"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simuladores no disponibles"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simulateurs non disponibles"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अनुपलब्ध सिम्युलेटर"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simulator tidak tersedia"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simulatori non disponibili"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "使用できないシミュレータ"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "사용할 수 없는 시뮬레이터"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ലഭ്യമല്ലാത്ത സിമുലേറ്ററുകൾ"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niet-beschikbare simulators"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niedostępne symulatory"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simuladores indisponíveis"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Недоступные симуляторы"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otillgängliga simulatorer"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "கிடைக்காத சிமுலேட்டர்கள்"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simulator ที่ใช้งานไม่ได้"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kullanılamayan simülatörler"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Недоступні симулятори"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trình mô phỏng không khả dụng"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "不可用的模拟器"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "無法使用的模擬器"
+          }
+        }
+      }
+    },
     "Undo": {
       "localizations": {
         "ar": {
@@ -115083,7 +118187,142 @@
         }
       }
     },
-    "Uninstall an App": {},
+    "Uninstall an App": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إلغاء تثبيت تطبيق"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App deinstallieren"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desinstalar una app"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Désinstaller une app"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कोई ऐप अनइंस्टॉल करें"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Copot App"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Disinstalla un'app"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App をアンインストール"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "앱 제거"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ഒരു ആപ്പ് അൺഇൻസ്റ്റാൾ ചെയ്യുക"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verwijder een app"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Odinstaluj aplikację"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Desinstalar um App"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удаление приложения"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Avinstallera en app"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ஓர் ஆப்பை நிறுவல்நீக்கு"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ถอนการติดตั้งแอป"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bir Uygulamayı Kaldır"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Видалення програми"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Gỡ cài đặt ứng dụng"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "卸载应用"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "解除安裝 App"
+          }
+        }
+      }
+    },
     "Unknown": {
       "localizations": {
         "ar": {
@@ -115492,7 +118731,142 @@
         }
       }
     },
-    "Unsigned, altered or orphaned": {},
+    "Unsigned, altered or orphaned": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "غير موقَّعة أو معدَّلة أو يتيمة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nicht signiert, verändert oder verwaist"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sin firmar, modificados o huérfanos"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non signés, modifiés ou orphelins"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "हस्ताक्षर रहित, बदले गए या अनाथ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak ditandatangani, diubah, atau terlantar"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Non firmati, alterati o orfani"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未署名、改変、または孤立"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "서명되지 않음, 변경됨 또는 고립됨"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "സൈൻ ചെയ്യാത്തവ, മാറ്റം വരുത്തിയവ അല്ലെങ്കിൽ അനാഥമായവ"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niet ondertekend, gewijzigd of verweesd"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niepodpisane, zmienione lub osierocone"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sem assinatura, alterados ou órfãos"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Без подписи, измененные или бесхозные"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Osignerade, ändrade eller föräldralösa"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "கையொப்பமிடப்படாதவை, மாற்றப்பட்டவை அல்லது அனாதையானவை"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่ได้ลงชื่อ ถูกแก้ไข หรือไม่มีเจ้าของ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İmzasız, değiştirilmiş veya sahipsiz"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Без підпису, змінені або осиротілі"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Chưa ký, bị sửa đổi hoặc mồ côi"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未签名、已更改或孤立"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未簽署、遭更改或孤立"
+          }
+        }
+      }
+    },
     "Untouched 3+ months": {
       "localizations": {
         "ar": {
@@ -116033,6 +119407,142 @@
           "stringUnit": {
             "state": "translated",
             "value": "版本"
+          }
+        }
+      }
+    },
+    "Version %@": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الإصدار %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versión %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version %@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "संस्करण %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versi %@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versione %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "バージョン %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "버전 %@"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "പതിപ്പ് %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versie %@"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wersja %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versão %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Версия %@"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version %@"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "பதிப்பு %@"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เวอร์ชัน %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sürüm %@"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Версія %@"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Phiên bản %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "版本 %@"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "版本 %@"
           }
         }
       }
@@ -116724,8 +120234,278 @@
         }
       }
     },
-    "Virtual machines": {},
-    "Virtual machines from Parallels, VMware Fusion, VirtualBox, UTM, Tart and Lima — often tens of gigabytes each. Removing one deletes that machine and everything inside it.": {},
+    "Virtual machines": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الآلات الافتراضية"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Virtuelle Maschinen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Máquinas virtuales"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Machines virtuelles"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "वर्चुअल मशीनें"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mesin virtual"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Macchine virtuali"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "仮想マシン"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "가상 머신"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "വെർച്വൽ മെഷീനുകൾ"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Virtuele machines"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maszyny wirtualne"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Máquinas virtuais"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Виртуальные машины"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Virtuella maskiner"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "மெய்நிகர் இயந்திரங்கள்"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เครื่องเสมือน"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sanal makineler"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Віртуальні машини"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Máy ảo"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "虚拟机"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "虛擬機器"
+          }
+        }
+      }
+    },
+    "Virtual machines from Parallels, VMware Fusion, VirtualBox, UTM, Tart and Lima — often tens of gigabytes each. Removing one deletes that machine and everything inside it.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "آلات افتراضية من Parallels وVMware Fusion وVirtualBox وUTM وTart وLima — غالبًا ما يبلغ حجم كل منها عشرات الغيغابايت. تؤدي إزالة إحداها إلى حذف تلك الآلة وكل ما بداخلها."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Virtuelle Maschinen von Parallels, VMware Fusion, VirtualBox, UTM, Tart und Lima – oft jeweils Dutzende Gigabyte groß. Das Entfernen löscht die jeweilige Maschine und alles darin."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Máquinas virtuales de Parallels, VMware Fusion, VirtualBox, UTM, Tart y Lima, a menudo de decenas de gigabytes cada una. Al eliminar una se borra esa máquina y todo lo que contiene."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Machines virtuelles de Parallels, VMware Fusion, VirtualBox, UTM, Tart et Lima, souvent de plusieurs dizaines de gigaoctets chacune. En supprimer une efface cette machine et tout son contenu."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Parallels, VMware Fusion, VirtualBox, UTM, Tart और Lima की वर्चुअल मशीनें — अक्सर हर एक दसियों गीगाबाइट की। किसी एक को हटाने से वह मशीन और उसके अंदर की हर चीज़ डिलीट हो जाती है।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mesin virtual dari Parallels, VMware Fusion, VirtualBox, UTM, Tart, dan Lima — sering kali masing-masing puluhan gigabyte. Menghapusnya akan menghapus mesin tersebut beserta semua isinya."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Macchine virtuali di Parallels, VMware Fusion, VirtualBox, UTM, Tart e Lima, spesso da decine di gigabyte ciascuna. Rimuoverne una elimina la macchina e tutto ciò che contiene."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Parallels、VMware Fusion、VirtualBox、UTM、Tart、Lima の仮想マシンで、1 つで数十 GB になることもよくあります。削除するとそのマシンと中身がすべて削除されます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Parallels, VMware Fusion, VirtualBox, UTM, Tart 및 Lima의 가상 머신으로, 각각 수십 GB인 경우가 많습니다. 제거하면 해당 머신과 그 안의 모든 항목이 삭제됩니다."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Parallels, VMware Fusion, VirtualBox, UTM, Tart, Lima എന്നിവയിൽ നിന്നുള്ള വെർച്വൽ മെഷീനുകൾ — പലപ്പോഴും ഓരോന്നും പത്തുകണക്കിന് ജിഗാബൈറ്റുകൾ. ഒന്ന് നീക്കം ചെയ്താൽ ആ മെഷീനും അതിനുള്ളിലെ എല്ലാം ഇല്ലാതാകും."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Virtuele machines van Parallels, VMware Fusion, VirtualBox, UTM, Tart en Lima — vaak elk tientallen gigabytes. Als je er een verwijdert, worden die machine en alles erin verwijderd."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Maszyny wirtualne z Parallels, VMware Fusion, VirtualBox, UTM, Tart i Lima — często po kilkadziesiąt gigabajtów każda. Usunięcie maszyny usuwa ją wraz z całą zawartością."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Máquinas virtuais do Parallels, VMware Fusion, VirtualBox, UTM, Tart e Lima — muitas vezes com dezenas de gigabytes cada. Remover uma apaga essa máquina e tudo o que há nela."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Виртуальные машины Parallels, VMware Fusion, VirtualBox, UTM, Tart и Lima — часто по нескольку десятков гигабайт каждая. Удаление машины удаляет ее вместе со всем содержимым."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Virtuella maskiner från Parallels, VMware Fusion, VirtualBox, UTM, Tart och Lima – ofta tiotals gigabyte var. Om du tar bort en raderas maskinen och allt som finns i den."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Parallels, VMware Fusion, VirtualBox, UTM, Tart, Lima ஆகியவற்றின் மெய்நிகர் இயந்திரங்கள் — பெரும்பாலும் ஒவ்வொன்றும் பல பத்து ஜிகாபைட்கள். ஒன்றை அகற்றினால் அந்த இயந்திரமும் அதனுள் உள்ள அனைத்தும் நீக்கப்படும்."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เครื่องเสมือนจาก Parallels, VMware Fusion, VirtualBox, UTM, Tart และ Lima — ซึ่งมักมีขนาดหลายสิบกิกะไบต์ต่อเครื่อง การเอาออกจะลบเครื่องนั้นพร้อมทุกอย่างที่อยู่ข้างใน"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Parallels, VMware Fusion, VirtualBox, UTM, Tart ve Lima sanal makineleri — her biri genellikle onlarca gigabayttır. Birini kaldırmak o makineyi ve içindeki her şeyi siler."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Віртуальні машини Parallels, VMware Fusion, VirtualBox, UTM, Tart і Lima — часто по кілька десятків гігабайтів кожна. Видалення машини видаляє її разом з усім вмістом."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Máy ảo từ Parallels, VMware Fusion, VirtualBox, UTM, Tart và Lima — mỗi máy thường nặng hàng chục gigabyte. Gỡ bỏ một máy sẽ xóa máy đó cùng mọi thứ bên trong."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "来自 Parallels、VMware Fusion、VirtualBox、UTM、Tart 和 Lima 的虚拟机——每个通常有几十 GB。移除后会删除该虚拟机及其中的所有内容。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "來自 Parallels、VMware Fusion、VirtualBox、UTM、Tart 和 Lima 的虛擬機器，每個通常有數十 GB。移除後會刪除該機器及其中的所有內容。"
+          }
+        }
+      }
+    },
     "Visualise a folder": {
       "localizations": {
         "ar": {
@@ -123133,7 +126913,142 @@
         }
       }
     },
-    "last used %@": {},
+    "last used %@": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "آخر استخدام %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "zuletzt verwendet %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "último uso %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dernière utilisation %@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अंतिम उपयोग %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "terakhir digunakan %@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ultimo utilizzo %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最終使用: %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "마지막 사용: %@"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "അവസാനം ഉപയോഗിച്ചത് %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "laatst gebruikt %@"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ostatnio używane %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "último uso %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "последний запуск %@"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "senast använd %@"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "கடைசியாகப் பயன்படுத்தியது %@"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ใช้ล่าสุด %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "son kullanım %@"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "останній запуск %@"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "dùng lần cuối %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "上次使用：%@"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "上次使用：%@"
+          }
+        }
+      }
+    },
     "layer": {
       "extractionState": "manual",
       "localizations": {
@@ -123546,10 +127461,278 @@
       }
     },
     "login item": {
-      "extractionState": "manual"
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عنصر تسجيل دخول"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anmeldeobjekt"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ítem de inicio"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "élément d'ouverture"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "लॉगिन आइटम"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "item login"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "elemento login"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "件のログイン項目"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "개 로그인 항목"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ലോഗിൻ ഇനം"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "inlogonderdeel"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "rzecz otwierana podczas logowania"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "item de início"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "объект входа"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "inloggningsobjekt"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "உள்நுழைவு உருப்படி"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "รายการเข้าสู่ระบบ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "giriş öğesi"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "елемент автозапуску"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mục đăng nhập"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "个登录项"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "個登入項目"
+          }
+        }
+      }
     },
     "login items": {
-      "extractionState": "manual"
+      "extractionState": "manual",
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "عناصر تسجيل دخول"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Anmeldeobjekte"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ítems de inicio"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "éléments d'ouverture"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "लॉगिन आइटम"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "item login"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "elementi login"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "件のログイン項目"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "개 로그인 항목"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ലോഗിൻ ഇനങ്ങൾ"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "inlogonderdelen"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "rzeczy otwieranych podczas logowania"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "itens de início"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "объектов входа"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "inloggningsobjekt"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "உள்நுழைவு உருப்படிகள்"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "รายการเข้าสู่ระบบ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "giriş öğesi"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "елементів автозапуску"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mục đăng nhập"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "个登录项"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "個登入項目"
+          }
+        }
+      }
     },
     "macOS": {
       "localizations": {
@@ -124369,7 +128552,142 @@
         }
       }
     },
-    "never booted": {},
+    "never booted": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لم يُشغَّل قط"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "nie gestartet"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "nunca iniciado"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "jamais démarré"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "कभी बूट नहीं हुआ"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "belum pernah dijalankan"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "mai avviato"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "未起動"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "부팅한 적 없음"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ഒരിക്കലും ബൂട്ട് ചെയ്തിട്ടില്ല"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "nooit opgestart"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "nigdy nie uruchomione"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "nunca iniciado"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ни разу не запускалось"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "aldrig startad"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ஒருபோதும் பூட் செய்யப்படவில்லை"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ยังไม่เคยบูต"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "hiç başlatılmadı"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "жодного разу не запускався"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "chưa từng khởi động"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "从未启动"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "從未啟動"
+          }
+        }
+      }
+    },
     "npm cache": {
       "localizations": {
         "ar": {

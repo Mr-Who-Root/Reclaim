@@ -41,8 +41,8 @@ struct AppsView: View {
     private var subtitle: String {
         switch model.mode {
         case .uninstall:
-            return model.apps.isEmpty ? "Remove an app together with the files it leaves in your Library"
-                : "\(Fmt.count(model.apps.count, "app")) installed · remove one with its support files"
+            return model.apps.isEmpty ? String(localized: "Remove an app together with the files it leaves in your Library")
+                : String(localized: "\(Fmt.count(model.apps.count, "app")) installed · remove one with its support files")
         case .leftovers:
             if model.phase.isDone, !model.leftovers.isEmpty {
                 return String(localized: "\(Fmt.count(model.leftovers.count, "potential leftover")) · \(Fmt.bytes(model.reclaimableBytes))")
@@ -190,7 +190,7 @@ private struct AppsListRow: View {
                             .help("Running")
                     }
                 }
-                Text(app.version.map { "Version \($0)" } ?? (app.bundleID ?? ""))
+                Text(app.version.map { String(localized: "Version \($0)") } ?? (app.bundleID ?? ""))
                     .font(.caption).foregroundStyle(.secondary).lineLimit(1)
             }
             Spacer(minLength: 4)
@@ -222,7 +222,7 @@ private struct AppsDetailHeader: View {
                         Text(app.name).font(.title3.weight(.semibold))
                         if running { Badge(text: "Running", color: .green) }
                     }
-                    Text([app.version.map { "Version \($0)" }, app.bundleID].compactMap { $0 }.joined(separator: " · "))
+                    Text([app.version.map { String(localized: "Version \($0)") }, app.bundleID].compactMap { $0 }.joined(separator: " · "))
                         .font(.caption).foregroundStyle(.secondary).textSelection(.enabled)
                     Text(FS.abbreviate(app.url.path)).font(.caption).foregroundStyle(.tertiary)
                 }
