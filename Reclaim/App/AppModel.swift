@@ -188,7 +188,28 @@ final class AppModel {
     func handle(url: URL) {
         guard url.scheme == "reclaim" else { return }
         let target = (url.host ?? url.path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))).lowercased()
-        if target == "settings" {
+        #if DEBUG
+        if target == "debug-menubar" {
+            // Renders the menu bar panel to an image (development only).
+            let renderer = ImageRenderer(content: MenuBarView().themedRoot().frame(width: 300).padding(1))
+            renderer.scale = 2
+            if let image = renderer.nsImage, let tiff = image.tiffRepresentation,
+               let png = NSBitmapImageRep(data: tiff)?.representation(using: .png, properties: [:]) {
+                try? png.write(to: FileManager.default.temporaryDirectory.appendingPathComponent("reclaim-menubar.png"))
+            }
+            return
+        }
+        #endif
+        if target == "update" {
+            // reclaim://update checks; reclaim://update/install installs a release that's already been found.
+            settingsSection = .about
+            route = .settings
+            let install = url.pathComponents.dropFirst().first == "install"
+            Task {
+                if Updater.shared.availableRelease == nil { await Updater.shared.check(userInitiated: true) }
+                if install { await Updater.shared.install() }
+            }
+        } else if target == "settings" {
             let sub = url.pathComponents.dropFirst().first ?? ""
             settingsSection = SettingsSection(rawValue: sub) ?? settingsSection
             route = .settings

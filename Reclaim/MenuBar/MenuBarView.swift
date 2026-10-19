@@ -6,7 +6,9 @@ struct MenuBarView: View {
     @Environment(\.openSettings) private var openSettings
     @State private var sampler = SystemStatsSampler()
     @State private var cpu: Double?
-    @State private var memory: (used: UInt64, total: UInt64)?
+    // Start with a reading so the panel is filled the moment it opens.
+    @State private var memory: (used: UInt64, total: UInt64)? = SystemStatsSampler().memory()
+    @State private var cpuTemp: TemperatureSensor.Reading? = TemperatureSensor.shared.read()
 
     private var app: AppModel { AppModel.shared }
 
@@ -29,6 +31,12 @@ struct MenuBarView: View {
                       caption: "of \(Fmt.bytes(Int64(memory.total)))")
             }
             meter(title: "CPU", value: cpu.map(Fmt.percent) ?? "—", fraction: cpu ?? 0, caption: nil)
+            if let cpuTemp {
+                meter(title: "CPU temperature", value: TemperatureSensor.format(cpuTemp.average),
+                      fraction: cpuTemp.average / 105,
+                      caption: String(localized: "Hottest core \(TemperatureSensor.format(cpuTemp.hottest))"),
+                      tint: cpuTemp.average > 95 ? .red : (cpuTemp.average > 80 ? .orange : nil))
+            }
 
             Divider()
 
@@ -96,6 +104,7 @@ struct MenuBarView: View {
             while !Task.isCancelled {
                 memory = sampler.memory()
                 cpu = sampler.cpuUsage() ?? cpu
+                cpuTemp = TemperatureSensor.shared.read()
                 try? await Task.sleep(for: .seconds(2))
             }
         }
@@ -113,14 +122,14 @@ struct MenuBarView: View {
         return nil
     }
 
-    private func meter(title: String, value: String, fraction: Double, caption: String?) -> some View {
+    private func meter(title: LocalizedStringKey, value: String, fraction: Double, caption: String?, tint: Color? = nil) -> some View {
         VStack(alignment: .leading, spacing: 4) {
             HStack {
                 Text(title).font(.caption.weight(.semibold))
                 Spacer()
                 Text(value).font(.caption).monospacedDigit()
             }
-            UsageBar(fraction: fraction, tint: meterTint(fraction), height: 6)
+            UsageBar(fraction: fraction, tint: tint ?? meterTint(fraction), height: 6)
             if let caption { Text(caption).font(.caption2).foregroundStyle(.secondary) }
         }
     }

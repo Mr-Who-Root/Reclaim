@@ -42,6 +42,13 @@ struct ReclaimApp: App {
 
 struct ReclaimCommands: Commands {
     var body: some Commands {
+        CommandGroup(after: .appInfo) {
+            Button("Check for Updates…") {
+                AppModel.shared.settingsSection = .about
+                AppModel.shared.route = .settings
+                Task { await Updater.shared.check(userInitiated: true) }
+            }
+        }
         CommandGroup(after: .newItem) {
             Button("Smart Scan") { AppModel.shared.startSmartScan() }
                 .keyboardShortcut("r", modifiers: [.command])
@@ -75,6 +82,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCent
             IconRenderer.applyDockIcon(tinted: defaults.bool(forKey: PrefKey.dockTint), accent: .current)
             SpotlightIndex.indexTools()
             AppModel.shared.startScheduler()
+            Updater.shared.startAutomaticChecks()
             AppModel.shared.writeSnapshot()
         }
     }

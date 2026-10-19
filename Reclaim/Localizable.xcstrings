@@ -21690,6 +21690,278 @@
         }
       }
     },
+    "CPU": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "المعالج"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Processeur"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ЦП"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ЦП"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU"
+          }
+        }
+      }
+    },
+    "CPU temperature": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "حرارة المعالج"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU-Temperatur"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temperatura de la CPU"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Température du processeur"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU तापमान"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suhu CPU"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temperatura CPU"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU温度"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU 온도"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU താപനില"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU-temperatuur"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temperatura CPU"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Temperatura da CPU"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Температура ЦП"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU-temperatur"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU வெப்பநிலை"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "อุณหภูมิ CPU"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU sıcaklığı"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Температура ЦП"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nhiệt độ CPU"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU 温度"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "CPU 溫度"
+          }
+        }
+      }
+    },
     "Cache of the browser Antigravity's agent drives. It rebuilds as the agent browses.": {
       "localizations": {
         "ar": {
@@ -24274,6 +24546,550 @@
         }
       }
     },
+    "Check for Updates": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "التحقق من وجود تحديثات"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nach Updates suchen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar actualizaciones"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rechercher les mises à jour"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपडेट के लिए जाँचें"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Periksa Pembaruan"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verifica aggiornamenti"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アップデートを確認"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "업데이트 확인"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "അപ്‌ഡേറ്റുകൾ പരിശോധിക്കുക"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoek naar updates"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sprawdź uaktualnienia"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar Atualizações"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Проверить обновления"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sök efter uppdateringar"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "புதுப்பிப்புகளைச் சரிபார்"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ตรวจหาการอัปเดต"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Güncellemeleri Denetle"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Перевірити наявність уточнень"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kiểm tra bản cập nhật"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "检查更新"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "檢查更新項目"
+          }
+        }
+      }
+    },
+    "Check for Updates…": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "التحقق من وجود تحديثات…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nach Updates suchen …"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar actualizaciones…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rechercher les mises à jour…"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपडेट के लिए जाँचें…"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Periksa Pembaruan…"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verifica aggiornamenti…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アップデートを確認…"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "업데이트 확인…"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "അപ്‌ഡേറ്റുകൾ പരിശോധിക്കുക…"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoek naar updates…"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sprawdź uaktualnienia…"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar Atualizações…"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Проверить обновления…"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sök efter uppdateringar…"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "புதுப்பிப்புகளைச் சரிபார்…"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ตรวจหาการอัปเดต…"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Güncellemeleri Denetle…"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Перевірити наявність уточнень…"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kiểm tra bản cập nhật…"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "检查更新…"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "檢查更新項目…"
+          }
+        }
+      }
+    },
+    "Check for updates automatically": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "التحقق من وجود تحديثات تلقائيًا"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automatisch nach Updates suchen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar actualizaciones automáticamente"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rechercher automatiquement les mises à jour"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपडेट के लिए स्वचालित रूप से जाँचें"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Periksa pembaruan secara otomatis"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verifica automaticamente gli aggiornamenti"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アップデートを自動的に確認"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "자동으로 업데이트 확인"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "അപ്‌ഡേറ്റുകൾ സ്വയമേവ പരിശോധിക്കുക"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoek automatisch naar updates"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Automatycznie sprawdzaj uaktualnienia"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscar atualizações automaticamente"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Проверять обновления автоматически"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sök efter uppdateringar automatiskt"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "புதுப்பிப்புகளைத் தானாகச் சரிபார்"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ตรวจหาการอัปเดตโดยอัตโนมัติ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Güncellemeleri otomatik olarak denetle"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Автоматично перевіряти наявність уточнень"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tự động kiểm tra bản cập nhật"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自动检查更新"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "自動檢查更新項目"
+          }
+        }
+      }
+    },
+    "Checking and installing… Reclaim will reopen.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جارٍ التحقق والتثبيت… سيُعاد فتح Reclaim."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wird geprüft und installiert … Reclaim wird neu geöffnet."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Comprobando e instalando… Reclaim se volverá a abrir."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vérification et installation… Reclaim va se rouvrir."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "जाँच और इंस्टॉल किया जा रहा है… Reclaim फिर से खुलेगा।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memeriksa dan menginstal… Reclaim akan dibuka ulang."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verifica e installazione… Reclaim si riaprirà."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "確認してインストール中… Reclaim が開き直します。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "확인 및 설치 중… Reclaim이 다시 열립니다."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "പരിശോധിച്ച് ഇൻസ്റ്റാൾ ചെയ്യുന്നു… Reclaim വീണ്ടും തുറക്കും."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Controleren en installeren… Reclaim wordt opnieuw geopend."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sprawdzanie i instalowanie… Reclaim otworzy się ponownie."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Verificando e instalando… O Reclaim será reaberto."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Проверка и установка… Reclaim перезапустится."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kontrollerar och installerar… Reclaim öppnas igen."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "சரிபார்த்து நிறுவுகிறது… Reclaim மீண்டும் திறக்கும்."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กำลังตรวจสอบและติดตั้ง… Reclaim จะเปิดใหม่"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Denetleniyor ve yükleniyor… Reclaim yeniden açılacak."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Перевірка та встановлення… Reclaim перезапуститься."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đang kiểm tra và cài đặt… Reclaim sẽ mở lại."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在验证并安装… Reclaim 将重新打开。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在驗證並安裝… Reclaim 將重新打開。"
+          }
+        }
+      }
+    },
     "Checking each app's contents against its signature. This is slower, and nothing is being changed.": {
       "localizations": {
         "ar": {
@@ -24406,6 +25222,142 @@
           "stringUnit": {
             "state": "translated",
             "value": "正在根據簽署檢查每個 App 的內容。這會比較慢，且不會更改任何內容。"
+          }
+        }
+      }
+    },
+    "Checking for updates…": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جارٍ التحقق من وجود تحديثات…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Suche nach Updates …"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscando actualizaciones…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recherche de mises à jour…"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपडेट के लिए जाँच की जा रही है…"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memeriksa pembaruan…"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ricerca aggiornamenti…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アップデートを確認中…"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "업데이트 확인 중…"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "അപ്‌ഡേറ്റുകൾക്കായി പരിശോധിക്കുന്നു…"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zoeken naar updates…"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sprawdzanie uaktualnień…"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buscando atualizações…"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Проверка обновлений…"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Söker efter uppdateringar…"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "புதுப்பிப்புகளைச் சரிபார்க்கிறது…"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กำลังตรวจหาการอัปเดต…"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Güncellemeler denetleniyor…"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Перевірка наявності уточнень…"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đang kiểm tra bản cập nhật…"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在检查更新…"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在檢查更新項目…"
           }
         }
       }
@@ -32305,6 +33257,142 @@
         }
       }
     },
+    "Couldn't reach GitHub. Check your internet connection.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تعذّر الوصول إلى GitHub. تحقق من اتصالك بالإنترنت."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub ist nicht erreichbar. Prüfe deine Internetverbindung."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No se pudo conectar con GitHub. Comprueba tu conexión a internet."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossible de joindre GitHub. Vérifiez votre connexion Internet."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub तक नहीं पहुँच सके। अपना इंटरनेट कनेक्शन जाँचें।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak dapat menjangkau GitHub. Periksa koneksi internet Anda."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Impossibile raggiungere GitHub. Controlla la connessione a internet."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub に接続できませんでした。インターネット接続を確認してください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub에 연결할 수 없습니다. 인터넷 연결을 확인하세요."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub-ൽ എത്താനായില്ല. നിങ്ങളുടെ ഇന്റർനെറ്റ് കണക്ഷൻ പരിശോധിക്കുക."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kan GitHub niet bereiken. Controleer je internetverbinding."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nie można połączyć się z serwisem GitHub. Sprawdź połączenie z internetem."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Não foi possível acessar o GitHub. Verifique sua conexão com a internet."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось связаться с GitHub. Проверьте подключение к интернету."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Det gick inte att nå GitHub. Kontrollera din internetanslutning."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub ஐ அணுக முடியவில்லை. உங்கள் இணைய இணைப்பைச் சரிபார்க்கவும்."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่สามารถเชื่อมต่อ GitHub ได้ ตรวจสอบการเชื่อมต่ออินเทอร์เน็ตของคุณ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub'a ulaşılamadı. İnternet bağlantınızı denetleyin."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не вдалося зв’язатися з GitHub. Перевірте підключення до інтернету."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Không thể kết nối tới GitHub. Hãy kiểm tra kết nối Internet của bạn."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "无法连接 GitHub。请检查你的互联网连接。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "無法連線至 GitHub。請檢查您的網際網路連線。"
+          }
+        }
+      }
+    },
     "Couldn't undo: %@": {
       "localizations": {
         "ar": {
@@ -37203,6 +38291,142 @@
         }
       }
     },
+    "Download & Install": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تنزيل وتثبيت"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laden und installieren"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descargar e instalar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Télécharger et installer"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "डाउनलोड और इंस्टॉल करें"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unduh & Instal"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scarica e installa"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダウンロードしてインストール"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "다운로드 및 설치"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ഡൗൺലോഡ് ചെയ്ത് ഇൻസ്റ്റാൾ ചെയ്യുക"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download en installeer"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pobierz i zainstaluj"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Baixar e Instalar"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Загрузить и установить"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hämta och installera"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "பதிவிறக்கி நிறுவு"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ดาวน์โหลดและติดตั้ง"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İndir ve Yükle"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Викачати й встановити"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tải về và cài đặt"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下载并安装"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下載並安裝"
+          }
+        }
+      }
+    },
     "Downloaded AI models": {
       "localizations": {
         "ar": {
@@ -37471,6 +38695,142 @@
           "stringUnit": {
             "state": "translated",
             "value": "Gradle（Android 與 Java）下載的相依項目、建置快取與 wrapper 發行版本。下次建置時會重建。"
+          }
+        }
+      }
+    },
+    "Downloading the update…": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جارٍ تنزيل التحديث…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Update wird geladen …"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Descargando la actualización…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Téléchargement de la mise à jour…"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपडेट डाउनलोड हो रहा है…"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mengunduh pembaruan…"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Download dell'aggiornamento…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アップデートをダウンロード中…"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "업데이트 다운로드 중…"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "അപ്‌ഡേറ്റ് ഡൗൺലോഡ് ചെയ്യുന്നു…"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Update downloaden…"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pobieranie uaktualnienia…"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Baixando a atualização…"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Загрузка обновления…"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hämtar uppdateringen…"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "புதுப்பிப்பைப் பதிவிறக்குகிறது…"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กำลังดาวน์โหลดการอัปเดต…"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Güncelleme indiriliyor…"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Викачування уточнення…"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đang tải về bản cập nhật…"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在下载更新…"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在下載更新項目…"
           }
         }
       }
@@ -41289,138 +42649,138 @@
         }
       }
     },
-    "Every tool unlocked. No account, no subscription, no network.": {
+    "Every tool unlocked. No account, no subscription.": {
       "localizations": {
         "ar": {
           "stringUnit": {
             "state": "translated",
-            "value": "كل الأدوات متاحة. بلا حساب، بلا اشتراك، بلا اتصال بالشبكة."
+            "value": "كل الأدوات متاحة. بلا حساب، بلا اشتراك."
           }
         },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Alle Werkzeuge freigeschaltet. Kein Account, kein Abo, kein Netzwerk."
+            "value": "Alle Werkzeuge freigeschaltet. Kein Account, kein Abo."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Todas las herramientas desbloqueadas. Sin cuenta, sin suscripción, sin red."
+            "value": "Todas las herramientas desbloqueadas. Sin cuenta, sin suscripción."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tous les outils débloqués. Pas de compte, pas d'abonnement, pas de réseau."
+            "value": "Tous les outils débloqués. Pas de compte, pas d'abonnement."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "हर टूल अनलॉक। कोई खाता नहीं, कोई सब्सक्रिप्शन नहीं, कोई नेटवर्क नहीं।"
+            "value": "हर टूल अनलॉक। कोई खाता नहीं, कोई सब्सक्रिप्शन नहीं।"
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Semua alat terbuka. Tanpa akun, tanpa langganan, tanpa jaringan."
+            "value": "Semua alat terbuka. Tanpa akun, tanpa langganan."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tutti gli strumenti sbloccati. Nessun account, nessun abbonamento, nessuna rete."
+            "value": "Tutti gli strumenti sbloccati. Nessun account, nessun abbonamento."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "すべてのツールが利用可能。アカウントもサブスクリプションもネットワーク接続も不要です。"
+            "value": "すべてのツールが利用可能。アカウントもサブスクリプションも不要です。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "모든 도구 잠금 해제. 계정, 구독, 네트워크가 필요 없습니다."
+            "value": "모든 도구 잠금 해제. 계정이나 구독이 필요 없습니다."
           }
         },
         "ml": {
           "stringUnit": {
             "state": "translated",
-            "value": "എല്ലാ ടൂളുകളും ലഭ്യം. അക്കൗണ്ടില്ല, സബ്‌സ്ക്രിപ്ഷനില്ല, നെറ്റ്‌വർക്കില്ല."
+            "value": "എല്ലാ ടൂളുകളും ലഭ്യം. അക്കൗണ്ടില്ല, സബ്‌സ്ക്രിപ്ഷനില്ല."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Alle tools ontgrendeld. Geen account, geen abonnement, geen netwerk."
+            "value": "Alle tools ontgrendeld. Geen account, geen abonnement."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Wszystkie narzędzia odblokowane. Bez konta, bez subskrypcji, bez sieci."
+            "value": "Wszystkie narzędzia odblokowane. Bez konta, bez subskrypcji."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Todas as ferramentas liberadas. Sem conta, sem assinatura, sem rede."
+            "value": "Todas as ferramentas liberadas. Sem conta, sem assinatura."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Все инструменты доступны. Без учетной записи, подписки и сети."
+            "value": "Все инструменты доступны. Без учетной записи и подписки."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Alla verktyg upplåsta. Inget konto, ingen prenumeration, inget nätverk."
+            "value": "Alla verktyg upplåsta. Inget konto, ingen prenumeration."
           }
         },
         "ta": {
           "stringUnit": {
             "state": "translated",
-            "value": "அனைத்துக் கருவிகளும் திறக்கப்பட்டுள்ளன. கணக்கு இல்லை, சந்தா இல்லை, நெட்வொர்க் இல்லை."
+            "value": "அனைத்துக் கருவிகளும் திறக்கப்பட்டுள்ளன. கணக்கு இல்லை, சந்தா இல்லை."
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "ปลดล็อกทุกเครื่องมือ ไม่ต้องมีบัญชี ไม่ต้องสมัครสมาชิก ไม่ต้องใช้เครือข่าย"
+            "value": "ปลดล็อกทุกเครื่องมือ ไม่ต้องมีบัญชี ไม่ต้องสมัครสมาชิก"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tüm araçlar açık. Hesap yok, abonelik yok, ağ yok."
+            "value": "Tüm araçlar açık. Hesap yok, abonelik yok."
           }
         },
         "uk": {
           "stringUnit": {
             "state": "translated",
-            "value": "Усі інструменти доступні. Без облікового запису, підписки й мережі."
+            "value": "Усі інструменти доступні. Без облікового запису й підписки."
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Mở khóa mọi công cụ. Không tài khoản, không thuê bao, không mạng."
+            "value": "Mở khóa mọi công cụ. Không tài khoản, không thuê bao."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "所有工具均已解锁。无需账户、无需订阅、无需联网。"
+            "value": "所有工具均已解锁。无需账户、无需订阅。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "所有工具皆已解鎖。不需要帳號、訂閱或網路。"
+            "value": "所有工具皆已解鎖。不需要帳號或訂閱。"
           }
         }
       }
@@ -49053,6 +50413,142 @@
         }
       }
     },
+    "GitHub didn't answer as expected. Try again later.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لم يستجب GitHub كما هو متوقع. حاول مرة أخرى لاحقًا."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub hat nicht wie erwartet geantwortet. Versuche es später erneut."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub no respondió como se esperaba. Inténtalo de nuevo más tarde."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub n'a pas répondu comme prévu. Réessayez plus tard."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub ने अपेक्षा के अनुसार जवाब नहीं दिया। बाद में फिर से कोशिश करें।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub tidak merespons seperti yang diharapkan. Coba lagi nanti."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub non ha risposto come previsto. Riprova più tardi."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub から想定どおりの応答がありませんでした。後でもう一度お試しください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub에서 예상과 다른 응답을 받았습니다. 나중에 다시 시도하세요."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub പ്രതീക്ഷിച്ചതുപോലെ പ്രതികരിച്ചില്ല. പിന്നീട് വീണ്ടും ശ്രമിക്കുക."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub antwoordde niet zoals verwacht. Probeer het later opnieuw."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Serwis GitHub nie odpowiedział zgodnie z oczekiwaniami. Spróbuj ponownie później."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O GitHub não respondeu como esperado. Tente novamente mais tarde."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub ответил не так, как ожидалось. Повторите попытку позже."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub svarade inte som väntat. Försök igen senare."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub எதிர்பார்த்தபடி பதிலளிக்கவில்லை. பிறகு மீண்டும் முயலவும்."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub ไม่ตอบสนองตามที่คาดไว้ ลองอีกครั้งในภายหลัง"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub beklendiği gibi yanıt vermedi. Daha sonra yeniden deneyin."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub відповів не так, як очікувалося. Спробуйте пізніше."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub không phản hồi như mong đợi. Hãy thử lại sau."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub 未按预期响应。请稍后再试。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "GitHub 未如預期回應。請稍後再試一次。"
+          }
+        }
+      }
+    },
     "Go": {
       "localizations": {
         "ar": {
@@ -52585,6 +54081,142 @@
           "stringUnit": {
             "state": "translated",
             "value": "Homebrew 下載項目"
+          }
+        }
+      }
+    },
+    "Hottest core %@": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "أسخن نواة %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heißester Kern: %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Núcleo más caliente: %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cœur le plus chaud : %@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "सबसे गर्म कोर %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Inti terpanas %@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Core più caldo: %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最も高温のコア %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "가장 뜨거운 코어 %@"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ഏറ്റവും ചൂടുള്ള കോർ %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Heetste kern: %@"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Najgorętszy rdzeń: %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Núcleo mais quente: %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Самое горячее ядро: %@"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Varmaste kärnan: %@"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "அதிக வெப்பமான கோர் %@"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "คอร์ที่ร้อนที่สุด %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En sıcak çekirdek %@"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Найгарячіше ядро: %@"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nhân nóng nhất %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最热核心 %@"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最熱核心 %@"
           }
         }
       }
@@ -58847,6 +60479,142 @@
           "stringUnit": {
             "state": "translated",
             "value": "上次更改"
+          }
+        }
+      }
+    },
+    "Last checked %@": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "آخر تحقق: %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zuletzt geprüft %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Última comprobación %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dernière vérification %@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अंतिम जाँच %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Terakhir diperiksa %@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ultimo controllo: %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "前回の確認: %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "마지막 확인: %@"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "അവസാനം പരിശോധിച്ചത് %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laatst gecontroleerd %@"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ostatnio sprawdzono %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Última verificação %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Проверено %@"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Senast kontrollerad %@"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "கடைசிச் சரிபார்ப்பு: %@"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ตรวจสอบล่าสุด %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Son denetim: %@"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Перевірено %@"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kiểm tra lần cuối %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "上次检查：%@"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "上次檢查：%@"
           }
         }
       }
@@ -65254,6 +67022,142 @@
           "stringUnit": {
             "state": "translated",
             "value": "媒體"
+          }
+        }
+      }
+    },
+    "Memory": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الذاكرة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Speicher"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memoria"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mémoire"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मेमोरी"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memori"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memoria"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "メモリ"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "메모리"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "മെമ്മറി"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Geheugen"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pamięć"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memória"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Память"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Minne"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "நினைவகம்"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "หน่วยความจำ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bellek"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пам’ять"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bộ nhớ"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "内存"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "記憶體"
           }
         }
       }
@@ -73987,6 +75891,142 @@
         }
       }
     },
+    "Nothing about your Mac leaves it — no analytics, no uploads": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا يغادر جهاز Mac أي شيء يخصه — بلا تحليلات، بلا رفع للبيانات"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nichts über deinen Mac gelangt nach außen – keine Analysen, keine Uploads"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nada sobre tu Mac sale de él: sin analíticas ni subidas"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aucune information sur votre Mac n'en sort : ni statistiques, ni envois"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपके Mac के बारे में कुछ भी बाहर नहीं जाता — न एनालिटिक्स, न अपलोड"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tidak ada data tentang Mac Anda yang keluar darinya — tanpa analitik, tanpa unggahan"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nessuna informazione sul Mac lascia il computer: nessuna analisi, nessun caricamento"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mac に関する情報が外に出ることはありません。解析もアップロードもなし"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mac에 관한 어떤 정보도 밖으로 나가지 않습니다 — 분석도, 업로드도 없습니다"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "നിങ്ങളുടെ Mac-നെക്കുറിച്ചുള്ള ഒന്നും പുറത്തുപോകില്ല — അനലിറ്റിക്സില്ല, അപ്‌ലോഡുകളില്ല"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Niets over je Mac gaat naar buiten — geen analyses, geen uploads"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Żadne dane o Macu nie opuszczają komputera — bez analityki, bez przesyłania danych"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nada sobre o seu Mac sai dele — sem análises de uso, sem envios"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Никакие данные о Вашем Mac не покидают его — без аналитики и отправки данных"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ingenting om din Mac lämnar den – ingen analys, inga uppladdningar"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "உங்கள் Mac பற்றிய எதுவும் வெளியே செல்லாது — பகுப்பாய்வு இல்லை, பதிவேற்றம் இல்லை"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่มีข้อมูลใดเกี่ยวกับ Mac ของคุณออกไปภายนอก — ไม่มีการวิเคราะห์ ไม่มีการอัปโหลด"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mac'inizle ilgili hiçbir şey dışarı çıkmaz — analiz yok, yükleme yok"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Жодні дані про ваш Mac не залишають його — без аналітики й надсилання даних"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Không có thông tin nào về Mac của bạn rời khỏi máy — không phân tích, không tải lên"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "有关你 Mac 的信息不会外传——无分析、无上传"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "與您 Mac 相關的資料都不會外傳：沒有分析、沒有上傳"
+          }
+        }
+      }
+    },
     "Nothing has been removed. Open a tool to review its results.": {
       "localizations": {
         "ar": {
@@ -74799,142 +76839,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "不會自動為您選取任何項目。以下每個群組都沒有識別碼相符的已安裝 App。"
-          }
-        }
-      }
-    },
-    "Nothing leaves your Mac — no analytics, no uploads": {
-      "localizations": {
-        "ar": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "لا يغادر أي شيء جهاز Mac — بلا تحليلات، بلا رفع للبيانات"
-          }
-        },
-        "de": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nichts verlässt deinen Mac – keine Analysen, keine Uploads"
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nada sale de tu Mac: sin analíticas ni subidas"
-          }
-        },
-        "fr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Rien ne quitte votre Mac : ni statistiques, ni envois"
-          }
-        },
-        "hi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "आपके Mac से कुछ भी बाहर नहीं जाता — न एनालिटिक्स, न अपलोड"
-          }
-        },
-        "id": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Tidak ada yang keluar dari Mac Anda — tanpa analitik, tanpa unggahan"
-          }
-        },
-        "it": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nulla lascia il Mac: nessuna analisi, nessun caricamento"
-          }
-        },
-        "ja": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "データが Mac の外に出ることはありません。解析もアップロードもなし"
-          }
-        },
-        "ko": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "아무것도 Mac 밖으로 나가지 않습니다 — 분석도, 업로드도 없습니다"
-          }
-        },
-        "ml": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ഒന്നും നിങ്ങളുടെ Mac വിട്ടുപോകില്ല — അനലിറ്റിക്സില്ല, അപ്‌ലോഡുകളില്ല"
-          }
-        },
-        "nl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Niets verlaat je Mac — geen analyses, geen uploads"
-          }
-        },
-        "pl": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nic nie opuszcza Maca — bez analityki, bez przesyłania danych"
-          }
-        },
-        "pt-BR": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Nada sai do seu Mac — sem análises de uso, sem envios"
-          }
-        },
-        "ru": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ничто не покидает Ваш Mac — без аналитики и отправки данных"
-          }
-        },
-        "sv": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Inget lämnar din Mac – ingen analys, inga uppladdningar"
-          }
-        },
-        "ta": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "எதுவும் உங்கள் Mac ஐ விட்டு வெளியேறாது — பகுப்பாய்வு இல்லை, பதிவேற்றம் இல்லை"
-          }
-        },
-        "th": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "ไม่มีสิ่งใดออกจาก Mac ของคุณ — ไม่มีการวิเคราะห์ ไม่มีการอัปโหลด"
-          }
-        },
-        "tr": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Hiçbir şey Mac'inizden çıkmaz — analiz yok, yükleme yok"
-          }
-        },
-        "uk": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Ніщо не залишає ваш Mac — без аналітики й надсилання даних"
-          }
-        },
-        "vi": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Không có gì rời khỏi Mac của bạn — không phân tích, không tải lên"
-          }
-        },
-        "zh-Hans": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "数据不会离开你的 Mac——无分析、无上传"
-          }
-        },
-        "zh-Hant": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "所有資料都不會離開您的 Mac：沒有分析、沒有上傳"
           }
         }
       }
@@ -80383,6 +82287,142 @@
           "stringUnit": {
             "state": "translated",
             "value": "打開設定"
+          }
+        }
+      }
+    },
+    "Open Settings › About to see what's new and install it.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "افتح الإعدادات › حول لمعرفة الجديد وتثبيت التحديث."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Öffne Einstellungen › Über, um die Neuerungen zu sehen und das Update zu installieren."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abre Ajustes › Acerca de para ver las novedades e instalar la actualización."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ouvrez Réglages › À propos pour découvrir les nouveautés et installer la mise à jour."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "नया क्या है देखने और अपडेट इंस्टॉल करने के लिए सेटिंग्ज़ › परिचय खोलें।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Buka Pengaturan › Tentang untuk melihat yang baru dan menginstal pembaruannya."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Apri Impostazioni › Informazioni per vedere le novità e installare l'aggiornamento."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "「設定」›「情報」を開くと、新機能を確認してインストールできます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "설정 › 정보를 열어 새로운 기능을 확인하고 설치하세요."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "പുതിയതെന്തെന്ന് കാണാനും അപ്‌ഡേറ്റ് ഇൻസ്റ്റാൾ ചെയ്യാനും ക്രമീകരണം › വിവരം തുറക്കുക."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Instellingen › Info om te zien wat er nieuw is en de update te installeren."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Otwórz Ustawienia › Informacje, aby zobaczyć nowości i zainstalować uaktualnienie."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Abra Ajustes › Sobre para ver as novidades e instalar a atualização."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Откройте «Настройки» › «О программе», чтобы узнать о новых функциях и установить обновление."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Öppna Inställningar › Om för att se nyheterna och installera uppdateringen."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "புதியவற்றைப் பார்த்துப் புதுப்பிப்பை நிறுவ, அமைப்புகள் › பற்றி என்பதைத் திறக்கவும்."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เปิด การตั้งค่า › เกี่ยวกับ เพื่อดูสิ่งใหม่และติดตั้งการอัปเดต"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yenilikleri görmek ve güncellemeyi yüklemek için Ayarlar › Hakkında bölümünü açın."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Відкрийте «Параметри» › «Про програму», щоб переглянути новинки й встановити уточнення."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mở Cài đặt › Giới thiệu để xem có gì mới và cài đặt bản cập nhật."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "打开“设置”›“关于”查看新功能并安装更新。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "打開「設定」›「關於」即可查看新功能並安裝。"
           }
         }
       }
@@ -87052,6 +89092,142 @@
         }
       }
     },
+    "Reclaim %@ is available": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يتوفر Reclaim %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim %@ ist verfügbar"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim %@ está disponible"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim %@ est disponible"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim %@ उपलब्ध है"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim %@ tersedia"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim %@ è disponibile"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim %@ を利用できます"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim %@ 사용 가능"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim %@ ലഭ്യമാണ്"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim %@ is beschikbaar"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Dostępny jest Reclaim %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Reclaim %@ está disponível"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Доступна версия Reclaim %@"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim %@ finns tillgänglig"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim %@ கிடைக்கிறது"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim %@ พร้อมให้ใช้งานแล้ว"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim %@ kullanılabilir"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Доступна версія Reclaim %@"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đã có Reclaim %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim %@ 现已可用"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim %@ 現已推出"
+          }
+        }
+      }
+    },
     "Reclaim Tool": {
       "localizations": {
         "ar": {
@@ -87320,6 +89496,142 @@
           "stringUnit": {
             "state": "translated",
             "value": "Reclaim 會請求一次個人專屬檔案夾（%@）的權限，接著在掃描前檢查每個位置。"
+          }
+        }
+      }
+    },
+    "Reclaim can't replace itself in %@. Download the update from the website instead.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا يمكن لـ Reclaim استبدال نفسه في %@. نزّل التحديث من موقع الويب بدلًا من ذلك."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim kann sich in %@ nicht selbst ersetzen. Lade das Update stattdessen von der Website."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim no puede reemplazarse a sí mismo en %@. Descarga la actualización desde el sitio web."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim ne peut pas se remplacer lui-même dans %@. Téléchargez plutôt la mise à jour depuis le site web."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim %@ में खुद को बदल नहीं सकता। इसके बजाय वेबसाइट से अपडेट डाउनलोड करें।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim tidak dapat mengganti dirinya sendiri di %@. Sebagai gantinya, unduh pembaruan dari situs web."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim non può sostituirsi da solo in %@. Scarica invece l'aggiornamento dal sito web."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim は %@ にある自身を置き換えられません。代わりに Web サイトからアップデートをダウンロードしてください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim은 %@에서 자신을 교체할 수 없습니다. 대신 웹사이트에서 업데이트를 다운로드하세요."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim-ന് %@-ൽ സ്വയം മാറ്റിസ്ഥാപിക്കാനാകില്ല. പകരം വെബ്‌സൈറ്റിൽ നിന്ന് അപ്‌ഡേറ്റ് ഡൗൺലോഡ് ചെയ്യുക."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim kan zichzelf niet vervangen in %@. Download de update in plaats daarvan van de website."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim nie może zastąpić samego siebie w lokalizacji %@. Zamiast tego pobierz uaktualnienie ze strony internetowej."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Reclaim não pode se substituir em %@. Baixe a atualização pelo site."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim не может заменить себя в папке %@. Загрузите обновление с сайта."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim kan inte ersätta sig själv i %@. Hämta uppdateringen från webbplatsen i stället."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim தன்னை %@ இல் மாற்ற முடியாது. அதற்குப் பதிலாக இணையதளத்திலிருந்து புதுப்பிப்பைப் பதிவிறக்கவும்."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim ไม่สามารถแทนที่ตัวเองใน %@ ได้ ให้ดาวน์โหลดการอัปเดตจากเว็บไซต์แทน"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim, %@ konumunda kendini değiştiremiyor. Bunun yerine güncellemeyi web sitesinden indirin."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim не може замінити себе в папці %@. Натомість викачайте уточнення з вебсайту."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim không thể tự thay thế trong %@. Thay vào đó, hãy tải về bản cập nhật từ trang web."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim 无法在“%@”中替换自身。请改为从网站下载更新。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim 無法在「%@」中取代自己。請改從網站下載更新項目。"
           }
         }
       }
@@ -88004,138 +90316,410 @@
         }
       }
     },
-    "Reclaim is not antivirus software. It has no malware database and never connects to the internet, so it cannot tell you whether a file is malicious. It reads signatures and records macOS already keeps.": {
+    "Reclaim downloads the update from GitHub, checks it, replaces this copy and reopens. Your settings and history are kept.": {
       "localizations": {
         "ar": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reclaim ليس برنامجًا لمكافحة الفيروسات. ليست لديه قاعدة بيانات للبرامج الضارة ولا يتصل بالإنترنت أبدًا، لذا لا يمكنه إخبارك ما إذا كان الملف ضارًا. إنه يقرأ التواقيع والسجلات التي يحتفظ بها macOS بالفعل."
+            "value": "ينزّل Reclaim التحديث من GitHub، ويتحقق منه، ويستبدل هذه النسخة ثم يُعيد فتح نفسه. يتم الاحتفاظ بإعداداتك وسجلك."
           }
         },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reclaim ist keine Antivirensoftware. Es hat keine Malware-Datenbank und verbindet sich nie mit dem Internet, kann dir also nicht sagen, ob eine Datei schädlich ist. Es liest Signaturen und Einträge, die macOS bereits speichert."
+            "value": "Reclaim lädt das Update von GitHub, prüft es, ersetzt diese Kopie und wird neu geöffnet. Deine Einstellungen und dein Verlauf bleiben erhalten."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reclaim no es un antivirus. No tiene base de datos de malware y nunca se conecta a internet, así que no puede decirte si un archivo es malicioso. Lee las firmas y los registros que macOS ya guarda."
+            "value": "Reclaim descarga la actualización desde GitHub, la comprueba, reemplaza esta copia y se vuelve a abrir. Se conservan tus ajustes e historial."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reclaim n'est pas un antivirus. Il n'a pas de base de données de logiciels malveillants et ne se connecte jamais à Internet ; il ne peut donc pas vous dire si un fichier est malveillant. Il lit les signatures et les informations que macOS conserve déjà."
+            "value": "Reclaim télécharge la mise à jour depuis GitHub, la vérifie, remplace cette copie et se rouvre. Vos réglages et votre historique sont conservés."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reclaim एंटीवायरस सॉफ़्टवेयर नहीं है। इसमें कोई मैलवेयर डेटाबेस नहीं है और यह कभी इंटरनेट से कनेक्ट नहीं होता, इसलिए यह नहीं बता सकता कि कोई फ़ाइल दुर्भावनापूर्ण है या नहीं। यह वे हस्ताक्षर और रिकॉर्ड पढ़ता है जो macOS पहले से रखता है।"
+            "value": "Reclaim GitHub से अपडेट डाउनलोड करता है, उसकी जाँच करता है, इस कॉपी को बदलता है और फिर से खुलता है। आपकी सेटिंग्ज़ और इतिहास बने रहते हैं।"
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reclaim bukan perangkat lunak antivirus. Reclaim tidak memiliki basis data malware dan tidak pernah terhubung ke internet, jadi tidak dapat memberi tahu apakah suatu file berbahaya. Reclaim membaca tanda tangan dan catatan yang sudah disimpan macOS."
+            "value": "Reclaim mengunduh pembaruan dari GitHub, memeriksanya, mengganti salinan ini, lalu membuka ulang. Pengaturan dan riwayat Anda tetap disimpan."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reclaim non è un antivirus. Non ha un database di malware e non si connette mai a internet, quindi non può dirti se un file è dannoso. Legge le firme e i dati che macOS conserva già."
+            "value": "Reclaim scarica l'aggiornamento da GitHub, lo verifica, sostituisce questa copia e si riapre. Impostazioni e cronologia vengono mantenute."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reclaim はウイルス対策ソフトウェアではありません。マルウェアのデータベースを持たず、インターネットにも接続しないため、ファイルが悪質かどうかは判断できません。macOS がすでに保持している署名と記録を読み取るだけです。"
+            "value": "Reclaim は GitHub からアップデートをダウンロードして確認し、このコピーを置き換えてから開き直します。設定と履歴は保持されます。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reclaim은 백신 소프트웨어가 아닙니다. 악성 코드 데이터베이스가 없고 인터넷에 연결하지 않으므로 파일이 악성인지 알려 줄 수 없습니다. macOS가 이미 보관하고 있는 서명과 기록을 읽을 뿐입니다."
+            "value": "Reclaim은 GitHub에서 업데이트를 다운로드하고 확인한 다음, 이 사본을 교체하고 다시 열립니다. 설정과 기록은 유지됩니다."
           }
         },
         "ml": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reclaim ഒരു ആന്റിവൈറസ് സോഫ്റ്റ്‌വെയറല്ല. ഇതിന് മാൽവെയർ ഡാറ്റാബേസ് ഇല്ല, ഇത് ഒരിക്കലും ഇന്റർനെറ്റിലേക്ക് കണക്റ്റ് ചെയ്യുന്നുമില്ല, അതിനാൽ ഒരു ഫയൽ ദോഷകരമാണോ എന്ന് ഇതിന് പറയാനാകില്ല. macOS ഇതിനകം സൂക്ഷിക്കുന്ന സിഗ്നേച്ചറുകളും രേഖകളുമാണ് ഇത് വായിക്കുന്നത്."
+            "value": "Reclaim GitHub-ൽ നിന്ന് അപ്‌ഡേറ്റ് ഡൗൺലോഡ് ചെയ്ത്, അത് പരിശോധിച്ച്, ഈ പകർപ്പ് മാറ്റിസ്ഥാപിച്ച് വീണ്ടും തുറക്കുന്നു. നിങ്ങളുടെ ക്രമീകരണവും ചരിത്രവും നിലനിർത്തും."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reclaim is geen antivirussoftware. Het heeft geen malwaredatabase en maakt nooit verbinding met het internet, dus het kan je niet vertellen of een bestand kwaadaardig is. Het leest handtekeningen en gegevens die macOS al bijhoudt."
+            "value": "Reclaim downloadt de update van GitHub, controleert deze, vervangt deze kopie en opent opnieuw. Je instellingen en geschiedenis blijven behouden."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reclaim nie jest oprogramowaniem antywirusowym. Nie ma bazy złośliwego oprogramowania i nigdy nie łączy się z internetem, więc nie może stwierdzić, czy plik jest złośliwy. Odczytuje podpisy i zapisy, które macOS już przechowuje."
+            "value": "Reclaim pobiera uaktualnienie z serwisu GitHub, sprawdza je, zastępuje tę kopię i otwiera się ponownie. Ustawienia i historia zostaną zachowane."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "O Reclaim não é um antivírus. Ele não tem banco de dados de malware e nunca se conecta à internet, então não pode dizer se um arquivo é malicioso. Ele lê assinaturas e registros que o macOS já mantém."
+            "value": "O Reclaim baixa a atualização do GitHub, verifica, substitui esta cópia e reabre. Seus ajustes e histórico são mantidos."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reclaim не является антивирусом. У него нет базы вредоносного ПО, и он никогда не подключается к интернету, поэтому не может сказать, вредоносен ли файл. Он читает подписи и записи, которые уже хранит macOS."
+            "value": "Reclaim загружает обновление с GitHub, проверяет его, заменяет эту копию и перезапускается. Настройки и история сохранятся."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reclaim är inte ett antivirusprogram. Det har ingen databas över skadlig programvara och ansluter aldrig till internet, så det kan inte avgöra om en fil är skadlig. Det läser signaturer och uppgifter som macOS redan sparar."
+            "value": "Reclaim hämtar uppdateringen från GitHub, kontrollerar den, ersätter den här kopian och öppnas igen. Dina inställningar och din historik behålls."
           }
         },
         "ta": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reclaim வைரஸ் தடுப்பு மென்பொருள் அல்ல. இதற்கு மால்வேர் தரவுத்தளம் இல்லை, இது ஒருபோதும் இணையத்துடன் இணைவதில்லை, எனவே ஒரு கோப்பு தீங்கிழைப்பதா என்பதை இதனால் சொல்ல முடியாது. macOS ஏற்கனவே வைத்திருக்கும் கையொப்பங்களையும் பதிவுகளையும் இது படிக்கிறது."
+            "value": "Reclaim புதுப்பிப்பை GitHub இலிருந்து பதிவிறக்கி, சரிபார்த்து, இந்த நகலை மாற்றி, மீண்டும் திறக்கும். உங்கள் அமைப்புகளும் வரலாறும் வைக்கப்படும்."
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reclaim ไม่ใช่ซอฟต์แวร์แอนติไวรัส ไม่มีฐานข้อมูลมัลแวร์และไม่เชื่อมต่ออินเทอร์เน็ต จึงบอกไม่ได้ว่าไฟล์เป็นอันตรายหรือไม่ แต่จะอ่านลายเซ็นและบันทึกที่ macOS เก็บไว้อยู่แล้ว"
+            "value": "Reclaim จะดาวน์โหลดการอัปเดตจาก GitHub ตรวจสอบ แทนที่สำเนานี้ แล้วเปิดใหม่ การตั้งค่าและประวัติของคุณจะยังคงอยู่"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reclaim bir antivirüs yazılımı değildir. Kötü amaçlı yazılım veritabanı yoktur ve asla internete bağlanmaz, bu yüzden bir dosyanın kötü amaçlı olup olmadığını size söyleyemez. macOS'in zaten tuttuğu imzaları ve kayıtları okur."
+            "value": "Reclaim güncellemeyi GitHub'dan indirir, denetler, bu kopyayı değiştirir ve yeniden açılır. Ayarlarınız ve geçmişiniz korunur."
           }
         },
         "uk": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reclaim не є антивірусом. Він не має бази шкідливого ПЗ і ніколи не під’єднується до інтернету, тому не може сказати, чи файл шкідливий. Він читає підписи й записи, які вже зберігає macOS."
+            "value": "Reclaim викачує уточнення з GitHub, перевіряє його, замінює цю копію й перезапускається. Ваші параметри й історія збережуться."
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reclaim không phải phần mềm diệt virus. Ứng dụng không có cơ sở dữ liệu phần mềm độc hại và không bao giờ kết nối Internet, nên không thể cho bạn biết một tệp có độc hại hay không. Ứng dụng đọc chữ ký và các bản ghi mà macOS đã lưu sẵn."
+            "value": "Reclaim tải về bản cập nhật từ GitHub, kiểm tra, thay thế bản sao này rồi mở lại. Cài đặt và lịch sử của bạn được giữ nguyên."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reclaim 不是杀毒软件。它没有恶意软件数据库，也从不连接互联网，因此无法告诉你某个文件是否有恶意。它只读取签名以及 macOS 已保存的记录。"
+            "value": "Reclaim 会从 GitHub 下载更新、进行验证、替换当前副本并重新打开。你的设置和历史记录会保留。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "Reclaim 不是防毒軟體。它沒有惡意軟體資料庫，也絕不會連線到網際網路，因此無法告訴您檔案是否為惡意檔案。它只會讀取 macOS 既有的簽署和記錄。"
+            "value": "Reclaim 會從 GitHub 下載更新項目、進行驗證、取代目前這份拷貝並重新打開。您的設定和歷史記錄都會保留。"
+          }
+        }
+      }
+    },
+    "Reclaim is not antivirus software. It has no malware database and doesn't go online, so it cannot tell you whether a file is malicious. It reads signatures and records macOS already keeps.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim ليس برنامجًا لمكافحة الفيروسات. ليست لديه قاعدة بيانات للبرامج الضارة ولا يستعلم عبر الإنترنت، لذا لا يمكنه إخبارك ما إذا كان الملف ضارًا. إنه يقرأ التواقيع والسجلات التي يحتفظ بها macOS بالفعل."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim ist keine Antivirensoftware. Es hat keine Malware-Datenbank und geht nicht online, kann dir also nicht sagen, ob eine Datei schädlich ist. Es liest Signaturen und Einträge, die macOS bereits speichert."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim no es un antivirus. No tiene base de datos de malware y no consulta nada en internet, así que no puede decirte si un archivo es malicioso. Lee las firmas y los registros que macOS ya guarda."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim n'est pas un antivirus. Il n'a pas de base de données de logiciels malveillants et ne consulte rien en ligne ; il ne peut donc pas vous dire si un fichier est malveillant. Il lit les signatures et les informations que macOS conserve déjà."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim एंटीवायरस सॉफ़्टवेयर नहीं है। इसमें कोई मैलवेयर डेटाबेस नहीं है और यह ऑनलाइन नहीं जाता, इसलिए यह नहीं बता सकता कि कोई फ़ाइल दुर्भावनापूर्ण है या नहीं। यह वे हस्ताक्षर और रिकॉर्ड पढ़ता है जो macOS पहले से रखता है।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim bukan perangkat lunak antivirus. Reclaim tidak memiliki basis data malware dan tidak mengakses internet, jadi tidak dapat memberi tahu apakah suatu file berbahaya. Reclaim membaca tanda tangan dan catatan yang sudah disimpan macOS."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim non è un antivirus. Non ha un database di malware e non va online, quindi non può dirti se un file è dannoso. Legge le firme e i dati che macOS conserva già."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim はウイルス対策ソフトウェアではありません。マルウェアのデータベースを持たず、オンラインで照会もしないため、ファイルが悪質かどうかは判断できません。macOS がすでに保持している署名と記録を読み取るだけです。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim은 백신 소프트웨어가 아닙니다. 악성 코드 데이터베이스가 없고 온라인으로 조회하지 않으므로 파일이 악성인지 알려 줄 수 없습니다. macOS가 이미 보관하고 있는 서명과 기록을 읽을 뿐입니다."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim ഒരു ആന്റിവൈറസ് സോഫ്റ്റ്‌വെയറല്ല. ഇതിന് മാൽവെയർ ഡാറ്റാബേസ് ഇല്ല, ഇത് ഓൺലൈനിൽ പോകുന്നുമില്ല, അതിനാൽ ഒരു ഫയൽ ദോഷകരമാണോ എന്ന് ഇതിന് പറയാനാകില്ല. macOS ഇതിനകം സൂക്ഷിക്കുന്ന സിഗ്നേച്ചറുകളും രേഖകളുമാണ് ഇത് വായിക്കുന്നത്."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim is geen antivirussoftware. Het heeft geen malwaredatabase en gaat niet online, dus het kan je niet vertellen of een bestand kwaadaardig is. Het leest handtekeningen en gegevens die macOS al bijhoudt."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim nie jest oprogramowaniem antywirusowym. Nie ma bazy złośliwego oprogramowania i nie korzysta z internetu, więc nie może stwierdzić, czy plik jest złośliwy. Odczytuje podpisy i zapisy, które macOS już przechowuje."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Reclaim não é um antivírus. Ele não tem banco de dados de malware e não consulta a internet, então não pode dizer se um arquivo é malicioso. Ele lê assinaturas e registros que o macOS já mantém."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim не является антивирусом. У него нет базы вредоносного ПО, и он не выходит в интернет, поэтому не может сказать, вредоносен ли файл. Он читает подписи и записи, которые уже хранит macOS."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim är inte ett antivirusprogram. Det har ingen databas över skadlig programvara och går inte ut på nätet, så det kan inte avgöra om en fil är skadlig. Det läser signaturer och uppgifter som macOS redan sparar."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim வைரஸ் தடுப்பு மென்பொருள் அல்ல. இதற்கு மால்வேர் தரவுத்தளம் இல்லை, இது ஆன்லைனுக்குச் செல்வதில்லை, எனவே ஒரு கோப்பு தீங்கிழைப்பதா என்பதை இதனால் சொல்ல முடியாது. macOS ஏற்கனவே வைத்திருக்கும் கையொப்பங்களையும் பதிவுகளையும் இது படிக்கிறது."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim ไม่ใช่ซอฟต์แวร์แอนติไวรัส ไม่มีฐานข้อมูลมัลแวร์และไม่ได้ตรวจสอบทางออนไลน์ จึงบอกไม่ได้ว่าไฟล์เป็นอันตรายหรือไม่ แต่จะอ่านลายเซ็นและบันทึกที่ macOS เก็บไว้อยู่แล้ว"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim bir antivirüs yazılımı değildir. Kötü amaçlı yazılım veritabanı yoktur ve internete çıkmaz, bu yüzden bir dosyanın kötü amaçlı olup olmadığını size söyleyemez. macOS'in zaten tuttuğu imzaları ve kayıtları okur."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim не є антивірусом. Він не має бази шкідливого ПЗ і не виходить в інтернет, тому не може сказати, чи файл шкідливий. Він читає підписи й записи, які вже зберігає macOS."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim không phải phần mềm diệt virus. Ứng dụng không có cơ sở dữ liệu phần mềm độc hại và không tra cứu trực tuyến, nên không thể cho bạn biết một tệp có độc hại hay không. Ứng dụng đọc chữ ký và các bản ghi mà macOS đã lưu sẵn."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim 不是杀毒软件。它没有恶意软件数据库，也不联网查询，因此无法告诉你某个文件是否有恶意。它只读取签名以及 macOS 已保存的记录。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim 不是防毒軟體。它沒有惡意軟體資料庫，也不會上網查詢，因此無法告訴您檔案是否為惡意檔案。它只會讀取 macOS 既有的簽署和記錄。"
+          }
+        }
+      }
+    },
+    "Reclaim is up to date": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim محدَّث"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim ist auf dem neuesten Stand"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim está actualizado"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim est à jour"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim अप टू डेट है"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim sudah versi terbaru"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim è aggiornato"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim は最新です"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim이 최신 버전입니다"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim ഏറ്റവും പുതിയ പതിപ്പാണ്"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim is up-to-date"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim jest aktualny"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Reclaim está atualizado"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Установлена последняя версия Reclaim"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim är uppdaterad"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim புதுப்பித்த நிலையில் உள்ளது"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim เป็นเวอร์ชันล่าสุดแล้ว"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim güncel"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "У вас найновіша версія Reclaim"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim đã là bản mới nhất"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim 已是最新版本"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim 已是最新版本"
           }
         }
       }
@@ -88544,6 +91128,142 @@
           "stringUnit": {
             "state": "translated",
             "value": "Reclaim 會在您的「圖片」、「桌面」、「下載項目」和「影片」中尋找相似照片、截圖、螢幕錄影和模糊的照片。分析會使用 Apple 的 Vision 框架在此 Mac 上進行。"
+          }
+        }
+      }
+    },
+    "Reclaim only goes online to ask GitHub for the latest release. Nothing about your Mac is sent.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا يتصل Reclaim بالإنترنت إلا ليسأل GitHub عن أحدث إصدار. لا يُرسَل أي شيء عن جهاز Mac."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim geht nur online, um bei GitHub nach der neuesten Version zu fragen. Über deinen Mac wird nichts gesendet."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim solo se conecta a internet para preguntar a GitHub por la última versión. No se envía nada sobre tu Mac."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim ne se connecte à Internet que pour demander à GitHub la dernière version. Aucune information sur votre Mac n'est envoyée."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim केवल GitHub से नवीनतम रिलीज़ के बारे में पूछने के लिए ऑनलाइन जाता है। आपके Mac के बारे में कुछ भी नहीं भेजा जाता।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim hanya terhubung ke internet untuk menanyakan rilis terbaru ke GitHub. Tidak ada data tentang Mac Anda yang dikirim."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim va online solo per chiedere a GitHub l'ultima versione. Non viene inviata alcuna informazione sul Mac."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim がオンラインに接続するのは、GitHub に最新リリースを問い合わせるときだけです。Mac に関する情報は送信されません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim은 GitHub에 최신 릴리스를 물어볼 때만 온라인에 연결합니다. Mac에 관한 정보는 전송되지 않습니다."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ഏറ്റവും പുതിയ റിലീസ് ഏതെന്ന് GitHub-നോട് ചോദിക്കാൻ മാത്രമാണ് Reclaim ഓൺലൈനിൽ പോകുന്നത്. നിങ്ങളുടെ Mac-നെക്കുറിച്ച് ഒന്നും അയയ്ക്കില്ല."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim gaat alleen online om GitHub naar de nieuwste release te vragen. Er wordt niets over je Mac verstuurd."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim łączy się z internetem tylko po to, aby zapytać serwis GitHub o najnowsze wydanie. Żadne dane o Macu nie są wysyłane."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O Reclaim só acessa a internet para perguntar ao GitHub qual é a versão mais recente. Nada sobre o seu Mac é enviado."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim выходит в интернет, только чтобы запросить у GitHub последний выпуск. Никакие данные о Вашем Mac не отправляются."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim går bara ut på nätet för att fråga GitHub efter den senaste versionen. Ingenting om din Mac skickas."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "சமீபத்திய வெளியீட்டைப் பற்றி GitHub இடம் கேட்க மட்டுமே Reclaim ஆன்லைனுக்குச் செல்லும். உங்கள் Mac பற்றிய எதுவும் அனுப்பப்படாது."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim จะออนไลน์เพื่อถาม GitHub ถึงรุ่นเผยแพร่ล่าสุดเท่านั้น ไม่มีข้อมูลใดเกี่ยวกับ Mac ของคุณถูกส่งออกไป"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim yalnızca GitHub'a en son sürümü sormak için internete çıkar. Mac'inizle ilgili hiçbir şey gönderilmez."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim виходить в інтернет лише для того, щоб запитати в GitHub найновіший випуск. Жодні дані про ваш Mac не надсилаються."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim chỉ kết nối Internet để hỏi GitHub về bản phát hành mới nhất. Không có thông tin nào về Mac của bạn được gửi đi."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim 仅在向 GitHub 查询最新版本时联网。不会发送有关你 Mac 的任何信息。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim 只會在向 GitHub 查詢最新發行版本時連線上網。不會傳送任何與您 Mac 相關的資料。"
           }
         }
       }
@@ -90176,6 +92896,142 @@
           "stringUnit": {
             "state": "translated",
             "value": "重新整理 Spotlight 項目"
+          }
+        }
+      }
+    },
+    "Release Notes": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ملاحظات الإصدار"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versionshinweise"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas de la versión"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notes de version"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "रिलीज़ नोट्स"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Catatan Rilis"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Note di rilascio"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "リリースノート"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "릴리스 노트"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "റിലീസ് കുറിപ്പുകൾ"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Releasenotes"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Informacje o wydaniu"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notas da Versão"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Примечания к выпуску"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versionsinformation"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "வெளியீட்டுக் குறிப்புகள்"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "บันทึกประจำรุ่น"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sürüm Notları"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Примітки до випуску"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ghi chú phát hành"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "发布说明"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "版本附註"
           }
         }
       }
@@ -115484,6 +118340,278 @@
         }
       }
     },
+    "The download didn't match its published checksum, so it wasn't installed.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لم يتطابق الملف الذي تم تنزيله مع المجموع الاختباري المنشور، لذا لم يتم تثبيته."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Der Download stimmte nicht mit seiner veröffentlichten Prüfsumme überein und wurde daher nicht installiert."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La descarga no coincidía con su suma de verificación publicada, así que no se instaló."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le téléchargement ne correspondait pas à sa somme de contrôle publiée ; il n'a donc pas été installé."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "डाउनलोड उसके प्रकाशित चेकसम से मेल नहीं खाया, इसलिए उसे इंस्टॉल नहीं किया गया।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unduhan tidak cocok dengan checksum yang dipublikasikan, jadi tidak diinstal."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il download non corrispondeva al checksum pubblicato, quindi non è stato installato."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダウンロードしたファイルが公開されたチェックサムと一致しなかったため、インストールされませんでした。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "다운로드한 파일이 게시된 체크섬과 일치하지 않아 설치하지 않았습니다."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ഡൗൺലോഡ് ചെയ്ത ഫയൽ പ്രസിദ്ധീകരിച്ച ചെക്ക്‌സവുമായി പൊരുത്തപ്പെട്ടില്ല, അതിനാൽ ഇൻസ്റ്റാൾ ചെയ്തില്ല."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De download kwam niet overeen met de gepubliceerde checksum en is daarom niet geïnstalleerd."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pobrany plik nie zgadzał się z opublikowaną sumą kontrolną, więc nie został zainstalowany."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O download não correspondeu à soma de verificação publicada, por isso não foi instalado."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Загруженный файл не совпал с опубликованной контрольной суммой, поэтому он не был установлен."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hämtningen matchade inte den publicerade kontrollsumman, så den installerades inte."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "பதிவிறக்கம் அதன் வெளியிடப்பட்ட checksum உடன் பொருந்தவில்லை, எனவே நிறுவப்படவில்லை."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไฟล์ที่ดาวน์โหลดไม่ตรงกับ checksum ที่เผยแพร่ไว้ จึงไม่ได้ติดตั้ง"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İndirilen dosya yayımlanan sağlama toplamıyla eşleşmediği için yüklenmedi."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Викачаний файл не збігся з опублікованою контрольною сумою, тому його не встановлено."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tệp tải về không khớp với mã kiểm tra (checksum) đã công bố nên không được cài đặt."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下载的文件与其公布的校验和不匹配，因此未安装。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下載的檔案與公布的檢查碼不符，因此未安裝。"
+          }
+        }
+      }
+    },
+    "The download isn't a valid Reclaim app, so it wasn't installed.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الملف الذي تم تنزيله ليس تطبيق Reclaim صالحًا، لذا لم يتم تثبيته."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Der Download ist keine gültige Reclaim-App und wurde daher nicht installiert."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La descarga no es una app Reclaim válida, así que no se instaló."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Le téléchargement n'est pas une app Reclaim valide ; il n'a donc pas été installé."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "डाउनलोड एक मान्य Reclaim ऐप नहीं है, इसलिए उसे इंस्टॉल नहीं किया गया।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unduhan bukan app Reclaim yang valid, jadi tidak diinstal."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Il download non è un'app Reclaim valida, quindi non è stato installato."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ダウンロードしたファイルは有効な Reclaim App ではないため、インストールされませんでした。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "다운로드한 파일이 올바른 Reclaim 앱이 아니어서 설치하지 않았습니다."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ഡൗൺലോഡ് ചെയ്ത ഫയൽ സാധുവായ ഒരു Reclaim ആപ്പല്ല, അതിനാൽ ഇൻസ്റ്റാൾ ചെയ്തില്ല."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De download is geen geldige Reclaim-app en is daarom niet geïnstalleerd."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pobrany plik nie jest prawidłową aplikacją Reclaim, więc nie został zainstalowany."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O download não é um app Reclaim válido, por isso não foi instalado."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Загруженный файл не является допустимым приложением Reclaim, поэтому он не был установлен."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hämtningen är inte en giltig Reclaim-app, så den installerades inte."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "பதிவிறக்கம் சரியான Reclaim ஆப் அல்ல, எனவே நிறுவப்படவில்லை."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไฟล์ที่ดาวน์โหลดไม่ใช่แอป Reclaim ที่ถูกต้อง จึงไม่ได้ติดตั้ง"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "İndirilen dosya geçerli bir Reclaim uygulaması olmadığı için yüklenmedi."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Викачаний файл не є дійсною програмою Reclaim, тому його не встановлено."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tệp tải về không phải ứng dụng Reclaim hợp lệ nên không được cài đặt."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下载的文件不是有效的 Reclaim 应用，因此未安装。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "下載的檔案不是有效的 Reclaim App，因此未安裝。"
+          }
+        }
+      }
+    },
     "The download record macOS attaches to files from the internet: which app saved them, when, and the address they came from.": {
       "localizations": {
         "ar": {
@@ -115752,6 +118880,142 @@
           "stringUnit": {
             "state": "translated",
             "value": "每組的保留項目一律無法選取"
+          }
+        }
+      }
+    },
+    "The latest release has no app download yet.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا يتضمن أحدث إصدار تنزيلًا للتطبيق بعد."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Die neueste Version bietet noch keinen App-Download."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La última versión aún no incluye la app para descargar."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "La dernière version ne propose pas encore l'app en téléchargement."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "नवीनतम रिलीज़ में अभी तक ऐप डाउनलोड उपलब्ध नहीं है।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rilis terbaru belum memiliki unduhan app."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "L'ultima versione non include ancora l'app da scaricare."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最新リリースには、まだ App のダウンロードがありません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "최신 릴리스에 아직 앱 다운로드가 없습니다."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ഏറ്റവും പുതിയ റിലീസിൽ ഇതുവരെ ആപ്പ് ഡൗൺലോഡ് ഇല്ല."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "De nieuwste release heeft nog geen app-download."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Najnowsze wydanie nie zawiera jeszcze aplikacji do pobrania."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "A versão mais recente ainda não tem o app para download."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "В последнем выпуске пока нет приложения для загрузки."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Den senaste versionen har ingen app att hämta ännu."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "சமீபத்திய வெளியீட்டில் இன்னும் ஆப் பதிவிறக்கம் இல்லை."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "รุ่นเผยแพร่ล่าสุดยังไม่มีไฟล์แอปให้ดาวน์โหลด"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "En son sürümde henüz indirilebilir uygulama yok."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Найновіший випуск ще не містить програми для викачування."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bản phát hành mới nhất chưa có tệp ứng dụng để tải về."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最新版本暂时没有可下载的应用。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "最新發行版本尚未提供 App 下載。"
           }
         }
       }
@@ -120245,6 +123509,278 @@
         }
       }
     },
+    "Update": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تحديث"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktualisieren"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Actualizar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mettre à jour"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपडेट करें"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Perbarui"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aggiorna"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アップデート"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "업데이트"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "അപ്‌ഡേറ്റ് ചെയ്യുക"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Werk bij"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uaktualnij"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Atualizar"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Обновить"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uppdatera"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "புதுப்பி"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "อัปเดต"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Güncelle"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Уточнити"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cập nhật"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "更新"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "更新"
+          }
+        }
+      }
+    },
+    "Updates": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "التحديثات"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Updates"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Actualizaciones"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mises à jour"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "अपडेट"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pembaruan"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aggiornamenti"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "アップデート"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "업데이트"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "അപ്‌ഡേറ്റുകൾ"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Updates"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uaktualnienia"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Atualizações"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Обновления"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Uppdateringar"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "புதுப்பிப்புகள்"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "การอัปเดต"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Güncellemeler"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Уточнення"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bản cập nhật"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "更新"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "更新項目"
+          }
+        }
+      }
+    },
     "Used": {
       "localizations": {
         "ar": {
@@ -122973,6 +126509,142 @@
         }
       }
     },
+    "What's New": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الجديد"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Neuerungen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Novedades"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nouveautés"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "नया क्या है"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yang Baru"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Novità"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新機能"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "새로운 기능"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "പുതിയതെന്ത്"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wat is er nieuw"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nowości"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Novidades"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Что нового"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nyheter"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "புதியவை"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "มีอะไรใหม่"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yenilikler"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Що нового"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Có gì mới"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新功能"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "新功能"
+          }
+        }
+      }
+    },
     "When you move files to the Trash from any tool, they show up here. You can restore them, review them in Finder, and empty the Trash to permanently reclaim the space.": {
       "localizations": {
         "ar": {
@@ -124738,6 +128410,278 @@
           "stringUnit": {
             "state": "translated",
             "value": "您已選擇讓此項目保持不變"
+          }
+        }
+      }
+    },
+    "You have %@": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إصدارك الحالي: %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Du hast %@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tienes la versión %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vous utilisez la version %@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपके पास %@ है"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versi Anda: %@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hai la versione %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在のバージョン: %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "현재 버전: %@"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "നിലവിലെ പതിപ്പ്: %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Je hebt versie %@"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Masz wersję %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você tem a versão %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ваша версия: %@"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Du har version %@"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "தற்போதைய பதிப்பு: %@"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เวอร์ชันของคุณ: %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yüklü sürüm: %@"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ваша версія: %@"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bạn đang dùng bản %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "当前版本：%@"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "目前版本：%@"
+          }
+        }
+      }
+    },
+    "You have %@. It installs in a few seconds and keeps your settings.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "إصدارك الحالي: %@. يُثبَّت التحديث في بضع ثوانٍ مع الاحتفاظ بإعداداتك."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Du hast %@. Die Installation dauert nur wenige Sekunden, deine Einstellungen bleiben erhalten."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tienes la versión %@. Se instala en unos segundos y conserva tus ajustes."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vous utilisez la version %@. L'installation ne prend que quelques secondes et conserve vos réglages."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "आपके पास %@ है। यह कुछ ही सेकंड में इंस्टॉल हो जाता है और आपकी सेटिंग्ज़ बनाए रखता है।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Versi Anda: %@. Pembaruan terinstal dalam beberapa detik dan pengaturan Anda tetap disimpan."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Hai la versione %@. Si installa in pochi secondi e mantiene le tue impostazioni."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "現在のバージョン: %@。数秒でインストールでき、設定は保持されます。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "현재 버전: %@. 몇 초 만에 설치되며 설정은 유지됩니다."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "നിലവിലെ പതിപ്പ്: %@. കുറച്ച് സെക്കൻഡുകൾക്കുള്ളിൽ ഇൻസ്റ്റാൾ ആകും, നിങ്ങളുടെ ക്രമീകരണം നിലനിർത്തും."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Je hebt versie %@. Installeren duurt een paar seconden en je instellingen blijven behouden."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Masz wersję %@. Instalacja trwa kilka sekund, a ustawienia zostaną zachowane."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Você tem a versão %@. A instalação leva poucos segundos e mantém seus ajustes."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ваша версия: %@. Установка займет несколько секунд, настройки сохранятся."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Du har version %@. Installationen tar några sekunder och dina inställningar behålls."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "தற்போதைய பதிப்பு: %@. சில நொடிகளில் நிறுவப்படும், உங்கள் அமைப்புகள் வைக்கப்படும்."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เวอร์ชันของคุณ: %@ ติดตั้งเสร็จในไม่กี่วินาทีและการตั้งค่าของคุณจะยังคงอยู่"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Yüklü sürüm: %@. Birkaç saniyede yüklenir ve ayarlarınızı korur."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ваша версія: %@. Встановлення займе кілька секунд, параметри збережуться."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bạn đang dùng bản %@. Việc cài đặt chỉ mất vài giây và giữ nguyên cài đặt của bạn."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "当前版本：%@。安装只需几秒钟，并会保留你的设置。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "目前版本：%@。安裝只需幾秒鐘，並會保留您的設定。"
           }
         }
       }

@@ -71,7 +71,7 @@ private struct SecurityIntro: View {
                     ])
                     SecurityCapabilityCard(title: "What it can't do", icon: "xmark.circle.fill", tint: .secondary, lines: [
                         "Tell you whether a file is malware — Reclaim is not antivirus software and has no malware database",
-                        "Anything requiring the internet — it never connects",
+                        "Anything requiring the internet — the check runs offline",
                         "Remove or quarantine anything",
                     ])
                 }
@@ -141,7 +141,7 @@ private struct SecurityResults: View {
                     case .origins: SecurityOriginsSection(origins: model.origins)
                     }
 
-                    Text("Reclaim is not antivirus software. It has no malware database and never connects to the internet, so it cannot tell you whether a file is malicious. It reads signatures and records macOS already keeps.")
+                    Text("Reclaim is not antivirus software. It has no malware database and doesn't go online, so it cannot tell you whether a file is malicious. It reads signatures and records macOS already keeps.")
                         .font(.caption).foregroundStyle(.secondary)
                         .padding(.top, 8)
                 }
