@@ -10,6 +10,7 @@ struct RootView: View {
         } detail: {
             DetailView(route: app.route ?? .home)
                 .id(app.route ?? .home)
+                .navigationTitle((app.route ?? .home).title)
         }
         .overlay(alignment: .bottom) {
             if let toast = app.toast {
