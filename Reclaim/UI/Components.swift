@@ -247,6 +247,8 @@ struct FileRow: View {
                 NSPasteboard.general.clearContents()
                 NSPasteboard.general.setString(entry.path, forType: .string)
             }
+            Divider()
+            Button("Never Suggest This") { Exclusions.shared.add(entry.url) }
         }
     }
 }

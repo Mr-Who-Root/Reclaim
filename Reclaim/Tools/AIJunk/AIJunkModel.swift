@@ -63,6 +63,7 @@ final class AIJunkModel: ScanTool {
         openCheckAvailable = result.openCheckAvailable
         blocked = result.blocked
         selectRecommended()
+        dropExcluded()
         phase = .done(.now)
     }
 

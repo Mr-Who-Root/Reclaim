@@ -68,6 +68,7 @@ final class DuplicatesModel: ScanTool {
         .sorted { ($0.wasted, $0.name) > ($1.wasted, $1.name) }
         selectAllButKeepers()
         lastScan = .now
+        dropExcluded()
         phase = .done(.now)
     }
 

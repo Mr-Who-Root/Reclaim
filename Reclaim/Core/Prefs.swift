@@ -18,6 +18,7 @@ enum PrefKey {
     static let appearance = "appearance"
     static let themeStyle = "themeStyle"
     static let autoCheckUpdates = "autoCheckUpdates"
+    static let exclusions = "exclusions"
     static let lastUpdateCheck = "lastUpdateCheck"
     static let notifiedUpdateVersion = "notifiedUpdateVersion"
     static let language = "language"

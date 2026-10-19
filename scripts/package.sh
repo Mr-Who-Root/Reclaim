@@ -3,9 +3,10 @@
 set -euo pipefail
 ROOT="${0:A:h:h}"
 cd "$ROOT"
+source scripts/signing.sh
 
 xcodebuild -project Reclaim.xcodeproj -scheme Reclaim -configuration Release \
-  -derivedDataPath .build/release ARCHS="arm64 x86_64" ONLY_ACTIVE_ARCH=NO build \
+  -derivedDataPath .build/release ARCHS="arm64 x86_64" ONLY_ACTIVE_ARCH=NO "${SIGN_ARGS[@]}" build \
   | grep -E "error:|BUILD (SUCCEEDED|FAILED)" || true
 
 APP=".build/release/Build/Products/Release/Reclaim.app"

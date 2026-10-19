@@ -1,3 +1,4 @@
+import CoreServices
 import AppKit
 
 /// An app bundle found in /Applications or ~/Applications.
@@ -8,6 +9,11 @@ struct InstalledApp: Identifiable, Hashable, Sendable {
     let version: String?
     /// Set for apps found outside the Applications folders (e.g. "~/Github/App/build/Release").
     var otherLocation: String? = nil
+    /// When the app was last opened, as Spotlight records it (nil when there's no record).
+    var lastUsed: Date? = nil
+
+    /// Not opened for six months or more.
+    var isUnused: Bool { lastUsed.map { $0.daysAgo >= 180 } ?? false }
     var id: String { url.path }
 }
 
@@ -113,8 +119,12 @@ enum AppsScanner {
         let version = short ?? build
         // Apple apps living on the sealed system volume can't be removed.
         if let bundleID, bundleID.hasPrefix("com.apple."), url.resolvingSymlinksInPath().path.hasPrefix("/System/") { return nil }
-        return InstalledApp(url: url, name: name.isEmpty ? url.deletingPathExtension().lastPathComponent : name,
-                            bundleID: bundleID, version: version)
+        var app = InstalledApp(url: url, name: name.isEmpty ? url.deletingPathExtension().lastPathComponent : name,
+                               bundleID: bundleID, version: version)
+        if let item = MDItemCreateWithURL(kCFAllocatorDefault, url as CFURL) {
+            app.lastUsed = MDItemCopyAttribute(item, kMDItemLastUsedDate) as? Date
+        }
+        return app
     }
 
     // MARK: Support files for one app

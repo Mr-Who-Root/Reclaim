@@ -98,6 +98,7 @@ final class LargeFilesModel: ScanTool {
         scannedFileCount = result.scanned
         selection = selection.filter { id in items.contains { $0.id == id } }
         lastScan = .now
+        dropExcluded()
         phase = .done(.now)
     }
 

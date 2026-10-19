@@ -2,7 +2,7 @@ import SwiftUI
 
 /// Every screen in the sidebar. Also used by URLs (`reclaim://junk`), Spotlight and Shortcuts.
 enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
-    case home, guided, junk, ai, downloads, duplicates, photos, large, map, security, trash, leftovers, apps, settings
+    case home, guided, junk, ai, docker, downloads, duplicates, photos, large, map, security, trash, leftovers, apps, settings
 
     var id: String { rawValue }
 
@@ -30,7 +30,7 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
     var section: Section {
         switch self {
         case .home, .guided: return .overview
-        case .junk, .ai, .downloads, .duplicates, .photos, .large: return .clean
+        case .junk, .ai, .docker, .downloads, .duplicates, .photos, .large: return .clean
         case .map, .security: return .explore
         case .trash: return .review
         case .leftovers, .apps: return .app
@@ -44,6 +44,7 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         case .guided: return String(localized: "Guided Cleanup")
         case .junk: return String(localized: "Junk")
         case .ai: return String(localized: "AI Junk")
+        case .docker: return String(localized: "Docker")
         case .downloads: return String(localized: "Downloads")
         case .duplicates: return String(localized: "Duplicates")
         case .photos: return String(localized: "Photo Clutter")
@@ -63,6 +64,7 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         case .guided: return String(localized: "A reviewed, step-by-step clean you approve")
         case .junk: return String(localized: "Caches, logs & developer junk")
         case .ai: return String(localized: "Agent temp files, AI app caches & models")
+        case .docker: return String(localized: "Images, containers, volumes & build cache")
         case .downloads: return String(localized: "Old installers, archives & stale downloads")
         case .duplicates: return String(localized: "Byte-for-byte identical files")
         case .photos: return String(localized: "Look-alikes, screenshots & blurry shots")
@@ -82,6 +84,7 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         case .guided: return "checklist"
         case .junk: return "sparkles"
         case .ai: return "brain"
+        case .docker: return "shippingbox"
         case .downloads: return "arrow.down.circle"
         case .duplicates: return "doc.on.doc"
         case .photos: return "photo.on.rectangle.angled"
@@ -101,6 +104,7 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         case .guided: return .indigo
         case .junk: return .orange
         case .ai: return .mint
+        case .docker: return Color(red: 0.11, green: 0.52, blue: 0.93)
         case .downloads: return .blue
         case .duplicates: return .purple
         case .photos: return .pink
@@ -113,6 +117,14 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         case .settings: return .gray
         }
     }
+
+    /// Whether the screen applies to this Mac. Docker only shows up when its command-line tool is installed.
+    var isAvailable: Bool {
+        self == .docker ? DockerCLI.path != nil : true
+    }
+
+    /// Every screen that applies to this Mac, in sidebar order.
+    static var visible: [Route] { allCases.filter(\.isAvailable) }
 
     /// Tools that produce reclaimable results in Smart Scan.
     static let scanTools: [Route] = [.junk, .ai, .downloads, .duplicates, .photos, .large, .leftovers]

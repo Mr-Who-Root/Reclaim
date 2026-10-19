@@ -140,6 +140,7 @@ final class PhotosModel: ScanTool {
         groups = []
         regroup(preselect: true)
         lastScan = .now
+        dropExcluded()
         phase = .done(.now)
     }
 

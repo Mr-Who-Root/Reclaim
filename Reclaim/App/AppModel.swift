@@ -15,6 +15,7 @@ final class AppModel {
 
     let junk = JunkModel()
     let aiJunk = AIJunkModel()
+    let docker = DockerModel()
     let downloads = DownloadsModel()
     let duplicates = DuplicatesModel()
     let photos = PhotosModel()
@@ -34,12 +35,15 @@ final class AppModel {
     private var toastDismissTask: Task<Void, Never>?
 
     /// Tools that report reclaimable space, in display order.
-    var scanTools: [any ScanTool] { [junk, aiJunk, downloads, duplicates, photos, large, apps] }
+    var scanTools: [any ScanTool] {
+        [junk, aiJunk] + (Route.docker.isAvailable ? [docker] : []) + [downloads, duplicates, photos, large, apps]
+    }
 
     func tool(for route: Route) -> (any ScanTool)? {
         switch route {
         case .junk: return junk
         case .ai: return aiJunk
+        case .docker: return docker
         case .downloads: return downloads
         case .duplicates: return duplicates
         case .photos: return photos
@@ -124,6 +128,11 @@ final class AppModel {
         }
         didTrash(paths: batch.movedPaths)
         return batch.movedPaths
+    }
+
+    /// Drops excluded paths from every tool's results (after someone excludes something).
+    func applyExclusions() {
+        for tool in scanTools { tool.dropExcluded() }
     }
 
     /// Tells every tool that these paths are gone, then refreshes free space and the widget.

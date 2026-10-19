@@ -87,7 +87,19 @@ private struct AppsUninstallPane: View {
                 .fixedSize()
                 .help("Sort apps")
             }
-            .padding(10)
+            .padding(.horizontal, 10)
+            .padding(.top, 10)
+            if !model.unusedApps.isEmpty {
+                Toggle(isOn: $model.unusedOnly) {
+                    Text("Unused for 6+ months · \(Fmt.count(model.unusedApps.count, "app")) · \(Fmt.bytes(model.unusedBytes))")
+                        .font(.caption)
+                }
+                .toggleStyle(.checkbox)
+                .padding(.horizontal, 12)
+                .padding(.top, 6)
+                .frame(maxWidth: .infinity, alignment: .leading)
+            }
+            Spacer().frame(height: 8)
             if model.appsLoading && model.apps.isEmpty {
                 ProgressView("Finding apps…").frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
@@ -193,6 +205,10 @@ private struct AppsListRow: View {
                 Text(app.otherLocation ?? app.version.map { String(localized: "Version \($0)") } ?? (app.bundleID ?? ""))
                     .font(.caption).foregroundStyle(.secondary).lineLimit(1).truncationMode(.middle)
                     .help(app.otherLocation.map { "\($0)/\(app.url.lastPathComponent)" } ?? "")
+                Text(app.lastUsed.map { String(localized: "Opened \(Fmt.relative($0))") } ?? String(localized: "No record of opening"))
+                    .font(.caption2)
+                    .foregroundStyle(app.isUnused ? AnyShapeStyle(Color.orange) : AnyShapeStyle(.tertiary))
+                    .lineLimit(1)
             }
             Spacer(minLength: 4)
             if let size {
