@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Viewer</string>
+			<key>CFBundleURLName</key>
+			<string>com.govindsr.reclaim.routes</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>reclaim</string>
+			</array>
+		</dict>
+	</array>
+	<key>NSDesktopFolderUsageDescription</key>
+	<string>Reclaim scans your Desktop for large, duplicate and look-alike files. Nothing leaves your Mac, and removals always go to the Trash.</string>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>Reclaim scans your Documents for large and duplicate files. Nothing leaves your Mac, and removals always go to the Trash.</string>
+	<key>NSDownloadsFolderUsageDescription</key>
+	<string>Reclaim scans your Downloads for old installers, archives and large files. Nothing leaves your Mac, and removals always go to the Trash.</string>
+	<key>NSRemovableVolumesUsageDescription</key>
+	<string>Reclaim can map and scan folders on external drives you choose.</string>
+	<key>NSNetworkVolumesUsageDescription</key>
+	<string>Reclaim can map and scan folders on network drives you choose.</string>
+	<key>NSAppleEventsUsageDescription</key>
+	<string>Reclaim asks Finder to empty the Trash or remove an app that needs your administrator password.</string>
+</dict>
+</plist>
