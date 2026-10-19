@@ -57,13 +57,14 @@ struct SettingsView: View {
 
 /// Settings as a page in the main window's sidebar.
 struct SettingsPage: View {
-    @State private var section: SettingsSection? = .access
+    @Bindable private var app = AppModel.shared
+    private var section: SettingsSection? { app.settingsSection }
 
     var body: some View {
         VStack(spacing: 0) {
             ToolHeader(route: .settings)
             HStack(spacing: 0) {
-                List(SettingsSection.allCases, selection: $section) { s in
+                List(SettingsSection.allCases, selection: $app.settingsSection) { s in
                     Label(s.title, systemImage: s.icon).tag(s)
                 }
                 .listStyle(.sidebar)
@@ -208,6 +209,7 @@ private struct LocationRow: View {
 // MARK: - Appearance
 
 private struct AppearanceSettings: View {
+    @AppStorage(PrefKey.themeStyle) private var styleRaw = ThemeStyle.vivid.rawValue
     @AppStorage(PrefKey.appearance) private var appearanceRaw = AppearanceMode.system.rawValue
     @AppStorage(PrefKey.accent) private var accentRaw = Accent.ocean.rawValue
     @AppStorage(PrefKey.dockTint) private var dockTint = false
@@ -217,6 +219,20 @@ private struct AppearanceSettings: View {
 
     var body: some View {
         Form {
+            Section {
+                HStack(spacing: 14) {
+                    ForEach(ThemeStyle.allCases) { style in
+                        StylePreview(style: style, accent: accent, selected: styleRaw == style.rawValue) {
+                            styleRaw = style.rawValue
+                        }
+                    }
+                }
+                .padding(.vertical, 6)
+            } header: {
+                Text("Style")
+            } footer: {
+                Text((ThemeStyle(rawValue: styleRaw) ?? .vivid).detail).font(.caption).foregroundStyle(.secondary)
+            }
             Section("Theme") {
                 Picker("Appearance", selection: $appearanceRaw) {
                     ForEach(AppearanceMode.allCases) { Text($0.label).tag($0.rawValue) }
@@ -256,6 +272,49 @@ private struct AppearanceSettings: View {
         IconRenderer.applyDockIcon(tinted: dockTint, accent: accent)
         AppModel.shared.writeSnapshot()
     }
+}
+
+/// A miniature window showing what a style looks like.
+private struct StylePreview: View {
+    let style: ThemeStyle
+    let accent: Accent
+    let selected: Bool
+    let action: () -> Void
+    @Environment(\.colorScheme) private var scheme
+
+    var body: some View {
+        Button(action: action) {
+            VStack(spacing: 6) {
+                ZStack {
+                    ThemeBackground()
+                    HStack(spacing: 4) {
+                        RoundedRectangle(cornerRadius: 3).fill(theme.sidebarOverlay == .clear ? Color.secondary.opacity(0.12) : theme.sidebarOverlay)
+                            .frame(width: 26)
+                        VStack(spacing: 4) {
+                            RoundedRectangle(cornerRadius: 4).fill(theme.cardFill).frame(height: 22)
+                            HStack(spacing: 4) {
+                                RoundedRectangle(cornerRadius: 4).fill(theme.cardFill)
+                                RoundedRectangle(cornerRadius: 4).fill(theme.cardFill)
+                            }
+                            Capsule().fill(LinearGradient(colors: [accent.color, accent.deepColor], startPoint: .top, endPoint: .bottom))
+                                .frame(width: 36, height: 8)
+                        }
+                    }
+                    .padding(6)
+                }
+                .environment(\.theme, theme)
+                .frame(width: 128, height: 82)
+                .clipShape(RoundedRectangle(cornerRadius: 9, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: 9, style: .continuous)
+                    .strokeBorder(selected ? accent.color : Color.secondary.opacity(0.3), lineWidth: selected ? 2.5 : 1))
+                Text(style.label).font(.caption.weight(selected ? .semibold : .regular))
+            }
+        }
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(selected ? .isSelected : [])
+    }
+
+    private var theme: Theme { Theme(style: style, accent: accent, dark: scheme == .dark) }
 }
 
 /// Six accent swatches.

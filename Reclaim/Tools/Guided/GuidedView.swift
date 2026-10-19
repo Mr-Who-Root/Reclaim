@@ -31,11 +31,11 @@ struct GuidedView: View {
 
     private var subtitle: String {
         switch model.stage {
-        case .areas: return "Reclaim proposes, you approve every action before anything moves"
-        case .auditing: return "Checking your Mac. Nothing is being changed."
-        case .review: return "Review each suggestion. Adding to the plan doesn't carry it out."
-        case .running: return "Carrying out only the actions you confirmed"
-        case .results: return "What Reclaim did, and how to undo it"
+        case .areas: return String(localized: "Reclaim proposes, you approve every action before anything moves")
+        case .auditing: return String(localized: "Checking your Mac. Nothing is being changed.")
+        case .review: return String(localized: "Review each suggestion. Adding to the plan doesn't carry it out.")
+        case .running: return String(localized: "Carrying out only the actions you confirmed")
+        case .results: return String(localized: "What Reclaim did, and how to undo it")
         }
     }
 
@@ -318,7 +318,7 @@ private struct GuidedReviewStep: View {
                            label: model.label(for:), count: { model.count(for: $0) })
                 HStack(spacing: 10) {
                     Picker("Sort", selection: $model.sort) {
-                        ForEach(GuidedModel.SortOrder.allCases) { Text($0.rawValue).tag($0) }
+                        ForEach(GuidedModel.SortOrder.allCases) { Text(Fmt.loc($0.rawValue)).tag($0) }
                     }
                     .fixedSize()
                     Spacer()
@@ -675,12 +675,12 @@ private struct GuidedOutcomeRow: View {
 
     private var detail: String {
         switch outcome.status {
-        case .moved: return "In the Trash · recoverable until you empty it"
-        case .restored: return "Restored to its original folder"
-        case .restoreFailed(let why): return "Couldn't undo: \(why)"
+        case .moved: return String(localized: "In the Trash · recoverable until you empty it")
+        case .restored: return String(localized: "Restored to its original folder")
+        case .restoreFailed(let why): return String(localized: "Couldn't undo: \(why)")
         case .skipped(let why), .failed(let why): return why
-        case .declined: return "You chose to leave this unchanged"
-        case .undecided: return "Left undecided, so Reclaim didn't touch it"
+        case .declined: return String(localized: "You chose to leave this unchanged")
+        case .undecided: return String(localized: "Left undecided, so Reclaim didn't touch it")
         }
     }
 

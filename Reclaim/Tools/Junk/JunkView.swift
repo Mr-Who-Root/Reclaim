@@ -21,9 +21,9 @@ struct JunkView: View {
 
     private var subtitle: String {
         if model.phase.isDone, !model.results.isEmpty {
-            return "Found \(Fmt.bytes(model.foundBytes)) in caches, logs and leftovers · scanned \(Fmt.relative(model.phase.lastScan))"
+            return String(localized: "Found \(Fmt.bytes(model.foundBytes)) in caches, logs and leftovers · scanned \(Fmt.relative(model.phase.lastScan))")
         }
-        return "Caches, logs, developer leftovers & old iOS backups"
+        return String(localized: "Caches, logs, developer leftovers & old iOS backups")
     }
 
     @ViewBuilder private var content: some View {
@@ -79,7 +79,7 @@ struct JunkView: View {
                         }
                     } header: {
                         HStack {
-                            Label(section.group.rawValue, systemImage: section.group.icon)
+                            Label(Fmt.loc(section.group.rawValue), systemImage: section.group.icon)
                             Spacer()
                             Text(Fmt.bytes(section.bytes)).monospacedDigit()
                         }
@@ -192,9 +192,9 @@ private struct JunkCheckbox: View {
 
     private var label: String {
         switch state {
-        case .none: return "Selects every item in this rule"
-        case .some: return "Some items selected. Selects every item in this rule"
-        case .all: return "Deselects every item in this rule"
+        case .none: return String(localized: "Selects every item in this rule")
+        case .some: return String(localized: "Some items selected. Selects every item in this rule")
+        case .all: return String(localized: "Deselects every item in this rule")
         }
     }
 }

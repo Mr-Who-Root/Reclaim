@@ -30,9 +30,9 @@ struct DuplicatesView: View {
 
     private var subtitle: String {
         if model.phase.isDone, !model.groups.isEmpty {
-            return "\(Fmt.count(model.groups.count, "set")) of identical files in \(model.scannedScopeLabel) · \(Fmt.bytes(model.reclaimableBytes)) in extra copies"
+            return String(localized: "\(Fmt.count(model.groups.count, "set")) of identical files in \(model.scannedScopeLabel) · \(Fmt.bytes(model.reclaimableBytes)) in extra copies")
         }
-        return "Byte-for-byte identical files. One copy of each always stays."
+        return String(localized: "Byte-for-byte identical files. One copy of each always stays.")
     }
 
     private var scopeControls: some View {

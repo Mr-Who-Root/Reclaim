@@ -23,32 +23,32 @@ enum SecuritySignatureStatus: Int, CaseIterable, Comparable, Hashable {
 
     var title: String {
         switch self {
-        case .apple: return "Part of macOS"
-        case .appStore: return "From the App Store"
-        case .notarized: return "Signed and notarised by Apple"
-        case .signedNotNotarized: return "Signed, but not notarised"
-        case .adHoc: return "Ad-hoc signature only"
-        case .unsigned: return "Unsigned"
-        case .invalid: return "Signature does not match the code"
+        case .apple: return String(localized: "Part of macOS")
+        case .appStore: return String(localized: "From the App Store")
+        case .notarized: return String(localized: "Signed and notarised by Apple")
+        case .signedNotNotarized: return String(localized: "Signed, but not notarised")
+        case .adHoc: return String(localized: "Ad-hoc signature only")
+        case .unsigned: return String(localized: "Unsigned")
+        case .invalid: return String(localized: "Signature does not match the code")
         }
     }
 
     var explanation: String {
         switch self {
         case .apple:
-            return "Apple signed this as part of the operating system."
+            return String(localized: "Apple signed this as part of the operating system.")
         case .appStore:
-            return "Distributed through the Mac App Store, so Apple reviewed it and it runs sandboxed."
+            return String(localized: "Distributed through the Mac App Store, so Apple reviewed it and it runs sandboxed.")
         case .notarized:
-            return "A known developer signed it and Apple scanned it for known malicious content before it was distributed."
+            return String(localized: "A known developer signed it and Apple scanned it for known malicious content before it was distributed.")
         case .signedNotNotarized:
-            return "A known developer signed it, but it carries no notarisation ticket. Common for older or internally distributed software."
+            return String(localized: "A known developer signed it, but it carries no notarisation ticket. Common for older or internally distributed software.")
         case .adHoc:
-            return "It carries a signature that identifies no developer, so there is nobody to hold responsible for it. Locally built software often looks like this."
+            return String(localized: "It carries a signature that identifies no developer, so there is nobody to hold responsible for it. Locally built software often looks like this.")
         case .unsigned:
-            return "It carries no signature, so macOS cannot tell you who made it or whether it has been altered. Scripts and self-built tools are normally unsigned."
+            return String(localized: "It carries no signature, so macOS cannot tell you who made it or whether it has been altered. Scripts and self-built tools are normally unsigned.")
         case .invalid:
-            return "It is signed, but the signature no longer matches what is on disk. Something changed it after it was signed — an update gone wrong, a modification, or tampering."
+            return String(localized: "It is signed, but the signature no longer matches what is on disk. Something changed it after it was signed — an update gone wrong, a modification, or tampering.")
         }
     }
 

@@ -31,7 +31,7 @@ struct PhotosView: View {
 
     private var subtitle: String {
         if model.phase.isDone, hasResults {
-            return "\(Fmt.bytes(model.reclaimableBytes)) worth reviewing in \(model.scannedScopeLabel)"
+            return String(localized: "\(Fmt.bytes(model.reclaimableBytes)) worth reviewing in \(model.scannedScopeLabel)")
         }
         return Route.photos.tagline
     }
@@ -105,13 +105,13 @@ struct PhotosView: View {
     private func description(for category: PhotoCategory) -> String {
         switch category {
         case .lookalikes:
-            return "Shots taken around the same time that look almost the same. The best copy — sharpest, then highest resolution — stays."
+            return String(localized: "Shots taken around the same time that look almost the same. The best copy — sharpest, then highest resolution — stays.")
         case .screenshots:
-            return "Found by name and by the screen-capture flag macOS adds. Screenshots older than \(PhotosModel.staleDays) days are suggested."
+            return String(localized: "Found by name and by the screen-capture flag macOS adds. Screenshots older than \(PhotosModel.staleDays) days are suggested.")
         case .recordings:
-            return "Screen recordings are often the biggest clutter. Ones older than \(PhotosModel.staleDays) days are suggested."
+            return String(localized: "Screen recordings are often the biggest clutter. Ones older than \(PhotosModel.staleDays) days are suggested.")
         case .blurry:
-            return "Camera photos that scored low for sharpness. Nothing here is preselected — check each one first."
+            return String(localized: "Camera photos that scored low for sharpness. Nothing here is preselected — check each one first.")
         }
     }
 
@@ -174,17 +174,17 @@ struct PhotosView: View {
 
     private func tileDetail(_ item: PhotoItem) -> String {
         switch model.category {
-        case .blurry: return "Sharpness \(item.sharpnessScore ?? 0)"
+        case .blurry: return String(localized: "Sharpness \(item.sharpnessScore ?? 0)")
         default: return Fmt.date(item.date)
         }
     }
 
     private func emptyMessage(for category: PhotoCategory) -> String {
         switch category {
-        case .screenshots: return "No screenshots in \(model.scannedScopeLabel)."
-        case .recordings: return "No screen recordings in \(model.scannedScopeLabel)."
-        case .blurry: return "Every camera photo looks sharp enough."
-        case .lookalikes: return ""
+        case .screenshots: return String(localized: "No screenshots in \(model.scannedScopeLabel).")
+        case .recordings: return String(localized: "No screen recordings in \(model.scannedScopeLabel).")
+        case .blurry: return String(localized: "Every camera photo looks sharp enough.")
+        case .lookalikes: return String(localized: "")
         }
     }
 

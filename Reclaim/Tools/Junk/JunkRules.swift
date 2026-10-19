@@ -23,7 +23,7 @@ enum JunkGroup: String, CaseIterable, Identifiable {
 enum JunkSafety {
     case safe, caution
 
-    var label: String { self == .safe ? "Safe" : "Caution" }
+    var label: String { self == .safe ? String(localized: "Safe") : String(localized: "Caution") }
     var color: Color { self == .safe ? .green : .orange }
 }
 
@@ -73,8 +73,8 @@ enum JunkRules {
     static let all: [JunkRule] = [
         // MARK: App caches & logs
         JunkRule(
-            id: "appCaches", title: "App caches", icon: "internaldrive",
-            explanation: "Files apps keep so they load faster. Apps rebuild them as needed, so clearing them is safe — an app may feel a little slower the first time you open it.",
+            id: "appCaches", title: String(localized: "App caches"), icon: "internaldrive",
+            explanation: String(localized: "Files apps keep so they load faster. Apps rebuild them as needed, so clearing them is safe — an app may feel a little slower the first time you open it."),
             group: .appData, safety: .safe, selectedByDefault: true,
             sources: [.children("Library/Caches")],
             excludedNames: [
@@ -84,21 +84,21 @@ enum JunkRules {
             ],
             isAppCaches: true),
         JunkRule(
-            id: "appLogs", title: "App logs", icon: "doc.plaintext",
-            explanation: "Diagnostic text files apps write over time, including old crash reports. Nothing needs them to run, and apps start fresh logs automatically.",
+            id: "appLogs", title: String(localized: "App logs"), icon: "doc.plaintext",
+            explanation: String(localized: "Diagnostic text files apps write over time, including old crash reports. Nothing needs them to run, and apps start fresh logs automatically."),
             group: .appData, safety: .safe, selectedByDefault: true,
             sources: [.children("Library/Logs")]),
         JunkRule(
-            id: "savedState", title: "Saved window state", icon: "macwindow",
-            explanation: "What apps remember about their open windows between launches. Clearing it only means some apps reopen with their default windows.",
+            id: "savedState", title: String(localized: "Saved window state"), icon: "macwindow",
+            explanation: String(localized: "What apps remember about their open windows between launches. Clearing it only means some apps reopen with their default windows."),
             group: .appData, safety: .safe, selectedByDefault: true,
             sources: [.children("Library/Saved Application State")],
             excludedNames: ["com.govindsr.reclaim.savedState"]),
 
         // MARK: Browsers
         JunkRule(
-            id: "chromium", title: "Chrome-family browser caches", icon: "globe",
-            explanation: "Chrome, Brave, Edge, Vivaldi and Arc rebuild their caches as you browse. Sites may load a little slower on the first visit. History, passwords and tabs aren't touched.",
+            id: "chromium", title: String(localized: "Chrome-family browser caches"), icon: "globe",
+            explanation: String(localized: "Chrome, Brave, Edge, Vivaldi and Arc rebuild their caches as you browse. Sites may load a little slower on the first visit. History, passwords and tabs aren't touched."),
             group: .browsers, safety: .safe, selectedByDefault: true,
             sources: [
                 .path("Library/Caches/Google/Chrome"), .path("Library/Caches/Google/Chrome Canary"),
@@ -107,20 +107,20 @@ enum JunkRules {
                 .path("Library/Caches/Arc"), .path("Library/Caches/company.thebrowser.Browser"),
             ]),
         JunkRule(
-            id: "firefox", title: "Firefox cache", icon: "flame",
-            explanation: "Firefox rebuilds its cache as you browse. Sites may load a little slower on the first visit. Bookmarks, history and passwords aren't touched.",
+            id: "firefox", title: String(localized: "Firefox cache"), icon: "flame",
+            explanation: String(localized: "Firefox rebuilds its cache as you browse. Sites may load a little slower on the first visit. Bookmarks, history and passwords aren't touched."),
             group: .browsers, safety: .safe, selectedByDefault: true,
             sources: [.profileSubfolder("Library/Caches/Firefox/Profiles", "cache2")]),
 
         // MARK: Developer
         JunkRule(
-            id: "derivedData", title: "Xcode DerivedData", icon: "hammer",
-            explanation: "Build intermediates and indexes that Xcode fully rebuilds on the next build. The classic developer space hog — your projects and code aren't stored here.",
+            id: "derivedData", title: String(localized: "Xcode DerivedData"), icon: "hammer",
+            explanation: String(localized: "Build intermediates and indexes that Xcode fully rebuilds on the next build. The classic developer space hog — your projects and code aren't stored here."),
             group: .developer, safety: .safe, selectedByDefault: true,
             sources: [.children("Library/Developer/Xcode/DerivedData")]),
         JunkRule(
-            id: "deviceSupport", title: "Device support files", icon: "iphone",
-            explanation: "Debugging symbols Xcode copied from iPhones, Watches and Apple TVs you've connected. Xcode copies them again the next time you connect that device.",
+            id: "deviceSupport", title: String(localized: "Device support files"), icon: "iphone",
+            explanation: String(localized: "Debugging symbols Xcode copied from iPhones, Watches and Apple TVs you've connected. Xcode copies them again the next time you connect that device."),
             group: .developer, safety: .safe, selectedByDefault: true,
             sources: [
                 .children("Library/Developer/Xcode/iOS DeviceSupport"),
@@ -129,70 +129,70 @@ enum JunkRules {
                 .children("Library/Developer/Xcode/visionOS DeviceSupport"),
             ]),
         JunkRule(
-            id: "simCaches", title: "Simulator caches", icon: "ipad.and.iphone",
-            explanation: "Caches Simulator recreates on demand. Your simulated devices and the apps installed on them are kept.",
+            id: "simCaches", title: String(localized: "Simulator caches"), icon: "ipad.and.iphone",
+            explanation: String(localized: "Caches Simulator recreates on demand. Your simulated devices and the apps installed on them are kept."),
             group: .developer, safety: .safe, selectedByDefault: true,
             sources: [.children("Library/Developer/CoreSimulator/Caches")]),
         JunkRule(
-            id: "previews", title: "SwiftUI preview data", icon: "rectangle.on.rectangle",
-            explanation: "Builds Xcode makes for SwiftUI previews. They're regenerated the next time you open a preview.",
+            id: "previews", title: String(localized: "SwiftUI preview data"), icon: "rectangle.on.rectangle",
+            explanation: String(localized: "Builds Xcode makes for SwiftUI previews. They're regenerated the next time you open a preview."),
             group: .developer, safety: .safe, selectedByDefault: true,
             sources: [.children("Library/Developer/Xcode/UserData/Previews")]),
         JunkRule(
-            id: "archives", title: "Xcode archives", icon: "archivebox",
-            explanation: "Your distributable app builds, with debug symbols. Keep any you may still need to symbolicate crash reports or submit again.",
+            id: "archives", title: String(localized: "Xcode archives"), icon: "archivebox",
+            explanation: String(localized: "Your distributable app builds, with debug symbols. Keep any you may still need to symbolicate crash reports or submit again."),
             group: .developer, safety: .caution, selectedByDefault: false,
             sources: [.grandchildrenWithExtension("Library/Developer/Xcode/Archives", "xcarchive")]),
         JunkRule(
-            id: "npm", title: "npm cache", icon: "shippingbox",
-            explanation: "Package tarballs npm downloaded. npm fetches them again when a project needs them.",
+            id: "npm", title: String(localized: "npm cache"), icon: "shippingbox",
+            explanation: String(localized: "Package tarballs npm downloaded. npm fetches them again when a project needs them."),
             group: .developer, safety: .safe, selectedByDefault: true,
             sources: [.path(".npm/_cacache")]),
         JunkRule(
-            id: "yarn", title: "Yarn cache", icon: "shippingbox",
-            explanation: "Yarn's offline package cache. Packages download again on the next install.",
+            id: "yarn", title: String(localized: "Yarn cache"), icon: "shippingbox",
+            explanation: String(localized: "Yarn's offline package cache. Packages download again on the next install."),
             group: .developer, safety: .safe, selectedByDefault: true,
             sources: [.path("Library/Caches/Yarn")]),
         JunkRule(
-            id: "pip", title: "pip cache", icon: "shippingbox",
-            explanation: "Python packages pip downloaded or built. pip fetches them again when needed.",
+            id: "pip", title: String(localized: "pip cache"), icon: "shippingbox",
+            explanation: String(localized: "Python packages pip downloaded or built. pip fetches them again when needed."),
             group: .developer, safety: .safe, selectedByDefault: true,
             sources: [.path("Library/Caches/pip")]),
         JunkRule(
-            id: "homebrew", title: "Homebrew downloads", icon: "mug",
-            explanation: "Bottles and source archives Homebrew downloaded during installs and upgrades. Installed packages keep working.",
+            id: "homebrew", title: String(localized: "Homebrew downloads"), icon: "mug",
+            explanation: String(localized: "Bottles and source archives Homebrew downloaded during installs and upgrades. Installed packages keep working."),
             group: .developer, safety: .safe, selectedByDefault: true,
             sources: [.path("Library/Caches/Homebrew")]),
         JunkRule(
-            id: "cocoapods", title: "CocoaPods cache", icon: "shippingbox",
-            explanation: "Pod specs and downloads CocoaPods keeps between installs. They download again on the next `pod install`.",
+            id: "cocoapods", title: String(localized: "CocoaPods cache"), icon: "shippingbox",
+            explanation: String(localized: "Pod specs and downloads CocoaPods keeps between installs. They download again on the next `pod install`."),
             group: .developer, safety: .safe, selectedByDefault: true,
             sources: [.path("Library/Caches/CocoaPods")]),
         JunkRule(
-            id: "gradle", title: "Gradle caches", icon: "cube",
-            explanation: "Downloaded dependencies, build caches and wrapper distributions for Gradle (Android and Java). Rebuilt on your next build.",
+            id: "gradle", title: String(localized: "Gradle caches"), icon: "cube",
+            explanation: String(localized: "Downloaded dependencies, build caches and wrapper distributions for Gradle (Android and Java). Rebuilt on your next build."),
             group: .developer, safety: .safe, selectedByDefault: true,
             sources: [.path(".gradle/caches"), .children(".gradle/wrapper/dists")]),
         JunkRule(
-            id: "cargo", title: "Cargo registry cache", icon: "shippingbox",
-            explanation: "Crate archives Cargo downloaded. Rust projects download them again when needed.",
+            id: "cargo", title: String(localized: "Cargo registry cache"), icon: "shippingbox",
+            explanation: String(localized: "Crate archives Cargo downloaded. Rust projects download them again when needed."),
             group: .developer, safety: .safe, selectedByDefault: true,
             sources: [.path(".cargo/registry/cache")]),
         JunkRule(
-            id: "android", title: "Android emulator images", icon: "candybarphone",
-            explanation: "Virtual device disks, often several gigabytes each. Removing one deletes that emulator and its data — recreate it in Android Studio if you need it again.",
+            id: "android", title: String(localized: "Android emulator images"), icon: "candybarphone",
+            explanation: String(localized: "Virtual device disks, often several gigabytes each. Removing one deletes that emulator and its data — recreate it in Android Studio if you need it again."),
             group: .developer, safety: .caution, selectedByDefault: false,
             sources: [.childrenWithExtension(".android/avd", "avd")]),
 
         // MARK: Backups & Mail
         JunkRule(
-            id: "iosBackups", title: "iPhone & iPad backups", icon: "iphone.gen3",
-            explanation: "Full device backups made by syncing with this Mac. Remove one only if that device backs up to iCloud or you no longer own it.",
+            id: "iosBackups", title: String(localized: "iPhone & iPad backups"), icon: "iphone.gen3",
+            explanation: String(localized: "Full device backups made by syncing with this Mac. Remove one only if that device backs up to iCloud or you no longer own it."),
             group: .backups, safety: .caution, selectedByDefault: false, needsFullDiskAccess: true,
             sources: [.children("Library/Application Support/MobileSync/Backup")]),
         JunkRule(
-            id: "mailDownloads", title: "Mail attachment copies", icon: "paperclip",
-            explanation: "Copies of attachments you opened from Mail. The originals stay in your messages.",
+            id: "mailDownloads", title: String(localized: "Mail attachment copies"), icon: "paperclip",
+            explanation: String(localized: "Copies of attachments you opened from Mail. The originals stay in your messages."),
             group: .backups, safety: .safe, selectedByDefault: true, needsFullDiskAccess: true,
             sources: [.children("Library/Containers/com.apple.mail/Data/Library/Mail Downloads")]),
     ]

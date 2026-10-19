@@ -188,7 +188,15 @@ enum Fmt {
     static func bytes(_ n: Int64) -> String { ByteText.string(n) }
 
     static func count(_ n: Int, _ singular: String, _ plural: String? = nil) -> String {
-        "\(n.formatted()) \(n == 1 ? singular : (plural ?? singular + "s"))"
+        "\(n.formatted()) \(noun(n == 1 ? singular : (plural ?? singular + "s")))"
+    }
+
+    /// Nouns used in counts ("item", "files"…) come from the string catalog.
+    static func noun(_ word: String) -> String { loc(word) }
+
+    /// Looks up a label built at runtime (enum names, filter chips) in the string catalog.
+    static func loc(_ text: String) -> String {
+        Bundle.main.localizedString(forKey: text, value: text, table: nil)
     }
 
     private static let relativeFormatter: RelativeDateTimeFormatter = {
@@ -199,7 +207,7 @@ enum Fmt {
 
     static func relative(_ date: Date?) -> String {
         guard let date else { return "—" }
-        if abs(date.timeIntervalSinceNow) < 60 { return "just now" }
+        if abs(date.timeIntervalSinceNow) < 60 { return String(localized: "just now") }
         return relativeFormatter.localizedString(for: date, relativeTo: .now)
     }
 
@@ -215,9 +223,9 @@ enum Fmt {
 
     /// "8 months", "2 years" — how long since a date.
     static func age(_ date: Date?) -> String {
-        guard let date else { return "unknown age" }
+        guard let date else { return String(localized: "unknown age") }
         let days = Int(-date.timeIntervalSinceNow / 86_400)
-        if days < 1 { return "today" }
+        if days < 1 { return String(localized: "today") }
         if days < 31 { return Fmt.count(days, "day") }
         if days < 365 { return Fmt.count(days / 30, "month") }
         return Fmt.count(days / 365, "year")

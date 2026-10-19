@@ -21,7 +21,7 @@ struct SecurityView: View {
     }
 
     private var headerSubtitle: String {
-        if let date = model.phase.lastScan { return "Last checked \(Fmt.relative(date)) · read-only, nothing is changed" }
+        if let date = model.phase.lastScan { return String(localized: "Last checked \(Fmt.relative(date)) · read-only, nothing is changed") }
         return Route.security.tagline
     }
 
@@ -127,7 +127,7 @@ private struct SecurityResults: View {
                         DeepVerifyProgress(done: done, total: total, current: current)
                     }
                     Picker("Section", selection: $section) {
-                        ForEach(SecuritySection.allCases) { Text($0.rawValue).tag($0) }
+                        ForEach(SecuritySection.allCases) { Text(Fmt.loc($0.rawValue)).tag($0) }
                     }
                     .pickerStyle(.segmented)
                     .labelsHidden()
@@ -220,9 +220,9 @@ private struct SecurityAppsSection: View {
 
     private func label(_ f: AppFilter) -> String {
         switch f {
-        case .all: return "All"
-        case .attention: return "Needs attention"
-        case .info: return "For your information"
+        case .all: return String(localized: "All")
+        case .attention: return String(localized: "Needs attention")
+        case .info: return String(localized: "For your information")
         case .status(let s): return s.title
         }
     }

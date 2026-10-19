@@ -13,6 +13,8 @@ struct RouteIcon: View {
             .foregroundStyle(.white)
             .frame(width: side, height: side)
             .background(RoundedRectangle(cornerRadius: side * 0.27, style: .continuous).fill(route.color.gradient))
+            .overlay(RoundedRectangle(cornerRadius: side * 0.27, style: .continuous).strokeBorder(.white.opacity(0.18), lineWidth: 0.5))
+            .shadow(color: route.color.opacity(side > 30 ? 0.35 : 0), radius: side * 0.18, y: side * 0.06)
             .accessibilityHidden(true)
     }
 }
@@ -33,7 +35,7 @@ struct ToolHeader<Trailing: View>: View {
         HStack(alignment: .center, spacing: 14) {
             RouteIcon(route: route, side: 42)
             VStack(alignment: .leading, spacing: 2) {
-                Text(route.title).font(.title2.weight(.bold))
+                Text(route.title).font(.system(.title2, design: .rounded).weight(.bold))
                 Text(subtitle ?? route.tagline).font(.callout).foregroundStyle(.secondary).lineLimit(2)
             }
             Spacer(minLength: 12)
@@ -50,14 +52,14 @@ struct ToolHeader<Trailing: View>: View {
 /// What a tool shows before its first scan.
 struct ToolIntro<Accessory: View>: View {
     let route: Route
-    let title: String
-    let message: String
-    var bullets: [String] = []
-    var buttonTitle: String = "Scan"
+    let title: LocalizedStringKey
+    let message: LocalizedStringKey
+    var bullets: [LocalizedStringKey] = []
+    var buttonTitle: LocalizedStringKey = "Scan"
     let action: () -> Void
     @ViewBuilder var accessory: () -> Accessory
 
-    init(route: Route, title: String, message: String, bullets: [String] = [], buttonTitle: String = "Scan",
+    init(route: Route, title: LocalizedStringKey, message: LocalizedStringKey, bullets: [LocalizedStringKey] = [], buttonTitle: LocalizedStringKey = "Scan",
          action: @escaping () -> Void, @ViewBuilder accessory: @escaping () -> Accessory = { EmptyView() }) {
         self.route = route
         self.title = title
@@ -71,11 +73,12 @@ struct ToolIntro<Accessory: View>: View {
     var body: some View {
         VStack(spacing: 18) {
             RouteIcon(route: route, side: 72)
-            Text(title).font(.title.weight(.semibold)).multilineTextAlignment(.center)
+            Text(title).font(.system(.title, design: .rounded).weight(.bold)).multilineTextAlignment(.center)
             Text(message).font(.body).foregroundStyle(.secondary).multilineTextAlignment(.center).frame(maxWidth: 520)
             if !bullets.isEmpty {
                 VStack(alignment: .leading, spacing: 6) {
-                    ForEach(bullets, id: \.self) { b in
+                    ForEach(bullets.indices, id: \.self) { i in
+                        let b = bullets[i]
                         Label(b, systemImage: "checkmark.circle.fill").foregroundStyle(.secondary)
                             .symbolRenderingMode(.hierarchical)
                     }
@@ -84,10 +87,9 @@ struct ToolIntro<Accessory: View>: View {
             }
             accessory()
             Button(action: action) {
-                Label(buttonTitle, systemImage: "magnifyingglass").padding(.horizontal, 10).padding(.vertical, 2)
+                Label(buttonTitle, systemImage: "magnifyingglass")
             }
-            .buttonStyle(.borderedProminent)
-            .controlSize(.large)
+            .buttonStyle(.pillLarge)
             .keyboardShortcut(.defaultAction)
         }
         .padding(40)
@@ -97,7 +99,7 @@ struct ToolIntro<Accessory: View>: View {
 
 /// Shown while a scan is running.
 struct ScanningPanel: View {
-    let title: String
+    let title: LocalizedStringKey
     let message: String?
     var onCancel: (() -> Void)? = nil
 
@@ -122,9 +124,9 @@ struct ScanningPanel: View {
 
 /// A finished scan with nothing to show.
 struct AllClearView: View {
-    let title: String
-    let message: String
-    var actionTitle: String = "Scan Again"
+    let title: LocalizedStringKey
+    let message: LocalizedStringKey
+    var actionTitle: LocalizedStringKey = "Scan Again"
     var action: (() -> Void)? = nil
 
     var body: some View {
@@ -135,7 +137,7 @@ struct AllClearView: View {
             Text(title).font(.title2.weight(.semibold))
             Text(message).foregroundStyle(.secondary).multilineTextAlignment(.center).frame(maxWidth: 480)
             if let action {
-                Button(actionTitle, action: action)
+                Button(actionTitle, action: action).buttonStyle(.softGlass)
             }
         }
         .padding(40)
@@ -149,13 +151,14 @@ struct AllClearView: View {
 struct SelectionBar<Leading: View>: View {
     let count: Int
     let bytes: Int64
-    var actionTitle: String = "Move to Trash"
+    var actionTitle: LocalizedStringKey = "Move to Trash"
     var isWorking: Bool = false
     let action: () -> Void
     @ViewBuilder var leading: () -> Leading
     @State private var confirming = false
+    @Environment(\.theme) private var theme
 
-    init(count: Int, bytes: Int64, actionTitle: String = "Move to Trash", isWorking: Bool = false,
+    init(count: Int, bytes: Int64, actionTitle: LocalizedStringKey = "Move to Trash", isWorking: Bool = false,
          action: @escaping () -> Void, @ViewBuilder leading: @escaping () -> Leading = { EmptyView() }) {
         self.count = count
         self.bytes = bytes
@@ -178,15 +181,14 @@ struct SelectionBar<Leading: View>: View {
             Button(role: .destructive) { confirming = true } label: {
                 if isWorking { ProgressView().controlSize(.small) } else { Label(actionTitle, systemImage: "trash") }
             }
-            .buttonStyle(.borderedProminent)
-            .tint(.red)
+            .buttonStyle(.pillDestructive)
             .disabled(count == 0 || isWorking)
         }
         .padding(.horizontal, 20)
         .padding(.vertical, 10)
-        .background(.bar)
+        .background(theme.barFill)
         .overlay(alignment: .top) { Divider() }
-        .confirmationDialog("Move \(Fmt.count(count, "item")) (\(Fmt.bytes(bytes))) to the Trash?",
+        .confirmationDialog(Text("Move \(Fmt.count(count, "item")) (\(Fmt.bytes(bytes))) to the Trash?"),
                             isPresented: $confirming) {
             Button(actionTitle, role: .destructive, action: action)
             Button("Cancel", role: .cancel) {}
@@ -253,7 +255,7 @@ struct Badge: View {
     let text: String
     var color: Color = .secondary
     var body: some View {
-        Text(text)
+        Text(Fmt.loc(text))
             .font(.caption2.weight(.semibold))
             .padding(.horizontal, 6)
             .padding(.vertical, 2)
@@ -263,14 +265,14 @@ struct Badge: View {
 }
 
 struct StatTile: View {
-    let title: String
+    let title: LocalizedStringKey
     let value: String
     var caption: String? = nil
     var tint: Color? = nil
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text(title).font(.caption).foregroundStyle(.secondary)
-            Text(value).font(.title2.weight(.bold)).monospacedDigit()
+            Text(value).font(.system(.title2, design: .rounded).weight(.bold)).monospacedDigit()
                 .foregroundStyle(tint.map { AnyShapeStyle($0) } ?? AnyShapeStyle(.tint))
             if let caption { Text(caption).font(.caption2).foregroundStyle(.secondary) }
         }
@@ -281,11 +283,14 @@ struct StatTile: View {
 
 struct CardModifier: ViewModifier {
     var padding: CGFloat = 14
+    @Environment(\.theme) private var theme
     func body(content: Content) -> some View {
+        let radius: CGFloat = theme.isVivid ? 16 : 12
         content
             .padding(padding)
-            .background(RoundedRectangle(cornerRadius: 12, style: .continuous).fill(.background.secondary))
-            .overlay(RoundedRectangle(cornerRadius: 12, style: .continuous).strokeBorder(.separator.opacity(0.5)))
+            .background(RoundedRectangle(cornerRadius: radius, style: .continuous).fill(theme.cardFill))
+            .overlay(RoundedRectangle(cornerRadius: radius, style: .continuous).strokeBorder(theme.cardStroke))
+            .shadow(color: .black.opacity(theme.isVivid && !theme.dark ? 0.06 : 0), radius: 8, y: 2)
     }
 }
 
@@ -295,6 +300,7 @@ extension View {
 
 /// A row of selectable filter chips with optional counts.
 struct ChipPicker<T: Hashable>: View {
+    @Environment(\.theme) private var theme
     @Binding var selection: T
     let options: [T]
     let label: (T) -> String
@@ -309,7 +315,7 @@ struct ChipPicker<T: Hashable>: View {
                         selection = option
                     } label: {
                         HStack(spacing: 4) {
-                            Text(label(option))
+                            Text(Fmt.loc(label(option)))
                             if let n = count?(option) {
                                 Text("\(n)").foregroundStyle(selected ? .white.opacity(0.85) : .secondary).monospacedDigit()
                             }
@@ -318,7 +324,7 @@ struct ChipPicker<T: Hashable>: View {
                         .padding(.horizontal, 10)
                         .padding(.vertical, 5)
                         .foregroundStyle(selected ? .white : .primary)
-                        .background(Capsule().fill(selected ? AnyShapeStyle(.tint) : AnyShapeStyle(Color.secondary.opacity(0.12))))
+                        .background(Capsule().fill(selected ? AnyShapeStyle(.tint) : AnyShapeStyle(theme.isVivid ? Color.white.opacity(theme.dark ? 0.10 : 0.55) : Color.secondary.opacity(0.12))))
                     }
                     .buttonStyle(.plain)
                     .accessibilityAddTraits(selected ? .isSelected : [])
@@ -359,7 +365,7 @@ struct ScopeMenu: View {
 
 /// Explains that some areas need Full Disk Access, with a button to open the right settings pane.
 struct FullDiskAccessBanner: View {
-    let reason: String
+    let reason: LocalizedStringKey
     @State private var granted = FS.hasFullDiskAccess()
 
     var body: some View {
@@ -382,13 +388,14 @@ struct FullDiskAccessBanner: View {
 
 /// A capsule progress bar.
 struct UsageBar: View {
+    @Environment(\.theme) private var theme
     let fraction: Double
     var tint: Color? = nil
     var height: CGFloat = 10
     var body: some View {
         GeometryReader { geo in
             ZStack(alignment: .leading) {
-                Capsule().fill(.quaternary)
+                Capsule().fill(theme.isVivid ? AnyShapeStyle(Color.white.opacity(theme.dark ? 0.14 : 0.6)) : AnyShapeStyle(.quaternary))
                 Capsule().fill(tint.map { AnyShapeStyle($0.gradient) } ?? AnyShapeStyle(.tint)).frame(width: max(height, geo.size.width * min(1, max(0, fraction))))
             }
         }
@@ -439,13 +446,21 @@ struct Toast: Identifiable, Equatable {
 
 /// A labelled section title used inside tool content.
 struct SectionTitle: View {
-    let title: String
-    var subtitle: String? = nil
+    let title: LocalizedStringKey
+    var subtitle: LocalizedStringKey? = nil
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
             Text(title).font(.headline)
             if let subtitle { Text(subtitle).font(.caption).foregroundStyle(.secondary) }
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+    }
+}
+
+extension AllClearView {
+    /// For messages built at runtime (already localized or verbatim, e.g. an error description).
+    @_disfavoredOverload
+    init(title: LocalizedStringKey, message: String, actionTitle: LocalizedStringKey = "Scan Again", action: (() -> Void)? = nil) {
+        self.init(title: title, message: "\(message)", actionTitle: actionTitle, action: action)
     }
 }

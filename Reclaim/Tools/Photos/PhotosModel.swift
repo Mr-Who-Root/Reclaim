@@ -5,10 +5,10 @@ enum PhotoCategory: String, CaseIterable, Identifiable {
     var id: String { rawValue }
     var title: String {
         switch self {
-        case .lookalikes: return "Look-alikes"
-        case .screenshots: return "Screenshots"
-        case .recordings: return "Screen Recordings"
-        case .blurry: return "Blurry"
+        case .lookalikes: return String(localized: "Look-alikes")
+        case .screenshots: return String(localized: "Screenshots")
+        case .recordings: return String(localized: "Screen Recordings")
+        case .blurry: return String(localized: "Blurry")
         }
     }
 }

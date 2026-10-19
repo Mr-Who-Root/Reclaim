@@ -43,11 +43,11 @@ struct OnboardingView: View {
                 if step < steps - 1 {
                     Button("Skip") { finish(scan: false) }.buttonStyle(.link)
                     Button("Continue") { withAnimation { step += 1 } }
-                        .buttonStyle(.borderedProminent).keyboardShortcut(.defaultAction)
+                        .buttonStyle(.pill).keyboardShortcut(.defaultAction)
                 } else {
                     Button("Finish") { finish(scan: false) }
                     Button("Finish & Run Smart Scan") { finish(scan: true) }
-                        .buttonStyle(.borderedProminent).keyboardShortcut(.defaultAction)
+                        .buttonStyle(.pill).keyboardShortcut(.defaultAction)
                 }
             }
             .padding(16)
@@ -160,7 +160,7 @@ struct OnboardingView: View {
                                     fullDisk = FS.hasFullDiskAccess()
                                 }
                             }
-                            .buttonStyle(.borderedProminent)
+                            .buttonStyle(.pill)
                             if AccessCenter.shared.isChecking { ProgressView().controlSize(.small) }
                             else if AccessCenter.shared.lastChecked != nil {
                                 Text("\(AccessCenter.shared.grantedCount) of \(AccessCenter.shared.locations.count) readable").font(.caption).foregroundStyle(.secondary)

@@ -169,7 +169,7 @@ struct TrashView: View {
         guard process.terminationStatus == 0 else {
             let data = errPipe.fileHandleForReading.readDataToEndOfFile()
             let text = String(data: data, encoding: .utf8)?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-            if text.contains("-1743") { return "Reclaim isn't allowed to control Finder. Allow it in System Settings › Privacy & Security › Automation." }
+            if text.contains("-1743") { return String(localized: "Reclaim isn't allowed to control Finder. Allow it in System Settings › Privacy & Security › Automation.") }
             return text.isEmpty ? "Finder declined the request." : text
         }
         return nil

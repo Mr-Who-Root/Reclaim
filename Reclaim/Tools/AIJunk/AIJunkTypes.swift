@@ -8,11 +8,11 @@ enum AIJunkCategory: String, CaseIterable, Identifiable, Sendable {
 
     var title: String {
         switch self {
-        case .temp: return "Stale AI temp files"
-        case .agents: return "Coding agent leftovers"
-        case .caches: return "AI app caches & logs"
-        case .models: return "Downloaded AI models"
-        case .generated: return "AI-generated images"
+        case .temp: return String(localized: "Stale AI temp files")
+        case .agents: return String(localized: "Coding agent leftovers")
+        case .caches: return String(localized: "AI app caches & logs")
+        case .models: return String(localized: "Downloaded AI models")
+        case .generated: return String(localized: "AI-generated images")
         }
     }
 
@@ -29,22 +29,22 @@ enum AIJunkCategory: String, CaseIterable, Identifiable, Sendable {
     var explanation: String {
         switch self {
         case .temp:
-            return "Scratch folders, headless browser profiles and compile caches that AI tools and agents leave in the system temp folders. Only items nothing has touched recently and no running app has open are listed."
+            return String(localized: "Scratch folders, headless browser profiles and compile caches that AI tools and agents leave in the system temp folders. Only items nothing has touched recently and no running app has open are listed.")
         case .agents:
-            return "Old sessions, checkpoints, snapshots and worktrees from Claude Code, Codex, Gemini, Cursor and Aider. Histories you might still resume are marked Caution."
+            return String(localized: "Old sessions, checkpoints, snapshots and worktrees from Claude Code, Codex, Gemini, Cursor and Aider. Histories you might still resume are marked Caution.")
         case .caches:
-            return "Browser-engine caches, logs and old bundled versions kept by AI apps. They rebuild on their own. Quit an app first if it has its cache open."
+            return String(localized: "Browser-engine caches, logs and old bundled versions kept by AI apps. They rebuild on their own. Quit an app first if it has its cache open.")
         case .models:
-            return "Model weights from Hugging Face, Ollama, LM Studio and others. Often many gigabytes each — they download again the next time you use them, so they're never selected for you."
+            return String(localized: "Model weights from Hugging Face, Ollama, LM Studio and others. Often many gigabytes each — they download again the next time you use them, so they're never selected for you.")
         case .generated:
-            return "Images in Downloads, Desktop and Pictures that are named or tagged like exports from ChatGPT, DALL·E, Gemini, Midjourney, Firefly, Stable Diffusion and similar. Never selected for you."
+            return String(localized: "Images in Downloads, Desktop and Pictures that are named or tagged like exports from ChatGPT, DALL·E, Gemini, Midjourney, Firefly, Stable Diffusion and similar. Never selected for you.")
         }
     }
 }
 
 enum AIJunkSafety: Sendable {
     case safe, caution
-    var label: String { self == .safe ? "Safe" : "Caution" }
+    var label: String { self == .safe ? String(localized: "Safe") : String(localized: "Caution") }
     var color: Color { self == .safe ? .green : .orange }
 }
 

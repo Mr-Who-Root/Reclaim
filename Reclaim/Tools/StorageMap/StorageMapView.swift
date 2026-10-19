@@ -40,7 +40,7 @@ struct StorageMapView: View {
     }
 
     private var subtitle: String {
-        if let root = model.root { return "\(root.name) · \(Fmt.bytes(root.size)) mapped" }
+        if let root = model.root { return String(localized: "\(root.name) · \(Fmt.bytes(root.size)) mapped") }
         return Route.map.tagline
     }
 
@@ -181,8 +181,14 @@ private struct StorageMapUnknownNote: View {
         VStack(spacing: 8) {
             HStack(spacing: 10) {
                 Image(systemName: "questionmark.folder").foregroundStyle(.orange)
-                Text("\(Fmt.count(model.unreadable.count, "folder")) couldn't be read and \(model.unreadable.count == 1 ? "is" : "are") shown as unknown. Totals exclude \(model.unreadable.count == 1 ? "it" : "them"), so they may be higher than shown.")
-                    .font(.caption).foregroundStyle(.secondary)
+                Group {
+                    if model.unreadable.count == 1 {
+                        Text("1 folder couldn't be read and is shown as unknown. Totals exclude it, so they may be higher than shown.")
+                    } else {
+                        Text("\(model.unreadable.count) folders couldn't be read and are shown as unknown. Totals exclude them, so they may be higher than shown.")
+                    }
+                }
+                .font(.caption).foregroundStyle(.secondary)
                 Spacer()
                 Button("Show Folders") { showList = true }
                     .controlSize(.small)
@@ -215,7 +221,7 @@ private struct StorageMapSidePanel: View {
     var body: some View {
         let _ = model.revision
         VStack(alignment: .leading, spacing: 10) {
-            SectionTitle(title: "Largest in \(folder.name)", subtitle: Fmt.count(folder.children.count, "item"))
+            SectionTitle(title: "Largest in \(folder.name)", subtitle: "\(Fmt.count(folder.children.count, "item"))")
             ScrollView {
                 LazyVStack(spacing: 2) {
                     ForEach(folder.children.prefix(200)) { node in

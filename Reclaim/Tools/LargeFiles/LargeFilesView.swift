@@ -30,8 +30,8 @@ struct LargeFilesView: View {
     }
 
     private var subtitle: String {
-        guard model.phase.isDone else { return "Big files you may have forgotten about" }
-        return "\(Fmt.count(model.items.count, "file")) of 10 MB or more in \(model.scope.label(defaultsLabel: LargeFilesModel.defaultsLabel)) · scanned \(Fmt.relative(model.phase.lastScan))"
+        guard model.phase.isDone else { return String(localized: "Big files you may have forgotten about") }
+        return String(localized: "\(Fmt.count(model.items.count, "file")) of 10 MB or more in \(model.scope.label(defaultsLabel: LargeFilesModel.defaultsLabel)) · scanned \(Fmt.relative(model.phase.lastScan))")
     }
 
     @ViewBuilder private var content: some View {
@@ -122,7 +122,7 @@ struct LargeFilesView: View {
             Spacer()
             Picker("View", selection: $model.viewMode) {
                 ForEach(LargeViewMode.allCases) { mode in
-                    Label(mode.rawValue, systemImage: mode.icon).tag(mode)
+                    Label(Fmt.loc(mode.rawValue), systemImage: mode.icon).tag(mode)
                 }
             }
             .pickerStyle(.segmented)

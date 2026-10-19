@@ -20,25 +20,25 @@ enum GuidedArea: String, CaseIterable, Identifiable, Codable {
 
     var title: String {
         switch self {
-        case .downloads: return "Downloads"
-        case .duplicates: return "Duplicate files"
-        case .junk: return "Junk"
-        case .ai: return "AI junk"
-        case .large: return "Large & old files"
-        case .apps: return "App leftovers"
-        case .photos: return "Photo clutter"
+        case .downloads: return String(localized: "Downloads")
+        case .duplicates: return String(localized: "Duplicate files")
+        case .junk: return String(localized: "Junk")
+        case .ai: return String(localized: "AI junk")
+        case .large: return String(localized: "Large & old files")
+        case .apps: return String(localized: "App leftovers")
+        case .photos: return String(localized: "Photo clutter")
         }
     }
 
     var detail: String {
         switch self {
-        case .downloads: return "Old installers, archives and large files that have sat in Downloads for months."
-        case .duplicates: return "Byte-for-byte identical copies. The suggested keeper is always left untouched."
-        case .junk: return "App caches, logs and developer leftovers that rebuild themselves."
-        case .ai: return "Stale agent scratch folders, old AI sessions and AI app caches nothing has open."
-        case .large: return "The biggest files you haven't changed in a long time."
-        case .apps: return "Support files left behind by apps you've already removed."
-        case .photos: return "Look-alike shots, screenshots, screen recordings and blurry photos."
+        case .downloads: return String(localized: "Old installers, archives and large files that have sat in Downloads for months.")
+        case .duplicates: return String(localized: "Byte-for-byte identical copies. The suggested keeper is always left untouched.")
+        case .junk: return String(localized: "App caches, logs and developer leftovers that rebuild themselves.")
+        case .ai: return String(localized: "Stale agent scratch folders, old AI sessions and AI app caches nothing has open.")
+        case .large: return String(localized: "The biggest files you haven't changed in a long time.")
+        case .apps: return String(localized: "Support files left behind by apps you've already removed.")
+        case .photos: return String(localized: "Look-alike shots, screenshots, screen recordings and blurry photos.")
         }
     }
 

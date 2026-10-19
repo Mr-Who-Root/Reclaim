@@ -29,8 +29,8 @@ struct DownloadsView: View {
     }
 
     private var subtitle: String {
-        guard model.phase.isDone else { return "Old installers, archives and stale files in your Downloads" }
-        return "\(Fmt.bytes(model.totalBytes)) in Downloads · \(Fmt.count(model.items.count, "item")) · scanned \(Fmt.relative(model.phase.lastScan))"
+        guard model.phase.isDone else { return String(localized: "Old installers, archives and stale files in your Downloads") }
+        return String(localized: "\(Fmt.bytes(model.totalBytes)) in Downloads · \(Fmt.count(model.items.count, "item")) · scanned \(Fmt.relative(model.phase.lastScan))")
     }
 
     @ViewBuilder private var content: some View {
@@ -82,7 +82,7 @@ struct DownloadsView: View {
                 ChipPicker(selection: $model.filter, options: DownloadsFilter.allCases,
                            label: { $0.rawValue }, count: { model.count(for: $0) })
                 Picker("Sort", selection: $model.sort) {
-                    ForEach(DownloadsSort.allCases) { Text($0.rawValue).tag($0) }
+                    ForEach(DownloadsSort.allCases) { Text(Fmt.loc($0.rawValue)).tag($0) }
                 }
                 .labelsHidden()
                 .fixedSize()

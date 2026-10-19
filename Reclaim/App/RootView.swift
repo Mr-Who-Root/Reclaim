@@ -21,8 +21,9 @@ struct RootView: View {
             }
         }
         .animation(.spring(duration: 0.35), value: app.toast)
+        .themedRoot()
         .sheet(isPresented: $app.showOnboarding) {
-            OnboardingView()
+            OnboardingView().themedRoot()
         }
         .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in
             app.refreshVolume()
@@ -32,44 +33,94 @@ struct RootView: View {
 
 private struct Sidebar: View {
     @Binding var selection: Route?
+    @Environment(\.theme) private var theme
     private var app: AppModel { AppModel.shared }
 
     var body: some View {
         List(selection: $selection) {
             ForEach(Route.Section.allCases) { section in
-                Section(section.rawValue) {
+                Section {
                     ForEach(Route.allCases.filter { $0.section == section }) { route in
                         SidebarRow(route: route).tag(route)
                     }
+                } header: {
+                    Text(section.title)
+                        .font(.caption.weight(.bold))
+                        .textCase(.uppercase)
+                        .tracking(0.6)
+                        .foregroundStyle(theme.sidebarSecondaryText.map { AnyShapeStyle($0) } ?? AnyShapeStyle(.secondary))
                 }
             }
         }
         .listStyle(.sidebar)
+        .safeAreaInset(edge: .top) { BrandHeader() }
         .safeAreaInset(edge: .bottom) {
             VStack(alignment: .leading, spacing: 6) {
                 HStack {
+                    Image(systemName: "internaldrive.fill").font(.caption).foregroundStyle(.secondary)
                     Text("Macintosh HD").font(.caption.weight(.semibold))
+                        .foregroundStyle(theme.sidebarText.map { AnyShapeStyle($0) } ?? AnyShapeStyle(.primary))
                     Spacer()
-                    Text("\(Fmt.bytes(app.volume.free)) free").font(.caption).foregroundStyle(.secondary).monospacedDigit()
+                    Text("\(Fmt.bytes(app.volume.free)) free").font(.caption).monospacedDigit()
+                        .foregroundStyle(theme.sidebarSecondaryText.map { AnyShapeStyle($0) } ?? AnyShapeStyle(.secondary))
                 }
                 UsageBar(fraction: app.volume.usedFraction, height: 6)
             }
-            .padding(12)
+            .card(padding: 10)
+            .padding(10)
         }
+        .background {
+            if theme.isColored {
+                ZStack {
+                    ThemeBackground()
+                    theme.sidebarOverlay
+                }
+                .ignoresSafeArea()
+            }
+        }
+    }
+}
+
+/// App logo and name at the top of the sidebar.
+private struct BrandHeader: View {
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        HStack(spacing: 10) {
+            Image(nsImage: IconRenderer.image(top: theme.accent.nsColor, bottom: theme.accent.deepNSColor, side: 96))
+                .resizable()
+                .frame(width: 38, height: 38)
+                .shadow(color: theme.accentColor.opacity(0.4), radius: 6, y: 2)
+            VStack(alignment: .leading, spacing: 0) {
+                Text("Reclaim").font(.system(.title3, design: .rounded).weight(.bold))
+                    .foregroundStyle(theme.sidebarText.map { AnyShapeStyle($0) } ?? AnyShapeStyle(.primary))
+                Text("Disk cleanup, all unlocked").font(.caption)
+                    .foregroundStyle(theme.sidebarSecondaryText.map { AnyShapeStyle($0) } ?? AnyShapeStyle(.secondary))
+            }
+            Spacer(minLength: 0)
+        }
+        .padding(.horizontal, 14)
+        .padding(.top, 4)
+        .padding(.bottom, 8)
+        .accessibilityElement(children: .combine)
     }
 }
 
 private struct SidebarRow: View {
     let route: Route
+    @Environment(\.theme) private var theme
     private var app: AppModel { AppModel.shared }
 
     var body: some View {
-        HStack(spacing: 8) {
-            RouteIcon(route: route, side: 22)
+        HStack(spacing: 9) {
+            RouteIcon(route: route, side: 24)
             Text(route.title)
+                .font(.system(size: 13, weight: .medium))
+                .foregroundStyle(theme.sidebarText.map { AnyShapeStyle($0) } ?? AnyShapeStyle(.primary))
             Spacer()
             trailing
         }
+        .padding(.vertical, 1)
     }
 
     @ViewBuilder private var trailing: some View {
@@ -77,7 +128,8 @@ private struct SidebarRow: View {
             if tool.phase.isScanning {
                 ProgressView().controlSize(.mini)
             } else if tool.phase.isDone, tool.reclaimableBytes > 0 {
-                Text(Fmt.bytes(tool.reclaimableBytes)).font(.caption).foregroundStyle(.secondary).monospacedDigit()
+                Text(Fmt.bytes(tool.reclaimableBytes)).font(.caption.weight(.medium)).monospacedDigit()
+                    .foregroundStyle(theme.sidebarSecondaryText.map { AnyShapeStyle($0) } ?? AnyShapeStyle(.secondary))
             }
         } else if route == .security, app.security.phase.isScanning {
             ProgressView().controlSize(.mini)

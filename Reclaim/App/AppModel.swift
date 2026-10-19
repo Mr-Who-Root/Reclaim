@@ -7,6 +7,8 @@ final class AppModel {
     static let shared = AppModel()
 
     var route: Route? = .home
+    /// Which Settings section the in-app Settings page shows.
+    var settingsSection: SettingsSection? = .access
     var toast: Toast?
     var showOnboarding = !UserDefaults.standard.bool(forKey: PrefKey.didOnboard)
     var volume = VolumeStats.startup()
@@ -147,6 +149,12 @@ final class AppModel {
 
     func refreshVolume() {
         volume = VolumeStats.startup()
+        SpaceHistory.shared.record(volume)
+    }
+
+    /// True once any tool has scanned (or is scanning) in this session.
+    var hasSessionResults: Bool {
+        smartScanRunning || scanTools.contains { $0.phase.isDone || $0.phase.isScanning }
     }
 
     /// Saves what the widget and Shortcuts read.
@@ -166,7 +174,11 @@ final class AppModel {
     func handle(url: URL) {
         guard url.scheme == "reclaim" else { return }
         let target = (url.host ?? url.path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))).lowercased()
-        if target == "scan" || target == "smartscan" {
+        if target == "settings" {
+            let sub = url.pathComponents.dropFirst().first ?? ""
+            settingsSection = SettingsSection(rawValue: sub) ?? settingsSection
+            route = .settings
+        } else if target == "scan" || target == "smartscan" {
             route = .home
             startSmartScan()
         } else if let r = Route(rawValue: target) {

@@ -13,6 +13,15 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         case review = "Review"
         case app = "App"
         var id: String { rawValue }
+        var title: String {
+            switch self {
+            case .overview: return String(localized: "Overview")
+            case .clean: return String(localized: "Clean Up")
+            case .explore: return String(localized: "Explore")
+            case .review: return String(localized: "Review")
+            case .app: return String(localized: "App")
+            }
+        }
     }
 
     var section: Section {
@@ -27,37 +36,37 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
 
     var title: String {
         switch self {
-        case .home: return "Mac Overview"
-        case .guided: return "Guided Cleanup"
-        case .junk: return "Junk"
-        case .ai: return "AI Junk"
-        case .downloads: return "Downloads"
-        case .duplicates: return "Duplicates"
-        case .photos: return "Photo Clutter"
-        case .large: return "Large & Old Files"
-        case .map: return "Storage Map"
-        case .apps: return "Apps & Leftovers"
-        case .security: return "Security Check"
-        case .trash: return "Trash"
-        case .settings: return "Settings"
+        case .home: return String(localized: "Mac Overview")
+        case .guided: return String(localized: "Guided Cleanup")
+        case .junk: return String(localized: "Junk")
+        case .ai: return String(localized: "AI Junk")
+        case .downloads: return String(localized: "Downloads")
+        case .duplicates: return String(localized: "Duplicates")
+        case .photos: return String(localized: "Photo Clutter")
+        case .large: return String(localized: "Large & Old Files")
+        case .map: return String(localized: "Storage Map")
+        case .apps: return String(localized: "Apps & Leftovers")
+        case .security: return String(localized: "Security Check")
+        case .trash: return String(localized: "Trash")
+        case .settings: return String(localized: "Settings")
         }
     }
 
     var tagline: String {
         switch self {
-        case .home: return "Free space at a glance, and one scan across every tool"
-        case .guided: return "A reviewed, step-by-step clean you approve"
-        case .junk: return "Caches, logs & developer junk"
-        case .ai: return "Agent temp files, AI app caches & models"
-        case .downloads: return "Old installers, archives & stale downloads"
-        case .duplicates: return "Byte-for-byte identical files"
-        case .photos: return "Look-alikes, screenshots & blurry shots"
-        case .large: return "Big files you've forgotten"
-        case .map: return "See what's eating space"
-        case .apps: return "Uninstall apps and clear their leftovers"
-        case .security: return "Signatures, login items & download origins"
-        case .trash: return "Review & restore what was moved"
-        case .settings: return "Access, appearance, language, schedules and more"
+        case .home: return String(localized: "Free space at a glance, and one scan across every tool")
+        case .guided: return String(localized: "A reviewed, step-by-step clean you approve")
+        case .junk: return String(localized: "Caches, logs & developer junk")
+        case .ai: return String(localized: "Agent temp files, AI app caches & models")
+        case .downloads: return String(localized: "Old installers, archives & stale downloads")
+        case .duplicates: return String(localized: "Byte-for-byte identical files")
+        case .photos: return String(localized: "Look-alikes, screenshots & blurry shots")
+        case .large: return String(localized: "Big files you've forgotten")
+        case .map: return String(localized: "See what's eating space")
+        case .apps: return String(localized: "Uninstall apps and clear their leftovers")
+        case .security: return String(localized: "Signatures, login items & download origins")
+        case .trash: return String(localized: "Review & restore what was moved")
+        case .settings: return String(localized: "Access, appearance, language, schedules and more")
         }
     }
 

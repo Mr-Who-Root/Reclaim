@@ -32,16 +32,16 @@ struct AIJunkView: View {
 
     private func idleLabel(_ days: Int) -> String {
         switch days {
-        case 1: return "1 day"
-        case 7: return "1 week"
-        case 30: return "1 month"
-        default: return "\(days) days"
+        case 1: return String(localized: "1 day")
+        case 7: return String(localized: "1 week")
+        case 30: return String(localized: "1 month")
+        default: return String(localized: "\(days) days")
         }
     }
 
     private var subtitle: String {
         if model.phase.isDone, !model.items.isEmpty {
-            return "Found \(Fmt.bytes(model.foundBytes)) left behind by AI tools · scanned \(Fmt.relative(model.phase.lastScan))"
+            return String(localized: "Found \(Fmt.bytes(model.foundBytes)) left behind by AI tools · scanned \(Fmt.relative(model.phase.lastScan))")
         }
         return Route.ai.tagline
     }
@@ -63,7 +63,7 @@ struct AIJunkView: View {
         case .done:
             if model.items.isEmpty {
                 AllClearView(title: "No AI junk found",
-                             message: skippedNote ?? "Nothing left behind by AI tools needs your attention. Scanned \(Fmt.relative(model.phase.lastScan)).",
+                             message: skippedNote.map { "\($0)" } ?? "Nothing left behind by AI tools needs your attention. Scanned \(Fmt.relative(model.phase.lastScan)).",
                              action: { Task { await model.scan() } })
             } else {
                 results
@@ -73,7 +73,7 @@ struct AIJunkView: View {
 
     private var skippedNote: String? {
         guard model.skippedRecent > 0 else { return nil }
-        return "\(Fmt.count(model.skippedRecent, "recently used item")) (\(Fmt.bytes(model.skippedRecentBytes))) left alone because it changed in the last \(idleLabel(model.idleDays))."
+        return String(localized: "\(Fmt.count(model.skippedRecent, "recently used item")) (\(Fmt.bytes(model.skippedRecentBytes))) left alone because it changed in the last \(idleLabel(model.idleDays)).")
     }
 
     private var results: some View {

@@ -46,8 +46,7 @@ struct MenuBarView: View {
                 } label: {
                     Label("Smart Scan", systemImage: "sparkle.magnifyingglass").frame(maxWidth: .infinity)
                 }
-                .buttonStyle(.borderedProminent)
-                .controlSize(.large)
+                .buttonStyle(.pillLarge)
             }
 
             if let last = app.lastSmartScan, !app.smartScanRunning {

@@ -16,6 +16,7 @@ enum PrefKey {
     static let launchAtLoginPrompted = "launchAtLoginPrompted"
     static let aiIdleDays = "aiIdleDays"
     static let appearance = "appearance"
+    static let themeStyle = "themeStyle"
     static let language = "language"
     static let scheduleEnabled = "scheduleEnabled"
     static let scheduleFrequency = "scheduleFrequency"
@@ -52,7 +53,10 @@ enum AppearanceMode: String, CaseIterable, Identifiable {
 
 /// Languages Reclaim ships translations for.
 enum AppLanguage: String, CaseIterable, Identifiable {
-    case system = "", en, hi, ml, ta, es, fr, de, ja, zhHans = "zh-Hans"
+    case system = "", en
+    case zhHans = "zh-Hans", zhHant = "zh-Hant", es, ar, ptBR = "pt-BR", fr, de, ja, ko, ru, it, tr
+    case nl, pl, indonesian = "id", vi, th, uk, sv
+    case hi, ml, ta
     var id: String { rawValue }
 
     /// The language's own name, so people can find it whatever language the app is in.
@@ -60,14 +64,28 @@ enum AppLanguage: String, CaseIterable, Identifiable {
         switch self {
         case .system: return String(localized: "Match System")
         case .en: return "English"
-        case .hi: return "हिन्दी"
-        case .ml: return "മലയാളം"
-        case .ta: return "தமிழ்"
+        case .zhHans: return "简体中文"
+        case .zhHant: return "繁體中文"
         case .es: return "Español"
+        case .ar: return "العربية"
+        case .ptBR: return "Português (Brasil)"
         case .fr: return "Français"
         case .de: return "Deutsch"
         case .ja: return "日本語"
-        case .zhHans: return "简体中文"
+        case .ko: return "한국어"
+        case .ru: return "Русский"
+        case .it: return "Italiano"
+        case .tr: return "Türkçe"
+        case .nl: return "Nederlands"
+        case .pl: return "Polski"
+        case .indonesian: return "Bahasa Indonesia"
+        case .vi: return "Tiếng Việt"
+        case .th: return "ไทย"
+        case .uk: return "Українська"
+        case .sv: return "Svenska"
+        case .hi: return "हिन्दी"
+        case .ml: return "മലയാളം"
+        case .ta: return "தமிழ்"
         }
     }
 
@@ -102,12 +120,12 @@ enum Accent: String, CaseIterable, Identifiable {
 
     var name: String {
         switch self {
-        case .ocean: return "Ocean"
-        case .violet: return "Violet"
-        case .rose: return "Rose"
-        case .ember: return "Ember"
-        case .forest: return "Forest"
-        case .graphite: return "Graphite"
+        case .ocean: return String(localized: "Ocean")
+        case .violet: return String(localized: "Violet")
+        case .rose: return String(localized: "Rose")
+        case .ember: return String(localized: "Ember")
+        case .forest: return String(localized: "Forest")
+        case .graphite: return String(localized: "Graphite")
         }
     }
 

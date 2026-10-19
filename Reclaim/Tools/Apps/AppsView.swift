@@ -10,7 +10,7 @@ struct AppsView: View {
             ToolHeader(route: .apps, subtitle: subtitle) {
                 HStack(spacing: 10) {
                     Picker("Mode", selection: $model.mode) {
-                        ForEach(AppsModel.Mode.allCases) { Text($0.rawValue).tag($0) }
+                        ForEach(AppsModel.Mode.allCases) { Text(Fmt.loc($0.rawValue)).tag($0) }
                     }
                     .pickerStyle(.segmented)
                     .labelsHidden()
@@ -48,9 +48,9 @@ struct AppsView: View {
                 : "\(Fmt.count(model.apps.count, "app")) installed · remove one with its support files"
         case .leftovers:
             if model.phase.isDone, !model.leftovers.isEmpty {
-                return "\(Fmt.count(model.leftovers.count, "potential leftover")) · \(Fmt.bytes(model.reclaimableBytes))"
+                return String(localized: "\(Fmt.count(model.leftovers.count, "potential leftover")) · \(Fmt.bytes(model.reclaimableBytes))")
             }
-            return "Support files left behind by apps you already removed"
+            return String(localized: "Support files left behind by apps you already removed")
         }
     }
 }
@@ -84,7 +84,7 @@ private struct AppsUninstallPane: View {
                 .padding(6)
                 .background(RoundedRectangle(cornerRadius: 7).fill(.quaternary.opacity(0.6)))
                 Picker("Sort", selection: $model.appSort) {
-                    ForEach(AppsModel.AppSort.allCases) { Text($0.rawValue).tag($0) }
+                    ForEach(AppsModel.AppSort.allCases) { Text(Fmt.loc($0.rawValue)).tag($0) }
                 }
                 .labelsHidden()
                 .fixedSize()
