@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Reclaim — Mac disk cleanup, every tool unlocked</title>
-<meta name="description" content="Reclaim is a native macOS disk cleaner with every tool unlocked: Smart Scan, Junk, AI Junk, Duplicates, Photo Clutter, Storage Map, Uninstaller, Security Check and more. No subscription, no account, no tracking.">
+<meta name="description" content="Reclaim is a native macOS disk cleaner with every tool unlocked: Smart Scan, Junk, AI Junk, Docker, Duplicates, Photo Clutter, Storage Map, Uninstaller, Security Check and more. No subscription, no account, no tracking.">
 <meta property="og:title" content="Reclaim — Mac disk cleanup, every tool unlocked">
 <meta property="og:description" content="Find and reclaim real space on your Mac. Look first, decide yourself, everything goes to the Trash first.">
 <meta property="og:image" content="assets/icon.png">
@@ -137,6 +137,7 @@
   .tools .wide { grid-column: span 2; }
   .tools .wide h3 { font-size: 19px; }
   .tools .wide p { font-size: 15.5px; max-width: 46ch; }
+  .card p code { font-family: var(--mono); font-size: .9em; }
   .card { padding: 20px; transition: transform .15s ease, border-color .2s ease; }
   .card:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.24); }
   .card .ico { width: 40px; height: 40px; border-radius: 11px; margin-bottom: 14px; box-shadow: 0 8px 18px rgba(0,0,0,.25); }
@@ -272,6 +273,8 @@
     <symbol id="i-trash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6l1 14h10l1-14"/></symbol>
     <symbol id="i-gear" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></symbol>
     <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10" stroke-width="2"/><path d="M8 12l3 3 5-6"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5"/><path d="M12 13v8"/><path d="M7.5 5.5l9 5"/></symbol>
+    <symbol id="i-eyeoff" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 2l20 20"/><path d="M6.7 6.7C3.9 8.4 2 12 2 12s3.5 7 10 7c2 0 3.8-.7 5.3-1.7"/><path d="M9.9 5.2A9.6 9.6 0 0 1 12 5c6.5 0 10 7 10 7a17.7 17.7 0 0 1-2.6 3.6"/><path d="M14.1 14.1a3 3 0 0 1-4.2-4.2"/></symbol>
     <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
     <symbol id="i-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 0 0-4 0v5"/><path d="M14 10V4a2 2 0 0 0-4 0v6"/><path d="M10 10.5V6a2 2 0 0 0-4 0v8"/><path d="M18 8a2 2 0 1 1 4 0v6a8 8 0 0 1-8 8h-2c-2.8 0-4.5-.9-6-2.4l-3.6-3.6a2 2 0 0 1 2.8-2.8L7 15"/></symbol>
     <symbol id="i-undo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 14L4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></symbol>
@@ -333,14 +336,15 @@
     <div class="wrap">
       <div class="sec-head">
         <div class="tag">Every tool, free</div>
-        <h2>Thirteen tools. One habit.</h2>
+        <h2>Fourteen tools. One habit.</h2>
         <p>Look first, decide yourself, then reclaim. Each tool starts with a read-only scan and tells you why it suggests something.</p>
       </div>
       <div class="grid tools">
         <article class="glass card wide"><span class="ico" style="background:#3b82f6"><svg><use href="#i-gauge"/></svg></span><h3>Smart Scan</h3><p>One pass across every section, from cleanup tools to the Trash, with a single report.</p></article>
         <article class="glass card wide"><span class="ico" style="background:#6366f1"><svg><use href="#i-list"/></svg></span><h3>Guided Cleanup</h3><p>A short plan you approve item by item, re-checked before it runs, with Undo.</p></article>
-        <article class="glass card"><span class="ico" style="background:#f59e0b"><svg><use href="#i-sparkles"/></svg></span><h3>Junk</h3><p>Caches, logs and developer junk — Xcode, Gradle, npm, Android images, simulators.</p></article>
+        <article class="glass card"><span class="ico" style="background:#f59e0b"><svg><use href="#i-sparkles"/></svg></span><h3>Junk</h3><p>Caches, logs and developer junk, plus <code>node_modules</code> and build folders in projects you've left.</p></article>
         <article class="glass card wide"><span class="ico" style="background:#2dd4bf"><svg><use href="#i-brain"/></svg></span><h3>AI Junk</h3><p>What AI tools leave behind: agent temp files, old sessions, caches and models.</p></article>
+        <article class="glass card"><span class="ico" style="background:#1d84ed"><svg><use href="#i-box"/></svg></span><h3>Docker</h3><p>Build cache, unused images, stopped containers and orphaned volumes.</p></article>
         <article class="glass card"><span class="ico" style="background:#3b82f6"><svg><use href="#i-download"/></svg></span><h3>Downloads</h3><p>Old installers, archives and unfinished downloads, biggest and oldest first.</p></article>
         <article class="glass card"><span class="ico" style="background:#c026d3"><svg><use href="#i-copy"/></svg></span><h3>Duplicates</h3><p>Byte-for-byte identical files. One copy always stays as the keeper.</p></article>
         <article class="glass card"><span class="ico" style="background:#ec4899"><svg><use href="#i-images"/></svg></span><h3>Photo Clutter</h3><p>Look-alike shots, screenshots, screen recordings and blurry photos.</p></article>
@@ -348,8 +352,9 @@
         <article class="glass card"><span class="ico" style="background:#22d3ee"><svg><use href="#i-grid"/></svg></span><h3>Storage Map</h3><p>An interactive treemap of any folder. Drill in and collect what to remove.</p></article>
         <article class="glass card"><span class="ico" style="background:#22c55e"><svg><use href="#i-shield"/></svg></span><h3>Security Check</h3><p>Signatures, notarisation, login items and where downloads came from. Read-only.</p></article>
         <article class="glass card"><span class="ico" style="background:#8c6bf2"><svg><use href="#i-inbox"/></svg></span><h3>Leftovers</h3><p>Support files from apps you already removed, matched by bundle identifier.</p></article>
-        <article class="glass card"><span class="ico" style="background:#a16207"><svg><use href="#i-appx"/></svg></span><h3>Uninstall an App</h3><p>Remove an app with its caches, preferences and containers, nothing left behind.</p></article>
-        <article class="glass card"><span class="ico" style="background:#ef4444"><svg><use href="#i-trash"/></svg></span><h3>Trash</h3><p>Everything Reclaim moved, with restore to the original folder.</p></article>
+        <article class="glass card"><span class="ico" style="background:#a16207"><svg><use href="#i-appx"/></svg></span><h3>Uninstall an App</h3><p>Remove an app with its caches, preferences and containers. Spot apps unused for months.</p></article>
+        <article class="glass card wide"><span class="ico" style="background:#ef4444"><svg><use href="#i-trash"/></svg></span><h3>Trash</h3><p>Everything Reclaim moved, with restore to the original folder.</p></article>
+        <article class="glass card wide"><span class="ico" style="background:#64748b"><svg><use href="#i-eyeoff"/></svg></span><h3>Exclusions</h3><p>Right-click anything and choose Never Suggest This. Every tool skips it, and anything inside it, from then on.</p></article>
       </div>
     </div>
   </section>
@@ -470,8 +475,8 @@
         <h2>Right where you already are.</h2>
       </div>
       <div class="grid five">
-        <article class="glass card"><span class="ico" style="background:#6366f1"><svg><use href="#i-menubar"/></svg></span><h3>Menu bar</h3><p>Free space, memory and CPU at a glance, with a Smart Scan button.</p></article>
-        <article class="glass card"><span class="ico" style="background:#0ea5e9"><svg><use href="#i-widget"/></svg></span><h3>Desktop widget</h3><p>Free space and what the last scan found, one click to scan.</p></article>
+        <article class="glass card"><span class="ico" style="background:#6366f1"><svg><use href="#i-menubar"/></svg></span><h3>Menu bar</h3><p>Free space, memory, CPU and its temperature at a glance, with a Smart Scan button.</p></article>
+        <article class="glass card"><span class="ico" style="background:#0ea5e9"><svg><use href="#i-widget"/></svg></span><h3>Desktop widget</h3><p>Free space and what the last scan found. Shows up in builds signed with an Apple certificate.</p></article>
         <article class="glass card"><span class="ico" style="background:#ec4899"><svg><use href="#i-mic"/></svg></span><h3>Shortcuts &amp; Siri</h3><p>“Run a Smart Scan in Reclaim” or check storage hands-free.</p></article>
         <article class="glass card"><span class="ico" style="background:#64748b"><svg><use href="#i-search"/></svg></span><h3>Spotlight</h3><p>Type a tool name in Spotlight and jump straight there.</p></article>
         <article class="glass card"><span class="ico" style="background:#22c55e"><svg><use href="#i-download"/></svg></span><h3>Updates</h3><p>Reclaim checks GitHub for new releases and installs them in one click.</p></article>
@@ -503,6 +508,7 @@
         <details class="glass"><summary>Is it really free?</summary><p>Yes. Every tool and feature is included. There's no subscription, no account and no in-app purchase.</p></details>
         <details class="glass"><summary>Does it ever delete things on its own?</summary><p>No. Scans — including scheduled ones — only find and report. Items move to the Trash only when you choose them, and you can restore them from Reclaim's Trash page until you empty the Trash.</p></details>
         <details class="glass"><summary>Why does macOS warn me the first time?</summary><p>Reclaim is signed ad hoc rather than with a paid Apple Developer ID, so Gatekeeper can't verify the developer. Allow it once in System Settings › Privacy &amp; Security, or use the Terminal command above.</p></details>
+        <details class="glass"><summary>Why isn't the widget in the widget gallery?</summary><p>macOS only lists widgets from apps signed with an Apple certificate that has a team, and the downloadable build is signed ad hoc. If you build Reclaim yourself with a free Apple Development certificate (Xcode › Settings › Accounts), the widget appears. The rest of the app works the same either way.</p></details>
         <details class="glass"><summary>Do I need Full Disk Access?</summary><p>No. Everything works without it. With it, Reclaim can also measure the Trash, Mail downloads, iPhone backups and other apps' data.</p></details>
         <details class="glass"><summary>How do updates work?</summary><p>From version 1.2, Reclaim asks GitHub for the latest release once a day (you can turn this off, or choose Reclaim › Check for Updates…). When there's a new version it shows a note on Home; one click downloads it, checks it against the SHA-256 checksum GitHub publishes, swaps it in place and reopens. Your settings and history are kept. On 1.1 or earlier, download 1.2 once from this page.</p></details>
         <details class="glass"><summary>Is it antivirus?</summary><p>No. Security Check reads code signatures, notarisation, login items and download records macOS already keeps. It has no malware database and works offline.</p></details>
