@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Reclaim — Mac disk cleanup, every tool unlocked</title>
-<meta name="description" content="Reclaim is a native macOS disk cleaner with every tool unlocked: Smart Scan, Junk, AI Junk, Duplicates, Photo Clutter, Storage Map, Uninstaller, Security Check and more. No subscription, no account, no network.">
+<meta name="description" content="Reclaim is a native macOS disk cleaner with every tool unlocked: Smart Scan, Junk, AI Junk, Duplicates, Photo Clutter, Storage Map, Uninstaller, Security Check and more. No subscription, no account, no tracking.">
 <meta property="og:title" content="Reclaim — Mac disk cleanup, every tool unlocked">
 <meta property="og:description" content="Find and reclaim real space on your Mac. Look first, decide yourself, everything goes to the Trash first.">
 <meta property="og:image" content="assets/icon.png">
@@ -133,6 +133,7 @@
 
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
   .tools { grid-template-columns: repeat(4, 1fr); grid-auto-flow: dense; }
+  .five { grid-template-columns: repeat(5, 1fr); }
   .tools .wide { grid-column: span 2; }
   .tools .wide h3 { font-size: 19px; }
   .tools .wide p { font-size: 15.5px; max-width: 46ch; }
@@ -230,6 +231,7 @@
 
   @media (max-width: 900px) {
     .tools { grid-template-columns: repeat(2, 1fr); }
+    .five { grid-template-columns: repeat(2, 1fr); }
     .nav-links { display: none; }
     nav.top .btn { margin-left: auto; }
     .split { grid-template-columns: 1fr; }
@@ -238,6 +240,7 @@
   }
   @media (max-width: 520px) {
     .tools { grid-template-columns: 1fr; }
+    .five { grid-template-columns: 1fr; }
     .tools .wide { grid-column: auto; }
     .hero { padding-top: 48px; }
     .styles { grid-template-columns: 1fr 1fr 1fr; }
@@ -449,13 +452,13 @@
       <div class="sec-head">
         <div class="tag">Safe by design</div>
         <h2>Nothing moves until you say so.</h2>
-        <p>Reclaim runs entirely on your Mac. No account, no network, no analytics.</p>
+        <p>Reclaim runs entirely on your Mac. No account, no analytics — its only request is a check for updates.</p>
       </div>
       <div class="principles">
         <div class="glass principle"><svg><use href="#i-eye"/></svg><h3>Look first</h3><p>Every tool starts with a read-only scan and explains each suggestion.</p></div>
         <div class="glass principle"><svg><use href="#i-hand"/></svg><h3>Decide yourself</h3><p>Risky items are marked Caution and never selected for you.</p></div>
         <div class="glass principle"><svg><use href="#i-undo"/></svg><h3>Change your mind</h3><p>Everything goes to the Trash first, with Undo and a full history.</p></div>
-        <div class="glass principle"><svg><use href="#i-offline"/></svg><h3>Stays on your Mac</h3><p>No uploads, no tracking. Security Check reads signatures only.</p></div>
+        <div class="glass principle"><svg><use href="#i-offline"/></svg><h3>Stays on your Mac</h3><p>No uploads, no tracking. The only request is the GitHub update check.</p></div>
       </div>
     </div>
   </section>
@@ -466,11 +469,12 @@
         <div class="tag">Works with your Mac</div>
         <h2>Right where you already are.</h2>
       </div>
-      <div class="grid">
+      <div class="grid five">
         <article class="glass card"><span class="ico" style="background:#6366f1"><svg><use href="#i-menubar"/></svg></span><h3>Menu bar</h3><p>Free space, memory and CPU at a glance, with a Smart Scan button.</p></article>
         <article class="glass card"><span class="ico" style="background:#0ea5e9"><svg><use href="#i-widget"/></svg></span><h3>Desktop widget</h3><p>Free space and what the last scan found, one click to scan.</p></article>
         <article class="glass card"><span class="ico" style="background:#ec4899"><svg><use href="#i-mic"/></svg></span><h3>Shortcuts &amp; Siri</h3><p>“Run a Smart Scan in Reclaim” or check storage hands-free.</p></article>
         <article class="glass card"><span class="ico" style="background:#64748b"><svg><use href="#i-search"/></svg></span><h3>Spotlight</h3><p>Type a tool name in Spotlight and jump straight there.</p></article>
+        <article class="glass card"><span class="ico" style="background:#22c55e"><svg><use href="#i-download"/></svg></span><h3>Updates</h3><p>Reclaim checks GitHub for new releases and installs them in one click.</p></article>
       </div>
     </div>
   </section>
@@ -500,7 +504,8 @@
         <details class="glass"><summary>Does it ever delete things on its own?</summary><p>No. Scans — including scheduled ones — only find and report. Items move to the Trash only when you choose them, and you can restore them from Reclaim's Trash page until you empty the Trash.</p></details>
         <details class="glass"><summary>Why does macOS warn me the first time?</summary><p>Reclaim is signed ad hoc rather than with a paid Apple Developer ID, so Gatekeeper can't verify the developer. Allow it once in System Settings › Privacy &amp; Security, or use the Terminal command above.</p></details>
         <details class="glass"><summary>Do I need Full Disk Access?</summary><p>No. Everything works without it. With it, Reclaim can also measure the Trash, Mail downloads, iPhone backups and other apps' data.</p></details>
-        <details class="glass"><summary>Is it antivirus?</summary><p>No. Security Check reads code signatures, notarisation, login items and download records macOS already keeps. It has no malware database and never goes online.</p></details>
+        <details class="glass"><summary>How do updates work?</summary><p>From version 1.2, Reclaim asks GitHub for the latest release once a day (you can turn this off, or choose Reclaim › Check for Updates…). When there's a new version it shows a note on Home; one click downloads it, checks it against the SHA-256 checksum GitHub publishes, swaps it in place and reopens. Your settings and history are kept. On 1.1 or earlier, download 1.2 once from this page.</p></details>
+        <details class="glass"><summary>Is it antivirus?</summary><p>No. Security Check reads code signatures, notarisation, login items and download records macOS already keeps. It has no malware database and works offline.</p></details>
         <details class="glass"><summary>Where's the source code?</summary><p>Reclaim is open source on <a href="https://github.com/Mr-Who-Root/Reclaim">GitHub</a>. You can build it yourself with Xcode.</p></details>
       </div>
     </div>
