@@ -12,6 +12,7 @@ final class AppModel {
     var volume = VolumeStats.startup()
 
     let junk = JunkModel()
+    let aiJunk = AIJunkModel()
     let downloads = DownloadsModel()
     let duplicates = DuplicatesModel()
     let photos = PhotosModel()
@@ -31,11 +32,12 @@ final class AppModel {
     private var toastDismissTask: Task<Void, Never>?
 
     /// Tools that report reclaimable space, in display order.
-    var scanTools: [any ScanTool] { [junk, downloads, duplicates, photos, large, apps] }
+    var scanTools: [any ScanTool] { [junk, aiJunk, downloads, duplicates, photos, large, apps] }
 
     func tool(for route: Route) -> (any ScanTool)? {
         switch route {
         case .junk: return junk
+        case .ai: return aiJunk
         case .downloads: return downloads
         case .duplicates: return duplicates
         case .photos: return photos
@@ -106,9 +108,17 @@ final class AppModel {
             showToast(Toast(message: "Moved \(Fmt.count(batch.moved.count, "item")) (\(Fmt.bytes(batch.bytes))) to the Trash",
                             detail: detail, undoIDs: batch.moved.map(\.id), isError: !batch.failed.isEmpty))
         }
+        didTrash(paths: batch.movedPaths)
+        return batch.movedPaths
+    }
+
+    /// Tells every tool that these paths are gone, then refreshes free space and the widget.
+    func didTrash(paths: Set<String>) {
+        if !paths.isEmpty {
+            for tool in scanTools { tool.forget(paths: paths) }
+        }
         refreshVolume()
         writeSnapshot()
-        return batch.movedPaths
     }
 
     func undo(_ toast: Toast) async {

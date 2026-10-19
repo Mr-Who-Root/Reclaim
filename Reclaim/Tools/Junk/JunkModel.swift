@@ -158,6 +158,15 @@ final class JunkModel: ScanTool {
 
     func selectNone() { selection.removeAll() }
 
+    func forget(paths: Set<String>) {
+        results = results.compactMap { result in
+            var r = result
+            r.items.removeAll { paths.containsPathOrAncestor(of: $0.id) }
+            return r.items.isEmpty ? nil : r
+        }
+        selection = selection.filter { !paths.containsPathOrAncestor(of: $0) }
+    }
+
     func trashSelected() async {
         let items = selectedItems
         guard !items.isEmpty, !isTrashing else { return }

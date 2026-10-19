@@ -196,6 +196,11 @@ final class DownloadsModel: ScanTool {
     func selectAllVisible() { selection.formUnion(visibleItems.map(\.id)) }
     func selectNone() { selection.removeAll() }
 
+    func forget(paths: Set<String>) {
+        items.removeAll { paths.containsPathOrAncestor(of: $0.id) }
+        selection = selection.filter { !paths.containsPathOrAncestor(of: $0) }
+    }
+
     func trashSelected() async {
         let chosen = selectedItems
         guard !chosen.isEmpty, !isTrashing else { return }

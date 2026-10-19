@@ -32,6 +32,21 @@ protocol ScanTool: AnyObject {
     func cancelScan()
     /// The highest-impact items for Guided Cleanup, each with a clear reason.
     func suggestions() -> [CleanupSuggestion]
+    /// Drops results that were moved to the Trash elsewhere (another tool, Guided Cleanup, the Storage Map).
+    func forget(paths: Set<String>)
+}
+
+extension Set where Element == String {
+    /// True if `path` itself, or any folder above it, is in the set.
+    func containsPathOrAncestor(of path: String) -> Bool {
+        if contains(path) { return true }
+        var p = path
+        while let slash = p.lastIndex(of: "/"), slash != p.startIndex {
+            p = String(p[..<slash])
+            if contains(p) { return true }
+        }
+        return false
+    }
 }
 
 /// One proposed cleanup action, shown in Guided Cleanup.

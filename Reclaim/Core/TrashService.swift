@@ -63,6 +63,15 @@ final class TrashLog {
         return batch
     }
 
+    /// Records an item something else (Finder) moved to the Trash, so it shows in history and can be restored.
+    @discardableResult
+    func record(original: URL, trashed: URL?, bytes: Int64, tool: Route) -> UUID {
+        let record = TrashRecord(originalPath: original.path, trashedPath: trashed?.path, bytes: bytes, date: .now, tool: tool.rawValue)
+        records.insert(record, at: 0)
+        save()
+        return record.id
+    }
+
     /// Puts trashed items back where they came from. Returns how many were restored and why others weren't.
     func restore(_ ids: [UUID]) async -> (restored: Int, failures: [String]) {
         var restored = 0

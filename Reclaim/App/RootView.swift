@@ -92,6 +92,7 @@ private struct DetailView: View {
         case .home: HomeView()
         case .guided: GuidedView()
         case .junk: JunkView()
+        case .ai: AIJunkView()
         case .downloads: DownloadsView()
         case .duplicates: DuplicatesView()
         case .photos: PhotosView()

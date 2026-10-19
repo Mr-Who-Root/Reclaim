@@ -2,7 +2,7 @@ import SwiftUI
 
 /// The places Guided Cleanup can audit, each backed by a cleanup tool.
 enum GuidedArea: String, CaseIterable, Identifiable, Codable {
-    case downloads, duplicates, junk, large, apps, photos
+    case downloads, duplicates, junk, ai, large, apps, photos
 
     var id: String { rawValue }
 
@@ -11,6 +11,7 @@ enum GuidedArea: String, CaseIterable, Identifiable, Codable {
         case .downloads: return .downloads
         case .duplicates: return .duplicates
         case .junk: return .junk
+        case .ai: return .ai
         case .large: return .large
         case .apps: return .apps
         case .photos: return .photos
@@ -22,6 +23,7 @@ enum GuidedArea: String, CaseIterable, Identifiable, Codable {
         case .downloads: return "Downloads"
         case .duplicates: return "Duplicate files"
         case .junk: return "Junk"
+        case .ai: return "AI junk"
         case .large: return "Large & old files"
         case .apps: return "App leftovers"
         case .photos: return "Photo clutter"
@@ -33,6 +35,7 @@ enum GuidedArea: String, CaseIterable, Identifiable, Codable {
         case .downloads: return "Old installers, archives and large files that have sat in Downloads for months."
         case .duplicates: return "Byte-for-byte identical copies. The suggested keeper is always left untouched."
         case .junk: return "App caches, logs and developer leftovers that rebuild themselves."
+        case .ai: return "Stale agent scratch folders, old AI sessions and AI app caches nothing has open."
         case .large: return "The biggest files you haven't changed in a long time."
         case .apps: return "Support files left behind by apps you've already removed."
         case .photos: return "Look-alike shots, screenshots, screen recordings and blurry photos."
@@ -304,8 +307,7 @@ final class GuidedModel {
         history.insert(record, at: 0)
         saveHistory()
 
-        AppModel.shared.refreshVolume()
-        AppModel.shared.writeSnapshot()
+        AppModel.shared.didTrash(paths: batch.movedPaths)
         stage = .results
     }
 

@@ -214,10 +214,15 @@ final class AppsModel: ScanTool {
             var toast = AppModel.shared.toast ?? Toast(message: "")
             if appGone {
                 let supportCount = moved.count
+                // Finder doesn't report where it put the app; it lands in ~/.Trash under its own name unless that's taken.
+                let trashed = FS.home.appendingPathComponent(".Trash", isDirectory: true).appendingPathComponent(url.lastPathComponent)
+                let bytes = chosen.first(where: \.isAppBundle)?.entry.size ?? appSizes[app.id] ?? 0
+                toast.undoIDs.append(TrashLog.shared.record(original: url, trashed: trashed, bytes: bytes, tool: .apps))
                 toast.message = "Uninstalled \(app.name)"
                 toast.detail = "Finder moved the app to the Trash"
-                    + (supportCount > 0 ? "; \(Fmt.count(supportCount, "support item")) moved too (Undo restores those)." : ".")
+                    + (supportCount > 0 ? " along with \(Fmt.count(supportCount, "support item"))." : ".")
                 toast.isError = false
+                AppModel.shared.didTrash(paths: [url.path])
             } else {
                 toast.message = "\(app.name) wasn't removed"
                 toast.detail = error ?? "Finder didn't move it to the Trash."
@@ -279,6 +284,17 @@ final class AppsModel: ScanTool {
         let valid = Set(groups.flatMap(\.items).map(\.id))
         leftoverSelection.formIntersection(valid)
         phase = .done(.now)
+    }
+
+    func forget(paths: Set<String>) {
+        leftovers = leftovers.compactMap { group in
+            var g = group
+            g.items.removeAll { paths.containsPathOrAncestor(of: $0.id) }
+            return g.items.isEmpty ? nil : g
+        }
+        leftoverSelection = leftoverSelection.filter { !paths.containsPathOrAncestor(of: $0) }
+        supportItems.removeAll { paths.containsPathOrAncestor(of: $0.id) }
+        uninstallSelection = uninstallSelection.filter { !paths.containsPathOrAncestor(of: $0) }
     }
 
     func trashLeftovers() async {

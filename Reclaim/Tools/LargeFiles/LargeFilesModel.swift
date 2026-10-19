@@ -159,6 +159,11 @@ final class LargeFilesModel: ScanTool {
     /// Sorts by a single field for the list mode's sort menu.
     func sortBy(_ comparator: KeyPathComparator<LargeItem>) { sortOrder = [comparator] }
 
+    func forget(paths: Set<String>) {
+        items.removeAll { paths.containsPathOrAncestor(of: $0.id) }
+        selection = selection.filter { !paths.containsPathOrAncestor(of: $0) }
+    }
+
     func trashSelected() async {
         let chosen = selectedItems
         guard !chosen.isEmpty, !isTrashing else { return }

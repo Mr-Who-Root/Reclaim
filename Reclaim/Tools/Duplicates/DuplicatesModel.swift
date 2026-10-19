@@ -131,6 +131,19 @@ final class DuplicatesModel: ScanTool {
 
     // MARK: Trash
 
+    func forget(paths: Set<String>) {
+        groups = groups.compactMap { group in
+            var g = group
+            g.files.removeAll { paths.containsPathOrAncestor(of: $0.path) }
+            guard g.files.count > 1 else { return nil }
+            if !g.files.contains(where: { $0.path == g.keeperPath }), let k = keepRule.pickKeeper(g.files) {
+                g.keeperPath = k.path
+            }
+            return g
+        }
+        selected = selected.filter { !paths.containsPathOrAncestor(of: $0) }
+    }
+
     func trashSelected() async {
         let entries = selectedEntries
         guard !entries.isEmpty, !isTrashing else { return }

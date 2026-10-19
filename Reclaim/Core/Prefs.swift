@@ -15,6 +15,7 @@ enum PrefKey {
     static let hideDevExplainer = "hideDevExplainer"
     static let savedFolders = "savedFolders"
     static let launchAtLoginPrompted = "launchAtLoginPrompted"
+    static let aiIdleDays = "aiIdleDays"
 }
 
 /// The six app accents. The whole UI, the widget and (optionally) the Dock icon follow it.

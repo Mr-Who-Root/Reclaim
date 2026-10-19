@@ -33,6 +33,7 @@ enum SpotlightIndex {
         case .home: words += ["smart scan", "overview", "free space"]
         case .guided: words += ["guided", "plan", "review"]
         case .junk: words += ["cache", "caches", "logs", "xcode", "derived data", "npm", "homebrew"]
+        case .ai: words += ["ai", "ai junk", "claude", "codex", "cursor", "ollama", "hugging face", "models", "temp files", "tmp"]
         case .downloads: words += ["installers", "dmg", "pkg", "zip", "archives"]
         case .duplicates: words += ["duplicate files", "copies", "identical"]
         case .photos: words += ["photos", "screenshots", "screen recordings", "blurry", "similar"]

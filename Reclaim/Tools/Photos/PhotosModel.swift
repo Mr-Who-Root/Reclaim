@@ -217,6 +217,19 @@ final class PhotosModel: ScanTool {
 
     // MARK: Trash
 
+    func forget(paths: Set<String>) {
+        let gone: (String) -> Bool = { paths.containsPathOrAncestor(of: $0) }
+        guard photos.contains(where: { gone($0.id) }) || screenshots.contains(where: { gone($0.id) })
+                || recordings.contains(where: { gone($0.id) }) || blurry.contains(where: { gone($0.id) }) else { return }
+        selected = selected.filter { !gone($0) }
+        photos.removeAll { gone($0.id) }
+        screenshots.removeAll { gone($0.id) }
+        recordings.removeAll { gone($0.id) }
+        blurry.removeAll { gone($0.id) }
+        pairs.removeAll { gone($0.a) || gone($0.b) }
+        regroup(preselect: false)
+    }
+
     func trashSelected() async {
         let entries = selectedEntries
         guard !entries.isEmpty, !isTrashing else { return }
