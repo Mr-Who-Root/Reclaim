@@ -14,7 +14,7 @@ final class AppsModel: ScanTool {
         var id: String { rawValue }
     }
 
-    let route: Route = .apps
+    let route: Route = .leftovers
     var mode: Mode = .uninstall
 
     // Installed apps
@@ -302,7 +302,7 @@ final class AppsModel: ScanTool {
         guard !chosen.isEmpty, !isWorking else { return }
         isWorking = true
         defer { isWorking = false }
-        let moved = await AppModel.shared.trash(chosen.map(\.entry), from: .apps)
+        let moved = await AppModel.shared.trash(chosen.map(\.entry), from: .leftovers)
         leftovers = leftovers.compactMap { group in
             var g = group
             g.items.removeAll { moved.contains($0.id) }

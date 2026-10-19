@@ -38,10 +38,11 @@ private struct Sidebar: View {
 
     var body: some View {
         List(selection: $selection) {
-            ForEach(Route.Section.allCases) { section in
+            ForEach(Route.Section.allCases.filter { $0 != .pinned }) { section in
                 Section {
                     ForEach(Route.allCases.filter { $0.section == section }) { route in
                         SidebarRow(route: route).tag(route)
+                            .listRowInsets(EdgeInsets(top: 1, leading: 8, bottom: 1, trailing: 8))
                     }
                 } header: {
                     Text(section.title)
@@ -53,8 +54,12 @@ private struct Sidebar: View {
             }
         }
         .listStyle(.sidebar)
+        .environment(\.defaultMinListRowHeight, 26)
         .safeAreaInset(edge: .top) { BrandHeader() }
-        .safeAreaInset(edge: .bottom) {
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            VStack(spacing: 6) {
+                Divider().opacity(0.4)
+                PinnedSettingsRow(selection: $selection)
             VStack(alignment: .leading, spacing: 6) {
                 HStack {
                     Image(systemName: "internaldrive.fill").font(.caption).foregroundStyle(.secondary)
@@ -67,7 +72,17 @@ private struct Sidebar: View {
                 UsageBar(fraction: app.volume.usedFraction, height: 6)
             }
             .card(padding: 10)
-            .padding(10)
+            }
+            .padding(.horizontal, 10)
+            .padding(.bottom, 10)
+            .background {
+                // Opaque, so list rows scrolling underneath don't show through.
+                if theme.isColored {
+                    ZStack { ThemeBackground(); theme.sidebarOverlay }.ignoresSafeArea()
+                } else {
+                    Rectangle().fill(.regularMaterial).ignoresSafeArea()
+                }
+            }
         }
         .background {
             if theme.isColored {
@@ -78,6 +93,33 @@ private struct Sidebar: View {
                 .ignoresSafeArea()
             }
         }
+    }
+}
+
+/// Settings, pinned under the sections.
+private struct PinnedSettingsRow: View {
+    @Binding var selection: Route?
+    @Environment(\.theme) private var theme
+
+    var body: some View {
+        let selected = selection == .settings
+        Button {
+            selection = .settings
+        } label: {
+            HStack(spacing: 9) {
+                RouteIcon(route: .settings, side: 24)
+                Text(Route.settings.title)
+                    .font(.system(size: 13, weight: .medium))
+                    .foregroundStyle(selected ? AnyShapeStyle(Color.white) : (theme.sidebarText.map { AnyShapeStyle($0) } ?? AnyShapeStyle(.primary)))
+                Spacer()
+            }
+            .padding(.horizontal, 8)
+            .padding(.vertical, 5)
+            .background(RoundedRectangle(cornerRadius: 7, style: .continuous).fill(selected ? AnyShapeStyle(.tint) : AnyShapeStyle(Color.clear)))
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityAddTraits(selected ? .isSelected : [])
     }
 }
 
@@ -100,8 +142,8 @@ private struct BrandHeader: View {
             Spacer(minLength: 0)
         }
         .padding(.horizontal, 14)
-        .padding(.top, 4)
-        .padding(.bottom, 8)
+        .padding(.top, 2)
+        .padding(.bottom, 4)
         .accessibilityElement(children: .combine)
     }
 }
@@ -113,14 +155,13 @@ private struct SidebarRow: View {
 
     var body: some View {
         HStack(spacing: 9) {
-            RouteIcon(route: route, side: 24)
+            RouteIcon(route: route, side: 22)
             Text(route.title)
                 .font(.system(size: 13, weight: .medium))
                 .foregroundStyle(theme.sidebarText.map { AnyShapeStyle($0) } ?? AnyShapeStyle(.primary))
             Spacer()
             trailing
         }
-        .padding(.vertical, 1)
     }
 
     @ViewBuilder private var trailing: some View {
@@ -150,7 +191,8 @@ private struct DetailView: View {
         case .photos: PhotosView()
         case .large: LargeFilesView()
         case .map: StorageMapView()
-        case .apps: AppsView()
+        case .leftovers: AppsView(mode: .leftovers)
+        case .apps: AppsView(mode: .uninstall)
         case .security: SecurityView()
         case .trash: TrashView()
         case .settings: SettingsPage()

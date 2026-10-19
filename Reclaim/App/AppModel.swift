@@ -44,7 +44,7 @@ final class AppModel {
         case .duplicates: return duplicates
         case .photos: return photos
         case .large: return large
-        case .apps: return apps
+        case .leftovers: return apps
         default: return nil
         }
     }

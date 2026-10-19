@@ -2,7 +2,7 @@ import SwiftUI
 
 /// Every screen in the sidebar. Also used by URLs (`reclaim://junk`), Spotlight and Shortcuts.
 enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
-    case home, guided, junk, ai, downloads, duplicates, photos, large, map, apps, security, trash, settings
+    case home, guided, junk, ai, downloads, duplicates, photos, large, map, security, trash, leftovers, apps, settings
 
     var id: String { rawValue }
 
@@ -12,6 +12,8 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         case explore = "Explore"
         case review = "Review"
         case app = "App"
+        /// Pinned at the bottom of the sidebar, outside the sections.
+        case pinned = "Pinned"
         var id: String { rawValue }
         var title: String {
             switch self {
@@ -20,6 +22,7 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
             case .explore: return String(localized: "Explore")
             case .review: return String(localized: "Review")
             case .app: return String(localized: "App")
+            case .pinned: return ""
             }
         }
     }
@@ -27,10 +30,11 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
     var section: Section {
         switch self {
         case .home, .guided: return .overview
-        case .junk, .ai, .downloads, .duplicates, .photos, .large, .apps: return .clean
+        case .junk, .ai, .downloads, .duplicates, .photos, .large: return .clean
         case .map, .security: return .explore
         case .trash: return .review
-        case .settings: return .app
+        case .leftovers, .apps: return .app
+        case .settings: return .pinned
         }
     }
 
@@ -45,7 +49,8 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         case .photos: return String(localized: "Photo Clutter")
         case .large: return String(localized: "Large & Old Files")
         case .map: return String(localized: "Storage Map")
-        case .apps: return String(localized: "Apps & Leftovers")
+        case .leftovers: return String(localized: "Leftovers")
+        case .apps: return String(localized: "Uninstall an App")
         case .security: return String(localized: "Security Check")
         case .trash: return String(localized: "Trash")
         case .settings: return String(localized: "Settings")
@@ -63,7 +68,8 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         case .photos: return String(localized: "Look-alikes, screenshots & blurry shots")
         case .large: return String(localized: "Big files you've forgotten")
         case .map: return String(localized: "See what's eating space")
-        case .apps: return String(localized: "Uninstall apps and clear their leftovers")
+        case .leftovers: return String(localized: "Support files from apps you already removed")
+        case .apps: return String(localized: "Remove an app together with everything it left behind")
         case .security: return String(localized: "Signatures, login items & download origins")
         case .trash: return String(localized: "Review & restore what was moved")
         case .settings: return String(localized: "Access, appearance, language, schedules and more")
@@ -81,7 +87,8 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         case .photos: return "photo.on.rectangle.angled"
         case .large: return "archivebox"
         case .map: return "square.grid.2x2"
-        case .apps: return "square.stack.3d.up"
+        case .leftovers: return "tray.full"
+        case .apps: return "xmark.app"
         case .security: return "checkmark.shield"
         case .trash: return "trash"
         case .settings: return "gearshape"
@@ -99,6 +106,7 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
         case .photos: return .pink
         case .large: return .teal
         case .map: return .cyan
+        case .leftovers: return Color(red: 0.55, green: 0.42, blue: 0.95)
         case .apps: return .brown
         case .security: return .green
         case .trash: return .red
@@ -107,5 +115,5 @@ enum Route: String, CaseIterable, Identifiable, Codable, Hashable {
     }
 
     /// Tools that produce reclaimable results in Smart Scan.
-    static let scanTools: [Route] = [.junk, .ai, .downloads, .duplicates, .photos, .large, .apps]
+    static let scanTools: [Route] = [.junk, .ai, .downloads, .duplicates, .photos, .large, .leftovers]
 }

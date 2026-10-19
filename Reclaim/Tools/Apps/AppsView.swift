@@ -2,19 +2,14 @@ import SwiftUI
 import QuickLook
 
 struct AppsView: View {
+    let mode: AppsModel.Mode
     @Bindable private var model = AppModel.shared.apps
     @State private var preview: URL?
 
     var body: some View {
         VStack(spacing: 0) {
-            ToolHeader(route: .apps, subtitle: subtitle) {
+            ToolHeader(route: mode == .uninstall ? .apps : .leftovers, subtitle: subtitle) {
                 HStack(spacing: 10) {
-                    Picker("Mode", selection: $model.mode) {
-                        ForEach(AppsModel.Mode.allCases) { Text(Fmt.loc($0.rawValue)).tag($0) }
-                    }
-                    .pickerStyle(.segmented)
-                    .labelsHidden()
-                    .frame(width: 220)
                     if model.mode == .leftovers, model.phase.isDone {
                         Button { Task { await model.scan() } } label: { Label("Scan Again", systemImage: "arrow.clockwise") }
                     } else if model.mode == .uninstall {
@@ -30,7 +25,9 @@ struct AppsView: View {
             }
         }
         .quickLookPreview($preview)
+        .onAppear { model.mode = mode }
         .task {
+            model.mode = mode
             if model.apps.isEmpty { await model.loadApps() }
         }
         .onReceive(NSWorkspace.shared.notificationCenter.publisher(for: NSWorkspace.didTerminateApplicationNotification)) { _ in
@@ -254,7 +251,7 @@ private struct AppsLeftoversPane: View {
     var body: some View {
         switch model.phase {
         case .idle:
-            ToolIntro(route: .apps,
+            ToolIntro(route: .leftovers,
                       title: "Find potential app leftovers",
                       message: "Reclaim compares the support files in your Library with the apps in your Applications folders, the apps that are running, and every app macOS knows about. You review each exact bundle-identifier match before anything moves to the Trash.",
                       bullets: ["Caches, containers, preferences and saved state", "Nothing is selected for you", "Everything goes to the Trash, so it's recoverable"],

@@ -3,7 +3,7 @@ import Foundation
 
 /// A Reclaim tool, for "Open a Reclaim Tool".
 enum ReclaimToolOption: String, AppEnum {
-    case home, guided, junk, ai, downloads, duplicates, photos, large, map, apps, security, trash, settings
+    case home, guided, junk, ai, downloads, duplicates, photos, large, map, security, trash, leftovers, apps, settings
 
     static var typeDisplayRepresentation: TypeDisplayRepresentation = "Reclaim Tool"
 
@@ -17,7 +17,8 @@ enum ReclaimToolOption: String, AppEnum {
         .photos: "Photo Clutter",
         .large: "Large & Old Files",
         .map: "Storage Map",
-        .apps: "Apps & Leftovers",
+        .leftovers: "Leftovers",
+        .apps: "Uninstall an App",
         .security: "Security Check",
         .trash: "Trash",
         .settings: "Settings",

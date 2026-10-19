@@ -13,7 +13,7 @@ enum GuidedArea: String, CaseIterable, Identifiable, Codable {
         case .junk: return .junk
         case .ai: return .ai
         case .large: return .large
-        case .apps: return .apps
+        case .apps: return .leftovers
         case .photos: return .photos
         }
     }
