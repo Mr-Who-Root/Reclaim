@@ -127,7 +127,10 @@ private struct SecurityResults: View {
                         DeepVerifyProgress(done: done, total: total, current: current)
                     }
                     Picker("Section", selection: $section) {
-                        ForEach(SecuritySection.allCases) { Text(Fmt.loc($0.rawValue)).tag($0) }
+                        ForEach(SecuritySection.allCases) { s in
+                            let n = attention(in: s)
+                            Text(n > 0 ? "\(Fmt.loc(s.rawValue)) (\(n))" : Fmt.loc(s.rawValue)).tag(s)
+                        }
                     }
                     .pickerStyle(.segmented)
                     .labelsHidden()
@@ -145,6 +148,29 @@ private struct SecurityResults: View {
                 .padding(20)
             }
         }
+        .onAppear {
+            // Open where the attention items are, so the count above matches what's shown.
+            if attention(in: .apps) == 0, let first = SecuritySection.allCases.first(where: { attention(in: $0) > 0 }) {
+                section = first
+            }
+        }
+    }
+
+    private func attention(in section: SecuritySection) -> Int {
+        switch section {
+        case .apps: return model.apps.filter(\.needsAttention).count
+        case .startup: return model.launchItems.filter(\.needsAttention).count
+        case .origins: return 0
+        }
+    }
+
+    /// "2 apps · 1 login item"
+    private var attentionBreakdown: String {
+        let apps = attention(in: .apps), startup = attention(in: .startup)
+        var parts: [String] = []
+        if apps > 0 { parts.append(Fmt.count(apps, "app")) }
+        if startup > 0 { parts.append(Fmt.count(startup, "login item")) }
+        return parts.isEmpty ? String(localized: "Unsigned, altered or orphaned") : parts.joined(separator: " · ")
     }
 
     @ViewBuilder private var summary: some View {
@@ -152,7 +178,7 @@ private struct SecurityResults: View {
             StatTile(title: "Apps checked", value: "\(model.apps.count)",
                      caption: model.deepVerifiedCount > 0 ? "\(model.deepVerifiedCount) deep-verified" : "Identity checked")
             StatTile(title: "Need attention", value: "\(model.attentionCount)",
-                     caption: "Unsigned, altered or orphaned", tint: model.attentionCount > 0 ? .red : .green)
+                     caption: attentionBreakdown, tint: model.attentionCount > 0 ? .red : .green)
             StatTile(title: "Start by themselves", value: "\(model.launchItems.count)", caption: "Agents & daemons")
             StatTile(title: "Downloads with a record", value: "\(model.origins.filter(\.hasRecord).count)",
                      caption: "of \(model.origins.count) in Downloads")
@@ -173,11 +199,14 @@ private struct SecurityResults: View {
             HStack(spacing: 12) {
                 Image(systemName: "exclamationmark.shield.fill").font(.title).foregroundStyle(.orange)
                 VStack(alignment: .leading, spacing: 2) {
-                    Text("\(Fmt.count(model.attentionCount, "item")) worth a closer look").font(.callout.weight(.semibold))
+                    Text("\(Fmt.count(model.attentionCount, "item")) worth a closer look: \(attentionBreakdown)").font(.callout.weight(.semibold))
                     Text("For your information — these aren't necessarily harmful. Check that you recognise each one.")
                         .font(.caption).foregroundStyle(.secondary)
                 }
                 Spacer()
+                if let target = SecuritySection.allCases.first(where: { attention(in: $0) > 0 }), target != section {
+                    Button("Show") { withAnimation { section = target } }.buttonStyle(.softGlass)
+                }
             }
             .card(padding: 12)
         }

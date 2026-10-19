@@ -73,7 +73,7 @@ struct LargeFilesView: View {
                 List(visible) { item in
                     FileRow(entry: item.entry,
                             isSelected: model.selection.contains(item.id),
-                            detail: "\(item.location) · changed \(Fmt.age(item.entry.modified)) ago",
+                            detail: item.location,
                             badge: item.kind.rawValue,
                             toggle: { model.toggle(item) },
                             onQuickLook: { preview = $0 })

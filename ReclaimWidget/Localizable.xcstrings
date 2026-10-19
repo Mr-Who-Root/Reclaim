@@ -1,0 +1,42 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "%@ free" : {
+
+    },
+    "%@ to review" : {
+
+    },
+    "%lld%%" : {
+
+    },
+    "Free space, what the last scan found, and a one-click Smart Scan." : {
+
+    },
+    "Macintosh HD" : {
+
+    },
+    "Not scanned yet" : {
+
+    },
+    "Nothing to reclaim" : {
+
+    },
+    "Reclaim" : {
+
+    },
+    "Review" : {
+
+    },
+    "Scan" : {
+
+    },
+    "of %@" : {
+
+    },
+    "used" : {
+
+    }
+  },
+  "version" : "1.0"
+}

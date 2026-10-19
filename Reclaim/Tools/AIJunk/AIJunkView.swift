@@ -79,22 +79,26 @@ struct AIJunkView: View {
     private var results: some View {
         VStack(spacing: 0) {
             notices
-            List {
-                ForEach(model.sections) { section in
-                    Section {
-                        AIJunkCategoryRow(section: section, model: model)
-                        if !model.collapsed.contains(section.category) {
-                            ForEach(section.items) { item in
-                                AIJunkItemRow(item: item, isSelected: model.selection.contains(item.id),
-                                              toggle: { model.toggle(item) },
-                                              preview: { preview = $0 })
-                                    .padding(.leading, 34)
+            ScrollView {
+                LazyVStack(spacing: 14) {
+                    ForEach(model.sections) { section in
+                        ResultGroupCard {
+                            AIJunkCategoryRow(section: section, model: model)
+                        } content: {
+                            if !model.collapsed.contains(section.category) {
+                                ForEach(section.items) { item in
+                                    RowDivider(inset: 34)
+                                    AIJunkItemRow(item: item, isSelected: model.selection.contains(item.id),
+                                                  toggle: { model.toggle(item) },
+                                                  preview: { preview = $0 })
+                                        .padding(.leading, 34)
+                                }
                             }
                         }
                     }
                 }
+                .padding(20)
             }
-            .listStyle(.inset)
 
             SelectionBar(count: model.selection.count, bytes: model.selectedBytes, isWorking: model.isTrashing,
                          action: { Task { await model.trashSelected() } }) {
@@ -158,7 +162,8 @@ private struct AIJunkCategoryRow: View {
             VStack(alignment: .leading, spacing: 3) {
                 Text(section.category.title).font(.headline)
                 Text(section.category.explanation).font(.caption).foregroundStyle(.secondary)
-                    .fixedSize(horizontal: false, vertical: true)
+                    .lineLimit(collapsed ? 1 : 2)
+                    .help(section.category.explanation)
             }
             Spacer(minLength: 12)
             Text(Fmt.count(section.items.count, "item")).font(.caption).foregroundStyle(.secondary)
@@ -191,14 +196,14 @@ private struct AIJunkItemRow: View {
                 HStack(spacing: 6) {
                     Text(item.title).lineLimit(1).truncationMode(.middle)
                     Badge(text: item.source, color: Route.ai.color)
-                    Badge(text: item.safety.label, color: item.safety.color)
+                    if item.safety == .caution { Badge(text: item.safety.label, color: item.safety.color) }
                     if let user = item.inUseBy {
                         Badge(text: "Open in \(user)", color: .red)
                             .help("A running app has this open. Quit it, then scan again.")
                     }
                 }
-                Text(item.detail).font(.caption).foregroundStyle(.secondary).lineLimit(2)
-                    .fixedSize(horizontal: false, vertical: true)
+                Text(item.detail).font(.caption).foregroundStyle(.secondary).lineLimit(1)
+                    .help(item.detail)
             }
             Spacer(minLength: 8)
             Text(Fmt.bytes(item.bytes)).monospacedDigit().fontWeight(.medium).frame(width: 84, alignment: .trailing)

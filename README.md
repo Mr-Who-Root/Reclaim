@@ -32,15 +32,22 @@ Requires macOS 26 or later (Apple silicon or Intel).
 | **Photo Clutter** | Look-alike shots (Vision feature prints), screenshots and screen recordings in ~40 languages, and blurry photos. |
 | **Large & Old Files** | Size, age and kind filters, list or sortable table, Quick Look. |
 | **Storage Map** | Interactive treemap of any folder or the whole disk, drill-down, Collector for batch removal. |
-| **Apps & Leftovers** | Uninstall apps with their support files (Finder password fallback for protected apps) and find leftovers of apps you already removed. |
+| **Leftovers** | Support files left behind by apps you already removed, matched by bundle identifier and grouped per app. |
+| **Uninstall an App** | Remove an app together with its caches, preferences, containers and other support files (Finder password fallback for protected apps). |
 | **Security Check** | Code-signature and notarisation status of every app, Deep Verify, login items and launch agents (flags ones pointing at missing programs), and where your downloads came from. Read-only; not antivirus. |
 | **Trash** | Everything Reclaim moved, restore to the original folder, Open/Empty Trash. |
 
-Also: **Settings** page (granted folders and access check, appearance and accent, language, scheduled scans with
-notifications, launch at login, about), a **menu bar** monitor (free space, memory, CPU, Smart Scan), a desktop
-**widget**, **Shortcuts & Siri** actions, **Spotlight** entries for every tool, `reclaim://` links
-(`reclaim://scan`, `reclaim://ai`, `reclaim://settings/about`…), and 9 languages: English, हिन्दी, മലയാളം, தமிழ்,
-Español, Français, Deutsch, 日本語 and 简体中文.
+Also: **Settings** (granted folders and access check, appearance, language, scheduled scans with notifications,
+launch at login, about), a **menu bar** monitor (free space, memory, CPU, Smart Scan), a desktop **widget**,
+**Shortcuts & Siri** actions, **Spotlight** entries for every tool, and `reclaim://` links (`reclaim://scan`,
+`reclaim://ai`, `reclaim://settings/about`…).
+
+**Appearance** — pick one of six accents and a style: **Vivid** (the whole window takes on your colour, with glass
+cards), **Subtle** or **Classic**, in light or dark mode. The Dock icon and widget can follow the accent.
+
+**Languages** — English, 简体中文, 繁體中文, Español, العربية, Português (Brasil), Français, Deutsch, 日本語, 한국어,
+Русский, Italiano, Türkçe, Nederlands, Polski, Bahasa Indonesia, Tiếng Việt, ไทย, Українська, Svenska, हिन्दी,
+മലയാളം and தமிழ். Switch in Settings › Language.
 
 ## Access
 

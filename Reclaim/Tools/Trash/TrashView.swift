@@ -85,32 +85,39 @@ struct TrashView: View {
     }
 
     private var list: some View {
-        List {
-            ForEach(grouped, id: \.day) { group in
-                Section {
-                    ForEach(group.records) { record in
-                        TrashRow(record: record, inTrash: inTrash.contains(record.id), restoring: restoring.contains(record.id)) {
-                            Task { await restore([record.id]) }
+        ScrollView {
+            LazyVStack(spacing: 14) {
+                ForEach(grouped, id: \.day) { group in
+                    let ids = group.records.filter { inTrash.contains($0.id) }.map(\.id)
+                    ResultGroupCard {
+                        ResultGroupHeader(icon: "calendar",
+                                          title: group.day.formatted(date: .complete, time: .omitted),
+                                          subtitle: Fmt.count(group.records.count, "item"),
+                                          total: Fmt.bytes(group.records.reduce(0) { $0 + $1.bytes }))
+                    } content: {
+                        ForEach(group.records) { record in
+                            RowDivider(inset: 0)
+                            TrashRow(record: record, inTrash: inTrash.contains(record.id), restoring: restoring.contains(record.id)) {
+                                Task { await restore([record.id]) }
+                            }
                         }
-                    }
-                } header: {
-                    HStack {
-                        Text(group.day.formatted(date: .complete, time: .omitted))
-                        Spacer()
-                        let ids = group.records.filter { inTrash.contains($0.id) }.map(\.id)
                         if ids.count > 1 {
-                            Button("Restore All \(ids.count)") { Task { await restore(ids) } }.buttonStyle(.link)
+                            HStack {
+                                Spacer()
+                                Button("Restore All \(ids.count)") { Task { await restore(ids) } }.buttonStyle(.softGlass)
+                            }
+                            .padding(.top, 4)
                         }
                     }
                 }
+                if records(for: filter).isEmpty {
+                    Text(filter == .inTrash ? "Nothing Reclaim moved is still in the Trash." : "No items here.")
+                        .foregroundStyle(.secondary)
+                        .frame(maxWidth: .infinity)
+                        .padding(.top, 40)
+                }
             }
-        }
-        .listStyle(.inset)
-        .overlay {
-            if records(for: filter).isEmpty {
-                Text(filter == .inTrash ? "Nothing Reclaim moved is still in the Trash." : "No items here.")
-                    .foregroundStyle(.secondary)
-            }
+            .padding(20)
         }
     }
 

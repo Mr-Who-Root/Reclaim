@@ -40,6 +40,7 @@ struct ToolHeader<Trailing: View>: View {
             }
             Spacer(minLength: 12)
             trailing()
+                .buttonStyle(.softGlass)
         }
         .padding(.horizontal, 20)
         .padding(.top, 16)
@@ -229,7 +230,8 @@ struct FileRow: View {
                 Text(Fmt.date(entry.modified)).font(.caption).foregroundStyle(.secondary)
                     .frame(width: 92, alignment: .trailing)
             }
-            Text(Fmt.bytes(entry.size)).monospacedDigit().fontWeight(.medium)
+            // A folder measuring zero bytes is one macOS wouldn't let us read, not an empty one.
+            Text(entry.size == 0 && entry.isDirectory ? "—" : Fmt.bytes(entry.size)).monospacedDigit().fontWeight(.medium)
                 .frame(width: 84, alignment: .trailing)
         }
         .padding(.vertical, 3)
@@ -463,4 +465,62 @@ extension AllClearView {
     init(title: LocalizedStringKey, message: String, actionTitle: LocalizedStringKey = "Scan Again", action: (() -> Void)? = nil) {
         self.init(title: title, message: "\(message)", actionTitle: actionTitle, action: action)
     }
+}
+
+// MARK: - Boxed result groups
+
+/// One boxed group of results: a header (icon, title, total) and its rows separated by hairlines.
+struct ResultGroupCard<Header: View, Content: View>: View {
+    @ViewBuilder var header: () -> Header
+    @ViewBuilder var content: () -> Content
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            header()
+            content()
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .card(padding: 16)
+    }
+}
+
+/// The standard header row of a result group.
+struct ResultGroupHeader<Leading: View>: View {
+    let icon: String
+    let title: String
+    var subtitle: String? = nil
+    var total: String? = nil
+    @ViewBuilder var leading: () -> Leading
+
+    init(icon: String, title: String, subtitle: String? = nil, total: String? = nil,
+         @ViewBuilder leading: @escaping () -> Leading = { EmptyView() }) {
+        self.icon = icon
+        self.title = title
+        self.subtitle = subtitle
+        self.total = total
+        self.leading = leading
+    }
+
+    var body: some View {
+        HStack(alignment: .firstTextBaseline, spacing: 10) {
+            leading()
+            Image(systemName: icon).font(.title3).foregroundStyle(.tint).frame(width: 24)
+            VStack(alignment: .leading, spacing: 3) {
+                Text(title).font(.system(.title3, design: .rounded).weight(.semibold))
+                if let subtitle {
+                    Text(subtitle).font(.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+                }
+            }
+            Spacer(minLength: 12)
+            if let total {
+                Text(total).font(.headline).monospacedDigit()
+            }
+        }
+    }
+}
+
+/// A thin separator between rows inside a result card.
+struct RowDivider: View {
+    var inset: CGFloat = 34
+    var body: some View { Divider().opacity(0.45).padding(.leading, inset) }
 }

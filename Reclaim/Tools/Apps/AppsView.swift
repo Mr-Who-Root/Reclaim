@@ -138,14 +138,23 @@ private struct AppsUninstallPane: View {
         let grouped = Dictionary(grouping: model.supportItems, by: \.location)
         let order = ["Application"] + AppsScanner.locations.map(\.label)
         let sections = order.filter { grouped[$0] != nil }
-        return List {
+        return ScrollView {
+          LazyVStack(spacing: 14) {
             if model.supportItems.count <= 1 {
                 Text("No support files found in your Library for \(app.name). Only the app itself will be removed.")
                     .font(.callout).foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .card(padding: 14)
             }
             ForEach(sections, id: \.self) { location in
-                Section(location) {
-                    ForEach(grouped[location] ?? []) { item in
+                let items = grouped[location] ?? []
+                ResultGroupCard {
+                    ResultGroupHeader(icon: location == "Application" ? "app.badge" : "folder",
+                                      title: location == "Application" ? String(localized: "The app") : Fmt.loc(location),
+                                      subtitle: Fmt.count(items.count, "item"),
+                                      total: Fmt.bytes(items.reduce(0) { $0 + $1.entry.size }))
+                } content: {
+                    ForEach(items) { item in
                         FileRow(entry: item.entry,
                                 isSelected: model.uninstallSelection.contains(item.id),
                                 detail: item.unreadable ? "Size unknown — macOS protects this folder. Full Disk Access lets Reclaim measure it."
@@ -158,8 +167,9 @@ private struct AppsUninstallPane: View {
                     }
                 }
             }
+          }
+          .padding(20)
         }
-        .listStyle(.inset)
     }
 }
 
@@ -280,18 +290,16 @@ private struct AppsLeftoversPane: View {
                 Text("Nothing is selected for you. Each group below has no installed app with a matching identifier.")
                     .font(.caption).foregroundStyle(.secondary)
                 Spacer()
-                Button(expanded.count == model.leftovers.count ? "Collapse All" : "Expand All") {
-                    expanded = expanded.count == model.leftovers.count ? [] : Set(model.leftovers.map(\.id))
-                }
-                .controlSize(.small)
+
             }
             .padding(.horizontal, 20)
             .padding(.vertical, 8)
-            List {
+            ScrollView {
+              LazyVStack(spacing: 14) {
                 ForEach(model.leftovers) { group in
-                    DisclosureGroup(isExpanded: Binding(
-                        get: { expanded.contains(group.id) },
-                        set: { if $0 { expanded.insert(group.id) } else { expanded.remove(group.id) } })) {
+                    ResultGroupCard {
+                        AppsLeftoverHeader(model: model, group: group)
+                    } content: {
                         ForEach(group.items) { item in
                             FileRow(entry: item.entry,
                                     isSelected: model.leftoverSelection.contains(item.id),
@@ -301,13 +309,13 @@ private struct AppsLeftoversPane: View {
                                     badgeColor: .orange,
                                     toggle: { model.toggleLeftover(item) },
                                     onQuickLook: { preview = $0 })
+                                .padding(.leading, 28)
                         }
-                    } label: {
-                        AppsLeftoverHeader(model: model, group: group)
                     }
                 }
+              }
+              .padding(20)
             }
-            .listStyle(.inset)
             SelectionBar(count: model.selectedLeftoverItems.count, bytes: model.leftoverSelectedBytes,
                          isWorking: model.isWorking,
                          action: { Task { await model.trashLeftovers() } }) {

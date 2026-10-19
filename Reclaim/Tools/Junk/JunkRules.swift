@@ -39,11 +39,13 @@ enum JunkSource {
     case grandchildrenWithExtension(String, String)
     /// `<child>/<sub>` for each child of the folder (e.g. Firefox Profiles/*/cache2).
     case profileSubfolder(String, String)
+    /// Folders exactly this many levels below the folder (e.g. system-images/<api>/<tag>/<abi>).
+    case descendants(String, Int)
 
     var base: URL {
         switch self {
         case .children(let p), .path(let p), .childrenWithExtension(let p, _),
-             .grandchildrenWithExtension(let p, _), .profileSubfolder(let p, _):
+             .grandchildrenWithExtension(let p, _), .profileSubfolder(let p, _), .descendants(let p, _):
             return FS.home.appendingPathComponent(p)
         }
     }
@@ -70,7 +72,24 @@ struct JunkRule: Identifiable {
 }
 
 enum JunkRules {
-    static let all: [JunkRule] = [
+    /// Virtual machine folders. UTM keeps its VMs in its container, which is only read with Full Disk Access
+    /// (otherwise macOS would ask about "data from other apps" in the middle of a scan).
+    private static var vmSources: [JunkSource] {
+        var sources: [JunkSource] = [
+            .childrenWithExtension("Parallels", "pvm"),
+            .childrenWithExtension("Virtual Machines.localized", "vmwarevm"),
+            .childrenWithExtension("Virtual Machines", "vmwarevm"),
+            .children("VirtualBox VMs"),
+            .children(".tart/vms"),
+            .children(".lima"),
+        ]
+        if FS.hasFullDiskAccess() {
+            sources.append(.childrenWithExtension("Library/Containers/com.utmapp.UTM/Data/Documents", "utm"))
+        }
+        return sources
+    }
+
+    static var all: [JunkRule] { [
         // MARK: App caches & logs
         JunkRule(
             id: "appCaches", title: String(localized: "App caches"), icon: "internaldrive",
@@ -183,6 +202,41 @@ enum JunkRules {
             explanation: String(localized: "Virtual device disks, often several gigabytes each. Removing one deletes that emulator and its data — recreate it in Android Studio if you need it again."),
             group: .developer, safety: .caution, selectedByDefault: false,
             sources: [.childrenWithExtension(".android/avd", "avd")]),
+        JunkRule(
+            id: "androidSnapshots", title: String(localized: "Android emulator snapshots"), icon: "camera.viewfinder",
+            explanation: String(localized: "Quick Boot snapshots of your Android emulators. Removing them only means the next start is a cold boot — the emulators and their data are kept."),
+            group: .developer, safety: .safe, selectedByDefault: true,
+            sources: [.profileSubfolder(".android/avd", "snapshots")]),
+        JunkRule(
+            id: "androidImages", title: String(localized: "Android system images"), icon: "cpu",
+            explanation: String(localized: "The Android OS images emulators are created from, often several gigabytes each. Android Studio downloads one again when you create an emulator that needs it."),
+            group: .developer, safety: .caution, selectedByDefault: false,
+            sources: [.descendants("Library/Android/sdk/system-images", 3)]),
+        JunkRule(
+            id: "androidCaches", title: String(localized: "Android tool caches"), icon: "shippingbox",
+            explanation: String(localized: "Caches the Android build tools and emulator rebuild on demand."),
+            group: .developer, safety: .safe, selectedByDefault: true,
+            sources: [.path(".android/cache"), .path(".android/build-cache")]),
+        JunkRule(
+            id: "simUnavailable", title: String(localized: "Unavailable simulators"), icon: "iphone.slash",
+            explanation: String(localized: "Simulated devices whose iOS, watchOS, tvOS or visionOS version is no longer installed, so Xcode can't run them. The same as xcrun simctl delete unavailable."),
+            group: .developer, safety: .safe, selectedByDefault: true,
+            sources: [.children("Library/Developer/CoreSimulator/Devices")]),
+        JunkRule(
+            id: "simDevices", title: String(localized: "Simulator devices"), icon: "ipad.and.iphone",
+            explanation: String(localized: "Simulated iPhones, iPads, Watches, Apple TVs and Vision Pros with the apps and data on them. Xcode can create a device again, but its data is gone. Running simulators are left alone."),
+            group: .developer, safety: .caution, selectedByDefault: false,
+            sources: [.children("Library/Developer/CoreSimulator/Devices")]),
+        JunkRule(
+            id: "genymotion", title: String(localized: "Genymotion virtual devices"), icon: "candybarphone",
+            explanation: String(localized: "Android virtual devices deployed by Genymotion. Removing one deletes that device and its data."),
+            group: .developer, safety: .caution, selectedByDefault: false,
+            sources: [.children(".Genymobile/Genymotion/deployed")]),
+        JunkRule(
+            id: "vms", title: String(localized: "Virtual machines"), icon: "desktopcomputer",
+            explanation: String(localized: "Virtual machines from Parallels, VMware Fusion, VirtualBox, UTM, Tart and Lima — often tens of gigabytes each. Removing one deletes that machine and everything inside it."),
+            group: .developer, safety: .caution, selectedByDefault: false,
+            sources: vmSources, excludedNames: ["_config", "_cache", "_disks", "_networks"]),
 
         // MARK: Backups & Mail
         JunkRule(
@@ -195,7 +249,7 @@ enum JunkRules {
             explanation: String(localized: "Copies of attachments you opened from Mail. The originals stay in your messages."),
             group: .backups, safety: .safe, selectedByDefault: true, needsFullDiskAccess: true,
             sources: [.children("Library/Containers/com.apple.mail/Data/Library/Mail Downloads")]),
-    ]
+    ] }
 }
 
 /// One removable thing found by a rule.
@@ -288,6 +342,20 @@ enum JunkScanner {
                     let candidate = child.appendingPathComponent(sub)
                     if FS.exists(candidate) { urls.append(candidate) }
                 }
+            case .descendants(_, let depth):
+                var level = (list(base) ?? []).filter(FS.isDirectory)
+                for _ in 1..<max(1, depth) {
+                    level = level.flatMap { FS.children(of: $0).filter(FS.isDirectory) }
+                }
+                urls += level
+            }
+        }
+
+        if rule.id == "simUnavailable" || rule.id == "simDevices" {
+            let sims = SimulatorInfo.shared
+            urls = urls.filter { url in
+                guard FS.isDirectory(url), let info = sims[url.lastPathComponent], !info.booted else { return false }
+                return rule.id == "simUnavailable" ? !info.available : info.available
             }
         }
 
@@ -296,6 +364,81 @@ enum JunkScanner {
             urls = urls.filter { !isOwned($0.standardizedFileURL.path, by: owned) }
         }
         return (urls, unreadable)
+    }
+
+    /// Simulator devices by UDID, read once per scan from `simctl` (or each device.plist if Xcode isn't selected).
+    private enum SimulatorInfo {
+        struct Device { let name: String; let runtime: String; let available: Bool; let booted: Bool; let lastBooted: Date? }
+        static var shared: [String: Device] { load() }
+
+        private static var cache: (date: Date, devices: [String: Device])?
+
+        static func load() -> [String: Device] {
+            if let cache, Date().timeIntervalSince(cache.date) < 30 { return cache.devices }
+            let devices = fromSimctl() ?? fromPlists()
+            cache = (.now, devices)
+            return devices
+        }
+
+        /// Runs `xcrun simctl` only when developer tools are selected, so it never triggers the install prompt.
+        private static func fromSimctl() -> [String: Device]? {
+            let select = Process()
+            select.executableURL = URL(fileURLWithPath: "/usr/bin/xcode-select")
+            select.arguments = ["-p"]
+            select.standardOutput = Pipe(); select.standardError = Pipe()
+            guard (try? select.run()) != nil else { return nil }
+            select.waitUntilExit()
+            guard select.terminationStatus == 0 else { return nil }
+
+            let p = Process()
+            p.executableURL = URL(fileURLWithPath: "/usr/bin/xcrun")
+            p.arguments = ["simctl", "list", "devices", "-j"]
+            let out = Pipe()
+            p.standardOutput = out; p.standardError = Pipe()
+            guard (try? p.run()) != nil else { return nil }
+            let watchdog = DispatchWorkItem { if p.isRunning { p.terminate() } }
+            DispatchQueue.global().asyncAfter(deadline: .now() + 20, execute: watchdog)
+            let data = out.fileHandleForReading.readDataToEndOfFile()
+            p.waitUntilExit()
+            watchdog.cancel()
+            guard p.terminationStatus == 0,
+                  let json = try? JSONSerialization.jsonObject(with: data) as? [String: Any],
+                  let byRuntime = json["devices"] as? [String: [[String: Any]]] else { return nil }
+            let iso = ISO8601DateFormatter()
+            iso.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+            var result: [String: Device] = [:]
+            for (runtime, list) in byRuntime {
+                for d in list {
+                    guard let udid = d["udid"] as? String else { continue }
+                    let last = (d["lastBootedAt"] as? String).flatMap { iso.date(from: $0) ?? ISO8601DateFormatter().date(from: $0) }
+                    result[udid] = Device(name: d["name"] as? String ?? udid, runtime: runtime,
+                                          available: d["isAvailable"] as? Bool ?? true,
+                                          booted: (d["state"] as? String) == "Booted", lastBooted: last)
+                }
+            }
+            return result
+        }
+
+        /// Without simctl we can't tell whether a runtime is installed, so every device counts as available.
+        private static func fromPlists() -> [String: Device] {
+            var result: [String: Device] = [:]
+            for dir in FS.children(of: FS.library("Developer/CoreSimulator/Devices")) where FS.isDirectory(dir) {
+                guard let data = try? Data(contentsOf: dir.appendingPathComponent("device.plist")),
+                      let plist = try? PropertyListSerialization.propertyList(from: data, format: nil) as? [String: Any] else { continue }
+                result[dir.lastPathComponent] = Device(name: plist["name"] as? String ?? dir.lastPathComponent,
+                                                       runtime: plist["runtime"] as? String ?? "",
+                                                       available: true, booted: (plist["state"] as? Int) == 3, lastBooted: nil)
+            }
+            return result
+        }
+
+        /// "com.apple.CoreSimulator.SimRuntime.iOS-18-2" → "iOS 18.2"
+        static func pretty(_ runtime: String) -> String {
+            guard let last = runtime.split(separator: ".").last else { return runtime }
+            let parts = last.split(separator: "-")
+            guard let os = parts.first else { return String(last) }
+            return parts.count > 1 ? "\(os) \(parts.dropFirst().joined(separator: "."))" : String(os)
+        }
     }
 
     private static func companions(for rule: JunkRule, url: URL) -> [URL] {
@@ -346,7 +489,24 @@ enum JunkScanner {
             let parts = [device, product, last.map { "backed up \(Fmt.date($0))" }].compactMap { $0 }
             return parts.isEmpty ? nil : parts.joined(separator: " · ")
         case "android":
-            return "Emulator \(url.deletingPathExtension().lastPathComponent)"
+            return String(localized: "Emulator \(url.deletingPathExtension().lastPathComponent)")
+        case "androidSnapshots":
+            return String(localized: "Quick Boot snapshots of \(url.deletingLastPathComponent().deletingPathExtension().lastPathComponent)")
+        case "androidImages":
+            // system-images/<android-35>/<google_apis_playstore>/<arm64-v8a>
+            let abi = url.lastPathComponent
+            let tag = url.deletingLastPathComponent().lastPathComponent.replacingOccurrences(of: "_", with: " ")
+            let api = url.deletingLastPathComponent().deletingLastPathComponent().lastPathComponent
+                .replacingOccurrences(of: "android-", with: "API ")
+            return "\(api) · \(tag) · \(abi)"
+        case "simUnavailable", "simDevices":
+            guard let info = SimulatorInfo.shared[name] else { return nil }
+            var parts = [info.name, SimulatorInfo.pretty(info.runtime)]
+            if let last = info.lastBooted { parts.append(String(localized: "last used \(Fmt.relative(last))")) }
+            else if rule.id == "simDevices" { parts.append(String(localized: "never booted")) }
+            return parts.joined(separator: " · ")
+        case "vms", "genymotion":
+            return url.deletingPathExtension().lastPathComponent
         default:
             return nil
         }

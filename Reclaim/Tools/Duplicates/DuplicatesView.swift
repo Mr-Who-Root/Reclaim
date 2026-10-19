@@ -125,24 +125,27 @@ struct DuplicatesView: View {
             .padding(.horizontal, 20)
             .padding(.bottom, 8)
 
-            List {
-                ForEach(model.groups) { group in
-                    Section {
-                        ForEach(orderedFiles(group)) { file in
-                            DupCopyRow(file: file,
-                                       isKeeper: model.isKeeper(file, in: group),
-                                       isSelected: model.selected.contains(file.path),
-                                       toggle: { model.toggle(file, in: group) },
-                                       keep: { model.keep(file, in: group.id) },
-                                       selectFolder: { model.selectCopies(in: file.url.deletingLastPathComponent()) },
-                                       preview: { preview = file.url })
+            ScrollView {
+                LazyVStack(spacing: 14) {
+                    ForEach(model.groups) { group in
+                        ResultGroupCard {
+                            DupGroupHeader(group: group)
+                        } content: {
+                            ForEach(orderedFiles(group)) { file in
+                                RowDivider(inset: 0)
+                                DupCopyRow(file: file,
+                                           isKeeper: model.isKeeper(file, in: group),
+                                           isSelected: model.selected.contains(file.path),
+                                           toggle: { model.toggle(file, in: group) },
+                                           keep: { model.keep(file, in: group.id) },
+                                           selectFolder: { model.selectCopies(in: file.url.deletingLastPathComponent()) },
+                                           preview: { preview = file.url })
+                            }
                         }
-                    } header: {
-                        DupGroupHeader(group: group)
                     }
                 }
+                .padding(20)
             }
-            .listStyle(.inset)
 
             SelectionBar(count: model.selected.count, bytes: model.selectedBytes, isWorking: model.isTrashing,
                          action: { Task { await model.trashSelected() } }) {

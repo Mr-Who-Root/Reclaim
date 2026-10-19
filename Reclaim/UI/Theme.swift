@@ -166,6 +166,8 @@ struct PillButtonStyle: ButtonStyle {
             ? [Color(red: 1.0, green: 0.36, blue: 0.36), Color(red: 0.80, green: 0.12, blue: 0.20)]
             : [theme.accentColor.mix(with: .white, by: 0.12), theme.deepColor]
         configuration.label
+            .lineLimit(1)
+            .fixedSize()
             .font((large ? Font.body : Font.callout).weight(.semibold))
             .foregroundStyle(.white)
             .padding(.horizontal, large ? 22 : 14)
@@ -187,6 +189,8 @@ struct GlassButtonStyle: ButtonStyle {
 
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
+            .lineLimit(1)
+            .fixedSize()
             .font(.callout.weight(.medium))
             .padding(.horizontal, 12)
             .padding(.vertical, 6)

@@ -6,7 +6,7 @@ struct RootView: View {
     var body: some View {
         NavigationSplitView {
             Sidebar(selection: $app.route)
-                .navigationSplitViewColumnWidth(min: 210, ideal: 230, max: 300)
+                .navigationSplitViewColumnWidth(min: 230, ideal: 250, max: 320)
         } detail: {
             DetailView(route: app.route ?? .home)
                 .id(app.route ?? .home)
@@ -158,6 +158,8 @@ private struct SidebarRow: View {
             RouteIcon(route: route, side: 22)
             Text(route.title)
                 .font(.system(size: 13, weight: .medium))
+                .lineLimit(1)
+                .layoutPriority(1)
                 .foregroundStyle(theme.sidebarText.map { AnyShapeStyle($0) } ?? AnyShapeStyle(.primary))
             Spacer()
             trailing

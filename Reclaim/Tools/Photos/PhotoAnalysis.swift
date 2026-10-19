@@ -283,8 +283,11 @@ enum PhotoAnalysis {
                 let c = Candidate(url: url, values: values)
                 if isScreenshotName(name) {
                     result.screenshots.append(PhotoItem(entry: c.entry, date: c.fallbackDate))
-                } else {
+                } else if cameraExtensions.contains(ext) {
+                    // Look-alikes and blur only make sense for camera photos; PNG/WebP/GIF are usually artwork and icons.
                     candidates.append(c)
+                } else if spotlightSaysScreenCapture(url) {
+                    result.screenshots.append(PhotoItem(entry: c.entry, date: c.fallbackDate))
                 }
             } else if videoExtensions.contains(ext) {
                 let c = Candidate(url: url, values: values)

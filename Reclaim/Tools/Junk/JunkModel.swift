@@ -172,7 +172,8 @@ final class JunkModel: ScanTool {
         guard !items.isEmpty, !isTrashing else { return }
         isTrashing = true
         defer { isTrashing = false }
-        var entries = items.map(\.entry)
+        let selectedPaths = Set(items.map(\.entry.path))
+        var entries = items.map(\.entry).filter { !selectedPaths.containsPathOrAncestor(of: $0.url.deletingLastPathComponent().path) }
         for item in items {
             entries += item.companions.map { FileEntry(url: $0, size: 0, modified: nil, created: nil, isDirectory: false) }
         }

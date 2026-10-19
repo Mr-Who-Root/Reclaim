@@ -179,8 +179,14 @@ final class AppModel {
             settingsSection = SettingsSection(rawValue: sub) ?? settingsSection
             route = .settings
         } else if target == "scan" || target == "smartscan" {
-            route = .home
-            startSmartScan()
+            // reclaim://scan/<tool> scans one tool; reclaim://scan runs Smart Scan.
+            if let sub = url.pathComponents.dropFirst().first, let r = Route(rawValue: sub), let tool = tool(for: r) {
+                route = r
+                Task { await tool.scan() }
+            } else {
+                route = .home
+                startSmartScan()
+            }
         } else if let r = Route(rawValue: target) {
             route = r
         }

@@ -58,37 +58,33 @@ struct JunkView: View {
     private var results: some View {
         VStack(spacing: 0) {
             if !model.blockedRules.isEmpty { fdaBanner.padding(.bottom, 8) }
-            List {
-                ForEach(model.groupedResults) { section in
-                    Section {
+            ScrollView {
+                LazyVStack(spacing: 14) {
+                    ForEach(model.groupedResults) { section in
                         if section.group == .developer, !hideDevExplainer {
                             JunkDevExplainer { hideDevExplainer = true }
-                                .listRowSeparator(.hidden)
                         }
-                        ForEach(section.results) { result in
-                            JunkRuleRow(result: result, model: model)
-                            if model.expanded.contains(result.id) {
-                                ForEach(result.items) { item in
-                                    FileRow(entry: item.entry,
-                                            isSelected: model.selection.contains(item.id),
-                                            detail: item.detail,
-                                            toggle: { model.toggleItem(item) })
-                                        .padding(.leading, 34)
+                        ResultGroupCard {
+                            ResultGroupHeader(icon: section.group.icon, title: Fmt.loc(section.group.rawValue), total: Fmt.bytes(section.bytes))
+                        } content: {
+                            ForEach(Array(section.results.enumerated()), id: \.element.id) { index, result in
+                                if index > 0 { RowDivider(inset: 0) }
+                                JunkRuleRow(result: result, model: model)
+                                if model.expanded.contains(result.id) {
+                                    ForEach(result.items) { item in
+                                        FileRow(entry: item.entry,
+                                                isSelected: model.selection.contains(item.id),
+                                                detail: item.detail,
+                                                toggle: { model.toggleItem(item) })
+                                            .padding(.leading, 34)
+                                    }
                                 }
                             }
                         }
-                    } header: {
-                        HStack {
-                            Label(Fmt.loc(section.group.rawValue), systemImage: section.group.icon)
-                            Spacer()
-                            Text(Fmt.bytes(section.bytes)).monospacedDigit()
-                        }
-                        .font(.headline)
-                        .padding(.vertical, 2)
                     }
                 }
+                .padding(20)
             }
-            .listStyle(.inset)
 
             SelectionBar(count: model.selection.count, bytes: model.selectedBytes,
                          isWorking: model.isTrashing,
@@ -145,12 +141,15 @@ private struct JunkRuleRow: View {
                 Text(rule.explanation)
                     .font(.caption)
                     .foregroundStyle(.secondary)
-                    .lineLimit(expanded ? nil : 2)
+                    .lineLimit(expanded ? nil : 1)
+                    .help(rule.explanation)
                     .fixedSize(horizontal: false, vertical: true)
             }
             Spacer(minLength: 12)
-            Text(Fmt.count(result.items.count, "item"))
-                .font(.caption).foregroundStyle(.secondary)
+            if result.items.count > 1 {
+                Text(Fmt.count(result.items.count, "item"))
+                    .font(.caption).foregroundStyle(.secondary)
+            }
             Text(Fmt.bytes(result.bytes))
                 .monospacedDigit().fontWeight(.semibold)
                 .frame(width: 84, alignment: .trailing)
@@ -203,23 +202,28 @@ private struct JunkDevExplainer: View {
     let onHide: () -> Void
 
     var body: some View {
-        HStack(alignment: .top, spacing: 12) {
-            Image(systemName: "info.circle.fill").font(.title3).foregroundStyle(.tint)
-            VStack(alignment: .leading, spacing: 4) {
-                Text("What developer caches are").font(.callout.weight(.semibold))
-                Text("Build intermediates, downloaded packages, and simulator or device-support files from Xcode, npm, Homebrew, Gradle and friends. They rebuild automatically the next time you build or install, and none of them contain your code or projects.")
-                    .font(.caption).foregroundStyle(.secondary)
-                    .fixedSize(horizontal: false, vertical: true)
-                Text("Tip: unused simulator runtimes live in a system folder. Remove them in Xcode › Settings › Components.")
-                    .font(.caption).foregroundStyle(.secondary)
-                    .fixedSize(horizontal: false, vertical: true)
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(spacing: 10) {
+                Image(systemName: "hammer.circle.fill").font(.title2).foregroundStyle(.tint)
+                Text("What developer caches are").font(.system(.title3, design: .rounded).weight(.semibold))
+                Spacer()
+                Button(action: onHide) { Image(systemName: "xmark") }
+                    .buttonStyle(.plain).foregroundStyle(.secondary)
+                    .help("Hide this explanation")
+                    .accessibilityLabel("Hide this explanation")
             }
-            Spacer()
-            Button("Hide", action: onHide)
-                .controlSize(.small)
-                .help("Hide this explanation")
+            Text("Build intermediates, downloaded packages, and simulator or device-support files from Xcode, npm, Homebrew, Gradle and friends. They rebuild automatically the next time you build or install, and none of them contain your code or projects.")
+                .font(.callout).foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+            Label("Emulators, simulators and virtual machines are different: they hold data, so they're marked Caution and never selected for you. Unused simulator runtimes live in a system folder — remove them in Xcode › Settings › Components.",
+                  systemImage: "info.circle")
+                .font(.caption).foregroundStyle(.secondary)
+                .fixedSize(horizontal: false, vertical: true)
+            Button("Don't show this again", action: onHide)
+                .buttonStyle(.link)
+                .font(.callout.weight(.semibold))
         }
-        .card(padding: 12)
-        .padding(.vertical, 4)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .card(padding: 16)
     }
 }
