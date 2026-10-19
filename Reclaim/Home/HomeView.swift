@@ -8,6 +8,9 @@ struct HomeView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 20) {
+                if let release = Updater.shared.availableRelease {
+                    UpdateBanner(release: release)
+                }
                 HomeHero()
                 HStack(alignment: .top, spacing: 16) {
                     FreeSpaceTrend()
@@ -31,6 +34,31 @@ struct HomeView: View {
             .frame(maxWidth: .infinity)
         }
         .onAppear { app.refreshVolume() }
+    }
+}
+
+/// A quiet one-line note when a newer Reclaim is out.
+private struct UpdateBanner: View {
+    let release: Updater.Release
+    private var app: AppModel { AppModel.shared }
+
+    var body: some View {
+        HStack(spacing: 12) {
+            Image(systemName: "arrow.down.circle.fill").font(.title2).foregroundStyle(.tint)
+            VStack(alignment: .leading, spacing: 1) {
+                Text("Reclaim \(release.version) is available").font(.callout.weight(.semibold))
+                Text("You have \(Updater.shared.currentVersion). It installs in a few seconds and keeps your settings.")
+                    .font(.caption).foregroundStyle(.secondary)
+            }
+            Spacer()
+            Button("What's New") {
+                app.settingsSection = .about
+                app.route = .settings
+            }
+            .buttonStyle(.softGlass)
+            Button("Update") { Task { await Updater.shared.install() } }.buttonStyle(.pill)
+        }
+        .card(padding: 12)
     }
 }
 

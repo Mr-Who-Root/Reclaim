@@ -2,7 +2,7 @@
 
 **Website:** https://mr-who-root.github.io/Reclaim/ · **Download:** [latest release](https://github.com/Mr-Who-Root/Reclaim/releases/latest)
 
-A native macOS disk-space cleaner with **every tool unlocked** — no subscription, no account, no network.
+A native macOS disk-space cleaner with **every tool unlocked** — no subscription, no account, no tracking. Its only network request is a check for new releases on GitHub (you can turn it off).
 Reclaim looks first, explains every suggestion, and moves nothing until you approve it. Everything it removes
 goes to the Trash, with Undo and a full history.
 
@@ -86,7 +86,15 @@ Config/             Info.plists and entitlements
 scripts/            Build, package and icon scripts
 ```
 
+## Updates
+
+Reclaim checks this repo's latest GitHub release once a day (Settings › About › Updates, or **Reclaim › Check for
+Updates…**). When a newer version is out it shows a note on Home; one click downloads the release zip, verifies its
+SHA-256 against the checksum GitHub publishes, checks the bundle identifier, version and code signature, swaps it in
+place and reopens. Automatic checks can be turned off. Because builds are signed ad hoc, macOS may ask for folder
+access again after an update.
+
 ## Privacy
 
-Everything runs on your Mac. No analytics, no uploads, no account. Reclaim never deletes permanently — you empty
+Everything runs on your Mac. No analytics, no uploads, no account. The only request Reclaim makes is the update check. Reclaim never deletes permanently — you empty
 the Trash yourself — and scheduled scans only ever find things.

@@ -547,6 +547,80 @@ enum AppInfo {
     }
 }
 
+/// Version check and one-click install from GitHub Releases.
+private struct UpdatesSection: View {
+    @AppStorage(PrefKey.autoCheckUpdates) private var autoCheck = true
+    private var updater: Updater { Updater.shared }
+
+    var body: some View {
+        Section {
+            switch updater.state {
+            case .available(let release):
+                VStack(alignment: .leading, spacing: 8) {
+                    HStack {
+                        Label("Reclaim \(release.version) is available", systemImage: "arrow.down.circle.fill")
+                            .font(.headline).foregroundStyle(.tint)
+                        Spacer()
+                        Text("You have \(updater.currentVersion)").font(.caption).foregroundStyle(.secondary)
+                    }
+                    if !release.notes.isEmpty {
+                        ScrollView {
+                            Text(LocalizedStringKey(release.notes))
+                                .font(.callout).foregroundStyle(.secondary)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        .frame(maxHeight: 140)
+                    }
+                    HStack {
+                        Button("Download & Install") { Task { await updater.install() } }.buttonStyle(.pill)
+                        Link("Release Notes", destination: release.pageURL)
+                        Spacer()
+                        Text(Fmt.bytes(release.zipSize)).font(.caption).foregroundStyle(.secondary)
+                    }
+                    Text("Reclaim downloads the update from GitHub, checks it, replaces this copy and reopens. Your settings and history are kept.")
+                        .font(.caption).foregroundStyle(.secondary)
+                }
+                .padding(.vertical, 2)
+            case .downloading(let progress):
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("Downloading the update…").font(.callout)
+                    ProgressView(value: progress)
+                }
+            case .installing:
+                HStack { ProgressView().controlSize(.small); Text("Checking and installing… Reclaim will reopen.").font(.callout) }
+            case .checking:
+                HStack { ProgressView().controlSize(.small); Text("Checking for updates…").font(.callout) }
+            case .upToDate:
+                LabeledContent {
+                    Button("Check Again") { Task { await updater.check(userInitiated: true) } }
+                } label: {
+                    Label("Reclaim is up to date", systemImage: "checkmark.circle.fill").foregroundStyle(.green)
+                }
+            case .failed(let message):
+                VStack(alignment: .leading, spacing: 6) {
+                    Label(message, systemImage: "exclamationmark.triangle").foregroundStyle(.orange).font(.callout)
+                    Button("Try Again") { Task { await updater.check(userInitiated: true) } }
+                }
+            case .idle:
+                LabeledContent {
+                    Button("Check for Updates") { Task { await updater.check(userInitiated: true) } }
+                } label: {
+                    Text("Version \(updater.currentVersion)")
+                }
+            }
+            Toggle("Check for updates automatically", isOn: $autoCheck)
+            if let last = updater.lastCheck {
+                Text("Last checked \(Fmt.relative(last))").font(.caption).foregroundStyle(.secondary)
+            }
+        } header: {
+            Text("Updates")
+        } footer: {
+            Text("Reclaim only goes online to ask GitHub for the latest release. Nothing about your Mac is sent.")
+                .font(.caption).foregroundStyle(.secondary)
+        }
+    }
+}
+
 private struct AboutSettings: View {
     @State private var confirmClear = false
 
@@ -559,11 +633,12 @@ private struct AboutSettings: View {
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Reclaim").font(.title.weight(.bold))
                         Text("Version \(AppInfo.version) (\(AppInfo.build))").foregroundStyle(.secondary)
-                        Text("Every tool unlocked. No account, no subscription, no network.").font(.callout).foregroundStyle(.secondary)
+                        Text("Every tool unlocked. No account, no subscription.").font(.callout).foregroundStyle(.secondary)
                     }
                 }
                 .padding(.vertical, 4)
             }
+            UpdatesSection()
             Section("Details") {
                 LabeledContent("Version", value: AppInfo.version)
                 LabeledContent("Build", value: AppInfo.build)
@@ -591,7 +666,7 @@ private struct AboutSettings: View {
                 Label("Never deletes permanently — you empty the Trash yourself", systemImage: "xmark")
                 Label("Never removes anything on a schedule", systemImage: "xmark")
                 Label("Not antivirus — Security Check reads signatures only", systemImage: "xmark")
-                Label("Nothing leaves your Mac — no analytics, no uploads", systemImage: "xmark")
+                Label("Nothing about your Mac leaves it — no analytics, no uploads", systemImage: "xmark")
             }
             Section {
                 Button("Clear Trash History…", role: .destructive) { confirmClear = true }
