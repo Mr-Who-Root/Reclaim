@@ -16,6 +16,10 @@ final class AppModel {
     let junk = JunkModel()
     let aiJunk = AIJunkModel()
     let docker = DockerModel()
+    let toolchains = ToolchainsModel()
+    let maintenance = MaintenanceModel()
+    let processes = DevProcessesModel()
+    let devOverview = DevOverviewModel()
     let downloads = DownloadsModel()
     let duplicates = DuplicatesModel()
     let photos = PhotosModel()
@@ -36,7 +40,8 @@ final class AppModel {
 
     /// Tools that report reclaimable space, in display order.
     var scanTools: [any ScanTool] {
-        [junk, aiJunk] + (Route.docker.isAvailable ? [docker] : []) + [downloads, duplicates, photos, large, apps]
+        let dev: [any ScanTool] = (Route.docker.isAvailable ? [docker] : []) + (DevEnvironment.detected ? [toolchains, maintenance] : [])
+        return [junk, aiJunk, downloads, duplicates, photos, large] + dev + [apps]
     }
 
     func tool(for route: Route) -> (any ScanTool)? {
@@ -44,6 +49,8 @@ final class AppModel {
         case .junk: return junk
         case .ai: return aiJunk
         case .docker: return docker
+        case .toolchains: return toolchains
+        case .maintenance: return maintenance
         case .downloads: return downloads
         case .duplicates: return duplicates
         case .photos: return photos
@@ -82,6 +89,8 @@ final class AppModel {
             }
             // Review: what's waiting in the Trash
             group.addTask { @MainActor in await self.trashStatus.scan() }
+            // Developer: processes left running
+            if DevEnvironment.detected { group.addTask { @MainActor in await self.processes.refresh() } }
             // App: installed apps and their sizes (Uninstall an App)
             group.addTask { @MainActor in await self.apps.loadAppsAndSizes() }
             // Explore
@@ -231,6 +240,8 @@ final class AppModel {
                 case .map: Task { await storageMap.scan() }
                 case .trash: Task { await trashStatus.scan() }
                 case .apps: Task { await apps.loadAppsAndSizes() }
+                case .processes: Task { await processes.refresh() }
+                case .dev: Task { await devOverview.scan() }
                 default: if let tool = tool(for: r) { Task { await tool.scan() } }
                 }
             } else {

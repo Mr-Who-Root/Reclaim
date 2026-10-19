@@ -171,12 +171,18 @@ private struct SidebarRow: View {
             if tool.phase.isScanning {
                 ProgressView().controlSize(.mini)
             } else if tool.phase.isDone, tool.reclaimableBytes > 0 {
-                Text(Fmt.bytes(tool.reclaimableBytes)).font(.caption.weight(.medium)).monospacedDigit()
+                Text(Fmt.bytes(tool.reclaimableBytes)).font(.caption.weight(.medium)).monospacedDigit().fixedSize()
                     .foregroundStyle(theme.sidebarSecondaryText.map { AnyShapeStyle($0) } ?? AnyShapeStyle(.secondary))
             }
         } else if (route == .security && app.security.phase.isScanning) || (route == .map && app.storageMap.phase.isScanning)
                     || (route == .trash && app.trashStatus.phase.isScanning) {
             ProgressView().controlSize(.mini)
+        } else if route == .processes, !app.processes.leftBehind.isEmpty {
+            Text("\(app.processes.leftBehind.count)").font(.caption.weight(.semibold)).monospacedDigit()
+                .padding(.horizontal, 6).padding(.vertical, 1)
+                .background(Capsule().fill(.orange.opacity(0.85))).foregroundStyle(.white)
+                .fixedSize()
+                .help("Dev processes left running")
         } else if route == .trash, app.trashStatus.waitingBytes > 0 {
             Text(Fmt.bytes(app.trashStatus.waitingBytes)).font(.caption.weight(.medium)).monospacedDigit()
                 .foregroundStyle(theme.sidebarSecondaryText.map { AnyShapeStyle($0) } ?? AnyShapeStyle(.secondary))
@@ -193,6 +199,10 @@ private struct DetailView: View {
         case .junk: JunkView()
         case .ai: AIJunkView()
         case .docker: DockerView()
+        case .dev: DevOverviewView()
+        case .toolchains: ToolchainsView()
+        case .maintenance: MaintenanceView()
+        case .processes: DevProcessesView()
         case .downloads: DownloadsView()
         case .duplicates: DuplicatesView()
         case .photos: PhotosView()

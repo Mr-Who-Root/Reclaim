@@ -3,7 +3,7 @@ import Foundation
 
 /// A Reclaim tool, for "Open a Reclaim Tool".
 enum ReclaimToolOption: String, AppEnum {
-    case home, guided, junk, ai, docker, downloads, duplicates, photos, large, map, security, trash, leftovers, apps, settings
+    case home, guided, junk, ai, dev, docker, toolchains, maintenance, processes, downloads, duplicates, photos, large, map, security, trash, leftovers, apps, settings
 
     static var typeDisplayRepresentation: TypeDisplayRepresentation = "Reclaim Tool"
 
@@ -13,6 +13,10 @@ enum ReclaimToolOption: String, AppEnum {
         .junk: "Junk",
         .ai: "AI Junk",
         .docker: "Docker",
+        .dev: "Dev Overview",
+        .toolchains: "SDKs & Toolchains",
+        .maintenance: "Git & Homebrew",
+        .processes: "Dev Processes",
         .downloads: "Downloads",
         .duplicates: "Duplicates",
         .photos: "Photo Clutter",
