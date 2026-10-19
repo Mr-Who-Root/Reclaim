@@ -70,7 +70,7 @@ private struct HomeHero: View {
 
             VStack(alignment: .leading, spacing: 12) {
                 Label("Smart Scan", systemImage: "sparkle.magnifyingglass").font(.headline)
-                Text("One pass across every cleanup tool plus a read-only Security Check. Nothing moves until you approve it.")
+                Text("One read-only pass across every section: cleanup tools, your apps, Security Check, the Storage Map and the Trash. Nothing moves until you approve it.")
                     .font(.callout).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
                 if app.smartScanRunning {
                     HStack(spacing: 10) {
@@ -276,7 +276,12 @@ private struct SmartScanResults: View {
                              subtitle: app.smartScanRunning ? "Results appear as each tool finishes." : "Nothing has been removed. Open a tool to review its results.")
                 Spacer()
                 if !app.smartScanRunning {
-                    Text(Fmt.bytes(app.totalReclaimable)).font(.system(.title, design: .rounded).weight(.bold)).monospacedDigit().foregroundStyle(.tint)
+                    VStack(alignment: .trailing, spacing: 2) {
+                        Text(Fmt.bytes(app.totalReclaimable)).font(.system(.title, design: .rounded).weight(.bold)).monospacedDigit().foregroundStyle(.tint)
+                        if app.trashStatus.waitingBytes > 0 {
+                            Text("+ \(Fmt.bytes(app.trashStatus.waitingBytes)) already in the Trash").font(.caption).foregroundStyle(.secondary)
+                        }
+                    }
                 }
             }
             VStack(spacing: 0) {
@@ -284,7 +289,13 @@ private struct SmartScanResults: View {
                     SmartScanRow(tool: tool)
                     Divider().padding(.leading, 44).opacity(0.5)
                 }
+                AppsReportRow()
+                Divider().padding(.leading, 44).opacity(0.5)
                 SecurityRow()
+                Divider().padding(.leading, 44).opacity(0.5)
+                StorageMapReportRow()
+                Divider().padding(.leading, 44).opacity(0.5)
+                TrashReportRow()
             }
             .card(padding: 6)
             if !app.smartScanRunning, app.totalReclaimable > 0 {
@@ -375,6 +386,98 @@ private struct SecurityRow: View {
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
+    }
+}
+
+/// One read-only line in the Smart Scan report.
+private struct ReportRow<Status: View>: View {
+    let route: Route
+    @ViewBuilder var status: () -> Status
+    private var app: AppModel { AppModel.shared }
+
+    var body: some View {
+        Button {
+            app.route = route
+        } label: {
+            HStack(spacing: 12) {
+                RouteIcon(route: route, side: 26)
+                Text(route.title)
+                Spacer()
+                status()
+                Image(systemName: "chevron.right").font(.caption).foregroundStyle(.tertiary)
+            }
+            .padding(.horizontal, 8)
+            .padding(.vertical, 7)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+    }
+}
+
+private struct AppsReportRow: View {
+    private var model: AppsModel { AppModel.shared.apps }
+    var body: some View {
+        ReportRow(route: .apps) {
+            if model.appsLoading {
+                ProgressView().controlSize(.small)
+            } else if model.apps.isEmpty {
+                Text("Not scanned yet").foregroundStyle(.tertiary).font(.caption)
+            } else {
+                Text("\(Fmt.count(model.apps.count, "app")) installed · \(Text(Fmt.bytes(model.installedAppsBytes)).fontWeight(.semibold).foregroundStyle(.primary))")
+                    .foregroundStyle(.secondary)
+            }
+        }
+    }
+}
+
+private struct StorageMapReportRow: View {
+    private var model: StorageMapModel { AppModel.shared.storageMap }
+    var body: some View {
+        ReportRow(route: .map) {
+            switch model.phase {
+            case .scanning(let message):
+                HStack(spacing: 6) {
+                    Text(message).font(.caption).foregroundStyle(.secondary).lineLimit(1).truncationMode(.middle).frame(maxWidth: 260, alignment: .trailing)
+                    ProgressView().controlSize(.small)
+                }
+            case .done:
+                if let root = model.root {
+                    let top = root.children.sorted { $0.size > $1.size }.prefix(2)
+                        .map { "\($0.url.lastPathComponent) \(Fmt.bytes($0.size))" }.joined(separator: ", ")
+                    Text("\(Fmt.bytes(root.size)) mapped · biggest: \(top)")
+                        .font(.callout).foregroundStyle(.secondary).lineLimit(1)
+                }
+            case .failed(let message):
+                Label(message, systemImage: "exclamationmark.triangle").foregroundStyle(.orange).font(.caption).lineLimit(1)
+            case .idle:
+                Text("Not scanned yet").foregroundStyle(.tertiary).font(.caption)
+            }
+        }
+    }
+}
+
+private struct TrashReportRow: View {
+    private var status: TrashStatus { AppModel.shared.trashStatus }
+    var body: some View {
+        ReportRow(route: .trash) {
+            switch status.phase {
+            case .scanning:
+                ProgressView().controlSize(.small)
+            case .done:
+                if let total = status.totalBytes {
+                    if total > 0 {
+                        Text("\(Fmt.count(status.itemCount ?? 0, "item")) · \(Text(Fmt.bytes(total)).fontWeight(.semibold).foregroundStyle(.primary)) waiting to be emptied")
+                            .foregroundStyle(.secondary)
+                    } else {
+                        Label("Empty", systemImage: "checkmark.circle.fill").foregroundStyle(.green).font(.callout)
+                    }
+                } else {
+                    Text("Full Disk Access needed to measure").font(.caption).foregroundStyle(.secondary)
+                }
+            default:
+                Text("Not scanned yet").foregroundStyle(.tertiary).font(.caption)
+            }
+        }
     }
 }
 

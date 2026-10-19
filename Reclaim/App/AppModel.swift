@@ -58,21 +58,32 @@ final class AppModel {
     // MARK: Smart Scan
 
     /// Runs every cleanup tool (plus Security Check) in one pass. Nothing is removed.
-    func startSmartScan(includeSecurity: Bool = true) {
+    let trashStatus = TrashStatus.shared
+
+    /// Smart Scan covers every section. `includeExplore` adds the slower read-only tools: Security Check and the Storage Map.
+    func startSmartScan(includeExplore: Bool = true) {
         guard !smartScanRunning else { return }
-        smartScanTask = Task { await runSmartScan(includeSecurity: includeSecurity) }
+        smartScanTask = Task { await runSmartScan(includeExplore: includeExplore) }
     }
 
-    func runSmartScan(includeSecurity: Bool = true) async {
+    /// Scans and reports only — nothing is moved or deleted.
+    func runSmartScan(includeExplore: Bool = true) async {
         guard !smartScanRunning else { return }
         smartScanRunning = true
         defer { smartScanRunning = false }
         await withTaskGroup(of: Void.self) { group in
+            // Clean Up + Leftovers
             for tool in scanTools {
                 group.addTask { @MainActor in await tool.scan() }
             }
-            if includeSecurity {
+            // Review: what's waiting in the Trash
+            group.addTask { @MainActor in await self.trashStatus.scan() }
+            // App: installed apps and their sizes (Uninstall an App)
+            group.addTask { @MainActor in await self.apps.loadAppsAndSizes() }
+            // Explore
+            if includeExplore {
                 group.addTask { @MainActor in await self.security.scan() }
+                group.addTask { @MainActor in await self.storageMap.scan() }
             }
         }
         lastSmartScan = .now
@@ -85,6 +96,7 @@ final class AppModel {
         smartScanTask?.cancel()
         for tool in scanTools { tool.cancelScan() }
         security.cancelScan()
+        storageMap.cancelScan()
     }
 
     // MARK: Trash + undo
@@ -118,6 +130,7 @@ final class AppModel {
     func didTrash(paths: Set<String>) {
         if !paths.isEmpty {
             for tool in scanTools { tool.forget(paths: paths) }
+            Task { await trashStatus.scan() }
         }
         refreshVolume()
         writeSnapshot()
@@ -155,6 +168,7 @@ final class AppModel {
     /// True once any tool has scanned (or is scanning) in this session.
     var hasSessionResults: Bool {
         smartScanRunning || scanTools.contains { $0.phase.isDone || $0.phase.isScanning }
+            || storageMap.phase.isDone || trashStatus.phase.isDone
     }
 
     /// Saves what the widget and Shortcuts read.
@@ -180,9 +194,15 @@ final class AppModel {
             route = .settings
         } else if target == "scan" || target == "smartscan" {
             // reclaim://scan/<tool> scans one tool; reclaim://scan runs Smart Scan.
-            if let sub = url.pathComponents.dropFirst().first, let r = Route(rawValue: sub), let tool = tool(for: r) {
+            if let sub = url.pathComponents.dropFirst().first, let r = Route(rawValue: sub) {
                 route = r
-                Task { await tool.scan() }
+                switch r {
+                case .security: Task { await security.scan() }
+                case .map: Task { await storageMap.scan() }
+                case .trash: Task { await trashStatus.scan() }
+                case .apps: Task { await apps.loadAppsAndSizes() }
+                default: if let tool = tool(for: r) { Task { await tool.scan() } }
+                }
             } else {
                 route = .home
                 startSmartScan()
@@ -210,7 +230,7 @@ final class AppModel {
         let last = UserDefaults.standard.object(forKey: PrefKey.lastScheduledScan) as? Date ?? .distantPast
         guard Date().timeIntervalSince(last) >= interval else { return }
         scheduledScanRunning = true
-        await runSmartScan(includeSecurity: false)
+        await runSmartScan(includeExplore: false)
         scheduledScanRunning = false
         UserDefaults.standard.set(Date(), forKey: PrefKey.lastScheduledScan)
         let thresholdGB = UserDefaults.standard.object(forKey: PrefKey.notifyThresholdGB) as? Int ?? 1

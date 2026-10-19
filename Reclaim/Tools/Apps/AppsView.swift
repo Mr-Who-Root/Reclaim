@@ -190,8 +190,9 @@ private struct AppsListRow: View {
                             .help("Running")
                     }
                 }
-                Text(app.version.map { String(localized: "Version \($0)") } ?? (app.bundleID ?? ""))
-                    .font(.caption).foregroundStyle(.secondary).lineLimit(1)
+                Text(app.otherLocation ?? app.version.map { String(localized: "Version \($0)") } ?? (app.bundleID ?? ""))
+                    .font(.caption).foregroundStyle(.secondary).lineLimit(1).truncationMode(.middle)
+                    .help(app.otherLocation.map { "\($0)/\(app.url.lastPathComponent)" } ?? "")
             }
             Spacer(minLength: 4)
             if let size {

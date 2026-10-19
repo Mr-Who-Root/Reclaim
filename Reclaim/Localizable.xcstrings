@@ -1960,6 +1960,148 @@
         }
       }
     },
+    "%@ installed · %@": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ مثبّتة · %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ installiert · %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@ installed · %2$@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ instaladas · %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ installées · %@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ इंस्टॉल हैं · %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ terinstal · %@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ installate · %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ をインストール済み · %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 설치됨 · %@"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ ഇൻസ്റ്റാൾ ചെയ്തിട്ടുണ്ട് · %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ geïnstalleerd · %@"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zainstalowano: %@ · %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ instalados · %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Установлено: %@ · %@"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ installerade · %@"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ நிறுவப்பட்டுள்ளன · %@"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ติดตั้งแล้ว %@ · %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ yüklü · %@"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Встановлено: %@ · %@"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đã cài %@ · %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已安装 %@ · %@"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已安裝 %@ · %@"
+          }
+        }
+      }
+    },
     "%@ installed · remove one with its support files": {
       "localizations": {
         "ar": {
@@ -2364,6 +2506,148 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ 記錄檔"
+          }
+        }
+      }
+    },
+    "%@ mapped · biggest: %@": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "تم رسم خريطة %@ · الأكبر: %@"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ erfasst · größte: %@"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@ mapped · biggest: %2$@"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ mapeados · más grandes: %@"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ cartographiés · plus gros : %@"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ मैप किया गया · सबसे बड़े: %@"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ dipetakan · terbesar: %@"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ mappati · più grandi: %@"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ をマッピング済み · 最大: %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ 매핑됨 · 가장 큰 항목: %@"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ മാപ്പ് ചെയ്തു · ഏറ്റവും വലുത്: %@"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ in kaart gebracht · grootste: %@"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zmapowano: %@ · największe: %@"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ mapeados · maiores: %@"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "На карте: %@ · крупнейшие: %@"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ kartlagt · störst: %@"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ வரைபடமாக்கப்பட்டது · மிகப் பெரியவை: %@"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "สร้างแผนที่แล้ว %@ · ใหญ่ที่สุด: %@"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ haritalandı · en büyükler: %@"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "На карті: %@ · найбільші: %@"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đã lập bản đồ %@ · lớn nhất: %@"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已映射 %@ · 最大：%@"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "已分析 %@ · 最大：%@"
           }
         }
       }
@@ -3920,6 +4204,148 @@
           "stringUnit": {
             "state": "translated",
             "value": "%@ · %@ 移到垃圾桶"
+          }
+        }
+      }
+    },
+    "%@ · %@ waiting to be emptied": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ بانتظار الإفراغ"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ warten auf das Entleeren"
+          }
+        },
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@ · %2$@ waiting to be emptied"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ pendientes de vaciar"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ en attente de vidage"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ ख़ाली किए जाने की प्रतीक्षा में"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ menunggu dikosongkan"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ in attesa di svuotamento"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ が空にされるのを待っています"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ 비우기 대기 중"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ ശൂന്യമാക്കാൻ കാത്തിരിക്കുന്നു"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ nog te legen"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ czeka na opróżnienie"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ aguardando esvaziamento"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ ожидают очистки"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ väntar på att tömmas"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ காலியாக்கப்படக் காத்திருக்கின்றன"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ รอการล้าง"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ boşaltılmayı bekliyor"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ очікують спорожнення"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ đang chờ dọn sạch"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ 等待清倒"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ · %@ 等待清空"
           }
         }
       }
@@ -5872,6 +6298,142 @@
           "stringUnit": {
             "state": "translated",
             "value": "%lld 個未決定 · 共找到 %@"
+          }
+        }
+      }
+    },
+    "+ %@ already in the Trash": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ %@ موجودة مسبقًا في سلة المهملات"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ %@ bereits im Papierkorb"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ %@ ya en la Papelera"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ %@ déjà dans la Corbeille"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ %@ पहले से ट्रैश में"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ %@ sudah ada di Tong Sampah"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ %@ già nel Cestino"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ すでにゴミ箱にある %@"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ 이미 휴지통에 있는 %@"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ %@ ഇതിനകം ട്രാഷിൽ"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ %@ al in de prullenmand"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ %@ już w Koszu"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ %@ já no Lixo"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ %@ уже в Корзине"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ %@ redan i papperskorgen"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ %@ ஏற்கெனவே குப்பைத் தொட்டியில்"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ %@ อยู่ในถังขยะแล้ว"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ %@ zaten Çöp Sepetinde"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ %@ уже в Смітнику"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ %@ đã nằm trong Thùng rác"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ 废纸篓中已有 %@"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+ 垃圾桶中已有 %@"
           }
         }
       }
@@ -38953,6 +39515,142 @@
         }
       }
     },
+    "Empty": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "فارغة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leer"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vacía"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vide"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ख़ाली"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kosong"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vuoto"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "空"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "비어 있음"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ശൂന്യം"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Leeg"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pusty"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Vazio"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пусто"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tom"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "காலி"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ว่างเปล่า"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Boş"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Порожньо"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Trống"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "空"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "空的"
+          }
+        }
+      }
+    },
     "Empty Trash": {
       "localizations": {
         "ar": {
@@ -47127,6 +47825,142 @@
           "stringUnit": {
             "state": "translated",
             "value": "完整磁碟取用權限（選用）"
+          }
+        }
+      }
+    },
+    "Full Disk Access needed to measure": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "يتطلب القياس الوصول الكامل إلى القرص"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Festplattenvollzugriff zum Messen erforderlich"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Requiere acceso total al disco para medir"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accès complet au disque requis pour mesurer"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "मापने के लिए पूर्ण डिस्क ऐक्सेस चाहिए"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Memerlukan Akses Disk Penuh untuk mengukur"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Richiede l'Accesso completo al disco per misurare"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "測定にはフルディスクアクセスが必要です"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "측정하려면 전체 디스크 접근 권한 필요"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "അളക്കാൻ പൂർണ്ണ ഡിസ്ക് ആക്സസ് ആവശ്യമാണ്"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Volledige schijftoegang nodig om te meten"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pomiar wymaga pełnego dostępu do dysku"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Requer Acesso Total ao Disco para medir"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Для измерения нужен полный доступ к диску"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Kräver full skivåtkomst för att mäta"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "அளவிட முழு வட்டு அணுகல் தேவை"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ต้องมีการเข้าถึงดิสก์เต็มรูปแบบเพื่อวัดขนาด"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ölçmek için Tam Disk Erişimi gerekiyor"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Для вимірювання потрібен повний доступ до диска"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cần quyền Truy cập toàn bộ ổ đĩa để đo"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "需要完全磁盘访问权限才能测量"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "需要完整磁碟取用權限才能測量"
           }
         }
       }
@@ -63879,6 +64713,142 @@
         }
       }
     },
+    "Measuring the Trash…": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "جارٍ قياس سلة المهملات…"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Papierkorb wird gemessen …"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Midiendo la Papelera…"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mesure de la Corbeille…"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ट्रैश मापा जा रहा है…"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mengukur Tong Sampah…"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Misurazione del Cestino…"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ゴミ箱を測定中…"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "휴지통 측정 중…"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ട്രാഷ് അളക്കുന്നു…"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Prullenmand meten…"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mierzenie Kosza…"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Medindo o Lixo…"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Измерение Корзины…"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mäter papperskorgen…"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "குப்பைத் தொட்டி அளவிடப்படுகிறது…"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "กำลังวัดขนาดถังขยะ…"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Çöp Sepeti ölçülüyor…"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вимірювання Смітника…"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Đang đo Thùng rác…"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在测量废纸篓…"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "正在測量垃圾桶…"
+          }
+        }
+      }
+    },
     "Measuring your Downloads": {
       "localizations": {
         "ar": {
@@ -77377,138 +78347,138 @@
         }
       }
     },
-    "One pass across every cleanup tool plus a read-only Security Check. Nothing moves until you approve it.": {
+    "One read-only pass across every section: cleanup tools, your apps, Security Check, the Storage Map and the Trash. Nothing moves until you approve it.": {
       "localizations": {
         "ar": {
           "stringUnit": {
             "state": "translated",
-            "value": "جولة واحدة عبر كل أدوات التنظيف بالإضافة إلى فحص أمان للقراءة فقط. لا يُنقل أي شيء حتى توافق عليه."
+            "value": "جولة واحدة للقراءة فقط عبر كل الأقسام: أدوات التنظيف وتطبيقاتك وفحص الأمان وخريطة التخزين وسلة المهملات. لا يُنقل أي شيء حتى توافق عليه."
           }
         },
         "de": {
           "stringUnit": {
             "state": "translated",
-            "value": "Ein Durchlauf durch alle Bereinigungswerkzeuge plus eine rein lesende Sicherheitsprüfung. Nichts wird verschoben, bis du zustimmst."
+            "value": "Ein rein lesender Durchlauf durch alle Bereiche: Bereinigungswerkzeuge, deine Apps, Sicherheitsprüfung, Speicherbelegung und Papierkorb. Nichts wird verschoben, bis du zustimmst."
           }
         },
         "es": {
           "stringUnit": {
             "state": "translated",
-            "value": "Una pasada por todas las herramientas de limpieza más una Revisión de seguridad de solo lectura. No se mueve nada hasta que lo apruebes."
+            "value": "Una pasada de solo lectura por todas las secciones: herramientas de limpieza, tus apps, Revisión de seguridad, el Mapa de almacenamiento y la Papelera. No se mueve nada hasta que lo apruebes."
           }
         },
         "fr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Un passage dans chaque outil de nettoyage, plus un Contrôle de sécurité en lecture seule. Rien ne bouge sans votre accord."
+            "value": "Un seul passage en lecture seule dans chaque section : outils de nettoyage, vos apps, Contrôle de sécurité, Carte du stockage et Corbeille. Rien ne bouge sans votre accord."
           }
         },
         "hi": {
           "stringUnit": {
             "state": "translated",
-            "value": "हर सफ़ाई टूल में एक साथ जाँच, साथ में केवल-पठन सुरक्षा जाँच। आपकी स्वीकृति के बिना कुछ भी नहीं हटता।"
+            "value": "हर अनुभाग में एक केवल-पठन जाँच: सफ़ाई टूल, आपके ऐप्स, सुरक्षा जाँच, स्टोरेज मैप और ट्रैश। आपकी स्वीकृति के बिना कुछ भी नहीं हटता।"
           }
         },
         "id": {
           "stringUnit": {
             "state": "translated",
-            "value": "Satu kali pemeriksaan di semua alat pembersihan plus Pemeriksaan Keamanan hanya-baca. Tidak ada yang dipindahkan hingga Anda menyetujuinya."
+            "value": "Satu kali pemeriksaan hanya-baca di setiap bagian: alat pembersihan, app Anda, Pemeriksaan Keamanan, Peta Penyimpanan, dan Tong Sampah. Tidak ada yang dipindahkan hingga Anda menyetujuinya."
           }
         },
         "it": {
           "stringUnit": {
             "state": "translated",
-            "value": "Un unico passaggio con tutti gli strumenti di pulizia più un Controllo sicurezza in sola lettura. Nulla viene spostato finché non lo approvi."
+            "value": "Un unico passaggio in sola lettura in ogni sezione: strumenti di pulizia, le tue app, Controllo sicurezza, Mappa archiviazione e Cestino. Nulla viene spostato finché non lo approvi."
           }
         },
         "ja": {
           "stringUnit": {
             "state": "translated",
-            "value": "すべてのクリーンアップツールと読み取り専用のセキュリティチェックを一度に実行します。承認するまで何も移動しません。"
+            "value": "すべてのセクションを読み取り専用で一度に確認します：クリーンアップツール、お使いの App、セキュリティチェック、ストレージマップ、ゴミ箱。承認するまで何も移動しません。"
           }
         },
         "ko": {
           "stringUnit": {
             "state": "translated",
-            "value": "모든 정리 도구와 읽기 전용 보안 검사를 한 번에 실행합니다. 승인하기 전에는 아무것도 이동되지 않습니다."
+            "value": "모든 섹션을 읽기 전용으로 한 번에 확인합니다: 정리 도구, 내 앱, 보안 검사, 저장 공간 맵, 휴지통. 승인하기 전에는 아무것도 이동되지 않습니다."
           }
         },
         "ml": {
           "stringUnit": {
             "state": "translated",
-            "value": "എല്ലാ ക്ലീനപ്പ് ടൂളുകളിലൂടെയും ഒരൊറ്റ പരിശോധന, ഒപ്പം റീഡ്-ഒൺലി സുരക്ഷാ പരിശോധനയും. നിങ്ങൾ അംഗീകരിക്കുന്നത് വരെ ഒന്നും നീങ്ങില്ല."
+            "value": "എല്ലാ വിഭാഗങ്ങളിലൂടെയും ഒരൊറ്റ റീഡ്-ഒൺലി പരിശോധന: ക്ലീനപ്പ് ടൂളുകൾ, നിങ്ങളുടെ ആപ്പുകൾ, സുരക്ഷാ പരിശോധന, സ്റ്റോറേജ് മാപ്പ്, ട്രാഷ്. നിങ്ങൾ അംഗീകരിക്കുന്നത് വരെ ഒന്നും നീങ്ങില്ല."
           }
         },
         "nl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Eén ronde langs alle opschoontools plus een alleen-lezen Beveiligingscontrole. Niets wordt verplaatst totdat je het goedkeurt."
+            "value": "Eén alleen-lezen ronde langs elke sectie: opschoontools, je apps, Beveiligingscontrole, de Opslagkaart en de prullenmand. Niets wordt verplaatst totdat je het goedkeurt."
           }
         },
         "pl": {
           "stringUnit": {
             "state": "translated",
-            "value": "Jedno przejście przez wszystkie narzędzia porządkowe oraz Kontrola bezpieczeństwa tylko do odczytu. Nic nie zostanie przeniesione, dopóki tego nie zatwierdzisz."
+            "value": "Jedno przejście tylko do odczytu przez wszystkie sekcje: narzędzia porządkowe, Twoje aplikacje, Kontrola bezpieczeństwa, Mapa dysku i Kosz. Nic nie zostanie przeniesione, dopóki tego nie zatwierdzisz."
           }
         },
         "pt-BR": {
           "stringUnit": {
             "state": "translated",
-            "value": "Uma passada por todas as ferramentas de limpeza, mais uma Verificação de Segurança somente leitura. Nada é movido até você aprovar."
+            "value": "Uma passada somente leitura por todas as seções: ferramentas de limpeza, seus apps, Verificação de Segurança, o Mapa de Armazenamento e o Lixo. Nada é movido até você aprovar."
           }
         },
         "ru": {
           "stringUnit": {
             "state": "translated",
-            "value": "Один проход по всем инструментам очистки плюс Проверка безопасности только для чтения. Ничего не перемещается без Вашего одобрения."
+            "value": "Один проход только для чтения по всем разделам: инструменты очистки, Ваши приложения, Проверка безопасности, Карта хранилища и Корзина. Ничего не перемещается без Вашего одобрения."
           }
         },
         "sv": {
           "stringUnit": {
             "state": "translated",
-            "value": "En genomgång med alla rensningsverktyg plus en skrivskyddad säkerhetskontroll. Inget flyttas förrän du godkänner det."
+            "value": "En skrivskyddad genomgång av alla avsnitt: rensningsverktyg, dina appar, säkerhetskontroll, Lagringskarta och papperskorgen. Inget flyttas förrän du godkänner det."
           }
         },
         "ta": {
           "stringUnit": {
             "state": "translated",
-            "value": "அனைத்துச் சுத்தம் செய்யும் கருவிகளிலும் ஒரே ஓட்டம், கூடவே படிக்க மட்டுமான பாதுகாப்புச் சோதனை. நீங்கள் அங்கீகரிக்கும் வரை எதுவும் நகராது."
+            "value": "ஒவ்வொரு பிரிவிலும் படிக்க மட்டுமான ஒரே ஓட்டம்: சுத்தம் செய்யும் கருவிகள், உங்கள் ஆப்ஸ், பாதுகாப்புச் சோதனை, சேமிப்பக வரைபடம் மற்றும் குப்பைத் தொட்டி. நீங்கள் அங்கீகரிக்கும் வரை எதுவும் நகராது."
           }
         },
         "th": {
           "stringUnit": {
             "state": "translated",
-            "value": "สแกนรอบเดียวครอบคลุมทุกเครื่องมือล้างข้อมูล พร้อมตรวจสอบความปลอดภัยแบบอ่านอย่างเดียว ไม่มีสิ่งใดถูกย้ายจนกว่าคุณจะอนุมัติ"
+            "value": "สแกนแบบอ่านอย่างเดียวรอบเดียวครอบคลุมทุกส่วน: เครื่องมือล้างข้อมูล แอปของคุณ ตรวจสอบความปลอดภัย แผนที่พื้นที่จัดเก็บ และถังขยะ ไม่มีสิ่งใดถูกย้ายจนกว่าคุณจะอนุมัติ"
           }
         },
         "tr": {
           "stringUnit": {
             "state": "translated",
-            "value": "Tüm temizlik araçlarında tek geçiş ve salt okunur bir Güvenlik Kontrolü. Siz onaylayana kadar hiçbir şey taşınmaz."
+            "value": "Her bölümde salt okunur tek geçiş: temizlik araçları, uygulamalarınız, Güvenlik Kontrolü, Depolama Haritası ve Çöp Sepeti. Siz onaylayana kadar hiçbir şey taşınmaz."
           }
         },
         "uk": {
           "stringUnit": {
             "state": "translated",
-            "value": "Один прохід усіма інструментами очищення плюс Перевірка безпеки лише для читання. Ніщо не переміщується без вашого схвалення."
+            "value": "Один прохід лише для читання всіма розділами: інструменти очищення, ваші програми, Перевірка безпеки, Карта сховища і Смітник. Ніщо не переміщується без вашого схвалення."
           }
         },
         "vi": {
           "stringUnit": {
             "state": "translated",
-            "value": "Quét một lượt qua mọi công cụ dọn dẹp cùng với Kiểm tra bảo mật chỉ đọc. Không có gì bị di chuyển cho đến khi bạn phê duyệt."
+            "value": "Một lượt quét chỉ đọc qua mọi phần: công cụ dọn dẹp, ứng dụng của bạn, Kiểm tra bảo mật, Bản đồ dung lượng và Thùng rác. Không có gì bị di chuyển cho đến khi bạn phê duyệt."
           }
         },
         "zh-Hans": {
           "stringUnit": {
             "state": "translated",
-            "value": "一次遍历所有清理工具，外加只读的安全检查。在你批准之前不会移动任何内容。"
+            "value": "以只读方式一次检查每个分区：清理工具、你的应用、安全检查、储存空间地图和废纸篓。在你批准之前不会移动任何内容。"
           }
         },
         "zh-Hant": {
           "stringUnit": {
             "state": "translated",
-            "value": "一次執行所有清理工具，外加唯讀的安全性檢查。在您核准之前，不會移動任何項目。"
+            "value": "以唯讀方式一次檢查每個區段：清理工具、您的 App、安全性檢查、儲存空間地圖和垃圾桶。在您核准之前，不會移動任何項目。"
           }
         }
       }
@@ -107842,6 +108812,142 @@
         }
       }
     },
+    "Status unknown": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "الحالة غير معروفة"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Status unbekannt"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Estado desconocido"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "État inconnu"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "स्थिति अज्ञात"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Status tidak diketahui"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stato sconosciuto"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "状態不明"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "상태 알 수 없음"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "നില അജ്ഞാതം"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Status onbekend"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stan nieznany"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Status desconhecido"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Состояние неизвестно"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Status okänd"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "நிலை தெரியவில்லை"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ไม่ทราบสถานะ"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Durum bilinmiyor"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Стан невідомий"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Không rõ trạng thái"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "状态未知"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "狀態不明"
+          }
+        }
+      }
+    },
     "Step %lld of %lld": {
       "localizations": {
         "ar": {
@@ -128274,6 +129380,142 @@
           "stringUnit": {
             "state": "translated",
             "value": "macOS 不允許 Reclaim 列出這些項目。這些項目本身沒有問題。"
+          }
+        }
+      }
+    },
+    "macOS only lets Reclaim see inside the Trash with Full Disk Access. Until then, sizes and whether items were emptied can't be checked.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "لا يسمح macOS لـ Reclaim برؤية محتويات سلة المهملات إلا مع الوصول الكامل إلى القرص. وحتى ذلك الحين، لا يمكن التحقق من الأحجام ولا مما إذا كانت العناصر قد حُذفت نهائيًا."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS lässt Reclaim nur mit Festplattenvollzugriff in den Papierkorb sehen. Bis dahin lässt sich weder die Größe prüfen noch, ob Objekte bereits endgültig gelöscht wurden."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS solo permite que Reclaim vea el interior de la Papelera con acceso total al disco. Hasta entonces, no se pueden comprobar los tamaños ni si los elementos ya se eliminaron de ella."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS ne permet à Reclaim de voir le contenu de la Corbeille qu'avec l'accès complet au disque. D'ici là, impossible de vérifier les tailles ni de savoir si les éléments ont été effacés."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS, Reclaim को पूर्ण डिस्क ऐक्सेस मिलने पर ही ट्रैश के अंदर देखने देता है। तब तक न तो आकार जाँचे जा सकते हैं और न ही यह कि आइटम ख़ाली किए गए या नहीं।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS hanya mengizinkan Reclaim melihat isi Tong Sampah dengan Akses Disk Penuh. Sampai saat itu, ukuran dan apakah item sudah dikosongkan tidak dapat diperiksa."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS consente a Reclaim di vedere il contenuto del Cestino solo con l'Accesso completo al disco. Fino ad allora non è possibile verificare le dimensioni né se gli elementi sono stati eliminati."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS では、フルディスクアクセスがないと Reclaim はゴミ箱の中を確認できません。それまでは、サイズや、項目が消去されたかどうかを確認できません。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS에서는 전체 디스크 접근 권한이 있어야 Reclaim이 휴지통 내부를 볼 수 있습니다. 그전까지는 크기와 항목이 비워졌는지 여부를 확인할 수 없습니다."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "പൂർണ്ണ ഡിസ്ക് ആക്സസ് ഉള്ളപ്പോൾ മാത്രമേ ട്രാഷിനുള്ളിൽ കാണാൻ macOS, Reclaim-നെ അനുവദിക്കൂ. അതുവരെ, വലുപ്പങ്ങളും ഇനങ്ങൾ ശൂന്യമാക്കിയോ എന്നതും പരിശോധിക്കാനാകില്ല."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS laat Reclaim alleen met volledige schijftoegang in de prullenmand kijken. Tot die tijd valt niet te controleren hoe groot alles is en of onderdelen al zijn verwijderd."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS pozwala Reclaim zajrzeć do Kosza tylko z pełnym dostępem do dysku. Do tego czasu nie można sprawdzić rozmiarów ani tego, czy rzeczy zostały usunięte."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "O macOS só permite que o Reclaim veja o conteúdo do Lixo com Acesso Total ao Disco. Até lá, não é possível verificar os tamanhos nem se os itens foram apagados."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS позволяет Reclaim видеть содержимое Корзины только при наличии полного доступа к диску. До тех пор нельзя проверить ни размеры, ни то, были ли объекты удалены."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS låter Reclaim se innehållet i papperskorgen endast med full skivåtkomst. Tills dess går det inte att kontrollera storlekar eller om objekten har raderats."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "முழு வட்டு அணுகல் இருந்தால் மட்டுமே குப்பைத் தொட்டியின் உள்ளே பார்க்க Reclaim ஐ macOS அனுமதிக்கும். அதுவரை, அளவுகளையும் உருப்படிகள் காலியாக்கப்பட்டனவா என்பதையும் சரிபார்க்க முடியாது."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS อนุญาตให้ Reclaim ดูภายในถังขยะได้เฉพาะเมื่อมีการเข้าถึงดิสก์เต็มรูปแบบ ระหว่างนี้จึงไม่สามารถตรวจสอบขนาด และไม่ทราบว่ารายการถูกล้างไปแล้วหรือไม่"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS, Reclaim'in Çöp Sepetinin içini yalnızca Tam Disk Erişimi ile görmesine izin verir. O zamana kadar boyutlar ve öğelerin boşaltılıp boşaltılmadığı denetlenemez."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS дозволяє Reclaim бачити вміст Смітника лише з повним доступом до диска. Доти неможливо перевірити ні розміри, ні те, чи елементи вже видалено."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS chỉ cho phép Reclaim xem bên trong Thùng rác khi có quyền Truy cập toàn bộ ổ đĩa. Trước lúc đó, không thể kiểm tra dung lượng cũng như các mục đã được dọn sạch hay chưa."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS 仅在 Reclaim 拥有完全磁盘访问权限时才允许其查看废纸篓内部。在此之前，无法检查大小，也无法确认项目是否已被清倒。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "macOS 只有在 Reclaim 擁有完整磁碟取用權限時，才允許它查看垃圾桶內容。在此之前，無法檢查大小，也無法確認項目是否已被清空。"
           }
         }
       }

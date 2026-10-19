@@ -23,7 +23,7 @@ Requires macOS 26 or later (Apple silicon or Intel).
 
 | Tool | What it does |
 | --- | --- |
-| **Mac Overview & Smart Scan** | Free space at a glance and one pass across every tool plus a read-only Security Check. |
+| **Mac Overview & Smart Scan** | Free space at a glance and one read-only pass across every section — all cleanup tools, Leftovers, your installed apps, Security Check, the Storage Map and the Trash. It only scans and reports; nothing is removed. |
 | **Guided Cleanup** | Audits the areas you pick, builds a short plan you approve item by item, re-checks each item before acting, and keeps Undo per item. Includes an on-device assistant (Apple Intelligence) to ask about the review. |
 | **Junk** | App caches, logs, saved window state, Chrome-family and Firefox caches, Xcode DerivedData / Archives / DeviceSupport, simulator caches, npm, Yarn, pip, Homebrew, CocoaPods, Gradle, Cargo, Android emulator images, iPhone backups and Mail downloads — each rule explains why it's safe. |
 | **AI Junk** | Stale agent scratch folders in `/tmp` and your temp folder, leftover Puppeteer/Playwright browser profiles, old Claude Code / Codex / Gemini / Antigravity / Continue sessions, agent git worktrees, Aider caches, orphaned Cursor/VS Code workspace data, AI app caches and old bundled versions, downloaded models (Hugging Face, Ollama — per model, only unshared layers — LM Studio, GPT4All, Whisper, PyTorch, Draw Things…) and AI-generated images. Anything a running app has open is left alone. |
@@ -33,7 +33,7 @@ Requires macOS 26 or later (Apple silicon or Intel).
 | **Large & Old Files** | Size, age and kind filters, list or sortable table, Quick Look. |
 | **Storage Map** | Interactive treemap of any folder or the whole disk, drill-down, Collector for batch removal. |
 | **Leftovers** | Support files left behind by apps you already removed, matched by bundle identifier and grouped per app. |
-| **Uninstall an App** | Remove an app together with its caches, preferences, containers and other support files (Finder password fallback for protected apps). |
+| **Uninstall an App** | Remove an app together with its caches, preferences, containers and other support files (Finder password fallback for protected apps). Lists apps in the Applications folders and anywhere else in your Home folder, such as your own builds. |
 | **Security Check** | Code-signature and notarisation status of every app, Deep Verify, login items and launch agents (flags ones pointing at missing programs), and where your downloads came from. Read-only; not antivirus. |
 | **Trash** | Everything Reclaim moved, restore to the original folder, Open/Empty Trash. |
 
