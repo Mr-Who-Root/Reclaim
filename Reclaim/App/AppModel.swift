@@ -193,11 +193,31 @@ final class AppModel {
     func writeSnapshot() {
         var snapshot = ReclaimSnapshot()
         snapshot.lastScan = lastSmartScan
-        snapshot.reclaimableBytes = totalReclaimable
+        // Until something has scanned this session, keep what the last scan found rather than reporting nothing.
+        let scanned = scanTools.contains { $0.phase.isDone }
+        snapshot.reclaimableBytes = scanned ? totalReclaimable : (ReclaimSnapshot.load()?.reclaimableBytes ?? 0)
         snapshot.accentHex = Accent.current.hex
         snapshot.vividWidget = UserDefaults.standard.object(forKey: PrefKey.vividWidget) as? Bool ?? true
         snapshot.save()
         WidgetCenter.shared.reloadAllTimelines()
+    }
+
+    /// An update swaps the app bundle, but the widget extension from the old copy can keep running. WidgetKit
+    /// then rejects everything it renders ("Bundle version did not match") and the widget stops updating.
+    /// The first launch of each new version stops it, so WidgetKit starts it again from this bundle.
+    func restartOutdatedWidget() async {
+        let info = Bundle.main.infoDictionary ?? [:]
+        let version = "\(info["CFBundleShortVersionString"] as? String ?? "") (\(info["CFBundleVersion"] as? String ?? ""))"
+        guard UserDefaults.standard.string(forKey: PrefKey.widgetVersion) != version else { return }
+        UserDefaults.standard.set(version, forKey: PrefKey.widgetVersion)
+        await offPool {
+            guard Shell.run("/usr/bin/pkill", ["-x", "ReclaimWidgetExtension"], timeout: 5).ok else { return }
+            // Wait for it to exit, so the next reload starts a fresh one instead of reaching the old one.
+            for _ in 0..<20 {
+                guard Shell.run("/usr/bin/pgrep", ["-x", "ReclaimWidgetExtension"], timeout: 5).ok else { return }
+                Thread.sleep(forTimeInterval: 0.1)
+            }
+        }
     }
 
     // MARK: URLs

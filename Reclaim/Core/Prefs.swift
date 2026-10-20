@@ -27,6 +27,7 @@ enum PrefKey {
     static let notifyEnabled = "notifyEnabled"
     static let homeAccessBookmark = "homeAccessBookmark"
     static let lastAccessCheck = "lastAccessCheck"
+    static let widgetVersion = "widgetVersion"
 }
 
 /// Light, dark, or follow the Mac.

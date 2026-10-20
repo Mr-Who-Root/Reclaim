@@ -83,7 +83,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, UNUserNotificationCent
             SpotlightIndex.indexTools()
             AppModel.shared.startScheduler()
             Updater.shared.startAutomaticChecks()
-            AppModel.shared.writeSnapshot()
+            Task {
+                await AppModel.shared.restartOutdatedWidget()
+                AppModel.shared.writeSnapshot()
+            }
         }
     }
 

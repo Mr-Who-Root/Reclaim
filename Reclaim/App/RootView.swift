@@ -37,6 +37,23 @@ private struct Sidebar: View {
     private var app: AppModel { AppModel.shared }
 
     var body: some View {
+        // The header sits above the list rather than in a safe-area inset, so rows can't scroll behind it.
+        VStack(spacing: 0) {
+            BrandHeader()
+            list
+        }
+        .background {
+            if theme.isColored {
+                ZStack {
+                    ThemeBackground()
+                    theme.sidebarOverlay
+                }
+                .ignoresSafeArea()
+            }
+        }
+    }
+
+    private var list: some View {
         List(selection: $selection) {
             ForEach(Route.Section.allCases.filter { $0 != .pinned }) { section in
                 Section {
@@ -55,7 +72,6 @@ private struct Sidebar: View {
         }
         .listStyle(.sidebar)
         .environment(\.defaultMinListRowHeight, 26)
-        .safeAreaInset(edge: .top) { BrandHeader() }
         .safeAreaInset(edge: .bottom, spacing: 0) {
             VStack(spacing: 6) {
                 Divider().opacity(0.4)
@@ -82,15 +98,6 @@ private struct Sidebar: View {
                 } else {
                     Rectangle().fill(.regularMaterial).ignoresSafeArea()
                 }
-            }
-        }
-        .background {
-            if theme.isColored {
-                ZStack {
-                    ThemeBackground()
-                    theme.sidebarOverlay
-                }
-                .ignoresSafeArea()
             }
         }
     }
