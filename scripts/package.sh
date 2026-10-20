@@ -14,7 +14,7 @@ APP=".build/release/Build/Products/Release/Reclaim.app"
 VERSION=$(/usr/libexec/PlistBuddy -c "Print :CFBundleShortVersionString" "$APP/Contents/Info.plist")
 
 mkdir -p build
-rm -rf build/Reclaim.app "build/Reclaim-$VERSION.dmg" "build/Reclaim-$VERSION.zip" build/dmg
+rm -rf build/Reclaim.app "build/Reclaim-$VERSION.dmg" "build/Reclaim-$VERSION.zip"
 cp -R "$APP" build/Reclaim.app
 codesign --verify --deep --strict build/Reclaim.app
 
@@ -22,11 +22,7 @@ codesign --verify --deep --strict build/Reclaim.app
 ditto -c -k --keepParent build/Reclaim.app "build/Reclaim-$VERSION.zip"
 
 # DMG with a drag-to-Applications layout.
-mkdir -p build/dmg
-cp -R build/Reclaim.app build/dmg/
-ln -s /Applications build/dmg/Applications
-hdiutil create -volname "Reclaim $VERSION" -srcfolder build/dmg -ov -format UDZO "build/Reclaim-$VERSION.dmg" >/dev/null
-rm -rf build/dmg
+scripts/make_dmg.sh build/Reclaim.app "$VERSION" "build/Reclaim-$VERSION.dmg"
 
 shasum -a 256 "build/Reclaim-$VERSION.dmg" "build/Reclaim-$VERSION.zip"
 echo "Packaged build/Reclaim-$VERSION.dmg and build/Reclaim-$VERSION.zip"

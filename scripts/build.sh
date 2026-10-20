@@ -17,6 +17,8 @@ echo "Built $ROOT/build/Reclaim.app"
 
 if [[ "${1:-}" == "--install" ]]; then
   pkill -x Reclaim 2>/dev/null && sleep 1 || true
+  # Stop the widget extension too, or the old copy keeps rendering the widget.
+  pkill -x ReclaimWidgetExtension 2>/dev/null || true
   rm -rf /Applications/Reclaim.app
   cp -R build/Reclaim.app /Applications/Reclaim.app
   /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f /Applications/Reclaim.app
