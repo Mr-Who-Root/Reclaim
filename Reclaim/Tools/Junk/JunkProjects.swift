@@ -25,6 +25,8 @@ enum JunkProjects {
         var kind: Kind = .build
         /// Matches when any child has this extension instead of a named marker file.
         var markerExtension: String? = nil
+        /// Only counts when the .gitignore next to the folder lists it, for markers that don't prove the folder is output.
+        var ignoredOnly = false
     }
 
     private static let js = ["package.json"]
@@ -43,7 +45,8 @@ enum JunkProjects {
                    Pattern(markers: ["pom.xml"], label: "Maven build", rebuild: "mvn package")],
         "build": [Pattern(markers: gradle, label: "Gradle build", rebuild: "./gradlew build"),
                   Pattern(markers: ["pubspec.yaml"], label: "Flutter build", rebuild: "flutter build"),
-                  Pattern(markers: ["CMakeLists.txt"], label: "CMake build", rebuild: "cmake --build")],
+                  Pattern(markers: ["CMakeLists.txt"], label: "CMake build", rebuild: "cmake --build"),
+                  Pattern(markers: [], label: "Xcode build", rebuild: "xcodebuild", markerExtension: "xcodeproj", ignoredOnly: true)],
         ".gradle": [Pattern(markers: gradle, label: "Gradle project cache", rebuild: "./gradlew build")],
         ".dart_tool": [Pattern(markers: ["pubspec.yaml"], label: "Dart tool cache", rebuild: "flutter pub get")],
         "Pods": [Pattern(markers: ["Podfile"], label: "CocoaPods", rebuild: "pod install")],
@@ -58,10 +61,21 @@ enum JunkProjects {
         "venv": [Pattern(markers: python, label: "Python environment", rebuild: "pip install", kind: .environment)],
     ]
 
-    /// Folders where people keep code (the usual names plus any saved folders).
+    /// Where projects are looked for: the whole Home folder, plus code and saved folders that live outside it.
     static var roots: [URL] {
-        rootURLs(saved: (UserDefaults.standard.stringArray(forKey: PrefKey.savedFolders) ?? []).map { URL(fileURLWithPath: $0, isDirectory: true) })
+        let saved = (UserDefaults.standard.stringArray(forKey: PrefKey.savedFolders) ?? []).map { URL(fileURLWithPath: $0, isDirectory: true) }
+        let home = FS.home.resolvingSymlinksInPath().path
+        var seen: Set<String> = [home.lowercased()]
+        var roots = [FS.home]
+        for url in codeFolders + saved where FS.isDirectory(url) {
+            let path = url.resolvingSymlinksInPath().path
+            if !path.hasPrefix(home + "/"), seen.insert(path.lowercased()).inserted { roots.append(url) }
+        }
+        return roots
     }
+
+    /// The usual code folders (~/Github, ~/Developer…) that exist on this Mac.
+    static var codeFolders: [URL] { rootURLs(saved: []) }
 
     enum Bucket { case old, recent, environments }
 
@@ -114,15 +128,16 @@ enum JunkProjects {
         var activityCache: [String: Date?] = [:]
         while !queue.isEmpty, budget > 0, !Task.isCancelled {
             let (dir, depth, devRoot) = queue.removeFirst()
-            let children = (try? FileManager.default.contentsOfDirectory(at: dir, includingPropertiesForKeys: [.isDirectoryKey, .isSymbolicLinkKey], options: [])) ?? []
+            let children = (try? FileManager.default.contentsOfDirectory(at: dir, includingPropertiesForKeys: [.isDirectoryKey, .isSymbolicLinkKey, .isPackageKey], options: [])) ?? []
             budget -= children.count
             let names = Set(children.map(\.lastPathComponent))
             for child in children {
                 let name = child.lastPathComponent
-                guard let v = try? child.resourceValues(forKeys: [.isDirectoryKey, .isSymbolicLinkKey]),
+                guard let v = try? child.resourceValues(forKeys: [.isDirectoryKey, .isSymbolicLinkKey, .isPackageKey]),
                       v.isDirectory == true, v.isSymbolicLink != true else { continue }
                 if let options = patterns[name] {
                     let match = options.first { p in
+                        if p.ignoredOnly, !isIgnored(name, in: dir) { return false }
                         if let ext = p.markerExtension { return names.contains { $0.hasSuffix("." + ext) } }
                         return p.markers.contains(where: names.contains)
                     }
@@ -142,11 +157,19 @@ enum JunkProjects {
                         continue
                     }
                 }
-                if name.hasPrefix(".") || skipNames.contains(name) || name.hasSuffix(".app") || name.hasSuffix(".xcarchive") { continue }
-                if depth < 6 { queue.append((child, depth + 1, devRoot)) }
+                // Packages (.app, .photoslibrary, .xcarchive…) never hold projects.
+                if name.hasPrefix(".") || skipNames.contains(name) || v.isPackage == true || name.hasSuffix(".app") || name.hasSuffix(".xcarchive") { continue }
+                if depth < 7 { queue.append((child, depth + 1, devRoot)) }
             }
         }
         return out
+    }
+
+    /// Whether the .gitignore in `dir` lists the folder `name` (as name, name/, /name or /name/).
+    private static func isIgnored(_ name: String, in dir: URL) -> Bool {
+        guard let text = try? String(contentsOf: dir.appendingPathComponent(".gitignore"), encoding: .utf8) else { return false }
+        let forms: Set<String> = [name, name + "/", "/" + name, "/" + name + "/"]
+        return text.split(whereSeparator: \.isNewline).contains { forms.contains($0.trimmingCharacters(in: .whitespaces)) }
     }
 
     /// The nearest folder above (or at) `dir` that has a .git, else `dir` itself.

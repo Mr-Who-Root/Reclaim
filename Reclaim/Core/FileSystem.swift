@@ -95,10 +95,21 @@ enum FS {
         (try? fm.contentsOfDirectory(atPath: url.path)) != nil
     }
 
+    /// Files whose presence makes a folder a code project.
+    static let projectMarkers = [".git", "package.json", "pubspec.yaml", "Cargo.toml", "go.mod", "Package.swift", "pom.xml",
+                                 "build.gradle", "build.gradle.kts", "settings.gradle", "settings.gradle.kts", "Podfile",
+                                 "pyproject.toml", "Gemfile", "CMakeLists.txt", "composer.json"]
+
+    /// Whether a folder is a code project (a repository, or a folder with a build manifest).
+    static func isCodeProject(_ url: URL) -> Bool {
+        projectMarkers.contains { exists(url.appendingPathComponent($0)) }
+    }
+
     /// Walks every regular file under `roots`. Return `false` from `body` to stop.
     /// Hidden files are skipped unless `includeHidden`; package contents (.app, .photoslibrary…) are skipped unless `intoPackages`.
+    /// Folders below a root for which `skipFolder` returns true are left out entirely.
     static func walkFiles(_ roots: [URL], includeHidden: Bool = false, intoPackages: Bool = false,
-                          body: (URL, URLResourceValues) -> Bool) {
+                          skipFolder: ((URL) -> Bool)? = nil, body: (URL, URLResourceValues) -> Bool) {
         var opts: FileManager.DirectoryEnumerationOptions = []
         if !includeHidden { opts.insert(.skipsHiddenFiles) }
         if !intoPackages { opts.insert(.skipsPackageDescendants) }
@@ -110,6 +121,7 @@ enum FS {
                 n += 1
                 if n & 511 == 0, Task.isCancelled { return }
                 guard let v = try? url.resourceValues(forKeys: resourceKeySet) else { continue }
+                if v.isDirectory == true, let skipFolder, skipFolder(url) { e.skipDescendants(); continue }
                 if v.isRegularFile != true { continue }
                 if !body(url, v) { return }
             }

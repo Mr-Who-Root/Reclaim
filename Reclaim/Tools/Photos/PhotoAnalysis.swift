@@ -267,14 +267,15 @@ enum PhotoAnalysis {
 
     /// Walks `roots`, analyses every photo and returns categories plus look-alike candidate pairs.
     /// Returns nil when cancelled.
-    static func run(roots: [URL], progress: ProgressReporter) async -> PhotoScanResult? {
+    /// With `skipProjects`, code projects are left out entirely (their images are app artwork, not photo clutter).
+    static func run(roots: [URL], skipProjects: Bool = false, progress: ProgressReporter) async -> PhotoScanResult? {
         var result = PhotoScanResult()
         var candidates: [Candidate] = []
         var found = 0
         progress.report("Looking for photos…", force: true)
 
         // 1. Walk (package contents such as Photos libraries are skipped).
-        FS.walkFiles(roots) { url, values in
+        FS.walkFiles(roots, skipFolder: skipProjects ? FS.isCodeProject : nil) { url, values in
             if isProjectAsset(url) { return true }
             let ext = url.pathExtension.lowercased()
             let name = url.lastPathComponent
