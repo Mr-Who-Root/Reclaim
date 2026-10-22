@@ -69,7 +69,7 @@ enum JunkProjects {
         artifacts(in: roots).filter { a in
             switch bucket {
             case .old: return a.kind == .build && a.idleDays >= 90
-            case .recent: return a.kind == .build && a.idleDays >= 14 && a.idleDays < 90
+            case .recent: return a.kind == .build && a.idleDays < 90
             case .environments: return a.kind == .environment && a.idleDays >= 90
             }
         }
