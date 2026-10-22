@@ -27,6 +27,8 @@ struct RootView: View {
         }
         .onReceive(NotificationCenter.default.publisher(for: NSApplication.didBecomeActiveNotification)) { _ in
             app.refreshVolume()
+            // Coming back from System Settings: pick up a newly granted Full Disk Access.
+            AccessCenter.shared.refreshFullDiskAccess()
         }
     }
 }

@@ -50,7 +50,7 @@ final class LargeFilesModel: ScanTool {
     /// Files of at least 10 MB from the last scan.
     private(set) var items: [LargeItem] = []
     var selection: Set<String> = []
-    var scope: ScanScope = .defaults
+    var scope: ScanScope = .home
     var minSize: LargeMinSize = .mb100
     var age: LargeAge = .any
     var kind: FS.Kind? = nil

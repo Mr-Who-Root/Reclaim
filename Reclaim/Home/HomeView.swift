@@ -11,6 +11,9 @@ struct HomeView: View {
                 if let release = Updater.shared.availableRelease {
                     UpdateBanner(release: release)
                 }
+                if !AccessCenter.shared.fullDiskAccess {
+                    FullAccessBanner()
+                }
                 HomeHero()
                 HStack(alignment: .top, spacing: 16) {
                     FreeSpaceTrend()
@@ -57,6 +60,27 @@ private struct UpdateBanner: View {
             }
             .buttonStyle(.softGlass)
             Button("Update") { Task { await Updater.shared.install() } }.buttonStyle(.pill)
+        }
+        .card(padding: 12)
+    }
+}
+
+/// Asks for Full Disk Access up front, so every scan can read every folder. Goes away once it's on.
+private struct FullAccessBanner: View {
+    private var access: AccessCenter { AccessCenter.shared }
+
+    var body: some View {
+        HStack(spacing: 12) {
+            Image(systemName: "lock.shield").font(.title2).foregroundStyle(.orange)
+            VStack(alignment: .leading, spacing: 1) {
+                Text("Let Reclaim check every folder").font(.callout.weight(.semibold))
+                Text("Turn on Full Disk Access for Reclaim so scans also cover Mail, iPhone backups, the Trash and other apps' data. If macOS asks, quit and reopen Reclaim.")
+                    .font(.caption).foregroundStyle(.secondary).fixedSize(horizontal: false, vertical: true)
+            }
+            Spacer()
+            Button("Check Again") { access.refreshFullDiskAccess() }
+                .buttonStyle(.softGlass)
+            Button("Grant Access") { FS.openFullDiskAccessSettings() }.buttonStyle(.pill)
         }
         .card(padding: 12)
     }

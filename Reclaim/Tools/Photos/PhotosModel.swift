@@ -34,7 +34,7 @@ final class PhotosModel: ScanTool {
     /// Screenshots and recordings older than this are suggested.
     static let staleDays = 30
 
-    var scope: ScanScope = .defaults
+    var scope: ScanScope = .home
     var category: PhotoCategory = .lookalikes
     private(set) var sensitivity: PhotoSensitivity = .normal
 
@@ -109,13 +109,14 @@ final class PhotosModel: ScanTool {
         scanID = id
         let roots = scope.roots(defaults: Self.defaultRoots)
         let label = scope.label(defaultsLabel: Self.defaultsLabel)
+        let skipProjects = scope == .home
         phase = .scanning("Looking for photos…")
         let reporter = ProgressReporter { [weak self] message in
             guard let self, self.scanID == id, self.phase.isScanning else { return }
             self.phase = .scanning(message)
         }
         let t = Task.detached(priority: .userInitiated) {
-            await PhotoAnalysis.run(roots: roots, progress: reporter)
+            await PhotoAnalysis.run(roots: roots, skipProjects: skipProjects, progress: reporter)
         }
         task = t
         let result = await t.value

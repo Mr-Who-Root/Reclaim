@@ -81785,6 +81785,142 @@
         }
       }
     },
+    "Let Reclaim check every folder": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "اسمح لـ Reclaim بفحص كل المجلدات"
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim jeden Ordner prüfen lassen"
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deja que Reclaim revise todas las carpetas"
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laisser Reclaim vérifier tous les dossiers"
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim को हर फ़ोल्डर जाँचने दें"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Izinkan Reclaim memeriksa setiap folder"
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Consenti a Reclaim di controllare ogni cartella"
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim にすべてのフォルダをチェックさせる"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim이 모든 폴더를 확인하도록 허용"
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "എല്ലാ ഫോൾഡറുകളും പരിശോധിക്കാൻ Reclaim-നെ അനുവദിക്കുക"
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Laat Reclaim elke map controleren"
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Pozwól Reclaim sprawdzać każdy folder"
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deixe o Reclaim verificar todas as pastas"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разрешите Reclaim проверять все папки"
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Låt Reclaim kontrollera alla mappar"
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ஒவ்வொரு கோப்புறையையும் சரிபார்க்க Reclaim-ஐ அனுமதிக்கவும்"
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ให้ Reclaim ตรวจทุกโฟลเดอร์"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim'in her klasörü denetlemesine izin verin"
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дозвольте Reclaim перевіряти всі папки"
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cho phép Reclaim kiểm tra mọi thư mục"
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "让 Reclaim 检查每个文件夹"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "讓 Reclaim 檢查每個檔案夾"
+          }
+        }
+      }
+    },
     "Lets Reclaim measure iOS backups, Mail downloads, other apps' leftovers and the Trash. In System Settings, turn on Reclaim in the list.": {
       "localizations": {
         "ar": {
@@ -157050,6 +157186,142 @@
           "stringUnit": {
             "state": "translated",
             "value": "Turborepo 快取"
+          }
+        }
+      }
+    },
+    "Turn on Full Disk Access for Reclaim so scans also cover Mail, iPhone backups, the Trash and other apps' data. If macOS asks, quit and reopen Reclaim.": {
+      "localizations": {
+        "ar": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "شغّل الوصول الكامل إلى القرص لـ Reclaim حتى تشمل عمليات الفحص البريد ونسخ iPhone الاحتياطية وسلة المهملات وبيانات التطبيقات الأخرى. إذا طلب macOS ذلك، فأنهِ Reclaim ثم افتحه من جديد."
+          }
+        },
+        "de": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Aktiviere den Festplattenvollzugriff für Reclaim, damit Scans auch Mail, iPhone-Backups, den Papierkorb und Daten anderer Apps erfassen. Wenn macOS fragt, beende Reclaim und öffne es erneut."
+          }
+        },
+        "es": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activa el acceso total al disco para Reclaim y así los análisis cubrirán también Mail, las copias de seguridad del iPhone, la Papelera y los datos de otras apps. Si macOS lo pide, cierra Reclaim y vuelve a abrirlo."
+          }
+        },
+        "fr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Activez l'accès complet au disque pour Reclaim afin que les analyses couvrent aussi Mail, les sauvegardes d'iPhone, la Corbeille et les données d'autres apps. Si macOS le demande, quittez puis rouvrez Reclaim."
+          }
+        },
+        "hi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim के लिए पूर्ण डिस्क ऐक्सेस चालू करें, ताकि स्कैन में Mail, iPhone बैकअप, ट्रैश और अन्य ऐप्स का डेटा भी शामिल हो। अगर macOS पूछे, तो Reclaim बंद करके फिर से खोलें।"
+          }
+        },
+        "id": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Nyalakan Akses Disk Penuh untuk Reclaim agar pemindaian juga mencakup Mail, cadangan iPhone, Tong Sampah, dan data app lain. Jika macOS meminta, keluar lalu buka kembali Reclaim."
+          }
+        },
+        "it": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Attiva l'Accesso completo al disco per Reclaim, così le scansioni includono anche Mail, i backup di iPhone, il Cestino e i dati di altre app. Se macOS lo chiede, esci da Reclaim e riaprilo."
+          }
+        },
+        "ja": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim のフルディスクアクセスをオンにすると、メール、iPhone のバックアップ、ゴミ箱、ほかの App のデータもスキャンされます。macOS に求められたら、Reclaim を終了して開き直してください。"
+          }
+        },
+        "ko": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Reclaim의 전체 디스크 접근 권한을 켜면 Mail, iPhone 백업, 휴지통 및 다른 앱의 데이터도 스캔합니다. macOS에서 요청하면 Reclaim을 종료한 후 다시 여세요."
+          }
+        },
+        "ml": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mail, iPhone ബാക്കപ്പുകൾ, ട്രാഷ്, മറ്റ് ആപ്പുകളുടെ ഡാറ്റ എന്നിവയും സ്കാനുകളിൽ ഉൾപ്പെടാൻ Reclaim-ന് പൂർണ്ണ ഡിസ്ക് ആക്സസ് ഓണാക്കുക. macOS ആവശ്യപ്പെട്ടാൽ, Reclaim അടച്ച് വീണ്ടും തുറക്കുക."
+          }
+        },
+        "nl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Zet volledige schijftoegang aan voor Reclaim, zodat scans ook Mail, iPhone-reservekopieën, de prullenmand en gegevens van andere apps omvatten. Als macOS erom vraagt, stop Reclaim en open het opnieuw."
+          }
+        },
+        "pl": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Włącz pełny dostęp do dysku dla Reclaim, aby skanowanie obejmowało też Mail, kopie zapasowe iPhone'a, Kosz i dane innych aplikacji. Jeśli macOS o to poprosi, zamknij Reclaim i otwórz go ponownie."
+          }
+        },
+        "pt-BR": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ative o Acesso Total ao Disco para o Reclaim e as varreduras também vão incluir o Mail, os backups do iPhone, o Lixo e dados de outros apps. Se o macOS pedir, encerre e abra o Reclaim de novo."
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Включите полный доступ к диску для Reclaim, чтобы сканирование охватывало также Почту, резервные копии iPhone, Корзину и данные других приложений. Если macOS попросит, закройте Reclaim и откройте снова."
+          }
+        },
+        "sv": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Slå på full skivåtkomst för Reclaim så att genomsökningar även omfattar Mail, iPhone-säkerhetskopior, papperskorgen och andra appars data. Om macOS frågar avslutar du Reclaim och öppnar det igen."
+          }
+        },
+        "ta": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ஸ்கேன்களில் Mail, iPhone காப்புப்பிரதிகள், குப்பைத் தொட்டி மற்றும் பிற ஆப்ஸின் தரவும் சேர Reclaim-க்கு முழு வட்டு அணுகலை இயக்கவும். macOS கேட்டால், Reclaim-ஐ மூடி மீண்டும் திறக்கவும்."
+          }
+        },
+        "th": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "เปิดการเข้าถึงดิสก์เต็มรูปแบบให้ Reclaim เพื่อให้การสแกนครอบคลุม Mail ข้อมูลสำรอง iPhone ถังขยะ และข้อมูลของแอปอื่นด้วย หาก macOS ขอ ให้ออกจาก Reclaim แล้วเปิดใหม่"
+          }
+        },
+        "tr": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Taramaların Mail'i, iPhone yedeklerini, Çöp Sepeti'ni ve diğer uygulamaların verilerini de kapsaması için Reclaim'e Tam Disk Erişimi verin. macOS isterse Reclaim'den çıkıp yeniden açın."
+          }
+        },
+        "uk": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Увімкніть повний доступ до диска для Reclaim, щоб сканування охоплювало також Пошту, резервні копії iPhone, Смітник і дані інших програм. Якщо macOS попросить, закрийте Reclaim і відкрийте знову."
+          }
+        },
+        "vi": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Bật Truy cập toàn bộ ổ đĩa cho Reclaim để quá trình quét bao gồm cả Mail, bản sao lưu iPhone, Thùng rác và dữ liệu của ứng dụng khác. Nếu macOS yêu cầu, hãy thoát rồi mở lại Reclaim."
+          }
+        },
+        "zh-Hans": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "为 Reclaim 打开完全磁盘访问权限，扫描就能覆盖邮件、iPhone 备份、废纸篓和其他应用的数据。如果 macOS 提示，请退出并重新打开 Reclaim。"
+          }
+        },
+        "zh-Hant": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "為 Reclaim 開啟完整磁碟取用權限，掃描就能涵蓋「郵件」、iPhone 備份、垃圾桶和其他 App 的資料。如果 macOS 要求，請結束並重新打開 Reclaim。"
           }
         }
       }

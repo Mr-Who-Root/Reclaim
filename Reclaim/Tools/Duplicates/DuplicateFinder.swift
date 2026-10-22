@@ -96,15 +96,15 @@ enum DuplicateFinder {
         }
     }
 
-    /// Returns nil when cancelled.
-    static func run(roots: [URL], minSize: Int64, progress: ProgressReporter) -> Result? {
+    /// Returns nil when cancelled. With `skipProjects`, code projects are left out: copies inside repositories are there on purpose.
+    static func run(roots: [URL], minSize: Int64, skipProjects: Bool = false, progress: ProgressReporter) -> Result? {
         var stats = Stats()
 
         // 1. Walk and bucket by logical size.
         var bySize: [Int64: [Candidate]] = [:]
         var seenPaths = Set<String>()
         progress.report("Looking through files…", force: true)
-        FS.walkFiles(roots) { url, v in
+        FS.walkFiles(roots, skipFolder: skipProjects ? FS.isCodeProject : nil) { url, v in
             let size = Int64(v.fileSize ?? 0)
             guard size > 0, size >= minSize, v.isSymbolicLink != true else { return true }
             guard seenPaths.insert(url.path).inserted else { return true }

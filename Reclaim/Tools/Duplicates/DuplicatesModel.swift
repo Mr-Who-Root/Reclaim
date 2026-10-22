@@ -8,7 +8,7 @@ final class DuplicatesModel: ScanTool {
     static let defaultRoots: [URL] = [FS.downloads, FS.desktop, FS.documents]
     static let defaultsLabel = "Downloads, Desktop & Documents"
 
-    var scope: ScanScope = .defaults
+    var scope: ScanScope = .home
     var minSize: DupMinSize = .kb100
     private(set) var keepRule: DupKeepRule = .oldest
 
@@ -42,6 +42,7 @@ final class DuplicatesModel: ScanTool {
         scanID = id
         let roots = scope.roots(defaults: Self.defaultRoots)
         let minBytes = minSize.rawValue
+        let skipProjects = scope == .home
         let label = scope.label(defaultsLabel: Self.defaultsLabel)
         phase = .scanning("Looking through files…")
         let reporter = ProgressReporter { [weak self] message in
@@ -49,7 +50,7 @@ final class DuplicatesModel: ScanTool {
             self.phase = .scanning(message)
         }
         let t = Task.detached(priority: .userInitiated) {
-            DuplicateFinder.run(roots: roots, minSize: minBytes, progress: reporter)
+            DuplicateFinder.run(roots: roots, minSize: minBytes, skipProjects: skipProjects, progress: reporter)
         }
         task = t
         let result = await t.value

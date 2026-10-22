@@ -45,7 +45,7 @@ enum CodeIndex {
         var queue: [(URL, Int, String?)] = roots.map { ($0, 0, nil) }
         while !queue.isEmpty, budget > 0, !Task.isCancelled {
             let (dir, depth, inheritedProject) = queue.removeFirst()
-            let children = (try? FileManager.default.contentsOfDirectory(at: dir, includingPropertiesForKeys: [.isDirectoryKey, .isSymbolicLinkKey])) ?? []
+            let children = (try? FileManager.default.contentsOfDirectory(at: dir, includingPropertiesForKeys: [.isDirectoryKey, .isSymbolicLinkKey, .isPackageKey])) ?? []
             budget -= children.count
             let names = Set(children.map(\.lastPathComponent))
             var project = inheritedProject
@@ -60,13 +60,13 @@ enum CodeIndex {
             for env in [".venv", "venv", "env"] where names.contains(env) {
                 if let base = venvBase(dir.appendingPathComponent(env)) { result.venvBases[base, default: []].insert(label) }
             }
-            guard depth < 6 else { continue }
+            guard depth < 7 else { continue }
             for child in children {
                 let name = child.lastPathComponent
                 if name.hasPrefix(".") || skip.contains(name) || name.hasSuffix(".app") || name.hasSuffix(".xcodeproj")
                     || name.hasSuffix(".xcworkspace") { continue }
-                guard let v = try? child.resourceValues(forKeys: [.isDirectoryKey, .isSymbolicLinkKey]),
-                      v.isDirectory == true, v.isSymbolicLink != true else { continue }
+                guard let v = try? child.resourceValues(forKeys: [.isDirectoryKey, .isSymbolicLinkKey, .isPackageKey]),
+                      v.isDirectory == true, v.isSymbolicLink != true, v.isPackage != true else { continue }
                 queue.append((child, depth + 1, project))
             }
         }

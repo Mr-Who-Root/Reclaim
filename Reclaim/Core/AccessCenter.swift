@@ -26,8 +26,10 @@ final class AccessCenter {
     private(set) var fullDiskAccess = FS.hasFullDiskAccess()
     private(set) var lastChecked: Date? = UserDefaults.standard.object(forKey: PrefKey.lastAccessCheck) as? Date
 
-    /// True once the person granted the Home folder and the full check has run.
-    var homeGranted: Bool { UserDefaults.standard.data(forKey: PrefKey.homeAccessBookmark) != nil && lastChecked != nil }
+    /// True once the person granted the Home folder and the full check has run, or Full Disk Access already opens everything.
+    var homeGranted: Bool {
+        fullDiskAccess || (UserDefaults.standard.data(forKey: PrefKey.homeAccessBookmark) != nil && lastChecked != nil)
+    }
 
     var grantedCount: Int { locations.filter { $0.status == .granted }.count }
     var blockedCount: Int { locations.filter { $0.status == .blocked }.count }
